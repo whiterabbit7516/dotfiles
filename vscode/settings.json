@@ -1,0 +1,97 @@
+{
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\6\\pwsh.exe",
+    "workbench.colorTheme": "Dracula",
+    "vim.highlightedyank.enable": true,
+    "vim.useCtrlKeys": false,
+    "vim.handleKeys": {
+        "<C-c>": true,
+        "<C-d>": true,
+        "<C-u>": true,
+        "<C-e>": true,
+        "<C-y>": true
+    },
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["U"],
+            "after": ["<C-r>"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["z"],
+            "after": ["z", "z"]
+        },
+        {
+            "before": ["J"],
+            "after": ["1", "0", "j"]
+        },
+        {
+            "before": ["K"],
+            "after": ["1", "0", "k"]
+        },
+        {
+            "before": ["H"],
+            "after": ["1", "0", "h"]
+        },
+        {
+            "before": ["L"],
+            "after": ["1", "0", "l"]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["J"],
+            "after": ["1", "0", "j"]
+        },
+        {
+            "before": ["K"],
+            "after": ["1", "0", "k"]
+        },
+        {
+            "before": ["H"],
+            "after": ["1", "0", "h"]
+        },
+        {
+            "before": ["L"],
+            "after": ["1", "0", "l"]
+        }
+    ],
+    "files.autoSave": "afterDelay",
+    "vim.statusBarColorControl": true,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f"
+    },
+    "diffEditor.renderSideBySide": false,
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "vim.hlsearch": true,
+    "terminal.integrated.commandsToSkipShell": [
+        // Ensure the toggle sidebar visibility keybinding skips the shell
+        "workbench.action.toggleSidebarVisibility"
+    ],
+    "window.menuBarVisibility": "default",
+    "editor.minimap.enabled": true,
+    "workbench.sideBar.location": "left",
+    "workbench.activityBar.visible": true,
+    "editor.rulers": [
+        120
+    ],
+    "explorer.confirmDragAndDrop": false,
+    "breadcrumbs.enabled": true,
+    "editor.formatOnType": true,
+    "[csharp]": {
+        "editor.defaultFormatter": "ms-vscode.csharp"
+    },
+    "editor.wordWrap": "on",
+    "git.enableSmartCommit": true
+}
