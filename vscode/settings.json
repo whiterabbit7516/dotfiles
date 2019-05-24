@@ -31,37 +31,37 @@
         },
         {
             "before": ["J"],
-            "after": ["1", "0", "j"]
+            "after": ["8", "j"]
         },
         {
             "before": ["K"],
-            "after": ["1", "0", "k"]
+            "after": ["8", "k"]
         },
         {
             "before": ["H"],
-            "after": ["1", "0", "h"]
+            "after": ["8", "h"]
         },
         {
             "before": ["L"],
-            "after": ["1", "0", "l"]
+            "after": ["8", "l"]
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
             "before": ["J"],
-            "after": ["1", "0", "j"]
+            "after": ["8", "j"]
         },
         {
             "before": ["K"],
-            "after": ["1", "0", "k"]
+            "after": ["8", "k"]
         },
         {
             "before": ["H"],
-            "after": ["1", "0", "h"]
+            "after": ["8", "h"]
         },
         {
             "before": ["L"],
-            "after": ["1", "0", "l"]
+            "after": ["8", "l"]
         }
     ],
     "files.autoSave": "afterDelay",
@@ -93,5 +93,11 @@
         "editor.defaultFormatter": "ms-vscode.csharp"
     },
     "editor.wordWrap": "on",
-    "git.enableSmartCommit": true
+    "git.enableSmartCommit": true,
+    "editor.minimap.maxColumn": 60,
+    "editor.minimap.renderCharacters": false,
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.smoothScrolling": true,
+    "editor.cursorBlinking": "phase",
+    "workbench.iconTheme": "material-icon-theme"
 }
