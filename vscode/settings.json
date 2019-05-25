@@ -92,7 +92,6 @@
     "[csharp]": {
         "editor.defaultFormatter": "ms-vscode.csharp"
     },
-    "editor.wordWrap": "on",
     "git.enableSmartCommit": true,
     "editor.minimap.maxColumn": 60,
     "editor.minimap.renderCharacters": false,
