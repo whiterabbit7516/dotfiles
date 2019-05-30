@@ -44,6 +44,10 @@
         {
             "before": ["L"],
             "after": ["8", "l"]
+        },
+        {
+            "before": ["<Space>"],
+            "after": ["z", "z"]
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
@@ -62,6 +66,10 @@
         {
             "before": ["L"],
             "after": ["8", "l"]
+        },
+        {
+            "before": ["<Space>"],
+            "after": ["z", "z"]
         }
     ],
     "files.autoSave": "afterDelay",
@@ -98,5 +106,8 @@
     "editor.cursorSmoothCaretAnimation": true,
     "editor.smoothScrolling": true,
     "editor.cursorBlinking": "phase",
-    "workbench.iconTheme": "material-icon-theme"
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.codeLens": false,
+    "editor.renderWhitespace": "all",
+    "search.usePCRE2": true
 }
