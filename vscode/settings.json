@@ -46,8 +46,12 @@
             "after": ["8", "l"]
         },
         {
-            "before": ["<Space>"],
-            "after": ["z", "z"]
+            "before": ["s"],
+            "after": ["i", " ", "<Esc>", "r"]
+        },
+        {
+            "before": ["S"],
+            "after": ["a", " ", "<Esc>", "r"]
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
@@ -66,10 +70,6 @@
         {
             "before": ["L"],
             "after": ["8", "l"]
-        },
-        {
-            "before": ["<Space>"],
-            "after": ["z", "z"]
         }
     ],
     "files.autoSave": "afterDelay",
