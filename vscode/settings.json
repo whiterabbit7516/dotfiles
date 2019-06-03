@@ -27,7 +27,7 @@
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": ["z"],
-            "after": ["z", "z"]
+            "after": ["5", "j", "z", "z", "5", "k"]
         },
         {
             "before": ["J"],
@@ -57,7 +57,7 @@
     "vim.visualModeKeyBindingsNonRecursive": [
         {
             "before": ["z"],
-            "after": ["z", "z"]
+            "after": ["5", "j", "z", "z", "5", "k"]
         },
         {
             "before": ["J"],
@@ -113,5 +113,6 @@
     "workbench.iconTheme": "material-icon-theme",
     "editor.codeLens": false,
     "editor.renderWhitespace": "all",
-    "search.usePCRE2": true
+    "search.usePCRE2": true,
+    "workbench.editor.enablePreviewFromQuickOpen": false
 }
