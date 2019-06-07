@@ -101,11 +101,6 @@
         }
     ],
     "files.autoSave": "afterDelay",
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#005f5f",
-        "statusBar.noFolderBackground": "#005f5f",
-        "statusBar.debuggingBackground": "#005f5f"
-    },
     "diffEditor.renderSideBySide": false,
     "git.confirmSync": false,
     "git.autofetch": true,
