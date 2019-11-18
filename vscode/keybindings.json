@@ -13,6 +13,10 @@
         "command": "workbench.action.terminal.kill"
     },
     {
+        "key": "ctrl+shift+a",
+        "command": "workbench.action.terminal.newInActiveWorkspace"
+    },
+    {
         "key": "ctrl+shift+k",
         "command": "workbench.action.terminal.focusNext"
     },
