@@ -27,10 +27,6 @@
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
         {
-            "before": ["z"],
-            "after": ["5", "j", "z", "z", "5", "k"]
-        },
-        {
             "before": ["J"],
             "after": ["8", "j"]
         },
@@ -68,10 +64,6 @@
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
-        {
-            "before": ["z"],
-            "after": ["5", "j", "z", "z", "5", "k"]
-        },
         {
             "before": ["J"],
             "after": ["8", "j"]
