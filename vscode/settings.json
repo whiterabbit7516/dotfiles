@@ -108,7 +108,7 @@
     "vim.hlsearch": true,
     "terminal.integrated.commandsToSkipShell": [
         // Ensure the toggle sidebar visibility keybinding skips the shell
-        "workbench.action.toggleSidebarVisibility"
+        // "workbench.action.toggleSidebarVisibility" // conflicts with tmux
     ],
     "window.menuBarVisibility": "default",
     "editor.minimap.enabled": true,
