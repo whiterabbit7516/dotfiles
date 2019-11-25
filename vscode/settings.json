@@ -53,14 +53,6 @@
         {
             "before": ["B"],
             "after": ["4", "b"]
-        },
-        {
-            "before": ["s"],
-            "after": ["i", " ", "<Esc>", "r"]
-        },
-        {
-            "before": ["S"],
-            "after": ["a", " ", "<Esc>", "r"]
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
