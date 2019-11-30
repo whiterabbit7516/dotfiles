@@ -13,7 +13,11 @@
         "<C-e>": true,
         "<C-y>": true
     },
-    "vim.insertModeKeyBindings": [
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": ["q"],
+            "after": ["<Esc>"]
+        },
         {
             "before": ["j", "j"],
             "after": ["<Esc>"]
@@ -56,11 +60,11 @@
         },
         {
             "before": ["s"],
-            "after": ["i", " ", "<Esc>", "r"]
+            "after": ["i", " ", "<Esc>"]
         },
         {
             "before": ["S"],
-            "after": ["a", " ", "<Esc>", "r"]
+            "after": ["a", " ", "<Esc>"]
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
