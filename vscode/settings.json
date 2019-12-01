@@ -19,8 +19,8 @@
             "after": ["<Esc>"]
         },
         {
-            "before": ["j", "j"],
-            "after": ["<Esc>"]
+            "before": ["Q","Q"],
+            "after": ["q"]
         }
     ],
     "vim.normalModeKeyBindings": [
