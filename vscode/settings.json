@@ -13,16 +13,6 @@
         "<C-e>": true,
         "<C-y>": true
     },
-    "vim.insertModeKeyBindingsNonRecursive": [
-        {
-            "before": ["q"],
-            "after": ["<Esc>"]
-        },
-        {
-            "before": ["Q","Q"],
-            "after": ["q"]
-        }
-    ],
     "vim.normalModeKeyBindings": [
         {
             "before": ["U"],
