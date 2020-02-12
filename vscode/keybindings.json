@@ -19,10 +19,5 @@
     {
         "key": "ctrl+shift+k",
         "command": "workbench.action.terminal.focusNext"
-    },
-    {
-        "key": "escape",
-        "command": "-extension.vim_escape",
-        "when": "editorTextFocus && vim.active && !inDebugRepl"
     }
 ]
