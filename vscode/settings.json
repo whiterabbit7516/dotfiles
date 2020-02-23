@@ -1,9 +1,9 @@
 {
-    "editor.fontFamily": "Fira Code",
+    // "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
     "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\6\\pwsh.exe",
     "terminal.external.windowsExec": "C:\\Program Files\\PowerShell\\6\\pwsh.exe",
-    "workbench.colorTheme": "Dracula",
+    "workbench.colorTheme": "Shades of Purple",
     "vim.highlightedyank.enable": true,
     "vim.useCtrlKeys": false,
     "vim.handleKeys": {
@@ -120,5 +120,5 @@
     "editor.renderWhitespace": "all",
     "search.usePCRE2": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "window.zoomLevel": 0
+    "window.zoomLevel": -1
 }
