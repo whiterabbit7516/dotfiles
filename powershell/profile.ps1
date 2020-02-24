@@ -13,9 +13,10 @@ Import-Module posh-git -ErrorAction SilentlyContinue
 
 if ($?)
 {
-    $GitPromptSettings.DefaultPromptPrefix = "`$ENV:USER@`$(hostname) | "
-    $GitPromptSettings.DefaultPromptPath = "`$(Get-Location | Split-Path -Leaf)"
-    $GitPromptSettings.DefaultPromptSuffix = " > "
+    $GitPromptSettings.DefaultForegroundColor = [ConsoleColor]::Magenta
+    $GitPromptSettings.DefaultPromptPrefix = "`$ENV:USER@`$(hostname) "
+    # $GitPromptSettings.DefaultPromptPath = "`$(Get-Location | Split-Path -Leaf)"
+    $GitPromptSettings.DefaultPromptSuffix = " `n>>> "
 }
 else 
 {
