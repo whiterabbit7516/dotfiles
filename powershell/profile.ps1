@@ -8,6 +8,9 @@ Set-Alias -Name vscode -Value 'code'
 
 #########################################
 
+# FZF
+Import-Module PSFzf -ArgumentList 'Ctrl+t','Ctrl+r' -ErrorAction SilentlyContinue
+
 # Set prompt
 Import-Module posh-git -ErrorAction SilentlyContinue
 
