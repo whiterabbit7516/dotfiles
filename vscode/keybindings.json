@@ -2,7 +2,7 @@
 [
     {
         "key": "ctrl+shift+j",
-        "command": "workbench.action.focusPanel"
+        "command": "workbench.action.terminal.focus"
     },
     {
         "key": "ctrl+shift+q",
@@ -70,6 +70,22 @@
     },
     {
         "key": "ctrl+i ctrl+j",
-        "command": "workbench.action.terminal.focus"
+        "command": "workbench.action.focusPanel"
+    },
+    {
+        "key": "ctrl+i ctrl+o",
+        "command": "workbench.panel.output.focus"
+    },
+    {
+        "key": "ctrl+i ctrl+t",
+        "command": "workbench.panel.terminal.focus"
+    },
+    {
+        "key": "ctrl+i ctrl+y",
+        "command": "workbench.debug.action.toggleRepl"
+    },
+    {
+        "key": "ctrl+i ctrl+b",
+        "command": "workbench.view.extension.bookmarks"
     }
 ]
