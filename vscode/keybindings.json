@@ -21,8 +21,55 @@
         "command": "workbench.action.terminal.focusNext"
     },
     {
-        "key": "escape",
-        "command": "-extension.vim_escape",
-        "when": "editorTextFocus && vim.active && !inDebugRepl"
+        "key": "ctrl+shift+9",
+        "command": "workbench.action.navigateBack"
+    },
+    {
+        "key": "ctrl+shift+0",
+        "command": "workbench.action.navigateForward"
+    },    
+    {
+        "key": "alt+left",
+        "command": "workbench.action.navigateBack"
+    },
+    {
+        "key": "alt+right",
+        "command": "workbench.action.navigateForward"
+    },
+    {
+        "key": "ctrl+shift+-",
+        "command": "-workbench.action.navigateForward"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "terminalHere.create"
+    },
+    {
+        "key": "ctrl+i ctrl+e",
+        "command": "workbench.explorer.fileView.focus"
+    },
+    {
+        "key": "ctrl+i ctrl+x",
+        "command": "workbench.view.extensions"
+    },
+    {
+        "key": "ctrl+i ctrl+g",
+        "command": "workbench.view.scm"
+    },
+    {
+        "key": "ctrl+i ctrl+d",
+        "command": "workbench.view.debug"
+    },
+    {
+        "key": "ctrl+i ctrl+f",
+        "command": "workbench.view.search.focus"
+    },
+    {
+        "key": "ctrl+i ctrl+r",
+        "command": "workbench.view.remote"
+    },
+    {
+        "key": "ctrl+i ctrl+j",
+        "command": "workbench.action.terminal.focus"
     }
 ]

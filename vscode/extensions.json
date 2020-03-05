@@ -7,7 +7,8 @@
         "alefragnani.Bookmarks",
         "EditorConfig.EditorConfig",
         "kaiwood.center-editor-window",
-        "eamodio.gitlens"
+		"eamodio.gitlens",
+		"tyriar.vscode-terminal-here"
 	],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
 	"unwantedRecommendations": [
