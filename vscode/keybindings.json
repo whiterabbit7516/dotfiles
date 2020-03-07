@@ -97,5 +97,14 @@
         "key": "ctrl+shift+r",
         "command": "workbench.action.terminal.rename",
         "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+i ctrl+h",
+        "command": "workbench.action.focusActiveEditorGroup"
+    },
+    {
+        "key": "ctrl+i ctrl+h",
+        "command": "workbench.action.focusNextGroup",
+        "when": "editorFocus"
     }
 ]
