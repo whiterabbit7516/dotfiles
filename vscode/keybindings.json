@@ -5,6 +5,11 @@
         "command": "workbench.action.terminal.focus"
     },
     {
+        "key": "ctrl+shift+j",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
+    },
+    {
         "key": "ctrl+shift+q",
         "command": "workbench.action.toggleMaximizedPanel"
     },
@@ -18,7 +23,7 @@
     },
     {
         "key": "ctrl+shift+k",
-        "command": "workbench.action.terminal.focusNext"
+        "command": "workbench.action.terminal.focusPrevious"
     },
     {
         "key": "ctrl+shift+9",
@@ -87,5 +92,10 @@
     {
         "key": "ctrl+i ctrl+b",
         "command": "workbench.view.extension.bookmarks"
+    },
+    {
+        "key": "ctrl+shift+r",
+        "command": "workbench.action.terminal.rename",
+        "when": "terminalFocus"
     }
 ]
