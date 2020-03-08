@@ -99,6 +99,11 @@
         "when": "terminalFocus"
     },
     {
+        "key": "ctrl+shift+r",
+        "command": "workbench.action.terminal.runSelectedText",
+        "when": "editorFocus"
+    },
+    {
         "key": "ctrl+i ctrl+h",
         "command": "workbench.action.focusActiveEditorGroup"
     },
