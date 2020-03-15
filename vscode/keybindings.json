@@ -10,6 +10,16 @@
         "when": "terminalFocus"
     },
     {
+        "key": "ctrl+shift+l",
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+h",
+        "command": "workbench.action.terminal.focusPreviousPane",
+        "when": "terminalFocus"
+    },
+    {
         "key": "ctrl+shift+q",
         "command": "workbench.action.toggleMaximizedPanel"
     },
