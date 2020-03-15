@@ -100,10 +100,6 @@
         "command": "workbench.debug.action.toggleRepl"
     },
     {
-        "key": "ctrl+i ctrl+b",
-        "command": "workbench.view.extension.bookmarks"
-    },
-    {
         "key": "ctrl+shift+r",
         "command": "workbench.action.terminal.rename",
         "when": "terminalFocus"
@@ -121,5 +117,33 @@
         "key": "ctrl+i ctrl+h",
         "command": "workbench.action.focusNextGroup",
         "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+i ctrl+b",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+i ctrl+n",
+        "command": "notifications.clearAll"
+    },
+    {
+        "key": "ctrl+i ctrl+m",
+        "command": "editor.action.toggleMinimap"
+    },
+    {
+        "key": "ctrl+i ctrl+z",
+        "command": "workbench.action.toggleZenMode"
+    },
+    {
+        "key": "ctrl+i ctrl+a",
+        "command": "workbench.action.toggleActivityBarVisibility"
+    },
+    {
+        "key": "ctrl+i ctrl+s",
+        "command": "workbench.action.toggleStatusbarVisibility"
+    },
+    {
+        "key": "ctrl+i ctrl+w",
+        "command": "workbench.action.toggleFullScreen"
     }
 ]
