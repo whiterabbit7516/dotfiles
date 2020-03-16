@@ -3,6 +3,10 @@
 #########################################
 Set-Alias -Name vscode -Value 'code'
 #########################################
+# environment variables
+#########################################
+# $ENV:PYTHONSTARTUP="/home/.../.pythonrc.py"
+#########################################
 # paths
 #########################################
 
@@ -19,7 +23,7 @@ if ($?)
     $GitPromptSettings.DefaultForegroundColor = [ConsoleColor]::Magenta
     $GitPromptSettings.DefaultPromptPrefix = "`$ENV:USER@`$(hostname) "
     # $GitPromptSettings.DefaultPromptPath = "`$(Get-Location | Split-Path -Leaf)"
-    $GitPromptSettings.DefaultPromptSuffix = " `n>>> "
+    $GitPromptSettings.DefaultPromptSuffix = " `n■ "
 }
 else 
 {
