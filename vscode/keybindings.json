@@ -150,5 +150,10 @@
     {
         "key": "ctrl+i ctrl+v",
         "command": "outline.focus"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "openInTerminal",
+        "when": "explorerResourceIsFolder"
     }
 ]
