@@ -60,7 +60,7 @@
         "command": "terminalHere.create"
     },
     {
-        "key": "ctrl+i ctrl+e",
+        "key": "ctrl+i ctrl+f",
         "command": "workbench.explorer.fileView.focus"
     },
     {
@@ -74,10 +74,6 @@
     {
         "key": "ctrl+i ctrl+d",
         "command": "workbench.view.debug"
-    },
-    {
-        "key": "ctrl+i ctrl+f",
-        "command": "workbench.view.search.focus"
     },
     {
         "key": "ctrl+i ctrl+r",
@@ -145,5 +141,14 @@
     {
         "key": "ctrl+i ctrl+w",
         "command": "workbench.action.toggleFullScreen"
+    },
+    {
+        "key": "ctrl+i ctrl+e",
+        "command": "workbench.files.action.focusOpenEditorsView",
+        "when": "workbench.explorer.openEditorsView.active"
+    },
+    {
+        "key": "ctrl+i ctrl+v",
+        "command": "outline.focus"
     }
 ]
