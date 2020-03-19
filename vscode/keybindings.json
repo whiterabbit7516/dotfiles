@@ -214,5 +214,35 @@
     {
         "key": "ctrl+a o",
         "command": "workbench.action.navigateLast"
+    },
+    {
+        "key": "ctrl+a ctrl+h",
+        "command": "workbench.action.positionPanelLeft",
+        "when": "panelFocus"
+    },
+    {
+        "key": "ctrl+a ctrl+j",
+        "command": "workbench.action.positionPanelBottom",
+        "when": "panelFocus"
+    },
+    {
+        "key": "ctrl+a ctrl+l",
+        "command": "workbench.action.positionPanelRight",
+        "when": "panelFocus"
+    },
+    {
+        "key": "ctrl+a ctrl+m",
+        "command": "workbench.action.joinTwoGroups",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+a ctrl+h",
+        "command": "workbench.action.toggleSidebarPosition",
+        "when": "sideBarFocus"
+    },
+    {
+        "key": "ctrl+a ctrl+l",
+        "command": "workbench.action.toggleSidebarPosition",
+        "when": "sideBarFocus"
     }
 ]
