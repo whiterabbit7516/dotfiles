@@ -155,5 +155,15 @@
         "key": "ctrl+shift+i",
         "command": "openInTerminal",
         "when": "explorerResourceIsFolder"
+    },
+    {
+        "key": "ctrl+a ctrl+a",
+        "command": "editor.action.selectAll",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "-editor.action.selectAll",
+        "when": "textInputFocus"
     }
 ]
