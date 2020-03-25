@@ -33,3 +33,10 @@ else
         return $prompt
     }
 }
+
+# Print nordvpn status
+$nordvpn = command nordvpn -ErrorAction SilentlyContinue
+if ($nordvpn -ne $null)
+{
+  nordvpn status | select-string -Pattern "Status|IP|server" -NoEmphasis
+}
