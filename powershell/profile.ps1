@@ -1,7 +1,14 @@
 #########################################
 # aliases
 #########################################
-Set-Alias -Name vscode -Value 'code'
+if ($(command code -ErrorAction SilentlyContinue) -ne $null)
+{
+  Set-Alias -Name vscode -Value 'code'
+}
+else if ($(command code-insiders -ErrorAction SilentlyContinue) -ne $null)
+{
+  Set-Alias -Name vscode -Value 'code-insiders'
+}
 #########################################
 # environment variables
 #########################################
