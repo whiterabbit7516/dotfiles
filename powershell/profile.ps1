@@ -5,7 +5,7 @@ if ($(command code -ErrorAction SilentlyContinue) -ne $null)
 {
   Set-Alias -Name vscode -Value 'code'
 }
-else if ($(command code-insiders -ErrorAction SilentlyContinue) -ne $null)
+elseif ($(command code-insiders -ErrorAction SilentlyContinue) -ne $null)
 {
   Set-Alias -Name vscode -Value 'code-insiders'
 }
