@@ -1,7 +1,14 @@
 #########################################
 # aliases
 #########################################
-Set-Alias -Name vscode -Value 'code'
+if ($(command code -ErrorAction SilentlyContinue) -ne $null)
+{
+  Set-Alias -Name vscode -Value 'code'
+}
+elseif ($(command code-insiders -ErrorAction SilentlyContinue) -ne $null)
+{
+  Set-Alias -Name vscode -Value 'code-insiders'
+}
 #########################################
 # environment variables
 #########################################
@@ -32,4 +39,11 @@ else
         $prompt = "[$ENV:USER@$(hostname)] $path > "
         return $prompt
     }
+}
+
+# Print nordvpn status
+$nordvpn = command nordvpn -ErrorAction SilentlyContinue
+if ($nordvpn -ne $null)
+{
+  nordvpn status | select-string -Pattern "Status|IP|server" -NoEmphasis
 }
