@@ -370,5 +370,25 @@
         "key": "alt+h",
         "command": "breadcrumbs.focusPrevious",
         "when": "breadcrumbsActive && breadcrumbsVisible"
+    },
+    {
+        "key": "alt+r",
+        "command": "workbench.action.quickOpenRecent",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "alt+p",
+        "command": "workbench.action.closeQuickOpen",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "alt+a",
+        "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "alt+e",
+        "command": "workbench.action.quickOpenPreviousRecentlyUsedEditor",
+        "when": "inQuickOpen"
     }
 ]
