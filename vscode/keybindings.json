@@ -148,6 +148,11 @@
         "command": "outline.focus"
     },
     {
+        "key": "ctrl+i ctrl+c",
+        "command": "breadcrumbs.focus",
+        "when": "breadcrumbsPossible"
+    },
+    {
         "key": "ctrl+shift+i",
         "command": "openInTerminal",
         "when": "explorerResourceIsFolder"
@@ -280,16 +285,6 @@
         "command": "workbench.action.navigateUp"
     },
     {
-        "key": "ctrl+alt+k",
-        "command": "editor.action.moveLinesUpAction",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+alt+j",
-        "command": "editor.action.moveLinesDownAction",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
         "key": "alt+h",
         "command": "workbench.action.navigateLeft"
     },
@@ -298,14 +293,14 @@
         "command": "workbench.action.navigateRight"
     },
     {
-        "key": "alt+j",
-        "command": "workbench.action.quickOpenNavigateNext",
-        "when": "inQuickOpen"
+        "key": "ctrl+alt+k",
+        "command": "editor.action.moveLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
     },
     {
-        "key": "alt+k",
-        "command": "workbench.action.quickOpenNavigatePrevious",
-        "when": "inQuickOpen"
+        "key": "ctrl+alt+j",
+        "command": "editor.action.moveLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
     },
     {
         "key": "shift+alt+l",
@@ -326,5 +321,54 @@
         "key": "shift+alt+j",
         "command": "editor.action.insertCursorBelow",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+j",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "alt+k",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "alt+j",
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "alt+k",
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "alt+t",
+        "command": "workbench.action.quickOpenTerm",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "alt+v",
+        "command": "workbench.action.quickOpenView",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "alt+p",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "alt+l",
+        "command": "workbench.action.acceptSelectedQuickOpenItem",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "alt+l",
+        "command": "breadcrumbs.focusNext",
+        "when": "breadcrumbsActive && breadcrumbsVisible"
+    },
+    {
+        "key": "alt+h",
+        "command": "breadcrumbs.focusPrevious",
+        "when": "breadcrumbsActive && breadcrumbsVisible"
     }
 ]
