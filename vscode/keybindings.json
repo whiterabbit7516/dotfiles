@@ -290,7 +290,8 @@
     },
     {
         "key": "alt+l",
-        "command": "workbench.action.navigateRight"
+        "command": "workbench.action.navigateRight",
+        "when": "!editorHasSelection"
     },
     {
         "key": "ctrl+alt+k",
@@ -390,5 +391,15 @@
         "key": "alt+e",
         "command": "workbench.action.quickOpenPreviousRecentlyUsedEditor",
         "when": "inQuickOpen"
+    },
+    {
+        "key": "alt+l",
+        "command": "acceptSelectedSuggestion",
+        "when": "suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "ctrl+space",
+        "command": "hideSuggestWidget",
+        "when": "suggestWidgetVisible && textInputFocus"
     }
 ]
