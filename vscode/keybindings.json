@@ -15,6 +15,11 @@
         "when": "terminalFocus"
     },
     {
+        "key": "alt+o",
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus"
+    },
+    {
         "key": "ctrl+shift+h",
         "command": "workbench.action.terminal.focusPreviousPane",
         "when": "terminalFocus"
@@ -107,6 +112,11 @@
     },
     {
         "key": "ctrl+i ctrl+h",
+        "command": "workbench.action.focusNextGroup",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+o",
         "command": "workbench.action.focusNextGroup",
         "when": "editorFocus"
     },
