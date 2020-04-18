@@ -413,7 +413,7 @@
         "when": "suggestWidgetVisible && textInputFocus"
     },
     {
-        "key": "ctrl+i ctrl+c",
+        "key": "c",
         "command": "workbench.files.action.collapseExplorerFolders",
         "when": "explorerViewletFocus"
     }
