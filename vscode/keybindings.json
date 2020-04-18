@@ -416,5 +416,33 @@
         "key": "c",
         "command": "workbench.files.action.collapseExplorerFolders",
         "when": "explorerViewletFocus"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "workbench.action.terminal.scrollUp",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "workbench.action.terminal.scrollDown",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "workbench.action.terminal.scrollUpPage",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "workbench.action.terminal.scrollDownPage",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "shift+alt+j",
+        "command": "workbench.action.terminal.selectToNextLine"
+    },
+    {
+        "key": "shift+alt+k",
+        "command": "workbench.action.terminal.selectToPreviousLine"
     }
 ]

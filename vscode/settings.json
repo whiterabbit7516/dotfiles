@@ -120,5 +120,6 @@
     "editor.renderWhitespace": "all",
     "search.usePCRE2": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "window.zoomLevel": -1
+    "window.zoomLevel": -1,
+    "terminal.integrated.copyOnSelection": true
 }
