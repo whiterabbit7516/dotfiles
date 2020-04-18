@@ -21,7 +21,6 @@ elseif ($(command code-insiders -ErrorAction SilentlyContinue) -ne $null)
 
 # PSReadLine
 Set-PSReadLineOption -EditMode Vi -ViModeIndicator Cursor
-Remove-PSReadLineKeyHandler -Chord Ctrl+r
 Set-PSReadLineKeyHandler -Chord Ctrl+c -Function ViCommandMode
 
 # FZF
