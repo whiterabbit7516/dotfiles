@@ -121,5 +121,6 @@
     "search.usePCRE2": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "window.zoomLevel": -1,
-    "terminal.integrated.copyOnSelection": true
+    "terminal.integrated.copyOnSelection": true,
+    "debug.toolBarLocation": "docked",
 }
