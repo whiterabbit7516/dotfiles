@@ -448,5 +448,72 @@
     {
         "key": "shift+alt+k",
         "command": "workbench.action.terminal.selectToPreviousLine"
+    },
+    {
+        "key": "ctrl+alt+j",
+        "command": "workbench.action.debug.stepOver",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "ctrl+alt+l",
+        "command": "workbench.action.debug.stepInto",
+        "when": "debugState != 'inactive'"
+    },
+    {
+        "key": "ctrl+alt+h",
+        "command": "workbench.action.debug.stepOut",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "ctrl+alt+k",
+        "command": "workbench.action.debug.stepBack",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "ctrl+y c",
+        "command": "workbench.action.debug.continue",
+        "when": "inDebugMode"
+    },
+    {
+        "key": "ctrl+y s",
+        "command": "workbench.action.debug.stop",
+        "when": "inDebugMode"
+    },
+    {
+        "key": "ctrl+y c",
+        "command": "workbench.action.debug.pause",
+        "when": "debugState == 'running'"
+    },
+    {
+        "key": "ctrl+y b",
+        "command": "editor.debug.action.toggleBreakpoint",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+y r",
+        "command": "workbench.action.debug.restart",
+        "when": "inDebugMode"
+    },
+    {
+        "key": "ctrl+y d",
+        "command": "workbench.action.debug.selectandstart"
+    },
+    {
+        "key": "ctrl+y t",
+        "command": "debug.enableOrDisableBreakpoint"
+    },
+    {
+        "key": "ctrl+y s",
+        "command": "workbench.action.debug.start",
+        "when": "!inDebugMode"
+    },
+    {
+        "key": "ctrl+y j",
+        "command": "editor.debug.action.runToCursor"
+    },
+    {
+        "key": "ctrl+y r",
+        "command": "workbench.action.debug.run",
+        "when": "!inDebugMode"
     }
 ]
