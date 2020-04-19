@@ -123,4 +123,5 @@
     "window.zoomLevel": -1,
     "terminal.integrated.copyOnSelection": true,
     "debug.toolBarLocation": "docked",
+    "terminal.integrated.cursorBlinking": true,
 }
