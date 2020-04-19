@@ -432,6 +432,11 @@
         "when": "explorerViewletFocus && !inputFocus"
     },
     {
+        "key": "r",
+        "command": "renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
         "key": "ctrl+y",
         "command": "workbench.action.terminal.scrollUp",
         "when": "terminalFocus"
