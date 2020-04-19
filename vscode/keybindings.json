@@ -141,6 +141,10 @@
         "command": "search.action.focusSearchList"
     },
     {
+        "key": "ctrl+i s",
+        "command": "references-view.tree.focus"
+    },
+    {
         "key": "ctrl+i ctrl+a",
         "command": "workbench.action.toggleActivityBarVisibility"
     },
