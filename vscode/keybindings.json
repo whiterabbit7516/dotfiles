@@ -137,12 +137,12 @@
         "command": "workbench.action.toggleZenMode"
     },
     {
-        "key": "ctrl+i ctrl+a",
-        "command": "workbench.action.toggleActivityBarVisibility"
+        "key": "ctrl+i ctrl+s",
+        "command": "search.action.focusSearchList"
     },
     {
-        "key": "ctrl+i ctrl+s",
-        "command": "workbench.action.toggleStatusbarVisibility"
+        "key": "ctrl+i ctrl+a",
+        "command": "workbench.action.toggleActivityBarVisibility"
     },
     {
         "key": "ctrl+i ctrl+w",
