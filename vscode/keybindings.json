@@ -515,5 +515,10 @@
         "key": "ctrl+y r",
         "command": "workbench.action.debug.run",
         "when": "!inDebugMode"
+    },
+    {
+        "key": "ctrl+y h",
+        "command": "editor.debug.action.showDebugHover",
+        "when": "editorTextFocus && inDebugMode"
     }
 ]
