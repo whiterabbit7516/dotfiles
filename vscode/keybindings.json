@@ -519,7 +519,8 @@
     },
     {
         "key": "ctrl+y j",
-        "command": "editor.debug.action.runToCursor"
+        "command": "editor.debug.action.runToCursor",
+        "when": "inDebugMode"
     },
     {
         "key": "ctrl+y r",
@@ -530,5 +531,10 @@
         "key": "ctrl+y h",
         "command": "editor.debug.action.showDebugHover",
         "when": "editorTextFocus && inDebugMode"
+    },
+    {
+        "key": "ctrl+y k",
+        "command": "debug.jumpToCursor",
+        "when": "inDebugMode"
     }
 ]
