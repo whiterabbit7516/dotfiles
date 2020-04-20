@@ -373,11 +373,6 @@
         "when": "inQuickOpen"
     },
     {
-        "key": "alt+v",
-        "command": "workbench.action.quickOpenView",
-        "when": "inQuickOpen"
-    },
-    {
         "key": "alt+p",
         "command": "workbench.action.quickOpen"
     },
@@ -409,6 +404,16 @@
     {
         "key": "alt+a",
         "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "alt+v",
+        "command": "workbench.action.openView",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "alt+c",
+        "command": "workbench.action.showCommands",
         "when": "inQuickOpen"
     },
     {
@@ -510,8 +515,9 @@
         "when": "inDebugMode"
     },
     {
-        "key": "ctrl+y d",
-        "command": "workbench.action.debug.selectandstart"
+        "key": "alt+d",
+        "command": "workbench.action.debug.selectandstart",
+        "when": "inQuickOpen"
     },
     {
         "key": "ctrl+y t",
