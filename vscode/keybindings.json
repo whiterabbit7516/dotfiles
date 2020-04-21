@@ -338,13 +338,13 @@
         "when": "editorTextFocus"
     },
     {
-        "key": "shift+alt+k",
-        "command": "editor.action.insertCursorAbove",
+        "key": "shift+alt+j",
+        "command": "editor.action.insertCursorBelow",
         "when": "editorTextFocus"
     },
     {
-        "key": "shift+alt+j",
-        "command": "editor.action.insertCursorBelow",
+        "key": "shift+alt+k",
+        "command": "editor.action.insertCursorAbove",
         "when": "editorTextFocus"
     },
     {
@@ -463,11 +463,13 @@
     },
     {
         "key": "shift+alt+j",
-        "command": "workbench.action.terminal.selectToNextLine"
+        "command": "workbench.action.terminal.selectToNextLine",
+        "when": "terminalFocus"
     },
     {
         "key": "shift+alt+k",
-        "command": "workbench.action.terminal.selectToPreviousLine"
+        "command": "workbench.action.terminal.selectToPreviousLine",
+        "when": "terminalFocus"
     },
     {
         "key": "ctrl+alt+j",
