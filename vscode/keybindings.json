@@ -257,6 +257,10 @@
         "when": "sideBarFocus"
     },
     {
+        "key": "ctrl+a ctrl+n",
+        "command": "workbench.action.files.newUntitledFile"
+    },
+    {
         "key": "ctrl+alt+h",
         "command": "workbench.action.terminal.resizePaneLeft",
         "when": "terminalFocus"
