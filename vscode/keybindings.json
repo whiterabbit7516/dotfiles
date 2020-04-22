@@ -163,6 +163,11 @@
         "when": "breadcrumbsPossible"
     },
     {
+        "key": "ctrl+shift+s",
+        "command": "workbench.action.terminal.split",
+        "when": "terminalFocus"
+    },
+    {
         "key": "ctrl+shift+i",
         "command": "openInTerminal",
         "when": "explorerResourceIsFolder"
@@ -255,6 +260,10 @@
         "key": "ctrl+a ctrl+l",
         "command": "workbench.action.toggleSidebarPosition",
         "when": "sideBarFocus"
+    },
+    {
+        "key": "ctrl+a ctrl+n",
+        "command": "workbench.action.files.newUntitledFile"
     },
     {
         "key": "ctrl+alt+h",
