@@ -764,5 +764,15 @@
         "key": "ctrl+x",
         "command": "workbench.action.quitNotebookEdit",
         "when": "inputFocus && notebookEditorFocused"
+    },
+    {
+        "key": "alt+b",
+        "command": "bookmarks.listFromAllFiles",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "alt+y",
+        "command": "workbench.action.tasks.runTask",
+        "when": "inQuickOpen"
     }
 ]
