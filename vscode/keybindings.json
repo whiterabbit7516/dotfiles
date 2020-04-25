@@ -232,6 +232,16 @@
         "command": "workbench.action.navigateLast"
     },
     {
+        "key": "ctrl+a n",
+        "command": "editor.action.marker.next",
+        "when": "editorFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+a p",
+        "command": "editor.action.marker.prev",
+        "when": "editorFocus && !editorReadonly"
+    },
+    {
         "key": "ctrl+a ctrl+h",
         "command": "workbench.action.positionPanelLeft",
         "when": "panelFocus"
@@ -774,5 +784,25 @@
         "key": "alt+y",
         "command": "workbench.action.tasks.runTask",
         "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+alt+n",
+        "command": "editor.action.wordHighlight.next",
+        "when": "editorTextFocus && hasWordHighlights"
+    },
+    {
+        "key": "ctrl+alt+p",
+        "command": "editor.action.wordHighlight.prev",
+        "when": "editorTextFocus && hasWordHighlights"
+    },
+    {
+        "key": "ctrl+alt+n",
+        "command": "editor.action.diffReview.next",
+        "when": "isInDiffEditor"
+    },
+    {
+        "key": "ctrl+alt+p",
+        "command": "editor.action.diffReview.prev",
+        "when": "isInDiffEditor"
     }
 ]
