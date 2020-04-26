@@ -125,6 +125,10 @@
         "command": "workbench.action.toggleSidebarVisibility"
     },
     {
+        "key": "ctrl+i ctrl+n",
+        "command": "notifications.clearAll"
+    },
+    {
         "key": "ctrl+i ctrl+m",
         "command": "editor.action.toggleMinimap"
     },
