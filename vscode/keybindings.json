@@ -471,22 +471,22 @@
         "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
     },
     {
-        "key": "ctrl+y",
+        "key": "ctrl+alt+y",
         "command": "workbench.action.terminal.scrollUp",
         "when": "terminalFocus"
     },
     {
-        "key": "ctrl+e",
+        "key": "ctrl+alt+e",
         "command": "workbench.action.terminal.scrollDown",
         "when": "terminalFocus"
     },
     {
-        "key": "ctrl+u",
+        "key": "ctrl+alt+u",
         "command": "workbench.action.terminal.scrollUpPage",
         "when": "terminalFocus"
     },
     {
-        "key": "ctrl+d",
+        "key": "ctrl+alt+d",
         "command": "workbench.action.terminal.scrollDownPage",
         "when": "terminalFocus"
     },
@@ -823,5 +823,65 @@
         "key": "ctrl+x ctrl+l",
         "command": "editor.action.deleteLines",
         "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+y ctrl+y",
+        "command": "extension.vim_ctrl+y",
+        "when": "editorTextFocus && vim.active && vim.use<C-y> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "-extension.vim_ctrl+y",
+        "when": "editorTextFocus && vim.active && vim.use<C-y> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+e ctrl+e",
+        "command": "extension.vim_ctrl+e",
+        "when": "editorTextFocus && vim.active && vim.use<C-e> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-extension.vim_ctrl+e",
+        "when": "editorTextFocus && vim.active && vim.use<C-e> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+d ctrl+d",
+        "command": "extension.vim_ctrl+d",
+        "when": "editorTextFocus && vim.active && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "-extension.vim_ctrl+d",
+        "when": "editorTextFocus && vim.active && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+u ctrl+u",
+        "command": "extension.vim_ctrl+u",
+        "when": "editorTextFocus && vim.active && vim.use<C-u> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "-extension.vim_ctrl+u",
+        "when": "editorTextFocus && vim.active && vim.use<C-u> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+alt+y",
+        "command": "scrollLineUp",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+alt+e",
+        "command": "scrollLineDown",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+alt+d",
+        "command": "scrollPageDown",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+alt+u",
+        "command": "scrollPageUp",
+        "when": "textInputFocus"
     }
 ]
