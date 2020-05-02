@@ -883,5 +883,15 @@
         "key": "ctrl+alt+u",
         "command": "scrollPageUp",
         "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+alt+e",
+        "command": "list.scrollDown",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "ctrl+alt+y",
+        "command": "list.scrollUp",
+        "when": "listFocus && !inputFocus"
     }
 ]
