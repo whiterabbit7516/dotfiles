@@ -77,10 +77,6 @@
         "command": "workbench.view.debug"
     },
     {
-        "key": "ctrl+i ctrl+u",
-        "command": "workbench.action.problems.focus"
-    },
-    {
         "key": "ctrl+i ctrl+r",
         "command": "workbench.view.remote"
     },
@@ -430,6 +426,11 @@
         "when": "inQuickOpen"
     },
     {
+        "key": "alt+e",
+        "command": "workbench.action.showAllEditors",
+        "when": "inQuickOpen"
+    },
+    {
         "key": "alt+v",
         "command": "workbench.action.openView",
         "when": "inQuickOpen"
@@ -437,11 +438,6 @@
     {
         "key": "alt+c",
         "command": "workbench.action.showCommands",
-        "when": "inQuickOpen"
-    },
-    {
-        "key": "alt+e",
-        "command": "workbench.action.quickOpenPreviousRecentlyUsedEditor",
         "when": "inQuickOpen"
     },
     {
