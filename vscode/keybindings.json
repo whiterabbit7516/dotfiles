@@ -756,11 +756,6 @@
     },
     {
         "key": "ctrl+x ctrl+x",
-        "command": "workbench.action.exitZenMode",
-        "when": "inZenMode"
-    },
-    {
-        "key": "ctrl+x ctrl+x",
         "command": "workbench.action.hideComment",
         "when": "commentEditorFocused"
     },
