@@ -77,6 +77,10 @@
         "command": "workbench.view.debug"
     },
     {
+        "key": "ctrl+i ctrl+u",
+        "command": "workbench.action.problems.focus"
+    },
+    {
         "key": "ctrl+i ctrl+r",
         "command": "workbench.view.remote"
     },
