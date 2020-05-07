@@ -977,19 +977,5 @@
         "key": "ctrl+alt+p",
         "command": "workbench.action.terminal.findPrevious",
         "when": "terminalFocus"
-    },
-    {
-        "key": "ctrl+f ctrl+f",
-        "command": "actions.find"
-    },
-    {
-        "key": "ctrl+f ctrl+f",
-        "command": "workbench.action.terminal.focusFindWidget",
-        "when": "terminalFindWidgetFocused || terminalFocus"
-    },
-    {
-        "key": "ctrl+f ctrl+s",
-        "command": "editor.action.addSelectionToNextFindMatch",
-        "when": "editorFocus"
     }
 ]
