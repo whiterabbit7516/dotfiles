@@ -527,7 +527,7 @@
         "when": "inDebugMode"
     },
     {
-        "key": "ctrl+y c",
+        "key": "ctrl+y p",
         "command": "workbench.action.debug.pause",
         "when": "debugState == 'running'"
     },
