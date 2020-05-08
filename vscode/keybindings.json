@@ -1011,5 +1011,17 @@
         "key": "ctrl+l ctrl+l",
         "command": "expandLineSelection",
         "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+i v",
+        "command": "workbench.debug.action.focusVariablesView"
+    },
+    {
+        "key": "ctrl+i c",
+        "command": "workbench.debug.action.focusCallStackView"
+    },
+    {
+        "key": "ctrl+i w",
+        "command": "workbench.debug.action.focusWatchView"
     }
 ]
