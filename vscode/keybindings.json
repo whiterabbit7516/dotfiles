@@ -991,5 +991,23 @@
     {
         "key": "ctrl+alt+[Minus]",
         "command": "workbench.action.decreaseViewSize"
+    },
+    {
+        "key": "ctrl+l ctrl+j",
+        "command": "editor.action.joinLines"
+    },
+    {
+        "key": "ctrl+l ctrl+b",
+        "command": "lineBreakInsert"
+    },
+    {
+        "key": "ctrl+l ctrl+d",
+        "command": "editor.action.deleteLines",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+l ctrl+l",
+        "command": "expandLineSelection",
+        "when": "textInputFocus"
     }
 ]
