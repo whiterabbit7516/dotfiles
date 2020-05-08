@@ -522,7 +522,7 @@
         "when": "inDebugMode"
     },
     {
-        "key": "ctrl+y s",
+        "key": "ctrl+y x",
         "command": "workbench.action.debug.stop",
         "when": "inDebugMode"
     },
