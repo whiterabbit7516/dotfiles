@@ -499,22 +499,22 @@
     {
         "key": "ctrl+alt+j",
         "command": "workbench.action.debug.stepOver",
-        "when": "debugState == 'stopped' && editorFocus"
+        "when": "debugState == 'stopped'"
     },
     {
         "key": "ctrl+alt+l",
         "command": "workbench.action.debug.stepInto",
-        "when": "debugState != 'inactive' && editorFocus"
+        "when": "debugState != 'inactive'"
     },
     {
         "key": "ctrl+alt+h",
         "command": "workbench.action.debug.stepOut",
-        "when": "debugState == 'stopped' && editorFocus"
+        "when": "debugState == 'stopped'"
     },
     {
         "key": "ctrl+alt+k",
         "command": "workbench.action.debug.stepBack",
-        "when": "debugState == 'stopped' && editorFocus"
+        "when": "debugState == 'stopped'"
     },
     {
         "key": "ctrl+y c",
