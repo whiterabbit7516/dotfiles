@@ -994,11 +994,13 @@
     },
     {
         "key": "ctrl+l ctrl+j",
-        "command": "editor.action.joinLines"
+        "command": "editor.action.joinLines",
+        "when": "editorFocus"
     },
     {
         "key": "ctrl+l ctrl+b",
-        "command": "lineBreakInsert"
+        "command": "lineBreakInsert",
+        "when": "editorFocus"
     },
     {
         "key": "ctrl+l ctrl+d",
