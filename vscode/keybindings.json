@@ -1031,5 +1031,35 @@
     {
         "key": "ctrl+i b",
         "command": "bookmarksExplorer.focus"
+    },
+    {
+        "key": "ctrl+f ctrl+f",
+        "command": "actions.find",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+f ctrl+r",
+        "command": "references-view.find",
+        "when": "editorFocus && editorHasReferenceProvider"
+    },
+    {
+        "key": "ctrl+f ctrl+i",
+        "command": "references-view.findImplementations",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+f ctrl+a",
+        "command": "editor.action.selectHighlights",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+f ctrl+h",
+        "command": "editor.action.startFindReplaceAction",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+f ctrl+s",
+        "command": "actions.findWithSelection",
+        "when": "editorFocus"
     }
 ]
