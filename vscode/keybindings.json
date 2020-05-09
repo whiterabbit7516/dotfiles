@@ -1023,5 +1023,13 @@
     {
         "key": "ctrl+i w",
         "command": "workbench.debug.action.focusWatchView"
+    },
+    {
+        "key": "ctrl+i t",
+        "command": "timeline.focus"
+    },
+    {
+        "key": "ctrl+i b",
+        "command": "bookmarksExplorer.focus"
     }
 ]
