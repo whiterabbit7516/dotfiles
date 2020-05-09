@@ -771,7 +771,7 @@
         "when": "inputFocus && notebookEditorFocused"
     },
     {
-        "key": "alt+b",
+        "key": "alt+m",
         "command": "bookmarks.listFromAllFiles",
         "when": "inQuickOpen"
     },
@@ -1069,5 +1069,40 @@
     {
         "key": "ctrl+i s",
         "command": "workbench.action.toggleStatusbarVisibility"
+    },
+    {
+        "key": "ctrl+m ctrl+c",
+        "command": "bookmarks.clearFromAllFiles"
+    },
+    {
+        "key": "ctrl+m ctrl+l",
+        "command": "bookmarks.toggleLabeled"
+    },
+    {
+        "key": "ctrl+m ctrl+m",
+        "command": "bookmarks.toggle",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+m ctrl+x",
+        "command": "bookmarks.clear"
+    },
+    {
+        "key": "ctrl+m ctrl+e",
+        "command": "bookmarks.editLabel"
+    },
+    {
+        "key": "ctrl+m ctrl+d",
+        "command": "bookmarks.deleteBookmark"
+    },
+    {
+        "key": "ctrl+m ctrl+n",
+        "command": "bookmarks.jumpToNext",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+m ctrl+p",
+        "command": "bookmarks.jumpToPrevious",
+        "when": "editorTextFocus"
     }
 ]
