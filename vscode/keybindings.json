@@ -293,12 +293,12 @@
     {
         "key": "ctrl+alt+h",
         "command": "workbench.action.navigateBack",
-        "when": "editorFocus"
+        "when": "editorFocus && !inDebugMode"
     },
     {
         "key": "ctrl+alt+l",
         "command": "workbench.action.navigateForward",
-        "when": "editorFocus"
+        "when": "editorFocus && !inDebugMode"
     },
     {
         "key": "alt+j",
@@ -320,12 +320,12 @@
     {
         "key": "ctrl+alt+k",
         "command": "editor.action.moveLinesUpAction",
-        "when": "editorTextFocus && !editorReadonly"
+        "when": "editorTextFocus && !editorReadonly && !inDebugMode"
     },
     {
         "key": "ctrl+alt+j",
         "command": "editor.action.moveLinesDownAction",
-        "when": "editorTextFocus && !editorReadonly"
+        "when": "editorTextFocus && !editorReadonly && !inDebugMode"
     },
     {
         "key": "ctrl+shift+alt+j",
@@ -1128,5 +1128,15 @@
         "key": "ctrl+i ctrl+c",
         "command": "breadcrumbs.focusAndSelect",
         "when": "breadcrumbsPossible"
+    },
+    {
+        "key": "ctrl+alt+j",
+        "command": "-bookmarks.jumpToPrevious",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+l",
+        "command": "-bookmarks.jumpToNext",
+        "when": "editorTextFocus"
     }
 ]
