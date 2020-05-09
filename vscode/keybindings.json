@@ -1104,5 +1104,29 @@
         "key": "ctrl+m ctrl+p",
         "command": "bookmarks.jumpToPrevious",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+i ctrl+u",
+        "command": "workbench.action.problems.focus"
+    },
+    {
+        "key": "alt+j",
+        "command": "list.focusDown",
+        "when": "listFocus && !inputFocus && !breadcrumbsActive"
+    },
+    {
+        "key": "alt+k",
+        "command": "list.focusUp",
+        "when": "listFocus && !inputFocus && !breadcrumbsActive"
+    },
+    {
+        "key": "alt+l",
+        "command": "list.select",
+        "when": "listFocus && !inputFocus && !breadcrumbsActive"
+    },
+    {
+        "key": "alt+h",
+        "command": "list.collapse",
+        "when": "listFocus && !inputFocus && !breadcrumbsActive"
     }
 ]
