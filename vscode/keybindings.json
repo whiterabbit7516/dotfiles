@@ -163,11 +163,6 @@
         "command": "outline.focus"
     },
     {
-        "key": "ctrl+i ctrl+c",
-        "command": "breadcrumbs.focus",
-        "when": "breadcrumbsPossible"
-    },
-    {
         "key": "ctrl+shift+s",
         "command": "workbench.action.terminal.split",
         "when": "terminalFocus"
@@ -1112,12 +1107,12 @@
     {
         "key": "alt+j",
         "command": "list.focusDown",
-        "when": "listFocus && !inputFocus && !breadcrumbsActive"
+        "when": "listFocus && !inputFocus"
     },
     {
         "key": "alt+k",
         "command": "list.focusUp",
-        "when": "listFocus && !inputFocus && !breadcrumbsActive"
+        "when": "listFocus && !inputFocus"
     },
     {
         "key": "alt+l",
@@ -1128,5 +1123,10 @@
         "key": "alt+h",
         "command": "list.collapse",
         "when": "listFocus && !inputFocus && !breadcrumbsActive"
+    },
+    {
+        "key": "ctrl+i ctrl+c",
+        "command": "breadcrumbs.focusAndSelect",
+        "when": "breadcrumbsPossible"
     }
 ]
