@@ -130,7 +130,7 @@
         "command": "notifications.clearAll"
     },
     {
-        "key": "ctrl+i ctrl+m",
+        "key": "ctrl+i m",
         "command": "editor.action.toggleMinimap"
     },
     {
@@ -146,7 +146,7 @@
         "command": "references-view.tree.focus"
     },
     {
-        "key": "ctrl+i ctrl+a",
+        "key": "ctrl+i a",
         "command": "workbench.action.toggleActivityBarVisibility"
     },
     {
@@ -1029,7 +1029,7 @@
         "command": "timeline.focus"
     },
     {
-        "key": "ctrl+i b",
+        "key": "ctrl+i ctrl+m",
         "command": "bookmarksExplorer.focus"
     },
     {
@@ -1061,5 +1061,13 @@
         "key": "ctrl+f ctrl+s",
         "command": "actions.findWithSelection",
         "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+i b",
+        "command": "workbench.debug.action.focusBreakpointsView"
+    },
+    {
+        "key": "ctrl+i s",
+        "command": "workbench.action.toggleStatusbarVisibility"
     }
 ]
