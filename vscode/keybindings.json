@@ -90,11 +90,11 @@
         "command": "workbench.panel.output.focus"
     },
     {
-        "key": "ctrl+i ctrl+t",
+        "key": "ctrl+i ctrl+y",
         "command": "workbench.panel.terminal.focus"
     },
     {
-        "key": "ctrl+i ctrl+y",
+        "key": "ctrl+d ctrl+y",
         "command": "workbench.debug.action.toggleRepl"
     },
     {
@@ -378,13 +378,25 @@
         "when": "inQuickOpen"
     },
     {
-        "key": "alt+t",
+        "key": "alt+y",
         "command": "workbench.action.quickOpenTerm",
         "when": "inQuickOpen"
     },
     {
         "key": "alt+p",
         "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "alt+o",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": "view output"
+    },
+    {
+        "key": "alt+b",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": "view side bar"
     },
     {
         "key": "alt+l",
@@ -512,27 +524,27 @@
         "when": "debugState == 'stopped'"
     },
     {
-        "key": "ctrl+y c",
+        "key": "ctrl+d c",
         "command": "workbench.action.debug.continue",
         "when": "inDebugMode"
     },
     {
-        "key": "ctrl+y x",
+        "key": "ctrl+d x",
         "command": "workbench.action.debug.stop",
         "when": "inDebugMode"
     },
     {
-        "key": "ctrl+y p",
+        "key": "ctrl+d p",
         "command": "workbench.action.debug.pause",
         "when": "debugState == 'running'"
     },
     {
-        "key": "ctrl+y b",
+        "key": "ctrl+d b",
         "command": "editor.debug.action.toggleBreakpoint",
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+y r",
+        "key": "ctrl+d r",
         "command": "workbench.action.debug.restart",
         "when": "inDebugMode"
     },
@@ -542,31 +554,31 @@
         "when": "inQuickOpen"
     },
     {
-        "key": "ctrl+y t",
+        "key": "ctrl+d t",
         "command": "debug.enableOrDisableBreakpoint"
     },
     {
-        "key": "ctrl+y s",
+        "key": "ctrl+d s",
         "command": "workbench.action.debug.start",
         "when": "!inDebugMode"
     },
     {
-        "key": "ctrl+y j",
+        "key": "ctrl+d j",
         "command": "editor.debug.action.runToCursor",
         "when": "inDebugMode"
     },
     {
-        "key": "ctrl+y r",
+        "key": "ctrl+d r",
         "command": "workbench.action.debug.run",
         "when": "!inDebugMode"
     },
     {
-        "key": "ctrl+y h",
+        "key": "ctrl+d h",
         "command": "editor.debug.action.showDebugHover",
         "when": "editorTextFocus && inDebugMode"
     },
     {
-        "key": "ctrl+y k",
+        "key": "ctrl+d k",
         "command": "debug.jumpToCursor",
         "when": "inDebugMode"
     },
@@ -771,7 +783,7 @@
         "when": "inQuickOpen"
     },
     {
-        "key": "alt+y",
+        "key": "alt+t",
         "command": "workbench.action.tasks.runTask",
         "when": "inQuickOpen"
     },
@@ -1008,15 +1020,15 @@
         "when": "textInputFocus"
     },
     {
-        "key": "ctrl+i v",
+        "key": "ctrl+d ctrl+v",
         "command": "workbench.debug.action.focusVariablesView"
     },
     {
-        "key": "ctrl+i c",
+        "key": "ctrl+d ctrl+s",
         "command": "workbench.debug.action.focusCallStackView"
     },
     {
-        "key": "ctrl+i w",
+        "key": "ctrl+d ctrl+w",
         "command": "workbench.debug.action.focusWatchView"
     },
     {
@@ -1058,7 +1070,7 @@
         "when": "editorFocus"
     },
     {
-        "key": "ctrl+i b",
+        "key": "ctrl+d ctrl+b",
         "command": "workbench.debug.action.focusBreakpointsView"
     },
     {
