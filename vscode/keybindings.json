@@ -1196,5 +1196,15 @@
         "key": "ctrl+v",
         "command": "-editor.action.clipboardPasteAction",
         "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "d",
+        "command": "debug.removeWatchExpression",
+        "when": "watchExpressionsFocused && !expressionSelected"
+    },
+    {
+        "key": "r",
+        "command": "debug.renameWatchExpression",
+        "when": "watchExpressionsFocused"
     }
 ]
