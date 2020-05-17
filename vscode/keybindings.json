@@ -1150,5 +1150,51 @@
         "key": "ctrl+alt+l",
         "command": "-bookmarks.jumpToNext",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+e ctrl+w",
+        "command": "editor.action.toggleWordWrap"
+    },
+    {
+        "key": "alt+z",
+        "command": "-editor.action.toggleWordWrap"
+    },
+    {
+        "key": "ctrl+x",
+        "command": "-copy-copy-paste.cut",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+u ctrl+c",
+        "command": "copy-copy-paste.copy",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "-copy-copy-paste.copy",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+u",
+        "command": "copy-copy-paste.history",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+shift+v",
+        "command": "-copy-copy-paste.history",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+u x",
+        "command": "copy-copy-paste.clear"
+    },
+    {
+        "key": "ctrl+u ctrl+x",
+        "command": "copy-copy-paste.cut"
+    },
+    {
+        "key": "ctrl+v",
+        "command": "-editor.action.clipboardPasteAction",
+        "when": "textInputFocus && !editorReadonly"
     }
 ]
