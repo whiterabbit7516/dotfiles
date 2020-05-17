@@ -66,10 +66,6 @@
         "command": "workbench.explorer.fileView.focus"
     },
     {
-        "key": "ctrl+i ctrl+x",
-        "command": "workbench.view.extensions"
-    },
-    {
         "key": "ctrl+i ctrl+g",
         "command": "workbench.view.scm"
     },
