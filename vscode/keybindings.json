@@ -1206,5 +1206,9 @@
         "key": "r",
         "command": "debug.renameWatchExpression",
         "when": "watchExpressionsFocused"
+    },
+    {
+        "key": "ctrl+i f",
+        "command": "workbench.files.action.showActiveFileInExplorer"
     }
 ]
