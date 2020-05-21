@@ -387,6 +387,11 @@
         "command": "workbench.action.quickOpen"
     },
     {
+        "key": "alt+f",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen"
+    },
+    {
         "key": "alt+o",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
@@ -1221,5 +1226,15 @@
     {
         "key": "ctrl+i ctrl+a",
         "command": "workbench.action.toggleEditorVisibility"
+    },
+    {
+        "key": "alt+g",
+        "command": "workbench.action.gotoSymbol",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "alt+s",
+        "command": "workbench.action.showAllSymbols",
+        "when": "inQuickOpen"
     }
 ]
