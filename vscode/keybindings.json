@@ -1205,5 +1205,21 @@
     {
         "key": "ctrl+i f",
         "command": "workbench.files.action.showActiveFileInExplorer"
+    },
+    {
+        "key": "ctrl+a ctrl+o",
+        "command": "workbench.action.toggleEditorGroupLayout"
+    },
+    {
+        "key": "ctrl+a ctrl+f",
+        "command": "workbench.action.toggleEditorWidths"
+    },
+    {
+        "key": "ctrl+i c",
+        "command": "breadcrumbs.toggle"
+    },
+    {
+        "key": "ctrl+i ctrl+a",
+        "command": "workbench.action.toggleEditorVisibility"
     }
 ]
