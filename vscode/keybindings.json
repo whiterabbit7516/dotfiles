@@ -1236,5 +1236,19 @@
         "key": "alt+s",
         "command": "workbench.action.showAllSymbols",
         "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+v ctrl+f",
+        "command": "list.toggleFilterOnType"
+    },
+    {
+        "key": "ctrl+u ctrl+v",
+        "command": "editor.action.clipboardPasteAction",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+v ctrl+v",
+        "command": "editor.action.clipboardPasteAction",
+        "when": "textInputFocus && !editorReadonly"
     }
 ]
