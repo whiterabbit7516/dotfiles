@@ -1250,5 +1250,25 @@
         "key": "ctrl+v ctrl+v",
         "command": "editor.action.clipboardPasteAction",
         "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+l ctrl+i",
+        "command": "editor.action.indentLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+]",
+        "command": "-editor.action.indentLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+l ctrl+o",
+        "command": "editor.action.outdentLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+[",
+        "command": "-editor.action.outdentLines",
+        "when": "editorTextFocus && !editorReadonly"
     }
 ]
