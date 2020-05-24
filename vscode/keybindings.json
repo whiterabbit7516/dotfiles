@@ -1278,5 +1278,15 @@
     {
         "key": "ctrl+[",
         "command": "workbench.action.moveEditorLeftInGroup"
+    },
+    {
+        "key": "ctrl+f ctrl+n",
+        "command": "editor.action.nextSelectionMatchFindAction",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+f ctrl+p",
+        "command": "editor.action.previousSelectionMatchFindAction",
+        "when": "editorFocus"
     }
 ]
