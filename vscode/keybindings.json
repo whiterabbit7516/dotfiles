@@ -673,6 +673,11 @@
         "when": "editorFocus && findWidgetVisible"
     },
     {
+        "key": "ctrl+f ctrl+x",
+        "command": "closeFindWidget",
+        "when": "editorFocus && findWidgetVisible"
+    },
+    {
         "key": "ctrl+x",
         "command": "closeMarkersNavigation",
         "when": "editorFocus && markersNavigationVisible"
