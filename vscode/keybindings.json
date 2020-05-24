@@ -1297,5 +1297,10 @@
     {
         "key": "ctrl+h",
         "command": "-editor.action.startFindReplaceAction"
+    },
+    {
+        "key": "alt+w",
+        "command": "workbench.action.switchWindow",
+        "when": "inQuickOpen"
     }
 ]
