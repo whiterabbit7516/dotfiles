@@ -1270,5 +1270,13 @@
         "key": "ctrl+[",
         "command": "-editor.action.outdentLines",
         "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+]",
+        "command": "workbench.action.moveEditorRightInGroup"
+    },
+    {
+        "key": "ctrl+[",
+        "command": "workbench.action.moveEditorLeftInGroup"
     }
 ]
