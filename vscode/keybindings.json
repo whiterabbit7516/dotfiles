@@ -1250,10 +1250,5 @@
         "key": "ctrl+v ctrl+v",
         "command": "editor.action.clipboardPasteAction",
         "when": "textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+e ctrl+r",
-        "command": "editor.action.rename",
-        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
     }
 ]
