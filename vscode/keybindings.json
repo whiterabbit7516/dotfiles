@@ -1293,5 +1293,9 @@
         "key": "ctrl+f ctrl+p",
         "command": "editor.action.previousSelectionMatchFindAction",
         "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "-editor.action.startFindReplaceAction"
     }
 ]
