@@ -1277,14 +1277,6 @@
         "when": "editorTextFocus && !editorReadonly"
     },
     {
-        "key": "ctrl+]",
-        "command": "workbench.action.moveEditorRightInGroup"
-    },
-    {
-        "key": "ctrl+[",
-        "command": "workbench.action.moveEditorLeftInGroup"
-    },
-    {
         "key": "ctrl+f ctrl+n",
         "command": "editor.action.nextSelectionMatchFindAction",
         "when": "editorFocus"
@@ -1302,5 +1294,41 @@
         "key": "alt+w",
         "command": "workbench.action.switchWindow",
         "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+]",
+        "command": "workbench.action.nextEditorInGroup"
+    },
+    {
+        "key": "ctrl+[",
+        "command": "workbench.action.previousEditorInGroup"
+    },
+    {
+        "key": "ctrl+shift+[",
+        "command": "workbench.action.moveEditorLeftInGroup"
+    },
+    {
+        "key": "ctrl+shift+]",
+        "command": "workbench.action.moveEditorRightInGroup"
+    },
+    {
+        "key": "ctrl+alt+[",
+        "command": "editor.fold",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "ctrl+shift+[",
+        "command": "-editor.fold",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "ctrl+alt+]",
+        "command": "editor.unfold",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "ctrl+shift+]",
+        "command": "-editor.unfold",
+        "when": "editorTextFocus && foldingEnabled"
     }
 ]
