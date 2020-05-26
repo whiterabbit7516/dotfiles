@@ -227,12 +227,12 @@
         "command": "workbench.action.navigateLast"
     },
     {
-        "key": "ctrl+a n",
+        "key": "ctrl+u ctrl+n",
         "command": "editor.action.marker.next",
         "when": "editorFocus && !editorReadonly"
     },
     {
-        "key": "ctrl+a p",
+        "key": "ctrl+u ctrl+p",
         "command": "editor.action.marker.prev",
         "when": "editorFocus && !editorReadonly"
     },
@@ -808,12 +808,12 @@
         "when": "editorTextFocus && hasWordHighlights"
     },
     {
-        "key": "ctrl+alt+n",
+        "key": "ctrl+e ctrl+n",
         "command": "editor.action.diffReview.next",
         "when": "isInDiffEditor"
     },
     {
-        "key": "ctrl+alt+p",
+        "key": "ctrl+e ctrl+p",
         "command": "editor.action.diffReview.prev",
         "when": "isInDiffEditor"
     },
