@@ -66,7 +66,7 @@
         "command": "workbench.explorer.fileView.focus"
     },
     {
-        "key": "ctrl+i ctrl+s",
+        "key": "ctrl+i ctrl+g",
         "command": "workbench.view.scm"
     },
     {
@@ -138,7 +138,7 @@
         "command": "workbench.action.toggleZenMode"
     },
     {
-        "key": "ctrl+i s",
+        "key": "ctrl+i ctrl+s",
         "command": "search.action.focusSearchList"
     },
     {
@@ -808,12 +808,12 @@
         "when": "editorTextFocus && hasWordHighlights"
     },
     {
-        "key": "ctrl+s n",
+        "key": "ctrl+g n",
         "command": "editor.action.diffReview.next",
         "when": "isInDiffEditor"
     },
     {
-        "key": "ctrl+s p",
+        "key": "ctrl+g p",
         "command": "editor.action.diffReview.prev",
         "when": "isInDiffEditor"
     },
@@ -1375,5 +1375,9 @@
     {
         "key": "ctrl+shift+f",
         "command": "-workbench.action.findInFiles"
+    },
+    {
+        "key": "ctrl+i s",
+        "command": "workbench.action.toggleStatusbarVisibility"
     }
 ]
