@@ -1415,5 +1415,15 @@
     {
         "key": "ctrl+shift+8",
         "command": "workbench.action.terminal.focusAtIndex8"
+    },
+    {
+        "key": "ctrl+shift+[",
+        "command": "-guid.insert",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+alt+[",
+        "command": "-guid.insertMany",
+        "when": "editorTextFocus"
     }
 ]
