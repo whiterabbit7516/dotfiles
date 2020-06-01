@@ -1425,5 +1425,20 @@
         "key": "ctrl+shift+alt+[",
         "command": "-guid.insertMany",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "r",
+        "command": "search.action.replace",
+        "when": "matchFocus && replaceActive && searchViewletVisible"
+    },
+    {
+        "key": "ctrl+shift+1",
+        "command": "-search.action.replace",
+        "when": "matchFocus && replaceActive && searchViewletVisible"
+    },
+    {
+        "key": "d",
+        "command": "search.action.remove",
+        "when": "fileMatchOrMatchFocus && searchViewletVisible"
     }
 ]
