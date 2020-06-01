@@ -29,6 +29,10 @@
         "command": "workbench.action.toggleMaximizedPanel"
     },
     {
+        "key": "ctrl+h",
+        "command": "workbench.action.toggleMaximizedPanel"
+    },
+    {
         "key": "ctrl+shift+x",
         "command": "workbench.action.terminal.kill",
         "when": "terminalFocus"
