@@ -1450,5 +1450,65 @@
         "key": "alt+l",
         "command": "-toggleFindInSelection",
         "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+f c",
+        "command": "toggleFindCaseSensitive",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+c",
+        "command": "-toggleFindCaseSensitive",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+f r",
+        "command": "toggleFindRegex",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+r",
+        "command": "-toggleFindRegex",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+f w",
+        "command": "toggleFindWholeWord",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+w",
+        "command": "-toggleFindWholeWord",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+f c",
+        "command": "workbench.action.terminal.toggleFindCaseSensitive",
+        "when": "terminalFindFocused || terminalFocus"
+    },
+    {
+        "key": "alt+c",
+        "command": "-workbench.action.terminal.toggleFindCaseSensitive",
+        "when": "terminalFindFocused || terminalFocus"
+    },
+    {
+        "key": "ctrl+f r",
+        "command": "workbench.action.terminal.toggleFindRegex",
+        "when": "terminalFindFocused || terminalFocus"
+    },
+    {
+        "key": "alt+r",
+        "command": "-workbench.action.terminal.toggleFindRegex",
+        "when": "terminalFindFocused || terminalFocus"
+    },
+    {
+        "key": "ctrl+f w",
+        "command": "workbench.action.terminal.toggleFindWholeWord",
+        "when": "terminalFindFocused || terminalFocus"
+    },
+    {
+        "key": "alt+w",
+        "command": "-workbench.action.terminal.toggleFindWholeWord",
+        "when": "terminalFindFocused || terminalFocus"
     }
 ]
