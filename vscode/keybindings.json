@@ -1525,18 +1525,22 @@
     },
     {
         "key": "ctrl+r ctrl+r",
-        "command": "workbench.action.openRecent"
+        "command": "workbench.action.openRecent",
+        "when": "!terminalFocus"
     },
     {
         "key": "ctrl+r c",
-        "command": "targetsContainers.focus"
+        "command": "targetsContainers.focus",
+        "when": "!terminalFocus"
     },
     {
         "key": "ctrl+r s",
-        "command": "sshHosts.focus"
+        "command": "sshHosts.focus",
+        "when": "!terminalFocus"
     },
     {
         "key": "ctrl+r e",
-        "command": "workbench.view.remote"
+        "command": "workbench.view.remote",
+        "when": "!terminalFocus"
     }
 ]
