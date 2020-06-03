@@ -70,16 +70,12 @@
         "command": "workbench.explorer.fileView.focus"
     },
     {
-        "key": "ctrl+i ctrl+g",
+        "key": "ctrl+i ctrl+r",
         "command": "workbench.view.scm"
     },
     {
         "key": "ctrl+i ctrl+d",
         "command": "workbench.view.debug"
-    },
-    {
-        "key": "ctrl+i ctrl+r",
-        "command": "workbench.view.remote"
     },
     {
         "key": "ctrl+i ctrl+j",
@@ -146,7 +142,7 @@
         "command": "search.action.focusSearchList"
     },
     {
-        "key": "ctrl+i r",
+        "key": "ctrl+i g",
         "command": "references-view.tree.focus"
     },
     {
@@ -163,7 +159,7 @@
         "when": "workbench.explorer.openEditorsView.active"
     },
     {
-        "key": "ctrl+i ctrl+v",
+        "key": "ctrl+i ctrl+g",
         "command": "outline.focus"
     },
     {
@@ -421,11 +417,6 @@
         "key": "alt+h",
         "command": "breadcrumbs.focusPrevious",
         "when": "breadcrumbsActive && breadcrumbsVisible"
-    },
-    {
-        "key": "alt+r",
-        "command": "workbench.action.quickOpenRecent",
-        "when": "inQuickOpen"
     },
     {
         "key": "alt+p",
@@ -1001,6 +992,14 @@
         "when": "textInputFocus && !editorReadonly"
     },
     {
+        "key": "ctrl+i ctrl+v",
+        "command": "workbench.action.increaseViewSize"
+    },
+    {
+        "key": "ctrl+i v",
+        "command": "workbench.action.decreaseViewSize"
+    },
+    {
         "key": "ctrl+alt+=",
         "command": "workbench.action.increaseViewSize"
     },
@@ -1512,7 +1511,32 @@
         "when": "terminalFindFocused || terminalFocus"
     },
     {
-        "key": "ctrl+i g",
+        "key": "ctrl+i r",
         "command": "gitlens.views.repositories:gitlens.focus"
+    },
+    {
+        "key": "alt+r",
+        "command": "workbench.action.openRecent",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.openRecent"
+    },
+    {
+        "key": "ctrl+r ctrl+r",
+        "command": "workbench.action.openRecent"
+    },
+    {
+        "key": "ctrl+r c",
+        "command": "targetsContainers.focus"
+    },
+    {
+        "key": "ctrl+r s",
+        "command": "sshHosts.focus"
+    },
+    {
+        "key": "ctrl+r e",
+        "command": "workbench.view.remote"
     }
 ]
