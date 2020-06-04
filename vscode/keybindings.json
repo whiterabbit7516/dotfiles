@@ -1530,17 +1530,47 @@
     },
     {
         "key": "ctrl+r c",
-        "command": "targetsContainers.focus",
-        "when": "!terminalFocus"
+        "command": "targetsContainers.focus"
     },
     {
         "key": "ctrl+r s",
-        "command": "sshHosts.focus",
-        "when": "!terminalFocus"
+        "command": "sshHosts.focus"
     },
     {
         "key": "ctrl+r e",
         "command": "workbench.view.remote",
         "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+y ctrl+s",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "editorHasSelection && terminalIsOpen",
+        "args": {
+            "text": " ${selectedText}"
+        }
+    },
+    {
+        "key": "ctrl+y ctrl+k",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u000b"
+        }
+    },
+    {
+        "key": "ctrl+y ctrl+r",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0012"
+        }
+    },
+    {
+        "key": "ctrl+y ctrl+x",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u001b"
+        }
     }
 ]
