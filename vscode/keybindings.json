@@ -1588,5 +1588,15 @@
         "args": {
             "text": "\u0004"
         }
+    },
+    {
+        "key": "ctrl+f h",
+        "command": "editor.action.replaceAll",
+        "when": "editorFocus && findWidgetVisible"
+    },
+    {
+        "key": "ctrl+s h",
+        "command": "search.action.replaceAll",
+        "when": "replaceActive && searchViewletVisible && !findWidgetVisible"
     }
 ]
