@@ -1546,7 +1546,7 @@
         "command": "workbench.action.terminal.sendSequence",
         "when": "editorHasSelection && terminalIsOpen",
         "args": {
-            "text": " ${selectedText}"
+            "text": "${selectedText}"
         }
     },
     {
@@ -1571,6 +1571,22 @@
         "when": "terminalFocus",
         "args": {
             "text": "\u001b"
+        }
+    },
+    {
+        "key": "ctrl+y ctrl+b",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0002"
+        }
+    },
+    {
+        "key": "ctrl+y ctrl+d",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0004"
         }
     }
 ]
