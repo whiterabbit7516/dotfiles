@@ -1068,7 +1068,7 @@
         "when": "editorFocus"
     },
     {
-        "key": "ctrl+f ctrl+h",
+        "key": "ctrl+f ctrl+r",
         "command": "editor.action.startFindReplaceAction",
         "when": "editorFocus"
     },
@@ -1364,7 +1364,7 @@
         "when": "hasSearchResult || inSearchEditor"
     },
     {
-        "key": "ctrl+s ctrl+h",
+        "key": "ctrl+s ctrl+r",
         "command": "workbench.action.replaceInFiles"
     },
     {
@@ -1590,13 +1590,23 @@
         }
     },
     {
-        "key": "ctrl+f h",
+        "key": "ctrl+f r",
         "command": "editor.action.replaceAll",
         "when": "editorFocus && findWidgetVisible"
     },
     {
-        "key": "ctrl+s h",
+        "key": "ctrl+s r",
         "command": "search.action.replaceAll",
         "when": "replaceActive && searchViewletVisible && !findWidgetVisible"
+    },
+    {
+        "key": "ctrl+f ctrl+y",
+        "command": "workbench.action.terminal.focusFind",
+        "when": "terminalFindFocused || terminalFocus"
+    },
+    {
+        "key": "ctrl+f ctrl+x",
+        "command": "workbench.action.terminal.hideFind",
+        "when": "terminalFindVisible && terminalFocus"
     }
 ]
