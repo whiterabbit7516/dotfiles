@@ -1626,5 +1626,13 @@
         "key": "ctrl+a ctrl+p",
         "command": "workbench.action.unpinEditor",
         "when": "config.workbench.editor.showTabs && editorSticky"
+    },
+    {
+        "key": "ctrl+i x",
+        "command": "workbench.view.extensions"
+    },
+    {
+        "key": "ctrl+shift+x",
+        "command": "-workbench.view.extensions"
     }
 ]
