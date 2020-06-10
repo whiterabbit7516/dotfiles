@@ -1542,7 +1542,7 @@
         "when": "!terminalFocus"
     },
     {
-        "key": "ctrl+y ctrl+s",
+        "key": "ctrl+y s",
         "command": "workbench.action.terminal.sendSequence",
         "when": "editorHasSelection && terminalIsOpen",
         "args": {
@@ -1579,6 +1579,14 @@
         "when": "terminalFocus",
         "args": {
             "text": "\u0002"
+        }
+    },
+    {
+        "key": "ctrl+y ctrl+a",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0001"
         }
     },
     {
