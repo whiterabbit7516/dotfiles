@@ -424,6 +424,11 @@
         "when": "inQuickOpen"
     },
     {
+        "key": "alt+x",
+        "command": "workbench.action.closeQuickOpen",
+        "when": "inQuickOpen"
+    },
+    {
         "key": "ctrl+x",
         "command": "workbench.action.closeQuickOpen",
         "when": "inQuickOpen"
