@@ -1634,5 +1634,10 @@
     {
         "key": "ctrl+shift+x",
         "command": "-workbench.view.extensions"
+    },
+    {
+        "key": "alt+h",
+        "command": "opensshremotes.openEmptyWindow",
+        "when": "inQuickOpen"
     }
 ]
