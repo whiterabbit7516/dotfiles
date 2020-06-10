@@ -1616,5 +1616,15 @@
         "key": "ctrl+f ctrl+x",
         "command": "workbench.action.terminal.hideFind",
         "when": "terminalFindVisible && terminalFocus"
+    },
+    {
+        "key": "ctrl+a ctrl+p",
+        "command": "workbench.action.pinEditor",
+        "when": "config.workbench.editor.showTabs && !editorSticky"
+    },
+    {
+        "key": "ctrl+a ctrl+p",
+        "command": "workbench.action.unpinEditor",
+        "when": "config.workbench.editor.showTabs && editorSticky"
     }
 ]
