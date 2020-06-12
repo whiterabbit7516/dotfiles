@@ -1520,7 +1520,7 @@
         "command": "gitlens.views.repositories:gitlens.focus"
     },
     {
-        "key": "alt+r",
+        "key": "alt+n",
         "command": "workbench.action.openRecent",
         "when": "inQuickOpen"
     },
@@ -1641,7 +1641,7 @@
         "command": "-workbench.view.extensions"
     },
     {
-        "key": "alt+h",
+        "key": "alt+r",
         "command": "opensshremotes.openEmptyWindow",
         "when": "inQuickOpen"
     }
