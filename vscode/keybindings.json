@@ -1555,11 +1555,51 @@
         }
     },
     {
+        "key": "ctrl+y ctrl+a",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0001"
+        }
+    },
+    {
+        "key": "ctrl+y ctrl+b",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0002"
+        }
+    },
+    {
+        "key": "ctrl+y ctrl+c",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0003"
+        }
+    },
+    {
+        "key": "ctrl+y ctrl+d",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0004"
+        }
+    },
+    {
         "key": "ctrl+y ctrl+k",
         "command": "workbench.action.terminal.sendSequence",
         "when": "terminalFocus",
         "args": {
             "text": "\u000b"
+        }
+    },
+    {
+        "key": "ctrl+y ctrl+l",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u000c"
         }
     },
     {
@@ -1576,30 +1616,6 @@
         "when": "terminalFocus",
         "args": {
             "text": "\u001b"
-        }
-    },
-    {
-        "key": "ctrl+y ctrl+b",
-        "command": "workbench.action.terminal.sendSequence",
-        "when": "terminalFocus",
-        "args": {
-            "text": "\u0002"
-        }
-    },
-    {
-        "key": "ctrl+y ctrl+a",
-        "command": "workbench.action.terminal.sendSequence",
-        "when": "terminalFocus",
-        "args": {
-            "text": "\u0001"
-        }
-    },
-    {
-        "key": "ctrl+y ctrl+d",
-        "command": "workbench.action.terminal.sendSequence",
-        "when": "terminalFocus",
-        "args": {
-            "text": "\u0004"
         }
     },
     {
