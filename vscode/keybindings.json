@@ -154,6 +154,10 @@
         "command": "workbench.action.toggleFullScreen"
     },
     {
+        "key": "ctrl+w f",
+        "command": "workbench.action.toggleFullScreen"
+    },
+    {
         "key": "ctrl+i ctrl+e",
         "command": "workbench.files.action.focusOpenEditorsView",
         "when": "workbench.explorer.openEditorsView.active"
@@ -1660,5 +1664,63 @@
         "key": "alt+r",
         "command": "opensshremotes.openEmptyWindow",
         "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+w x",
+        "command": "workbench.action.closeWindow"
+    },
+    {
+        "key": "ctrl+w r",
+        "command": "workbench.action.reloadWindow"
+    },
+    {
+        "key": "ctrl+w n",
+        "command": "workbench.action.newWindow"
+    },
+    {
+        "key": "ctrl+w ctrl+o",
+        "command": "workbench.action.closeOtherEditors"
+    },
+    {
+        "key": "ctrl+w ctrl+l",
+        "command": "workbench.action.closeEditorsToTheRight"
+    },
+    {
+        "key": "ctrl+w ctrl+s",
+        "command": "workbench.action.closeUnmodifiedEditors"
+    },
+    {
+        "key": "ctrl+w ctrl+e",
+        "command": "workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+w ctrl+w",
+        "command": "workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+w ctrl+a",
+        "command": "workbench.action.closeEditorsInGroup"
+    },
+    {
+        "key": "ctrl+w d",
+        "command": "workbench.action.duplicateWorkspaceInNewWindow"
+    },
+    {
+        "key": "ctrl+w ctrl+w",
+        "command": "workbench.action.closeGroup",
+        "when": "activeEditorGroupEmpty && multipleEditorGroups"
+    },
+    {
+        "key": "ctrl+w ctrl+w",
+        "command": "workbench.action.closeWindow",
+        "when": "!editorIsOpen && !multipleEditorGroups"
+    },
+    {
+        "key": "ctrl+w ctrl+z",
+        "command": "workbench.action.reopenClosedEditor"
+    },
+    {
+        "key": "ctrl+w ctrl+h",
+        "command": "workbench.action.closeEditorsToTheLeft"
     }
 ]
