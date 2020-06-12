@@ -1722,5 +1722,20 @@
     {
         "key": "ctrl+w ctrl+h",
         "command": "workbench.action.closeEditorsToTheLeft"
+    },
+    {
+        "key": "ctrl+x",
+        "command": "editor.action.cancelSelectionAnchor",
+        "when": "editorTextFocus && selectionAnchorSet"
+    },
+    {
+        "key": "ctrl+s ctrl+v",
+        "command": "editor.action.selectFromAnchorToCursor",
+        "when": "editorTextFocus && selectionAnchorSet"
+    },
+    {
+        "key": "ctrl+s ctrl+m",
+        "command": "editor.action.setSelectionAnchor",
+        "when": "editorTextFocus"
     }
 ]
