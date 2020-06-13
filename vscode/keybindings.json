@@ -177,6 +177,11 @@
         "when": "explorerResourceIsFolder"
     },
     {
+        "key": "ctrl+s ctrl+a",
+        "command": "editor.action.selectAll",
+        "when": "textInputFocus"
+    },
+    {
         "key": "ctrl+a ctrl+a",
         "command": "editor.action.selectAll",
         "when": "textInputFocus"
