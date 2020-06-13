@@ -1742,5 +1742,20 @@
         "key": "ctrl+s ctrl+m",
         "command": "editor.action.setSelectionAnchor",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+s ctrl+a",
+        "command": "workbench.action.terminal.selectAll",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+s ctrl+k",
+        "command": "workbench.action.terminal.selectToPreviousCommand",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+s ctrl+j",
+        "command": "workbench.action.terminal.selectToNextCommand",
+        "when": "terminalFocus"
     }
 ]
