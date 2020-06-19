@@ -1620,6 +1620,22 @@
         }
     },
     {
+        "key": "ctrl+y ctrl+s",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0013"
+        }
+    },
+    {
+        "key": "ctrl+y ctrl+t",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0014"
+        }
+    },
+    {
         "key": "ctrl+y ctrl+x",
         "command": "workbench.action.terminal.sendSequence",
         "when": "terminalFocus",
