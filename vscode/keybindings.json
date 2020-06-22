@@ -1773,5 +1773,20 @@
         "key": "ctrl+s ctrl+j",
         "command": "workbench.action.terminal.selectToNextCommand",
         "when": "terminalFocus"
+    },
+    {
+        "key": "shift+alt+j",
+        "command": "list.expandSelectionDown",
+        "when": "listFocus && listSupportsMultiselect && !inputFocus"
+    },
+    {
+        "key": "shift+alt+k",
+        "command": "list.expandSelectionUp",
+        "when": "listFocus && listSupportsMultiselect && !inputFocus"
+    },
+    {
+        "key": "shift+alt+o",
+        "command": "list.toggleSelection",
+        "when": "listFocus && !inputFocus"
     }
 ]
