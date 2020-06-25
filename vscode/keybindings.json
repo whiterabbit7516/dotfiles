@@ -1596,6 +1596,14 @@
         }
     },
     {
+        "key": "ctrl+y ctrl+i",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0009"
+        }
+    },
+    {
         "key": "ctrl+y ctrl+k",
         "command": "workbench.action.terminal.sendSequence",
         "when": "terminalFocus",
@@ -1609,6 +1617,14 @@
         "when": "terminalFocus",
         "args": {
             "text": "\u000c"
+        }
+    },
+    {
+        "key": "ctrl+y ctrl+o",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u000f"
         }
     },
     {
