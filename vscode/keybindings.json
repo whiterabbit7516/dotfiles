@@ -1807,5 +1807,9 @@
     {
         "key": "ctrl+t ctrl+t",
         "command": "workbench.action.showAllSymbols"
+    },
+    {
+        "key": "ctrl+o ctrl+o",
+        "command": "workbench.action.files.openFile"
     }
 ]
