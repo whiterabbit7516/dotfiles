@@ -4,6 +4,7 @@ Copy-Item $PSScriptRoot/powershell/profile.ps1 $PROFILE
 # vim todo
 
 # tmux todo
+Copy-Item $PSScriptRoot/tmux/tmux.conf ~/.tmux.conf
 
 # vscode
 Copy-Item $PSScriptRoot/vscode/settings.json ~/.config/Code/User/settings.json
