@@ -1643,6 +1643,14 @@
         }
     },
     {
+        "key": "ctrl+y ctrl+w",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u001a"
+        }
+    },
+    {
         "key": "ctrl+y ctrl+x",
         "command": "workbench.action.terminal.sendSequence",
         "when": "terminalFocus",
@@ -1795,5 +1803,9 @@
         "key": "shift+alt+o",
         "command": "list.toggleSelection",
         "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "ctrl+t ctrl+t",
+        "command": "workbench.action.showAllSymbols"
     }
 ]
