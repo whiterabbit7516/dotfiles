@@ -3,35 +3,38 @@
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-" Make sure you use single quotes
-
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-Plug 'junegunn/vim-easy-align'
-
-" Any valid git URL is allowed
-Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-
-" Multiple Plug commands can be written in a single line using | separators
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-
-" On-demand loading
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-
 " Using a non-master branch
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
-" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-Plug 'fatih/vim-go', { 'tag': '*' }
+" fzf
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+nnoremap <C-P> :Files<CR>
 
-" Plugin options
-Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
-
-" Plugin outside ~/.vim/plugged with post-update hook
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-" Unmanaged plugin (manually installed and updated)
-Plug '~/my-prototype-plugin'
+Plug 'itchyny/lightline.vim'
 
 " Initialize plugin system
 call plug#end()
+
+nmap U <C-r>
+
+nnoremap J 8j
+nnoremap K 8k
+nnoremap H 8h
+nnoremap L 8l
+nnoremap W 4w
+nnoremap E 4e
+nnoremap B 4b
+nnoremap s i<space><esc>
+nnoremap S a<space><esc>
+
+vnoremap J 8j
+vnoremap K 8k
+vnoremap H 8h
+vnoremap L 8l
+vnoremap W 4w
+vnoremap E 4e
+vnoremap B 4b
+
+
+set number
