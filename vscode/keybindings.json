@@ -1757,6 +1757,15 @@
         }
     },
     {
+        // escape char
+        "key": "ctrl+y x",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u001b"
+        }
+    },
+    {
         "key": "ctrl+f r",
         "command": "editor.action.replaceAll",
         "when": "editorFocus && findWidgetVisible"
