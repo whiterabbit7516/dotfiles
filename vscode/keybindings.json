@@ -52,7 +52,7 @@
     {
         "key": "ctrl+shift+0",
         "command": "workbench.action.navigateForward"
-    },    
+    },
     {
         "key": "alt+left",
         "command": "workbench.action.navigateBack"
@@ -548,7 +548,7 @@
         "when": "inDebugMode"
     },
     {
-        "key": "ctrl+d p",
+        "key": "ctrl+d s",
         "command": "workbench.action.debug.pause",
         "when": "debugState == 'running'"
     },
@@ -572,7 +572,7 @@
         "command": "debug.enableOrDisableBreakpoint"
     },
     {
-        "key": "ctrl+d s",
+        "key": "ctrl+d d",
         "command": "workbench.action.debug.start",
         "when": "!inDebugMode"
     },
@@ -1086,7 +1086,7 @@
         "command": "workbench.debug.action.focusBreakpointsView"
     },
     {
-        "key": "ctrl+m ctrl+c",
+        "key": "ctrl+m ctrl+w",
         "command": "bookmarks.clearFromAllFiles"
     },
     {
@@ -1193,7 +1193,7 @@
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+u x",
+        "key": "ctrl+u ctrl+w",
         "command": "copy-copy-paste.clear"
     },
     {
@@ -1343,6 +1343,10 @@
     {
         "key": "ctrl+d n",
         "command": "editor.debug.action.goToNextBreakpoint"
+    },
+    {
+        "key": "ctrl+d p",
+        "command": "editor.debug.action.goToPreviousBreakpoint"
     },
     {
         "key": "ctrl+s ctrl+s",
