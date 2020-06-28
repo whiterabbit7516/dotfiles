@@ -827,16 +827,6 @@
         "when": "isInDiffEditor"
     },
     {
-        "key": "ctrl+y ctrl+y",
-        "command": "extension.vim_ctrl+y",
-        "when": "editorTextFocus && vim.active && vim.use<C-y> && !inDebugRepl"
-    },
-    {
-        "key": "ctrl+e ctrl+e",
-        "command": "extension.vim_ctrl+e",
-        "when": "editorTextFocus && vim.active && vim.use<C-e> && !inDebugRepl"
-    },
-    {
         "key": "ctrl+d ctrl+d",
         "command": "extension.vim_ctrl+d",
         "when": "editorTextFocus && vim.active && !inDebugRepl"
@@ -1587,11 +1577,51 @@
         }
     },
     {
+        "key": "ctrl+y ctrl+e",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0005"
+        }
+    },
+    {
+        "key": "ctrl+y ctrl+f",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0006"
+        }
+    },
+    {
+        "key": "ctrl+y ctrl+g",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0007"
+        }
+    },
+    {
+        "key": "ctrl+y ctrl+h",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0008"
+        }
+    },
+    {
         "key": "ctrl+y ctrl+i",
         "command": "workbench.action.terminal.sendSequence",
         "when": "terminalFocus",
         "args": {
             "text": "\u0009"
+        }
+    },
+    {
+        "key": "ctrl+y ctrl+j",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u000a"
         }
     },
     {
@@ -1611,11 +1641,43 @@
         }
     },
     {
+        "key": "ctrl+y ctrl+m",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u000d"
+        }
+    },
+    {
+        "key": "ctrl+y ctrl+n",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u000e"
+        }
+    },
+    {
         "key": "ctrl+y ctrl+o",
         "command": "workbench.action.terminal.sendSequence",
         "when": "terminalFocus",
         "args": {
             "text": "\u000f"
+        }
+    },
+    {
+        "key": "ctrl+y ctrl+p",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0010"
+        }
+    },
+    {
+        "key": "ctrl+y ctrl+q",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0011"
         }
     },
     {
@@ -1643,11 +1705,27 @@
         }
     },
     {
+        "key": "ctrl+y ctrl+u",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0015"
+        }
+    },
+    {
+        "key": "ctrl+y ctrl+v",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0016"
+        }
+    },
+    {
         "key": "ctrl+y ctrl+w",
         "command": "workbench.action.terminal.sendSequence",
         "when": "terminalFocus",
         "args": {
-            "text": "\u001a"
+            "text": "\u0017"
         }
     },
     {
@@ -1655,7 +1733,23 @@
         "command": "workbench.action.terminal.sendSequence",
         "when": "terminalFocus",
         "args": {
-            "text": "\u001b"
+            "text": "\u0018"
+        }
+    },
+    {
+        "key": "ctrl+y ctrl+y",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0019"
+        }
+    },
+    {
+        "key": "ctrl+y ctrl+z",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u001a"
         }
     },
     {
