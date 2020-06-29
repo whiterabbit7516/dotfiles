@@ -1,9 +1,13 @@
+#!/bin/bash
+
 # powershell
 cp ./powershell/profile.ps1 ~/.config/powershell/profile.ps1
 
-# vim todo
+# vim
+cp ./vim/.vimrc ~/.vimrc
 
-# tmux todo
+# tmux
+cp ./tmux/tmux.conf ~/.tmux.conf
 
 # vscode
 cp ./vscode/settings.json ~/.config/Code/User/settings.json
