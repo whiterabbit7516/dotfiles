@@ -1,4 +1,8 @@
 {
+    "terminal.integrated.shell.linux": "/snap/powershell/132/opt/powershell/pwsh",
+    "terminal.integrated.shellArgs.linux": [
+        "-nol"
+    ],
     // "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
     "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\6\\pwsh.exe",
@@ -120,7 +124,7 @@
     "editor.renderWhitespace": "all",
     "search.usePCRE2": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "window.zoomLevel": -1,
+    "window.zoomLevel": -2,
     "terminal.integrated.copyOnSelection": true,
     "debug.toolBarLocation": "docked",
     "terminal.integrated.cursorBlinking": true,

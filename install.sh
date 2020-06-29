@@ -7,7 +7,7 @@ cp ./powershell/profile.ps1 ~/.config/powershell/profile.ps1
 cp ./vim/.vimrc ~/.vimrc
 
 # tmux
-cp ./tmux/tmux.conf ~/.tmux.conf
+cp ./tmux/.tmux.conf ~/.tmux.conf
 
 # vscode
 cp ./vscode/settings.json ~/.config/Code/User/settings.json
