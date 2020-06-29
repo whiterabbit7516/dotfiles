@@ -1,9 +1,10 @@
 # powershell
-Copy-Item $PSScriptRoot/powershell/profile.ps1 $PROFILE
+Copy-Item $PSScriptRoot/powershell/profile.ps1 $PROFILE.CurrentUserAllHosts
 
-# vim todo
+# vim
+Copy-Item $PSScriptRoot/vim/.vimrc ~/.vimrc
 
-# tmux todo
+# tmux
 Copy-Item $PSScriptRoot/tmux/tmux.conf ~/.tmux.conf
 
 # vscode
