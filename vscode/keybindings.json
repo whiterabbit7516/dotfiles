@@ -1766,6 +1766,143 @@
         }
     },
     {
+        // escape char
+        "key": "ctrl+y escape",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u001b"
+        }
+    },
+    {
+        // f1
+        "key": "ctrl+y f1",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u001bOP"
+        }
+    },
+    {
+        // f2
+        "key": "ctrl+y f2",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u001bOQ"
+        }
+    },
+    {
+        // f3
+        "key": "ctrl+y f3",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u001bOR"
+        }
+    },
+    {
+        // f4
+        "key": "ctrl+y f4",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u001bOS"
+        }
+    },
+    {
+        // f5
+        "key": "ctrl+y f5",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u001b[15~"
+        }
+    },
+    {
+        // f6
+        "key": "ctrl+y f6",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u001b[17~"
+        }
+    },
+    {
+        // f7
+        "key": "ctrl+y f7",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u001b[18~"
+        }
+    },
+    {
+        // f8
+        "key": "ctrl+y f8",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u001b[19~"
+        }
+    },
+    {
+        // f9
+        "key": "ctrl+y f9",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u001b[20~"
+        }
+    },
+    // f10 ??
+    // f11 ??
+    {
+        // f12
+        "key": "ctrl+y f12",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u001b[24~"
+        }
+    },
+    {
+        // down
+        "key": "alt+j",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u001bOB"
+        }
+    },
+    {
+        // up
+        "key": "alt+k",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u001bOA"
+        }
+    },
+    {
+        // left
+        "key": "alt+h",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u001bOD"
+        }
+    },
+    {
+        // right
+        "key": "alt+l",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u001bOC"
+        }
+    },
+    {
         "key": "ctrl+f r",
         "command": "editor.action.replaceAll",
         "when": "editorFocus && findWidgetVisible"
