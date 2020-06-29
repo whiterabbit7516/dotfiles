@@ -2055,5 +2055,10 @@
     {
         "key": "ctrl+o ctrl+o",
         "command": "workbench.action.files.openFile"
+    },
+    {
+        "key": "ctrl+l ctrl+a",
+        "command": "editor.action.insertCursorAtEndOfEachLineSelected",
+        "when": "editorTextFocus"
     }
 ]
