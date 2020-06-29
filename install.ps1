@@ -1,5 +1,5 @@
 # powershell
-Copy-Item $PSScriptRoot/powershell/profile.ps1 $PROFILE.CurrentUserAllHosts
+Copy-Item $PSScriptRoot/powershell/profile.ps1 ~/.config/powershell/profile.ps1
 
 # vim
 Copy-Item $PSScriptRoot/vim/.vimrc ~/.vimrc
