@@ -72,9 +72,9 @@ function prompt {
 #########################################
 # .local/powershell/profile.ps1
 #########################################
-if (Test-Path ~/.local/powershell/profile.ps1)
+if (Test-Path ~/local/etc/powershell/profile.ps1)
 {
-  Write-Information "Reading ~/.local/powershell/profile.ps1"
-  Invoke-Expression -Command ~/.local/powershell/profile.ps1
+  Write-Information "Reading ~/local/etc/powershell/profile.ps1"
+  Invoke-Expression -Command ~/local/etc/powershell/profile.ps1
 }
 #########################################
