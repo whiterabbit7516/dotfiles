@@ -40,14 +40,26 @@ Import-Module PSFzf -ArgumentList 'Ctrl+t','Ctrl+r' -ErrorAction SilentlyContinu
 #########################################
 # PoshGit
 #########################################
-# Import-Module posh-git -ErrorAction SilentlyContinue
-# if ($?)
-# {
-#     $GitPromptSettings.DefaultForegroundColor = [ConsoleColor]::Magenta
-#     $GitPromptSettings.DefaultPromptPrefix = "`$ENV:USER@`$(hostname) "
-#     # $GitPromptSettings.DefaultPromptPath = "`$(Get-Location | Split-Path -Leaf)"
-#     $GitPromptSettings.DefaultPromptSuffix = " `n■ "
-# }
+Import-Module posh-git -ErrorAction SilentlyContinue
+if ($?)
+{
+    $GitPromptSettings.DefaultForegroundColor = [ConsoleColor]::Magenta
+    $GitPromptSettings.DefaultPromptPrefix = "`$ENV:USER@`$(hostname) "
+    # $GitPromptSettings.DefaultPromptPath = "`$(Get-Location | Split-Path -Leaf)"
+    $GitPromptSettings.DefaultPromptSuffix = " `n■ ■ ■ "
+}
+#########################################
+# Prompt
+#########################################
+else
+{
+  $HOST.UI.RawUI.ForegroundColor = 6
+  function prompt {
+    $path = Get-Location # | Split-Path -Leaf
+    $prompt = "[$ENV:USER@$(hostname)] $path`n■ ■ ■ "
+    return $prompt
+  }
+}
 #########################################
 # VPN
 #########################################
@@ -59,15 +71,6 @@ if ($nordvpn -ne $null)
 else
 {
   Write-Warning "VPN Unavailable"
-}
-#########################################
-# Prompt
-#########################################
-$HOST.UI.RawUI.ForegroundColor = 6
-function prompt {
-  $path = Get-Location # | Split-Path -Leaf
-  $prompt = "[$ENV:USER@$(hostname)] $path`n■ ■ ■ "
-  return $prompt
 }
 #########################################
 # .local/powershell/profile.ps1
