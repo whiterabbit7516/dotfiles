@@ -70,7 +70,7 @@ function prompt {
   return $prompt
 }
 #########################################
-# .local/profile.ps1
+# .local/powershell/profile.ps1
 #########################################
 if (Test-Path ~/.local/powershell/profile.ps1)
 {
