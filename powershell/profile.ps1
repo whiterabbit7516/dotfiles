@@ -56,7 +56,9 @@ Import-Module PSFzf -ArgumentList 'Ctrl+t','Ctrl+r' -ErrorAction SilentlyContinu
 $HOST.UI.RawUI.ForegroundColor = 6
 function prompt {
   $path = Get-Location # | Split-Path -Leaf
-  $prompt = "[$ENV:USER@$(hostname)] $path`n■ ■ ■ "
+  $username = $ENV:USER ?? $(whoami)
+  $hostname = $ENV:HOST ?? $(hostname)
+  $prompt = "$username | $hostname | $path`n■ ■ ■ "
   return $prompt
 }
 # }
