@@ -1,14 +1,20 @@
-#!/bin/bash
-
+##########################################
 # powershell
-cp ./powershell/profile.ps1 ~/.config/powershell/profile.ps1
+##########################################
+ln -fsv $PWD/powershell/profile.ps1 ~/.config/powershell/profile.ps1
 
+##########################################
 # vim
-cp ./vim/.vimrc ~/.vimrc
+##########################################
+ln -fsv $PWD/vim/.vimrc ~/.vimrc
 
+##########################################
 # tmux
-cp ./tmux/.tmux.conf ~/.tmux.conf
+##########################################
+ln -fsv $PWD/tmux/.tmux.conf ~/.tmux.conf
 
+##########################################
 # vscode
-cp ./vscode/settings.json ~/.config/Code/User/settings.json
-cp ./vscode/keybindings.json ~/.config/Code/User/keybindings.json
+##########################################
+ln -fsv $PWD/vscode/settings.json ~/.config/Code/User/settings.json
+ln -fsv $PWD/vscode/keybindings.json ~/.config/Code/User/keybindings.json
