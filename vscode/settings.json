@@ -100,7 +100,7 @@
         // Ensure the toggle sidebar visibility keybinding skips the shell
         "workbench.action.toggleSidebarVisibility" // conflicts with tmux
     ],
-    "window.menuBarVisibility": "default",
+    "window.menuBarVisibility": "hidden",
     "editor.minimap.enabled": false,
     "workbench.sideBar.location": "left",
     "workbench.activityBar.visible": true,
@@ -127,4 +127,5 @@
     "terminal.integrated.copyOnSelection": true,
     "debug.toolBarLocation": "docked",
     "terminal.integrated.cursorBlinking": true,
+    "window.customMenuBarAltFocus": false,
 }
