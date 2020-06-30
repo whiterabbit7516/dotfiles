@@ -16,5 +16,7 @@ ln -fsv $PWD/tmux/.tmux.conf ~/.tmux.conf
 ##########################################
 # vscode
 ##########################################
-ln -fsv $PWD/vscode/settings.json ~/.config/Code/User/settings.json
-ln -fsv $PWD/vscode/keybindings.json ~/.config/Code/User/keybindings.json
+# ln -fsv $PWD/vscode/settings.json ~/.config/Code/User/settings.json
+# ln -fsv $PWD/vscode/keybindings.json ~/.config/Code/User/keybindings.json
+cp $PWD/vscode/settings.json ~/.config/Code/User/settings.json
+cp $PWD/vscode/keybindings.json ~/.config/Code/User/keybindings.json

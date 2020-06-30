@@ -16,5 +16,7 @@ ln -fsv $PSScriptRoot/tmux/.tmux.conf ~/.tmux.conf
 ##########################################
 # vscode
 ##########################################
-ln -fsv $PSScriptRoot/vscode/settings.json ~/.config/Code/User/settings.json
-ln -fsv $PSScriptRoot/vscode/keybindings.json ~/.config/Code/User/keybindings.json
+# ln -fsv $PSScriptRoot/vscode/settings.json ~/.config/Code/User/settings.json
+# ln -fsv $PSScriptRoot/vscode/keybindings.json ~/.config/Code/User/keybindings.json
+copy-item $PSScriptRoot/vscode/settings.json ~/.config/Code/User/settings.json
+copy-item $PSScriptRoot/vscode/keybindings.json ~/.config/Code/User/keybindings.json
