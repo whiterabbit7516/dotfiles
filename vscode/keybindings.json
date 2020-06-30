@@ -2060,5 +2060,10 @@
         "key": "ctrl+l ctrl+a",
         "command": "editor.action.insertCursorAtEndOfEachLineSelected",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+a ctrl+p",
+        "command": "workbench.action.keepEditor",
+        "when": "!editorPinned"
     }
 ]
