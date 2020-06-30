@@ -128,4 +128,5 @@
     "debug.toolBarLocation": "docked",
     "terminal.integrated.cursorBlinking": true,
     "window.customMenuBarAltFocus": false,
+    "editor.find.autoFindInSelection": "multiline",
 }
