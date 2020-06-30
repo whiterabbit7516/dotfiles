@@ -1291,19 +1291,23 @@
     },
     {
         "key": "ctrl+]",
-        "command": "workbench.action.nextEditorInGroup"
+        "command": "workbench.action.nextEditorInGroup",
+        "when": "editorFocus || openEditorsFocus"
     },
     {
         "key": "ctrl+[",
-        "command": "workbench.action.previousEditorInGroup"
+        "command": "workbench.action.previousEditorInGroup",
+        "when": "editorFocus || openEditorsFocus"
     },
     {
         "key": "ctrl+shift+[",
-        "command": "workbench.action.moveEditorLeftInGroup"
+        "command": "workbench.action.moveEditorLeftInGroup",
+        "when": "editorFocus || openEditorsFocus"
     },
     {
         "key": "ctrl+shift+]",
-        "command": "workbench.action.moveEditorRightInGroup"
+        "command": "workbench.action.moveEditorRightInGroup",
+        "when": "editorFocus || openEditorsFocus"
     },
     {
         "key": "ctrl+alt+[",
