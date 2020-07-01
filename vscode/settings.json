@@ -59,6 +59,10 @@
         {
             "before": ["S"],
             "after": ["a", " ", "<Esc>"]
+        },
+        {
+            "before": ["Y"],
+            "after": ["y", "$"]
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [

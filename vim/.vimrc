@@ -36,5 +36,5 @@ vnoremap W 4w
 vnoremap E 4e
 vnoremap B 4b
 
-
+nnoremap Y y$
 set number
