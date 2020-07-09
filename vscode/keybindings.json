@@ -1907,6 +1907,42 @@
         }
     },
     {
+        // tmux select window left
+        "key": "ctrl+[",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u2672"
+        }
+    },
+    {
+        // tmux select window right
+        "key": "ctrl+]",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u2673"
+        }
+    },
+    {
+        // tmux swap window left
+        "key": "ctrl+shift+[",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u267A"
+        }
+    },
+    {
+        // tmux swap window right
+        "key": "ctrl+shift+]",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u267B"
+        }
+    },
+    {
         "key": "ctrl+f r",
         "command": "editor.action.replaceAll",
         "when": "editorFocus && findWidgetVisible"
