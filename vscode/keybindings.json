@@ -1912,7 +1912,7 @@
         "command": "workbench.action.terminal.sendSequence",
         "when": "terminalFocus",
         "args": {
-            "text": "\u2672"
+            "text": "\u0002["
         }
     },
     {
@@ -1921,7 +1921,7 @@
         "command": "workbench.action.terminal.sendSequence",
         "when": "terminalFocus",
         "args": {
-            "text": "\u2673"
+            "text": "\u0002]"
         }
     },
     {
@@ -1930,7 +1930,7 @@
         "command": "workbench.action.terminal.sendSequence",
         "when": "terminalFocus",
         "args": {
-            "text": "\u267A"
+            "text": "\u0002{"
         }
     },
     {
@@ -1939,7 +1939,7 @@
         "command": "workbench.action.terminal.sendSequence",
         "when": "terminalFocus",
         "args": {
-            "text": "\u267B"
+            "text": "\u0002}"
         }
     },
     {
