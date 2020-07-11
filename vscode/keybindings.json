@@ -2102,7 +2102,8 @@
     },
     {
         "key": "ctrl+w ctrl+o",
-        "command": "workbench.action.closeOtherEditors"
+        "command": "workbench.action.closeOtherEditors",
+        "when": "editorFocus || openEditorsFocus"
     },
     {
         "key": "ctrl+w ctrl+l",
@@ -2114,11 +2115,13 @@
     },
     {
         "key": "ctrl+w ctrl+e",
-        "command": "workbench.action.closeActiveEditor"
+        "command": "workbench.action.closeActiveEditor",
+        "when": "editorFocus || openEditorsFocus"
     },
     {
         "key": "ctrl+w ctrl+w",
-        "command": "workbench.action.closeActiveEditor"
+        "command": "workbench.action.closeActiveEditor",
+        "when": "editorFocus || openEditorsFocus"
     },
     {
         "key": "ctrl+w ctrl+a",
