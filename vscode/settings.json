@@ -133,4 +133,6 @@
     "terminal.integrated.cursorBlinking": true,
     "window.customMenuBarAltFocus": false,
     "editor.find.autoFindInSelection": "multiline",
+    "workbench.statusBar.visible": true,
+    "window.enableMenuBarMnemonics": false,
 }
