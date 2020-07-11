@@ -1044,8 +1044,12 @@
         "command": "workbench.debug.action.focusWatchView"
     },
     {
-        "key": "ctrl+i t",
+        "key": "ctrl+i ctrl+t",
         "command": "timeline.focus"
+    },
+    {
+        "key": "ctrl+i t",
+        "command": "workbench.action.toggleMenuBar"
     },
     {
         "key": "ctrl+i ctrl+m",
