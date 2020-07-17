@@ -393,7 +393,13 @@
     },
     {
         "key": "alt+p",
-        "command": "workbench.action.quickOpen"
+        "command": "workbench.action.quickOpen",
+        "args": ""
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpen",
+        "args": ""
     },
     {
         "key": "alt+f",
@@ -426,11 +432,6 @@
         "key": "alt+h",
         "command": "breadcrumbs.focusPrevious",
         "when": "breadcrumbsActive && breadcrumbsVisible"
-    },
-    {
-        "key": "alt+p",
-        "command": "workbench.action.closeQuickOpen",
-        "when": "inQuickOpen"
     },
     {
         "key": "alt+x",
@@ -1536,15 +1537,15 @@
         "when": "!terminalFocus"
     },
     {
-        "key": "ctrl+r c",
+        "key": "ctrl+r ctrl+c",
         "command": "targetsContainers.focus"
     },
     {
-        "key": "ctrl+r s",
+        "key": "ctrl+r ctrl+s",
         "command": "sshHosts.focus"
     },
     {
-        "key": "ctrl+r e",
+        "key": "ctrl+r ctrl+e",
         "command": "workbench.view.remote",
         "when": "!terminalFocus"
     },
@@ -2247,7 +2248,295 @@
         "when": "editorTextFocus && !editorReadonly"
     },
     {
+        "key": "ctrl+shift+p",
+        "command": "-workbench.action.quickOpenNavigatePreviousInFilePicker",
+        "when": "inFilesPicker && inQuickOpen"
+    },
+    {
         "key": "ctrl+k m",
         "command": "-workbench.action.editor.changeLanguageMode"
     },
+    {
+        "key": "ctrl+r",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Git "
+    },
+    {
+        "key": "ctrl+shift+r",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Remote "
+    },
+    {
+        "key": "ctrl+v",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">View "
+    },
+    {
+        "key": "ctrl+y",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Terminal "
+    },
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Window "
+    },
+    {
+        "key": "ctrl+shift+w",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Workspace "
+    },
+    {
+        "key": "ctrl+e",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">View Editor "
+    },
+    {
+        "key": "ctrl+shift+e",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Explorer "
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Task "
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">File "
+    },
+    {
+        "key": "ctrl+u",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Copy "
+    },
+    {
+        "key": "ctrl+q",
+        "command": "workbench.action.closeQuickOpen",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Focus "
+    },
+    {
+        "key": "ctrl+i",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Focus "
+    },
+    {
+        "key": "ctrl+o",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Open "
+    },
+    {
+        "key": "ctrl+a",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">View Editor Group "
+    },
+    {
+        "key": "ctrl+shift+a",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Cursor "
+    },
+    {
+        "key": "ctrl+s",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Search "
+    },
+    {
+        "key": "ctrl+shift+s",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Select "
+    },
+    {
+        "key": "ctrl+shift+x",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Extensions "
+    },
+    {
+        "key": "ctrl+d",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Debug "
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Developer "
+    },
+    {
+        "key": "ctrl+f",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Find "
+    },
+    {
+        "key": "ctrl+shift+f",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Folder "
+    },
+    {
+        "key": "ctrl+z",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Undo "
+    },
+    {
+        "key": "ctrl+shift+z",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Zen "
+    },
+    {
+        "key": "ctrl+c",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Command "
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Go To "
+    },
+    {
+        "key": "ctrl+g",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Symbol "
+    },
+    {
+        "key": "ctrl+b",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">View Bar "
+    },
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">New "
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Next "
+    },
+    {
+        "key": "ctrl+m",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Bookmarks "
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">View Panel "
+    },
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Help "
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Preferences "
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Line "
+    },
+    {
+        "key": "ctrl+t v",
+        "command": "fileutils.duplicateFile",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+t d",
+        "command": "fileutils.removeFile",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+t m",
+        "command": "fileutils.moveFile",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+t r",
+        "command": "fileutils.renameFile",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+t n",
+        "command": "workbench.action.quickOpen",
+        "when": "!inQuickOpen",
+        "args": ">File New "
+    },
+    {
+        "key": "ctrl+t u",
+        "command": "workbench.action.quickOpen",
+        "when": "!inQuickOpen",
+        "args": ">File Copy "
+    },
+    {
+        "key": "ctrl+r c",
+        "command": "workbench.action.quickOpen",
+        "when": "!inQuickOpen",
+        "args": ">Git Commit "
+    },
+    {
+        "key": "ctrl+r s",
+        "command": "workbench.action.quickOpen",
+        "when": "!inQuickOpen",
+        "args": ">Git Stage "
+    },
+    {
+        "key": "ctrl+r u",
+        "command": "workbench.action.quickOpen",
+        "when": "!inQuickOpen",
+        "args": ">Git Unstage "
+    },
+    {
+        "key": "ctrl+r d",
+        "command": "workbench.action.quickOpen",
+        "when": "!inQuickOpen",
+        "args": ">Git Discard "
+    },
+    {
+        "key": "ctrl+r p",
+        "command": "workbench.action.quickOpen",
+        "when": "!inQuickOpen",
+        "args": ">Git "
+    }
 ]
