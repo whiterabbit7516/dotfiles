@@ -2504,6 +2504,18 @@
         "args": ">File New "
     },
     {
+        "key": "ctrl+t o",
+        "command": "workbench.action.quickOpen",
+        "when": "!inQuickOpen",
+        "args": ">File Open "
+    },
+    {
+        "key": "ctrl+t s",
+        "command": "workbench.action.quickOpen",
+        "when": "!inQuickOpen",
+        "args": ">File Save "
+    },
+    {
         "key": "ctrl+t u",
         "command": "workbench.action.quickOpen",
         "when": "!inQuickOpen",
