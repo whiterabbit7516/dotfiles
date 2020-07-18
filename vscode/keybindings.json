@@ -2454,6 +2454,12 @@
         "args": ">Bookmarks "
     },
     {
+        "key": "ctrl+shift+m",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Vim "
+    },
+    {
         "key": "ctrl+j",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
@@ -2550,5 +2556,13 @@
         "command": "workbench.action.quickOpen",
         "when": "!inQuickOpen",
         "args": ">Git "
+    },
+    {
+        "key": "ctrl+m c",
+        "command": "vim.showQuickpickCmdLine"
+    },
+    {
+        "key": "ctrl+m v",
+        "command": "toggleVim"
     }
 ]
