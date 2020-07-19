@@ -301,13 +301,13 @@
     },
     {
         "key": "ctrl+alt+h",
-        "command": "workbench.action.navigateBack",
-        "when": "editorFocus && !inDebugMode"
+        "command": "editor.action.outdentLines",
+        "when": "editorFocus && !editorReadonly && !inDebugMode"
     },
     {
         "key": "ctrl+alt+l",
-        "command": "workbench.action.navigateForward",
-        "when": "editorFocus && !inDebugMode"
+        "command": "editor.action.indentLines",
+        "when": "editorFocus && !editorReadonly && !inDebugMode"
     },
     {
         "key": "alt+j",
@@ -2559,10 +2559,12 @@
     },
     {
         "key": "ctrl+m c",
-        "command": "vim.showQuickpickCmdLine"
+        "command": "vim.showQuickpickCmdLine",
+        "when": "!inQuickOpen"
     },
     {
         "key": "ctrl+m v",
-        "command": "toggleVim"
+        "command": "toggleVim",
+        "when": "!inQuickOpen"
     }
 ]
