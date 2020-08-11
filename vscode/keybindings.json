@@ -2275,6 +2275,11 @@
         "args": ">View "
     },
     {
+        "key": "ctrl+shift+v",
+        "command": "editor.action.clipboardPasteAction",
+        "when": "inQuickOpen"
+    },
+    {
         "key": "ctrl+y",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
