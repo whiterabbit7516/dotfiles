@@ -94,6 +94,10 @@
         "command": "workbench.panel.terminal.focus"
     },
     {
+        "key": "ctrl+shift+y",
+        "command": "workbench.panel.terminal.focus"
+    },
+    {
         "key": "ctrl+d ctrl+y",
         "command": "workbench.debug.action.toggleRepl"
     },
@@ -2116,8 +2120,7 @@
     },
     {
         "key": "ctrl+w ctrl+e",
-        "command": "workbench.action.closeActiveEditor",
-        "when": "editorFocus || openEditorsFocus"
+        "command": "workbench.action.closeActiveEditor"
     },
     {
         "key": "ctrl+w ctrl+w",
