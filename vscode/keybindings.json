@@ -614,7 +614,7 @@
     {
         "key": "d",
         "command": "deleteFile",
-        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceMoveableToTrash && !explorerResourceReadonly && !inputFocus"
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
     },
     {
         "key": "s",
@@ -2574,5 +2574,10 @@
         "key": "ctrl+m v",
         "command": "toggleVim",
         "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+k ctrl+d",
+        "command": "editor.action.formatDocument",
+        "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
     }
 ]
