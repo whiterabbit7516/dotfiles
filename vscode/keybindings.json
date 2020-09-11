@@ -1925,6 +1925,15 @@
         }
     },
     {
+        // tmux copy mode
+        "key": "ctrl+y v",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0002v"
+        }
+    },
+    {
         // tmux select window left
         "key": "ctrl+[",
         "command": "workbench.action.terminal.sendSequence",
