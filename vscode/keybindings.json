@@ -2545,6 +2545,10 @@
         "args": ">File Copy "
     },
     {
+        "key": "ctrl+r b",
+        "command": "git.checkout"
+    },
+    {
         "key": "ctrl+r c",
         "command": "workbench.action.quickOpen",
         "when": "!inQuickOpen",
