@@ -91,11 +91,11 @@
     },
     {
         "key": "ctrl+i ctrl+y",
-        "command": "workbench.panel.terminal.focus"
+        "command": "workbench.action.terminal.focus"
     },
     {
         "key": "ctrl+shift+y",
-        "command": "workbench.panel.terminal.focus"
+        "command": "workbench.action.terminal.focus"
     },
     {
         "key": "ctrl+d ctrl+y",
