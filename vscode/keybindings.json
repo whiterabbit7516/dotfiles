@@ -107,6 +107,11 @@
         "when": "terminalFocus"
     },
     {
+        "key": "ctrl+shift+r",
+        "command": "workbench.action.terminal.runSelectedText",
+        "when": "editorFocus"
+    },
+    {
         "key": "ctrl+y r",
         "command": "workbench.action.terminal.runSelectedText",
         "when": "editorFocus"
