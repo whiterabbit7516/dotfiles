@@ -1,6 +1,7 @@
 ##########################################
 # powershell
 ##########################################
+mkdir -p ~/.config/powershell
 ln -fsv $PWD/powershell/profile.ps1 ~/.config/powershell/profile.ps1
 
 ##########################################
@@ -17,6 +18,7 @@ ln -fsv $PWD/tmux/.tmux.conf ~/.tmux.conf
 ##########################################
 # vscode
 ##########################################
+mkdir -p ~/.config/Code/User
 # ln -fsv $PWD/vscode/settings.json ~/.config/Code/User/settings.json
 # ln -fsv $PWD/vscode/keybindings.json ~/.config/Code/User/keybindings.json
 cp $PWD/vscode/settings.json ~/.config/Code/User/settings.json
