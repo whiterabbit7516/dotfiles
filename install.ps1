@@ -13,6 +13,7 @@ ln -fsv $PSScriptRoot/vim/.vimrc ~/.vimrc
 ##########################################
 # tmux
 ##########################################
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ln -fsv $PSScriptRoot/tmux/.tmux.conf ~/.tmux.conf
 
 ##########################################
