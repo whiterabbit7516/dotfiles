@@ -2085,16 +2085,6 @@
         "when": "terminalFindVisible && terminalFocus"
     },
     {
-        "key": "ctrl+a ctrl+p",
-        "command": "workbench.action.pinEditor",
-        "when": "config.workbench.editor.showTabs && !editorSticky"
-    },
-    {
-        "key": "ctrl+a ctrl+p",
-        "command": "workbench.action.unpinEditor",
-        "when": "config.workbench.editor.showTabs && editorSticky"
-    },
-    {
         "key": "ctrl+i x",
         "command": "workbench.view.extensions"
     },
@@ -2224,11 +2214,6 @@
         "key": "ctrl+l ctrl+a",
         "command": "editor.action.insertCursorAtEndOfEachLineSelected",
         "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+a ctrl+p",
-        "command": "workbench.action.keepEditor",
-        "when": "!editorPinned"
     },
     {
         "key": "ctrl+e ctrl+l",
@@ -2617,5 +2602,19 @@
         "key": "ctrl+k ctrl+f",
         "command": "editor.action.formatSelection",
         "when": "editorHasDocumentSelectionFormattingProvider && editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+a ctrl+e",
+        "command": "workbench.action.keepEditor"
+    },
+    {
+        "key": "ctrl+a ctrl+p",
+        "command": "workbench.action.pinEditor",
+        "when": "!activeEditorIsPinned"
+    },
+    {
+        "key": "ctrl+a ctrl+p",
+        "command": "workbench.action.unpinEditor",
+        "when": "activeEditorIsPinned"
     }
 ]
