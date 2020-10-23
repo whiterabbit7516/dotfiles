@@ -245,12 +245,12 @@
         "command": "workbench.action.navigateLast"
     },
     {
-        "key": "ctrl+u n",
+        "key": "ctrl+u ctrl+n",
         "command": "editor.action.marker.next",
         "when": "editorFocus && !editorReadonly"
     },
     {
-        "key": "ctrl+u p",
+        "key": "ctrl+u ctrl+p",
         "command": "editor.action.marker.prev",
         "when": "editorFocus && !editorReadonly"
     },
@@ -1359,11 +1359,11 @@
         "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
     },
     {
-        "key": "ctrl+d n",
+        "key": "ctrl+d ctrl+n",
         "command": "editor.debug.action.goToNextBreakpoint"
     },
     {
-        "key": "ctrl+d p",
+        "key": "ctrl+d ctrl+p",
         "command": "editor.debug.action.goToPreviousBreakpoint"
     },
     {
@@ -1371,12 +1371,12 @@
         "command": "workbench.action.files.save"
     },
     {
-        "key": "ctrl+s n",
+        "key": "ctrl+s ctrl+n",
         "command": "search.action.focusNextSearchResult",
         "when": "hasSearchResult || inSearchEditor"
     },
     {
-        "key": "ctrl+s p",
+        "key": "ctrl+s ctrl+p",
         "command": "search.action.focusPreviousSearchResult",
         "when": "hasSearchResult || inSearchEditor"
     },
