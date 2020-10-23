@@ -2563,6 +2563,12 @@
         "args": ">Git Discard "
     },
     {
+        "key": "ctrl+r o",
+        "command": "workbench.action.quickOpen",
+        "when": "!inQuickOpen",
+        "args": ">Git Open "
+    },
+    {
         "key": "ctrl+r p",
         "command": "workbench.action.quickOpen",
         "when": "!inQuickOpen",
