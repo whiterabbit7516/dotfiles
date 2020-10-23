@@ -2563,6 +2563,24 @@
         "args": ">Git Discard "
     },
     {
+        "key": "ctrl+r h",
+        "command": "workbench.action.quickOpen",
+        "when": "!inQuickOpen",
+        "args": ">Git History "
+    },
+    {
+        "key": "ctrl+r l",
+        "command": "workbench.action.quickOpen",
+        "when": "!inQuickOpen",
+        "args": ">GitLens "
+    },
+    {
+        "key": "ctrl+r g",
+        "command": "workbench.action.quickOpen",
+        "when": "!inQuickOpen",
+        "args": ">Git Graph "
+    },
+    {
         "key": "ctrl+r o",
         "command": "workbench.action.quickOpen",
         "when": "!inQuickOpen",
