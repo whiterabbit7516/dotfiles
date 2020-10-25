@@ -7,7 +7,7 @@
     "editor.fontLigatures": true,
     "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\6\\pwsh.exe",
     "terminal.external.windowsExec": "C:\\Program Files\\PowerShell\\6\\pwsh.exe",
-    "workbench.colorTheme": "Dracula",
+    "workbench.colorTheme": "Horizon",
     "vim.highlightedyank.enable": true,
     "vim.useCtrlKeys": false,
     "vim.handleKeys": {
@@ -135,4 +135,5 @@
     "editor.find.autoFindInSelection": "multiline",
     "workbench.statusBar.visible": true,
     "window.enableMenuBarMnemonics": false,
+    "dotfiles.repository": "https://github.com/HA07Z7XE/dotfiles.git",
 }
