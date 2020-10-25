@@ -24,3 +24,9 @@ mkdir -p ~/.config/Code/User
 # ln -fsv $PWD/vscode/keybindings.json ~/.config/Code/User/keybindings.json
 cp $PWD/vscode/settings.json ~/.config/Code/User/settings.json
 cp $PWD/vscode/keybindings.json ~/.config/Code/User/keybindings.json
+
+##########################################
+# bash
+##########################################
+# ln -fsv $PWD/bash/bashrc ~/.bashrc
+# ln -fsv $PWD/bash/bash_profile ~/.bash_profile

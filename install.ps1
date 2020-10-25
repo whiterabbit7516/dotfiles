@@ -24,3 +24,9 @@ new-item -type dir ~/.config/Code/User -force | out-null
 # ln -fsv $PSScriptRoot/vscode/keybindings.json ~/.config/Code/User/keybindings.json
 copy-item $PSScriptRoot/vscode/settings.json ~/.config/Code/User/settings.json
 copy-item $PSScriptRoot/vscode/keybindings.json ~/.config/Code/User/keybindings.json
+
+##########################################
+# bash
+##########################################
+# ln -fsv $PSScriptRoot/bash/bashrc ~/.bashrc
+# ln -fsv $PSScriptRoot/bash/bash_profile ~/.bash_profile
