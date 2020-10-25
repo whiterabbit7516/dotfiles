@@ -3,6 +3,8 @@
 ##########################################
 new-item -type dir ~/.config/powershell -force | out-null
 ln -fsv $PSScriptRoot/powershell/profile.ps1 ~/.config/powershell/profile.ps1
+new-item -type dir ~/.local/dotfiles/powershell -force | out-null
+cp -rnv $PSScriptRoot/powershell/local/* ~/.local/dotfiles/powershell
 
 ##########################################
 # vim
@@ -15,6 +17,8 @@ ln -fsv $PSScriptRoot/vim/.vimrc ~/.vimrc
 ##########################################
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ln -fsv $PSScriptRoot/tmux/.tmux.conf ~/.tmux.conf
+new-item -type dir ~/.local/dotfiles/tmux -force | out-null
+cp -rnv $PSScriptRoot/tmux/local/* ~/.local/dotfiles/tmux
 
 ##########################################
 # vscode

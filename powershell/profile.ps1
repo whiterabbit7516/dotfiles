@@ -77,9 +77,9 @@ else
 #########################################
 # .local/powershell/profile.ps1
 #########################################
-if (Test-Path ~/.local/etc/powershell/profile.ps1)
+if (Test-Path ~/.local/dotfiles/powershell/profile.ps1)
 {
-  Write-Information "Reading ~/.local/etc/powershell/profile.ps1"
-  Invoke-Expression -Command ~/.local/etc/powershell/profile.ps1
+  Write-Information "Reading ~/.local/dotfiles/powershell/profile.ps1"
+  Invoke-Expression -Command ~/.local/dotfiles/powershell/profile.ps1
 }
 #########################################

@@ -3,6 +3,8 @@
 ##########################################
 mkdir -p ~/.config/powershell
 ln -fsv $PWD/powershell/profile.ps1 ~/.config/powershell/profile.ps1
+mkdir -p ~/.local/dotfiles/powershell
+cp -rnv $PWD/powershell/local/* ~/.local/dotfiles/powershell
 
 ##########################################
 # vim
@@ -15,6 +17,8 @@ ln -fsv $PWD/vim/.vimrc ~/.vimrc
 ##########################################
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ln -fsv $PWD/tmux/.tmux.conf ~/.tmux.conf
+mkdir -p ~/.local/dotfiles/tmux
+cp -rnv $PWD/tmux/local/* ~/.local/dotfiles/tmux
 
 ##########################################
 # vscode
