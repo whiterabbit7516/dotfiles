@@ -2640,5 +2640,9 @@
         "key": "ctrl+a ctrl+p",
         "command": "workbench.action.unpinEditor",
         "when": "activeEditorIsPinned"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-workbench.action.files.newUntitledFile"
     }
 ]
