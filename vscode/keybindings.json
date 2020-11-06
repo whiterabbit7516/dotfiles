@@ -1939,6 +1939,96 @@
         }
     },
     {
+        // tmux paste
+        "key": "ctrl+y p",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0002p"
+        }
+    },
+    {
+        // tmux next pane
+        "key": "ctrl+y o",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0002o"
+        }
+    },
+    {
+        // tmux previous pane
+        "key": "ctrl+y shift-o",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0002O"
+        }
+    },
+    {
+        // tmux pane left
+        "key": "ctrl+y h",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0002h"
+        }
+    },
+    {
+        // tmux pane down
+        "key": "ctrl+y j",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0002j"
+        }
+    },
+    {
+        // tmux pane up
+        "key": "ctrl+y k",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0002k"
+        }
+    },
+    {
+        // tmux pane right
+        "key": "ctrl+y l",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0002l"
+        }
+    },
+    {
+        // tmux zoom pane
+        "key": "ctrl+y z",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0002z"
+        }
+    },
+    {
+        // tmux display panes
+        "key": "ctrl+y q",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0002q"
+        }
+    },
+    {
+        // tmux choose tree
+        "key": "ctrl+y w",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0002w"
+        }
+    },
+    {
         // tmux select window left
         "key": "ctrl+[",
         "command": "workbench.action.terminal.sendSequence",
