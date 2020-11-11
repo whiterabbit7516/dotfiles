@@ -2414,12 +2414,6 @@
         "args": ">File "
     },
     {
-        "key": "ctrl+u",
-        "command": "workbench.action.quickOpen",
-        "when": "inQuickOpen",
-        "args": ">Copy "
-    },
-    {
         "key": "ctrl+q",
         "command": "workbench.action.closeQuickOpen",
         "when": "inQuickOpen"
@@ -2734,5 +2728,47 @@
     {
         "key": "ctrl+n",
         "command": "-workbench.action.files.newUntitledFile"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Copy "
+    },
+    {
+        "key": "ctrl+shift+u",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Problems "
+    },
+    {
+        "key": "ctrl+u w",
+        "command": "codeFragments.deleteAllFragments",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+i u",
+        "command": "codeFragments.focus",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+u s",
+        "command": "codeFragments.saveSelectedCodeFragment",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+u d",
+        "command": "codeFragments.deleteCodeFragment",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+u v",
+        "command": "codeFragments.insertCodeFragment",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+u r",
+        "command": "codeFragments.renameCodeFragment",
+        "when": "!inQuickOpen"
     }
 ]
