@@ -592,7 +592,7 @@
         "when": "inDebugMode"
     },
     {
-        "key": "ctrl+d r",
+        "key": "ctrl+d e",
         "command": "workbench.action.debug.run",
         "when": "!inDebugMode"
     },
