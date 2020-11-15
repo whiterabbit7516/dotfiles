@@ -2357,7 +2357,7 @@
         "key": "ctrl+o",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": ">Source Control "
+        "args": ">Git "
     },
     {
         "key": "ctrl+v",
@@ -2433,7 +2433,7 @@
         "key": "ctrl+shift+o",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": ">Git "
+        "args": ">Source Control "
     },
     {
         "key": "ctrl+a",
@@ -2633,6 +2633,12 @@
         "command": "workbench.action.quickOpen",
         "when": "!inQuickOpen",
         "args": ">Git Stage "
+    },
+    {
+        "key": "ctrl+o p",
+        "command": "workbench.action.quickOpen",
+        "when": "!inQuickOpen",
+        "args": ">Git "
     },
     {
         "key": "ctrl+o u",
