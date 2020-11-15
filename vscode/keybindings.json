@@ -70,8 +70,13 @@
         "command": "workbench.explorer.fileView.focus"
     },
     {
-        "key": "ctrl+i ctrl+r",
+        "key": "ctrl+i ctrl+o",
         "command": "workbench.view.scm"
+    },
+    {
+        "key": "ctrl+o ctrl+m",
+        "command": "workbench.view.scm",
+        "when": "!inQuickOpen"
     },
     {
         "key": "ctrl+i ctrl+d",
@@ -86,7 +91,7 @@
         "command": "workbench.action.focusPanel"
     },
     {
-        "key": "ctrl+i ctrl+o",
+        "key": "ctrl+i o",
         "command": "workbench.panel.output.focus"
     },
     {
@@ -1528,10 +1533,6 @@
         "when": "terminalFindFocused || terminalFocus"
     },
     {
-        "key": "ctrl+i r",
-        "command": "gitlens.views.repositories:gitlens.focus"
-    },
-    {
         "key": "alt+n",
         "command": "workbench.action.openRecent",
         "when": "inQuickOpen"
@@ -1543,20 +1544,22 @@
     {
         "key": "ctrl+r ctrl+r",
         "command": "workbench.action.openRecent",
-        "when": "!terminalFocus"
+        "when": "!terminalFocus && !inQuickOpen"
     },
     {
         "key": "ctrl+r ctrl+c",
-        "command": "targetsContainers.focus"
+        "command": "targetsContainers.focus",
+        "when": "!inQuickOpen"
     },
     {
         "key": "ctrl+r ctrl+s",
-        "command": "sshHosts.focus"
+        "command": "sshHosts.focus",
+        "when": "!inQuickOpen"
     },
     {
-        "key": "ctrl+r ctrl+e",
+        "key": "ctrl+i ctrl+r",
         "command": "workbench.view.remote",
-        "when": "!terminalFocus"
+        "when": "!inQuickOpen && !terminalFocus"
     },
     {
         "key": "ctrl+y s",
@@ -2297,10 +2300,6 @@
         "command": "workbench.action.showAllSymbols"
     },
     {
-        "key": "ctrl+o ctrl+o",
-        "command": "workbench.action.files.openFile"
-    },
-    {
         "key": "ctrl+l ctrl+a",
         "command": "editor.action.insertCursorAtEndOfEachLineSelected",
         "when": "editorTextFocus"
@@ -2352,13 +2351,13 @@
         "key": "ctrl+r",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": ">Git "
+        "args": ">Remote "
     },
     {
-        "key": "ctrl+shift+r",
+        "key": "ctrl+o",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": ">Remote "
+        "args": ">Source Control "
     },
     {
         "key": "ctrl+v",
@@ -2431,10 +2430,10 @@
         "args": ">Focus "
     },
     {
-        "key": "ctrl+o",
+        "key": "ctrl+shift+o",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": ">Open "
+        "args": ">Git "
     },
     {
         "key": "ctrl+a",
@@ -2619,62 +2618,57 @@
         "args": ">File Copy "
     },
     {
-        "key": "ctrl+r b",
-        "command": "git.checkout"
+        "key": "ctrl+o b",
+        "command": "git.checkout",
+        "when": "!inQuickOpen"
     },
     {
-        "key": "ctrl+r c",
+        "key": "ctrl+o c",
         "command": "workbench.action.quickOpen",
         "when": "!inQuickOpen",
         "args": ">Git Commit "
     },
     {
-        "key": "ctrl+r s",
+        "key": "ctrl+o s",
         "command": "workbench.action.quickOpen",
         "when": "!inQuickOpen",
         "args": ">Git Stage "
     },
     {
-        "key": "ctrl+r u",
+        "key": "ctrl+o u",
         "command": "workbench.action.quickOpen",
         "when": "!inQuickOpen",
         "args": ">Git Unstage "
     },
     {
-        "key": "ctrl+r d",
+        "key": "ctrl+o d",
         "command": "workbench.action.quickOpen",
         "when": "!inQuickOpen",
         "args": ">Git Discard "
     },
     {
-        "key": "ctrl+r h",
+        "key": "ctrl+o h",
         "command": "workbench.action.quickOpen",
         "when": "!inQuickOpen",
         "args": ">Git History "
     },
-    {
-        "key": "ctrl+r l",
+    {    
+        "key": "ctrl+o l",
         "command": "workbench.action.quickOpen",
         "when": "!inQuickOpen",
         "args": ">GitLens "
     },
     {
-        "key": "ctrl+r g",
+        "key": "ctrl+o g",
         "command": "workbench.action.quickOpen",
         "when": "!inQuickOpen",
         "args": ">Git Graph "
     },
     {
-        "key": "ctrl+r o",
+        "key": "ctrl+o o",
         "command": "workbench.action.quickOpen",
         "when": "!inQuickOpen",
         "args": ">Git Open "
-    },
-    {
-        "key": "ctrl+r p",
-        "command": "workbench.action.quickOpen",
-        "when": "!inQuickOpen",
-        "args": ">Git "
     },
     {
         "key": "ctrl+m c",
@@ -2770,5 +2764,48 @@
         "key": "ctrl+u r",
         "command": "codeFragments.renameCodeFragment",
         "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+o ctrl+b",
+        "command": "gitlens.views.branches.focus",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+o ctrl+l",
+        "command": "gitlens.views.lineHistory.focus",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+o ctrl+h",
+        "command": "gitlens.views.fileHistory.focus",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+o ctrl+r",
+        "command": "gitlens.views.remotes.focus",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+o ctrl+s",
+        "command": "gitlens.views.searchAndCompare.focus",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+o ctrl+c",
+        "command": "gitlens.views.commits.focus",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+o ctrl+p",
+        "command": "workbench.scm.repositories.focus",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+t ctrl+o",
+        "command": "workbench.action.files.openFile"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "-workbench.action.files.openFile"
     }
 ]
