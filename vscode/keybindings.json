@@ -408,6 +408,7 @@
     {
         "key": "alt+p",
         "command": "workbench.action.quickOpen",
+        "when": "!inQuickOpen",
         "args": ""
     },
     {
@@ -422,9 +423,14 @@
     },
     {
         "key": "alt+o",
+        "command": "gitlens.gitCommands",
+        "when": "inQuickOpen",
+    },
+    {
+        "key": "alt+p",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": "view output"
+        "args": "?"
     },
     {
         "key": "alt+b",
