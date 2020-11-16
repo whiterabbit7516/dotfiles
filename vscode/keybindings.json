@@ -2574,7 +2574,7 @@
         "args": ">Line "
     },
     {
-        "key": "ctrl+t v",
+        "key": "ctrl+t c",
         "command": "fileutils.duplicateFile",
         "when": "!inQuickOpen"
     },
