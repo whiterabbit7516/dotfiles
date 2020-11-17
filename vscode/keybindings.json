@@ -2758,7 +2758,7 @@
         "when": "!inQuickOpen"
     },
     {
-        "key": "ctrl+u s",
+        "key": "ctrl+u c",
         "command": "codeFragments.saveSelectedCodeFragment",
         "when": "!inQuickOpen"
     },
