@@ -2722,7 +2722,7 @@
         "key": "ctrl+u",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": ">Copy "
+        "args": ">Fragment "
     },
     {
         "key": "ctrl+shift+u",
