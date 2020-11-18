@@ -1378,10 +1378,6 @@
         "command": "editor.debug.action.goToPreviousBreakpoint"
     },
     {
-        "key": "ctrl+s ctrl+s",
-        "command": "workbench.action.files.save"
-    },
-    {
         "key": "ctrl+s ctrl+n",
         "command": "search.action.focusNextSearchResult",
         "when": "hasSearchResult || inSearchEditor"
@@ -1400,8 +1396,9 @@
         "command": "-workbench.action.replaceInFiles"
     },
     {
-        "key": "ctrl+s ctrl+f",
-        "command": "workbench.action.findInFiles"
+        "key": "ctrl+s ctrl+s",
+        "command": "workbench.action.findInFiles",
+        "when": "!inQuickOpen"
     },
     {
         "key": "ctrl+shift+f",
@@ -2315,16 +2312,6 @@
         "command": "workbench.action.editor.changeLanguageMode"
     },
     {
-        "key": "ctrl+k ctrl+a",
-        "command": "editor.unfoldAll",
-        "when": "editorTextFocus && foldingEnabled"
-    },
-    {
-        "key": "ctrl+k ctrl+j",
-        "command": "-editor.unfoldAll",
-        "when": "editorTextFocus && foldingEnabled"
-    },
-    {
         "key": "ctrl+l ctrl+c",
         "command": "editor.action.commentLine",
         "when": "editorTextFocus && !editorReadonly"
@@ -2422,12 +2409,6 @@
         "key": "ctrl+q",
         "command": "workbench.action.closeQuickOpen",
         "when": "inQuickOpen"
-    },
-    {
-        "key": "ctrl+i",
-        "command": "workbench.action.quickOpen",
-        "when": "inQuickOpen",
-        "args": ">Focus "
     },
     {
         "key": "ctrl+i",
@@ -2814,10 +2795,26 @@
     },
     {
         "key": "ctrl+t ctrl+o",
-        "command": "workbench.action.files.openFile"
+        "command": "workbench.action.files.openFile",
+        "when": "!inQuickOpen"
     },
     {
         "key": "ctrl+o",
         "command": "-workbench.action.files.openFile"
+    },
+    {
+        "key": "ctrl+i d",
+        "command": "dockerContainers.focus",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+k ctrl+j",
+        "command": "-editor.unfoldAll",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "ctrl+k ctrl+9",
+        "command": "editor.unfoldAll",
+        "when": "!inQuickOpen"
     }
 ]
