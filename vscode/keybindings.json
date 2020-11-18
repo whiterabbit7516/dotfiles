@@ -25,10 +25,6 @@
         "when": "terminalFocus"
     },
     {
-        "key": "ctrl+shift+q",
-        "command": "workbench.action.toggleMaximizedPanel"
-    },
-    {
         "key": "ctrl+h",
         "command": "workbench.action.toggleMaximizedPanel"
     },
@@ -2462,7 +2458,7 @@
         "key": "ctrl+shift+d",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": ">Developer "
+        "args": ">Docker "
     },
     {
         "key": "ctrl+f",
@@ -2553,6 +2549,12 @@
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
         "args": ">Preferences "
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Developer "
     },
     {
         "key": "ctrl+l",
