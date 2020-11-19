@@ -438,7 +438,7 @@
         "key": "alt+z",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": "ext "
+        "args": "undo "
     },
     {
         "key": "alt+l",
@@ -2183,8 +2183,12 @@
         "when": "terminalFindVisible && terminalFocus"
     },
     {
-        "key": "ctrl+i z",
+        "key": "ctrl+i x",
         "command": "workbench.view.extensions"
+    },
+    {
+        "key": "ctrl+i z",
+        "command": "workbench.view.undostack" // non existant
     },
     {
         "key": "ctrl+shift+x",
@@ -2482,7 +2486,7 @@
         "key": "ctrl+z",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": ">Extensions "
+        "args": ">Undo "
     },
     {
         "key": "ctrl+shift+z",
