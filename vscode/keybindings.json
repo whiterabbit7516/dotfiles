@@ -435,6 +435,12 @@
         "args": "view side bar"
     },
     {
+        "key": "alt+z",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": "ext "
+    },
+    {
         "key": "alt+l",
         "command": "workbench.action.acceptSelectedQuickOpenItem",
         "when": "inQuickOpen"
@@ -2177,7 +2183,7 @@
         "when": "terminalFindVisible && terminalFocus"
     },
     {
-        "key": "ctrl+i x",
+        "key": "ctrl+i z",
         "command": "workbench.view.extensions"
     },
     {
@@ -2476,7 +2482,7 @@
         "key": "ctrl+z",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": ">Undo "
+        "args": ">Extensions "
     },
     {
         "key": "ctrl+shift+z",
