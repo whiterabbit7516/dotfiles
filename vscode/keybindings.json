@@ -2423,6 +2423,12 @@
         "args": ">Focus "
     },
     {
+        "key": "ctrl+shift+i",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Insert "
+    },
+    {
         "key": "ctrl+shift+o",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
