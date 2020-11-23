@@ -58,7 +58,7 @@
         "command": "workbench.action.navigateForward"
     },
     {
-        "key": "ctrl+shift+i",
+        "key": "ctrl+shift+t",
         "command": "terminalHere.create"
     },
     {
