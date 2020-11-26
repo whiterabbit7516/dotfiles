@@ -59,7 +59,8 @@
     },
     {
         "key": "ctrl+shift+t",
-        "command": "terminalHere.create"
+        "command": "terminalHere.create",
+        "when": "!inQuickOpen"
     },
     {
         "key": "ctrl+i ctrl+f",
@@ -2797,13 +2798,23 @@
         "when": "!inQuickOpen"
     },
     {
-        "key": "ctrl+o ctrl+s",
+        "key": "ctrl+o ctrl+f",
         "command": "gitlens.views.searchAndCompare.focus",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+o ctrl+t",
+        "command": "gitlens.views.tags.focus",
         "when": "!inQuickOpen"
     },
     {
         "key": "ctrl+o ctrl+c",
         "command": "gitlens.views.commits.focus",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+o ctrl+s",
+        "command": "gitlens.views.stashes.focus",
         "when": "!inQuickOpen"
     },
     {
