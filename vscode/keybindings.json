@@ -467,13 +467,13 @@
         "when": "inQuickOpen"
     },
     {
-        "key": "alt+a",
-        "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+        "key": "alt+e",
+        "command": "workbench.action.showAllEditors",
         "when": "inQuickOpen"
     },
     {
-        "key": "alt+e",
-        "command": "workbench.action.showAllEditors",
+        "key": "alt+a",
+        "command": "workbench.action.showAllEditorsByMostRecentlyUsed",
         "when": "inQuickOpen"
     },
     {
