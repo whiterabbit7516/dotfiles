@@ -37,6 +37,10 @@ Set-PSReadLineKeyHandler -Chord Ctrl+c -Function ViCommandMode
 # FZF
 #########################################
 Import-Module PSFzf -ArgumentList 'Ctrl+t','Ctrl+r' -ErrorAction SilentlyContinue
+# Set-PSReadLineKeyHandler -Key Tab -ScriptBlock { Invoke-FzfTabCompletion }
+Set-Alias -Name fe -Value 'Invoke-FuzzyEdit'
+Set-Alias -Name fd -Value 'Invoke-FuzzySetLocation'
+Set-Alias -Name fh -Value 'Invoke-FuzzyHistory'
 #########################################
 # PoshGit
 #########################################

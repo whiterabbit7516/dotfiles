@@ -1,6 +1,7 @@
 ##########################################
 # powershell
 ##########################################
+install-module psfzf -force
 new-item -type dir ~/.config/powershell -force | out-null
 ln -fsv $PSScriptRoot/powershell/profile.ps1 ~/.config/powershell/profile.ps1
 new-item -type dir ~/.local/dotfiles/powershell -force | out-null
