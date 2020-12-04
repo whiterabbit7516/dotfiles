@@ -477,7 +477,7 @@
         "when": "inQuickOpen"
     },
     {
-        "key": "alt+v",
+        "key": "alt+i",
         "command": "workbench.action.openView",
         "when": "inQuickOpen"
     },
