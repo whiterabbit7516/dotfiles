@@ -430,12 +430,6 @@
         "args": "?"
     },
     {
-        "key": "alt+b",
-        "command": "workbench.action.quickOpen",
-        "when": "inQuickOpen",
-        "args": "view side bar"
-    },
-    {
         "key": "alt+z",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
@@ -2419,12 +2413,6 @@
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
         "args": ">Symbol "
-    },
-    {
-        "key": "ctrl+b",
-        "command": "workbench.action.quickOpen",
-        "when": "inQuickOpen",
-        "args": ">View Bar "
     },
     {
         "key": "ctrl+n",
