@@ -1,11 +1,11 @@
 #########################################
 # aliases
 #########################################
-if ($(command code -ErrorAction SilentlyContinue) -ne $null)
+if ($(get-command code -ErrorAction SilentlyContinue) -ne $null)
 {
   Set-Alias -Name vscode -Value 'code'
 }
-elseif ($(command code-insiders -ErrorAction SilentlyContinue) -ne $null)
+elseif ($(get-command code-insiders -ErrorAction SilentlyContinue) -ne $null)
 {
   Set-Alias -Name vscode -Value 'code-insiders'
 }
@@ -69,7 +69,7 @@ function prompt {
 #########################################
 # VPN
 #########################################
-$nordvpn = command nordvpn -ErrorAction SilentlyContinue
+$nordvpn = get-command nordvpn -ErrorAction SilentlyContinue
 if ($nordvpn -ne $null)
 {
   nordvpn status | select-string -Pattern "Status|IP|server" -NoEmphasis
