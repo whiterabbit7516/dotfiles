@@ -1022,12 +1022,28 @@
         "command": "workbench.action.decreaseViewSize"
     },
     {
-        "key": "ctrl+alt+=",
+        "key": "ctrl+=",
         "command": "workbench.action.increaseViewSize"
     },
     {
-        "key": "ctrl+alt+[Minus]",
+        "key": "ctrl+[Minus]",
         "command": "workbench.action.decreaseViewSize"
+    },
+    {
+        "key": "ctrl+=",
+        "command": "-workbench.action.zoomIn"
+    },
+    {
+        "key": "ctrl+-",
+        "command": "-workbench.action.zoomOut"
+    },
+    {
+        "key": "ctrl+shift+=",
+        "command": "workbench.action.zoomIn"
+    },
+    {
+        "key": "ctrl+shift+[Minus]",
+        "command": "workbench.action.zoomOut"
     },
     {
         "key": "ctrl+l ctrl+j",
@@ -2757,5 +2773,5 @@
         "key": "ctrl+w a",
         "command": "workbench.action.addRootFolder",
         "when": "!inQuickOpen"
-    }
+    },
 ]
