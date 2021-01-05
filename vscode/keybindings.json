@@ -615,6 +615,10 @@
         "when": "inDebugMode"
     },
     {
+        "key": "ctrl+d o",
+        "command": "workbench.action.debug.configure"
+    },
+    {
         "key": "n",
         "command": "explorer.newFile",
         "when": "explorerViewletFocus && !inputFocus"
