@@ -2551,6 +2551,11 @@
         "args": ">File Copy "
     },
     {
+        "key": "ctrl+o ctrl+g",
+        "command": "git-graph.view",
+        "when": "!inQuickOpen"
+    },
+    {
         "key": "ctrl+o b",
         "command": "git.checkout",
         "when": "!inQuickOpen"
@@ -2777,5 +2782,5 @@
         "key": "ctrl+w a",
         "command": "workbench.action.addRootFolder",
         "when": "!inQuickOpen"
-    },
+    }
 ]
