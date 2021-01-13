@@ -2158,10 +2158,6 @@
         "command": "workbench.action.duplicateWorkspaceInNewWindow"
     },
     {
-        "key": "ctrl+w o",
-        "command": "workbench.action.openWorkspaceConfigFile"
-    },
-    {
         "key": "ctrl+w ctrl+w",
         "command": "workbench.action.closeGroup",
         "when": "activeEditorGroupEmpty && multipleEditorGroups"
