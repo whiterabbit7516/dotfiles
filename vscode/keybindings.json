@@ -466,9 +466,16 @@
         "when": "inQuickOpen"
     },
     {
-        "key": "alt+a",
-        "command": "workbench.action.showAllEditorsByMostRecentlyUsed",
-        "when": "inQuickOpen"
+        "key": "ctrl+tab",
+        "command": "workbench.action.quickOpen",
+        "when": "!inQuickOpen",
+        "args": "edt mru "
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.quickOpen",
+        "when": "!inQuickOpen",
+        "args": "edt mru "
     },
     {
         "key": "alt+i",
@@ -2805,5 +2812,19 @@
     {
         "key": "ctrl+,",
         "command": "-workbench.action.openSettings"
+    },
+    {
+        "key": "ctrl+shift+.",
+        "command": "-breadcrumbs.focusAndSelect",
+        "when": "breadcrumbsPossible"
+    },
+    {
+        "key": "ctrl+k ctrl+t",
+        "command": "workbench.action.selectTheme",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+k ctrl+t",
+        "command": "-workbench.action.selectTheme"
     }
 ]
