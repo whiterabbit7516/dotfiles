@@ -590,7 +590,7 @@
     {
         "key": "ctrl+d w",
         "command": "editor.debug.action.selectionToWatch",
-        "when": "inDebugMode"
+        "when": "!inQuickOpen"
     },
     {
         "key": "alt+d",
