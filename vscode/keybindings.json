@@ -627,8 +627,9 @@
         "when": "inDebugMode"
     },
     {
-        "key": "ctrl+d o",
-        "command": "workbench.action.debug.configure"
+        "key": "ctrl+d s",
+        "command": "workbench.action.debug.configure",
+        "when": "!inDebugMode"
     },
     {
         "key": "n",
@@ -2831,5 +2832,10 @@
     {
         "key": "ctrl+k ctrl+t",
         "command": "-workbench.action.selectTheme"
+    },
+    {
+        "key": "ctrl+w s",
+        "command": "workbench.action.openWorkspaceSettingsFile",
+        "when": "!inQuickOpen"
     }
 ]
