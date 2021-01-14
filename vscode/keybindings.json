@@ -588,6 +588,11 @@
         "when": "inDebugMode"
     },
     {
+        "key": "ctrl+d w",
+        "command": "editor.debug.action.selectionToWatch",
+        "when": "inDebugMode"
+    },
+    {
         "key": "alt+d",
         "command": "workbench.action.debug.selectandstart",
         "when": "inQuickOpen"
