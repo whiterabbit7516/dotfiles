@@ -627,9 +627,9 @@
         "when": "inDebugMode"
     },
     {
-        "key": "ctrl+d s",
+        "key": "ctrl+d z",
         "command": "workbench.action.debug.configure",
-        "when": "!inDebugMode"
+        "when": "!inQuickOpen"
     },
     {
         "key": "n",
@@ -2834,8 +2834,18 @@
         "command": "-workbench.action.selectTheme"
     },
     {
-        "key": "ctrl+w s",
+        "key": "ctrl+w z",
         "command": "workbench.action.openWorkspaceSettingsFile",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+k z",
+        "command": "workbench.action.openSettingsJson",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+t z",
+        "command": "workbench.action.tasks.configureTaskRunner",
         "when": "!inQuickOpen"
     }
 ]
