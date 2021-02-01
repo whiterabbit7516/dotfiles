@@ -63,6 +63,14 @@
         {
             "before": ["Y"],
             "after": ["y", "$"]
+        },
+        {
+            "before": ["V"],
+            "after": ["v", "$"]
+        },
+        {
+            "before": ["v", "v"],
+            "after": ["V"]
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
