@@ -37,6 +37,4 @@ vnoremap E 4e
 vnoremap B 4b
 
 nnoremap Y y$
-nnoremap V v$
-nnoremap vv V
 set number
