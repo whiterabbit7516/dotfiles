@@ -42,6 +42,10 @@
         "command": "workbench.action.terminal.focusPrevious"
     },
     {
+        "key": "ctrl+,",
+        "command": "workbench.action.navigateBack"
+    },
+    {
         "key": "ctrl+shift+9",
         "command": "workbench.action.navigateBack"
     },
