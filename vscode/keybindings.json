@@ -2668,17 +2668,18 @@
     },
     {
         "key": "ctrl+a ctrl+e",
-        "command": "workbench.action.keepEditor"
+        "command": "workbench.action.keepEditor",
+        "when": "!inQuickOpen"
     },
     {
         "key": "ctrl+a ctrl+p",
         "command": "workbench.action.pinEditor",
-        "when": "!activeEditorIsPinned"
+        "when": "!activeEditorIsPinned && !inQuickOpen"
     },
     {
         "key": "ctrl+a ctrl+p",
         "command": "workbench.action.unpinEditor",
-        "when": "activeEditorIsPinned"
+        "when": "activeEditorIsPinned && !inQuickOpen"
     },
     {
         "key": "ctrl+n",
@@ -2850,6 +2851,36 @@
     {
         "key": "ctrl+t z",
         "command": "workbench.action.tasks.configureTaskRunner",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+a alt+1",
+        "command": "workbench.action.editorLayoutSingle",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+a alt+2",
+        "command": "workbench.action.editorLayoutTwoRowsRight",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+a alt+3",
+        "command": "workbench.action.editorLayoutTwoColumnsBottom",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+a alt+4",
+        "command": "workbench.action.editorLayoutTwoByTwoGrid",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+a alt+5",
+        "command": "workbench.action.editorLayoutThreeColumns",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+a alt+6",
+        "command": "workbench.action.editorLayoutThreeRows",
         "when": "!inQuickOpen"
     }
 ]
