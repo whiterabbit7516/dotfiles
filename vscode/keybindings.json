@@ -2434,27 +2434,27 @@
         "command": "workbench.action.tasks.configureTaskRunner",
     },
     {
-        "key": "ctrl+a alt+1",
+        "key": "ctrl+a 1",
         "command": "workbench.action.editorLayoutSingle",
     },
     {
-        "key": "ctrl+a alt+2",
+        "key": "ctrl+a 2",
         "command": "workbench.action.editorLayoutTwoRowsRight",
     },
     {
-        "key": "ctrl+a alt+3",
+        "key": "ctrl+a 3",
         "command": "workbench.action.editorLayoutTwoColumnsBottom",
     },
     {
-        "key": "ctrl+a alt+4",
+        "key": "ctrl+a 4",
         "command": "workbench.action.editorLayoutTwoByTwoGrid",
     },
     {
-        "key": "ctrl+a alt+5",
+        "key": "ctrl+a 5",
         "command": "workbench.action.editorLayoutThreeColumns",
     },
     {
-        "key": "ctrl+a alt+6",
+        "key": "ctrl+a 6",
         "command": "workbench.action.editorLayoutThreeRows",
     },
     {
