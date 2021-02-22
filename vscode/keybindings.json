@@ -412,11 +412,13 @@
     {
         "key": "ctrl+tab",
         "command": "workbench.action.quickOpen",
+        "when": "!inQuickOpen",
         "args": "edt mru "
     },
     {
         "key": "ctrl+shift+tab",
         "command": "workbench.action.quickOpen",
+        "when": "!inQuickOpen",
         "args": "edt mru "
     },
     {
