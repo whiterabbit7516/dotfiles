@@ -1482,6 +1482,18 @@
         "when": "!terminalFocus"
     },
     {
+        "key": "ctrl+shift+s",
+        "command": "-workbench.action.files.saveAs"
+    },
+    {
+        "key": "ctrl+shift+s",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "editorHasSelection && terminalIsOpen",
+        "args": {
+            "text": "${selectedText}"
+        }
+    },
+    {
         "key": "ctrl+y s",
         "command": "workbench.action.terminal.sendSequence",
         "when": "editorHasSelection && terminalIsOpen",
@@ -2237,7 +2249,7 @@
         "command": "workbench.action.quickOpen",
         "args": ">Git History "
     },
-    {    
+    {
         "key": "ctrl+o l",
         "command": "workbench.action.quickOpen",
         "args": ">GitLens "
