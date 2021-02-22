@@ -46,6 +46,10 @@
         "command": "workbench.action.navigateBack"
     },
     {
+        "key": "ctrl+shift+,",
+        "command": "workbench.action.navigateForward"
+    },
+    {
         "key": "ctrl+shift+9",
         "command": "workbench.action.navigateBack"
     },
