@@ -2457,11 +2457,11 @@
     },
     {
         "key": "ctrl+a 2",
-        "command": "workbench.action.editorLayoutTwoRowsRight",
+        "command": "workbench.action.editorLayoutTwoColumns",
     },
     {
         "key": "ctrl+a 3",
-        "command": "workbench.action.editorLayoutTwoColumnsBottom",
+        "command": "workbench.action.editorLayoutTwoRowsRight",
     },
     {
         "key": "ctrl+a 4",
@@ -2469,11 +2469,138 @@
     },
     {
         "key": "ctrl+a 5",
-        "command": "workbench.action.editorLayoutThreeColumns",
+        "command": "layoutEditorGroups",
+        "args": {
+            "orientation": 0,
+            "groups": [
+                {
+                    "size": 1,
+                    "groups": [
+                        {},
+                        {}
+                    ]
+                },
+                {
+                    "size": 1,
+                    "groups": [
+                        {},
+                        {},
+                        {}
+                    ]
+                },
+            ]
+        }
     },
     {
         "key": "ctrl+a 6",
-        "command": "workbench.action.editorLayoutThreeRows",
+        "command": "layoutEditorGroups",
+        "args": {
+            "orientation": 0,
+            "groups": [
+                {
+                    "size": 1,
+                    "groups": [
+                        {},
+                        {},
+                        {}
+                    ]
+                },
+                {
+                    "size": 1,
+                    "groups": [
+                        {},
+                        {},
+                        {}
+                    ]
+                },
+            ]
+        }
+    },
+    {
+        "key": "ctrl+a 7",
+        "command": "layoutEditorGroups",
+        "args": {
+            "orientation": 0,
+            "groups": [
+                {
+                    "size": 1,
+                    "groups": [
+                        {},
+                        {},
+                        {}
+                    ]
+                },
+                {
+                    "size": 1,
+                    "groups": [
+                        {},
+                        {},
+                        {},
+                        {}
+                    ]
+                },
+            ]
+        }
+    },
+    {
+        "key": "ctrl+a 8",
+        "command": "layoutEditorGroups",
+        "args": {
+            "orientation": 0,
+            "groups": [
+                {
+                    "size": 1,
+                    "groups": [
+                        {},
+                        {},
+                        {},
+                        {}
+                    ]
+                },
+                {
+                    "size": 1,
+                    "groups": [
+                        {},
+                        {},
+                        {},
+                        {}
+                    ]
+                },
+            ]
+        }
+    },
+    {
+        "key": "ctrl+a 9",
+        "command": "layoutEditorGroups",
+        "args": {
+            "orientation": 0,
+            "groups": [
+                {
+                    "size": 1,
+                    "groups": [
+                        {},
+                        {},
+                        {}
+                    ]
+                },
+                {
+                    "size": 1,
+                    "groups": [
+                        {},
+                        {},
+                        {}
+                    ]
+                },
+                {
+                    "size": 1,
+                    "groups": [
+                        {},
+                        {},
+                        {}
+                    ]
+                }
+            ]
+        }
     },
     {
         "key": "ctrl+w ctrl+a",
