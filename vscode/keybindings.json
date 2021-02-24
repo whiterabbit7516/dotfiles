@@ -1070,6 +1070,11 @@
         "command": "bookmarks.toggleLabeled"
     },
     {
+        "key": "ctrl+alt+k",
+        "command": "-bookmarks.toggle",
+        "when": "editorTextFocus"
+    },
+    {
         "key": "ctrl+m ctrl+m",
         "command": "bookmarks.toggle",
         "when": "editorTextFocus"
