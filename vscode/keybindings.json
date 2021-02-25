@@ -2309,13 +2309,14 @@
         "when": "editorHasDocumentSelectionFormattingProvider && editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
     },
     {
-        "key": "ctrl+a ctrl+e",
+        "key": "ctrl+a ctrl+p",
         "command": "workbench.action.keepEditor",
+        "when": "!activeEditorIsNotPreview"
     },
     {
         "key": "ctrl+a ctrl+p",
         "command": "workbench.action.pinEditor",
-        "when": "!activeEditorIsPinned"
+        "when": "activeEditorIsNotPreview && !activeEditorIsPinned"
     },
     {
         "key": "ctrl+a ctrl+p",
