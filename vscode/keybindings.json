@@ -2833,13 +2833,13 @@
         "key": "ctrl+s",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": ">Select "
+        "args": ">Search "
     },
     {
         "key": "ctrl+shift+s",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": ">Search "
+        "args": ">Select "
     },
     {
         "key": "ctrl+shift+x",
