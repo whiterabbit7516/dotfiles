@@ -2748,6 +2748,12 @@
         "args": ">Remote "
     },
     {
+        "key": "ctrl+shift+r",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Refresh "
+    },
+    {
         "key": "ctrl+o",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
