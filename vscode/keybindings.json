@@ -171,7 +171,7 @@
         "command": "workbench.action.toggleFullScreen"
     },
     {
-        "key": "ctrl+w f",
+        "key": "ctrl+w a",
         "command": "workbench.action.toggleFullScreen"
     },
     {
@@ -1200,7 +1200,7 @@
         "command": "workbench.action.toggleEditorGroupLayout"
     },
     {
-        "key": "ctrl+a ctrl+f",
+        "key": "ctrl+a a",
         "command": "workbench.action.toggleEditorWidths"
     },
     {
@@ -2409,10 +2409,6 @@
         "command": "editor.unfoldAll",
     },
     {
-        "key": "ctrl+w a",
-        "command": "workbench.action.addRootFolder",
-    },
-    {
         "key": "ctrl+o ctrl+g",
         "command": "git-graph.view",
     },
@@ -2978,5 +2974,5 @@
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
         "args": ">Problems "
-    },
+    }
 ]
