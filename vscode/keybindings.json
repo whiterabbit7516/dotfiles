@@ -2617,6 +2617,10 @@
         "command": "workbench.action.closeEditorsAndGroup"
     },
     {
+        "key": "ctrl+/",
+        "command": "metaGo.gotoSmart"
+    },
+    {
         "key": "ctrl+w",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
