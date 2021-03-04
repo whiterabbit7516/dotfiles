@@ -82,6 +82,10 @@
         "command": "workbench.view.scm",
     },
     {
+        "key": "ctrl+i ctrl+l",
+        "command": "workbench.view.extension.liveshare"
+    },
+    {
         "key": "ctrl+i ctrl+d",
         "command": "workbench.view.debug"
     },
@@ -2893,7 +2897,7 @@
         "key": "ctrl+c",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": ">Command "
+        "args": ">"
     },
     {
         "key": "ctrl+shift+g",
@@ -2929,7 +2933,7 @@
         "key": "ctrl+shift+m",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": ">Vim "
+        "args": ">Macros "
     },
     {
         "key": "ctrl+b",
@@ -2963,6 +2967,12 @@
     },
     {
         "key": "ctrl+l",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Live Share "
+    },
+    {
+        "key": "ctrl+shift+l",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
         "args": ">Line "
