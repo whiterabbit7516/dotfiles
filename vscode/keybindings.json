@@ -171,7 +171,7 @@
         "command": "workbench.action.toggleActivityBarVisibility"
     },
     {
-        "key": "ctrl+i ctrl+w",
+        "key": "ctrl+i ctrl+a",
         "command": "workbench.action.toggleFullScreen"
     },
     {
@@ -1214,10 +1214,6 @@
     {
         "key": "ctrl+i c",
         "command": "breadcrumbs.toggle"
-    },
-    {
-        "key": "ctrl+i ctrl+a",
-        "command": "workbench.action.toggleEditorVisibility"
     },
     {
         "key": "ctrl+u ctrl+v",
