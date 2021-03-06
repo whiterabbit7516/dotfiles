@@ -297,8 +297,12 @@
         "when": "sideBarFocus"
     },
     {
+        "key": "ctrl+s r",
+        "command": "search.action.refreshSearchResults"
+    },
+    {
         "key": "ctrl+a ctrl+n",
-        "command": "workbench.action.files.newUntitledFile"
+        "command": "workbench.action.files.newUntitledFile",
     },
     {
         "key": "ctrl+alt+h",
@@ -655,6 +659,14 @@
         "key": "ctrl+f ctrl+x",
         "command": "closeFindWidget",
         "when": "editorFocus && findWidgetVisible"
+    },
+    {
+        "key": "ctrl+f r",
+        "command": "workbench.files.action.refreshFilesExplorer"
+    },
+    {
+        "key": "ctrl+o r",
+        "command": "git.refresh"
     },
     {
         "key": "ctrl+x",
@@ -1052,7 +1064,7 @@
         "when": "editorFocus"
     },
     {
-        "key": "ctrl+f ctrl+r",
+        "key": "ctrl+f ctrl+h",
         "command": "editor.action.startFindReplaceAction",
         "when": "editorFocus"
     },
@@ -1332,7 +1344,7 @@
         "when": "hasSearchResult || inSearchEditor"
     },
     {
-        "key": "ctrl+s ctrl+r",
+        "key": "ctrl+s ctrl+h",
         "command": "workbench.action.replaceInFiles"
     },
     {
@@ -1419,18 +1431,8 @@
         "when": "editorFocus"
     },
     {
-        "key": "ctrl+f c",
-        "command": "toggleFindCaseSensitive",
-        "when": "editorFocus"
-    },
-    {
         "key": "alt+c",
         "command": "-toggleFindCaseSensitive",
-        "when": "editorFocus"
-    },
-    {
-        "key": "ctrl+f r",
-        "command": "toggleFindRegex",
         "when": "editorFocus"
     },
     {
@@ -1439,19 +1441,9 @@
         "when": "editorFocus"
     },
     {
-        "key": "ctrl+f w",
-        "command": "toggleFindWholeWord",
-        "when": "editorFocus"
-    },
-    {
         "key": "alt+w",
         "command": "-toggleFindWholeWord",
         "when": "editorFocus"
-    },
-    {
-        "key": "ctrl+f c",
-        "command": "workbench.action.terminal.toggleFindCaseSensitive",
-        "when": "terminalFindFocused || terminalFocus"
     },
     {
         "key": "alt+c",
@@ -1459,18 +1451,8 @@
         "when": "terminalFindFocused || terminalFocus"
     },
     {
-        "key": "ctrl+f r",
-        "command": "workbench.action.terminal.toggleFindRegex",
-        "when": "terminalFindFocused || terminalFocus"
-    },
-    {
         "key": "alt+r",
         "command": "-workbench.action.terminal.toggleFindRegex",
-        "when": "terminalFindFocused || terminalFocus"
-    },
-    {
-        "key": "ctrl+f w",
-        "command": "workbench.action.terminal.toggleFindWholeWord",
         "when": "terminalFindFocused || terminalFocus"
     },
     {
@@ -2010,12 +1992,12 @@
         }
     },
     {
-        "key": "ctrl+f r",
+        "key": "ctrl+f h",
         "command": "editor.action.replaceAll",
         "when": "editorFocus && findWidgetVisible"
     },
     {
-        "key": "ctrl+s r",
+        "key": "ctrl+s h",
         "command": "search.action.replaceAll",
         "when": "replaceActive && searchViewletVisible && !findWidgetVisible"
     },
