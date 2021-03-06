@@ -303,6 +303,9 @@
     {
         "key": "ctrl+a ctrl+n",
         "command": "workbench.action.files.newUntitledFile",
+        "args": {
+            "viewType": "default"
+        }
     },
     {
         "key": "ctrl+alt+h",
