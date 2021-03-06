@@ -38,4 +38,7 @@ vnoremap B 4b
 
 nnoremap Y y$
 nnoremap , @@
+nnoremap > xp
+nnoremap < hxph
+
 set number

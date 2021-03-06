@@ -67,7 +67,15 @@
         {
             "before": [","],
             "after": ["@", "@"]
-        }
+        },
+        {
+            "before": [">"],
+            "after": ["x", "p"]
+        },
+        {
+            "before": ["<"],
+            "after": ["h", "x", "p", "h"]
+        },
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
