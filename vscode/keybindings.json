@@ -2292,6 +2292,11 @@
         "command": "toggleVim",
     },
     {
+        "key": "ctrl+m ctrl+v",
+        "command": "extension.vim_ctrl+v",
+        "when": "editorTextFocus && vim.active && !inDebugRepl"
+    },
+    {
         "key": "ctrl+k ctrl+d",
         "command": "editor.action.formatDocument",
         "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
