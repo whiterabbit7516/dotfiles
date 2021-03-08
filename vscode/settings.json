@@ -76,6 +76,27 @@
             "before": ["<"],
             "after": ["h", "x", "p", "h"]
         },
+        {
+            "before": ["<leader>", "q"],
+            "after": [
+                // draw left
+                "q", "h", "r", "-", "h", "r", "◀", "q",
+                // draw right
+                "q", "l", "r", "-", "l", "r", "▶", "q",
+                // draw down
+                "q", "j", "r", "|", "j", "r", "▼", "q",
+                // draw up
+                "q", "k", "r", "|", "k", "r", "▲", "q",
+                // draw up left
+                "q", "y", "r", "\\", "k", "h", "r", "◤", "q",
+                // draw up right
+                "q", "u", "r", "/", "k", "l", "r", "◥", "q",
+                // draw lower right
+                "q", "n", "r", "\\", "j", "l", "r", "◢", "q",
+                // draw lower left
+                "q", "b", "r", "/", "j", "h", "r", "◣", "q",
+            ]
+        }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
