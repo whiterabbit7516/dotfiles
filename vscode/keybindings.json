@@ -1409,7 +1409,7 @@
         "when": "editorTextFocus"
     },
     {
-        "key": "h",
+        "key": "r",
         "command": "search.action.replace",
         "when": "matchFocus && replaceActive && searchViewletVisible"
     },
