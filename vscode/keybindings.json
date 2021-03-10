@@ -2603,6 +2603,18 @@
         }
     },
     {
+        "key": "ctrl+k 0",
+        "command": "settings.cycle.main.0",
+    },
+    {
+        "key": "ctrl+k 1",
+        "command": "settings.cycle.main.1",
+    },
+    {
+        "key": "ctrl+k 2",
+        "command": "settings.cycle.main.2",
+    },
+    {
         "key": "ctrl+w ctrl+a",
         "command": "workbench.action.closeEditorsAndGroup"
     },

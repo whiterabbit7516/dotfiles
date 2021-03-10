@@ -16,7 +16,6 @@ Plug 'itchyny/lightline.vim'
 " Initialize plugin system
 call plug#end()
 
-nmap U <C-r>
 
 nnoremap J 8j
 nnoremap K 8k
@@ -36,6 +35,7 @@ vnoremap W 4w
 vnoremap E 4e
 vnoremap B 4b
 
+nnoremap U <C-r>
 nnoremap Y y$
 nnoremap , @@
 nnoremap > xp
