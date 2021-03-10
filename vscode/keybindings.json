@@ -2615,6 +2615,34 @@
         "command": "settings.cycle.main.2",
     },
     {
+        "key": "ctrl+k 3",
+        "command": "settings.cycle.main.3",
+    },
+    {
+        "key": "ctrl+k 4",
+        "command": "settings.cycle.main.4",
+    },
+    {
+        "key": "ctrl+k 5",
+        "command": "settings.cycle.main.5",
+    },
+    {
+        "key": "ctrl+k 6",
+        "command": "settings.cycle.main.6",
+    },
+    {
+        "key": "ctrl+k 7",
+        "command": "settings.cycle.main.7",
+    },
+    {
+        "key": "ctrl+k 8",
+        "command": "settings.cycle.main.8",
+    },
+    {
+        "key": "ctrl+k 9",
+        "command": "settings.cycle.main.9",
+    },
+    {
         "key": "ctrl+w ctrl+a",
         "command": "workbench.action.closeEditorsAndGroup"
     },
