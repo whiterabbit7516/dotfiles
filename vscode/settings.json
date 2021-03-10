@@ -17,116 +17,278 @@
         "<C-e>": true,
         "<C-y>": true
     },
-    "vim.normalModeKeyBindings": [
-    ],
+    "vim.normalModeKeyBindings": [],
     "vim.normalModeKeyBindingsNonRecursive": [
         {
-            "before": ["J"],
-            "after": ["8", "j"]
-        },
-        {
-            "before": ["K"],
-            "after": ["8", "k"]
-        },
-        {
-            "before": ["H"],
-            "after": ["8", "h"]
-        },
-        {
-            "before": ["L"],
-            "after": ["8", "l"]
-        },
-        {
-            "before": ["W"],
-            "after": ["4", "w"]
-        },
-        {
-            "before": ["E"],
-            "after": ["4", "e"]
-        },
-        {
-            "before": ["B"],
-            "after": ["4", "b"]
-        },
-        {
-            "before": ["s"],
-            "after": ["i", " ", "<Esc>"]
-        },
-        {
-            "before": ["S"],
-            "after": ["a", " ", "<Esc>"]
-        },
-        {
-            "before": ["Y"],
-            "after": ["y", "$"]
-        },
-        {
-            "before": ["U"],
-            "after": ["<C-r>"]
-        },
-        {
-            "before": [","],
-            "after": ["@", "@"]
-        },
-        {
-            "before": [">"],
-            "after": ["x", "p"]
-        },
-        {
-            "before": ["<"],
-            "after": ["h", "x", "p", "h"]
-        },
-        {
-            "before": ["<leader>", "q"],
+            "before": [
+                "J"
+            ],
             "after": [
-                // draw left
-                "q", "h", "r", "-", "h", "r", "◀", "q",
-                // draw right
-                "q", "l", "r", "-", "l", "r", "▶", "q",
-                // draw down
-                "q", "j", "r", "|", "j", "r", "▼", "q",
-                // draw up
-                "q", "k", "r", "|", "k", "r", "▲", "q",
-                // draw up left
-                "q", "y", "r", "\\", "k", "h", "r", "◤", "q",
-                // draw up right
-                "q", "u", "r", "/", "k", "l", "r", "◥", "q",
-                // draw lower right
-                "q", "n", "r", "\\", "j", "l", "r", "◢", "q",
-                // draw lower left
-                "q", "b", "r", "/", "j", "h", "r", "◣", "q",
+                "8",
+                "j"
+            ]
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "after": [
+                "8",
+                "k"
+            ]
+        },
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "8",
+                "h"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "8",
+                "l"
+            ]
+        },
+        {
+            "before": [
+                "W"
+            ],
+            "after": [
+                "4",
+                "w"
+            ]
+        },
+        {
+            "before": [
+                "E"
+            ],
+            "after": [
+                "4",
+                "e"
+            ]
+        },
+        {
+            "before": [
+                "B"
+            ],
+            "after": [
+                "4",
+                "b"
+            ]
+        },
+        {
+            "before": [
+                "s"
+            ],
+            "after": [
+                "i",
+                " ",
+                "<Esc>"
+            ]
+        },
+        {
+            "before": [
+                "S"
+            ],
+            "after": [
+                "a",
+                " ",
+                "<Esc>"
+            ]
+        },
+        {
+            "before": [
+                "Y"
+            ],
+            "after": [
+                "y",
+                "$"
+            ]
+        },
+        {
+            "before": [
+                "U"
+            ],
+            "after": [
+                "<C-r>"
+            ]
+        },
+        {
+            "before": [
+                ","
+            ],
+            "after": [
+                "@",
+                "@"
+            ]
+        },
+        {
+            "before": [
+                ">"
+            ],
+            "after": [
+                "x",
+                "p"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "after": [
+                "h",
+                "x",
+                "p",
+                "h"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "q"
+            ],
+            "after": [
+                "q",
+                "h",
+                "r",
+                "-",
+                "h",
+                "r",
+                "◀",
+                "q",
+                "q",
+                "l",
+                "r",
+                "-",
+                "l",
+                "r",
+                "▶",
+                "q",
+                "q",
+                "j",
+                "r",
+                "|",
+                "j",
+                "r",
+                "▼",
+                "q",
+                "q",
+                "k",
+                "r",
+                "|",
+                "k",
+                "r",
+                "▲",
+                "q",
+                "q",
+                "y",
+                "r",
+                "\\",
+                "k",
+                "h",
+                "r",
+                "◤",
+                "q",
+                "q",
+                "u",
+                "r",
+                "/",
+                "k",
+                "l",
+                "r",
+                "◥",
+                "q",
+                "q",
+                "n",
+                "r",
+                "\\",
+                "j",
+                "l",
+                "r",
+                "◢",
+                "q",
+                "q",
+                "b",
+                "r",
+                "/",
+                "j",
+                "h",
+                "r",
+                "◣",
+                "q"
             ]
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
-            "before": ["J"],
-            "after": ["8", "j"]
+            "before": [
+                "J"
+            ],
+            "after": [
+                "8",
+                "j"
+            ]
         },
         {
-            "before": ["K"],
-            "after": ["8", "k"]
+            "before": [
+                "K"
+            ],
+            "after": [
+                "8",
+                "k"
+            ]
         },
         {
-            "before": ["H"],
-            "after": ["8", "h"]
+            "before": [
+                "H"
+            ],
+            "after": [
+                "8",
+                "h"
+            ]
         },
         {
-            "before": ["L"],
-            "after": ["8", "l"]
+            "before": [
+                "L"
+            ],
+            "after": [
+                "8",
+                "l"
+            ]
         },
         {
-            "before": ["W"],
-            "after": ["4", "w"]
+            "before": [
+                "W"
+            ],
+            "after": [
+                "4",
+                "w"
+            ]
         },
         {
-            "before": ["E"],
-            "after": ["4", "e"]
+            "before": [
+                "E"
+            ],
+            "after": [
+                "4",
+                "e"
+            ]
         },
         {
-            "before": ["B"],
-            "after": ["4", "b"]
-        }
+            "before": [
+                "B"
+    ],
+            "after": [
+                "4",
+                "b"
+            ]
+        },
     ],
     "files.autoSave": "afterDelay",
     "diffEditor.renderSideBySide": false,
@@ -140,9 +302,9 @@
     "window.menuBarVisibility": "hidden",
     "editor.minimap.enabled": false,
     "workbench.sideBar.location": "left",
-    "workbench.activityBar.visible": true,
+    "workbench.activityBar.visible": false,
     "editor.rulers": [
-        120
+        180,
     ],
     "explorer.confirmDragAndDrop": false,
     "breadcrumbs.enabled": true,
@@ -177,80 +339,216 @@
                     "workbench.colorTheme": "Horizon Bright",
                     "vim.normalModeKeyBindingsNonRecursive": [
                         {
-                            "before": ["J"],
-                            "after": ["8", "j"]
+                            "before": [
+                                "J"
+                            ],
+                            "after": [
+                                "8",
+                                "j"
+                            ]
                         },
                         {
-                            "before": ["K"],
-                            "after": ["8", "k"]
+                            "before": [
+                                "K"
+                            ],
+                            "after": [
+                                "8",
+                                "k"
+                            ]
                         },
                         {
-                            "before": ["H"],
-                            "after": ["8", "h"]
+                            "before": [
+                                "H"
+                            ],
+                            "after": [
+                                "8",
+                                "h"
+                            ]
                         },
                         {
-                            "before": ["L"],
-                            "after": ["8", "l"]
+                            "before": [
+                                "L"
+                            ],
+                            "after": [
+                                "8",
+                                "l"
+                            ]
                         },
                         {
-                            "before": ["W"],
-                            "after": ["4", "w"]
+                            "before": [
+                                "W"
+                            ],
+                            "after": [
+                                "4",
+                                "w"
+                            ]
                         },
                         {
-                            "before": ["E"],
-                            "after": ["4", "e"]
+                            "before": [
+                                "E"
+                            ],
+                            "after": [
+                                "4",
+                                "e"
+                            ]
                         },
                         {
-                            "before": ["B"],
-                            "after": ["4", "b"]
+                            "before": [
+                                "B"
+                            ],
+                            "after": [
+                                "4",
+                                "b"
+                            ]
                         },
                         {
-                            "before": ["s"],
-                            "after": ["i", " ", "<Esc>"]
+                            "before": [
+                                "s"
+                            ],
+                            "after": [
+                                "i",
+                                " ",
+                                "<Esc>"
+                            ]
                         },
                         {
-                            "before": ["S"],
-                            "after": ["a", " ", "<Esc>"]
+                            "before": [
+                                "S"
+                            ],
+                            "after": [
+                                "a",
+                                " ",
+                                "<Esc>"
+                            ]
                         },
                         {
-                            "before": ["Y"],
-                            "after": ["y", "$"]
+                            "before": [
+                                "Y"
+                            ],
+                            "after": [
+                                "y",
+                                "$"
+                            ]
                         },
                         {
-                            "before": ["U"],
-                            "after": ["<C-r>"]
+                            "before": [
+                                "U"
+                            ],
+                            "after": [
+                                "<C-r>"
+                            ]
                         },
                         {
-                            "before": [","],
-                            "after": ["@", "@"]
+                            "before": [
+                                ","
+                            ],
+                            "after": [
+                                "@",
+                                "@"
+                            ]
                         },
                         {
-                            "before": [">"],
-                            "after": ["x", "p"]
+                            "before": [
+                                ">"
+                            ],
+                            "after": [
+                                "x",
+                                "p"
+                            ]
                         },
                         {
-                            "before": ["<"],
-                            "after": ["h", "x", "p", "h"]
+                            "before": [
+                                "<"
+                            ],
+                            "after": [
+                                "h",
+                                "x",
+                                "p",
+                                "h"
+                            ]
                         },
                         {
-                            "before": ["<leader>", "q"],
+                            "before": [
+                                "<leader>",
+                                "q"
+                            ],
                             "after": [
                                 // draw left
-                                "q", "h", "r", "-", "h", "r", "◀", "q",
+                                "q",
+                                "h",
+                                "r",
+                                "-",
+                                "h",
+                                "r",
+                                "◀",
+                                "q",
                                 // draw right
-                                "q", "l", "r", "-", "l", "r", "▶", "q",
+                                "q",
+                                "l",
+                                "r",
+                                "-",
+                                "l",
+                                "r",
+                                "▶",
+                                "q",
                                 // draw down
-                                "q", "j", "r", "|", "j", "r", "▼", "q",
+                                "q",
+                                "j",
+                                "r",
+                                "|",
+                                "j",
+                                "r",
+                                "▼",
+                                "q",
                                 // draw up
-                                "q", "k", "r", "|", "k", "r", "▲", "q",
+                                "q",
+                                "k",
+                                "r",
+                                "|",
+                                "k",
+                                "r",
+                                "▲",
+                                "q",
                                 // draw up left
-                                "q", "y", "r", "\\", "k", "h", "r", "◤", "q",
+                                "q",
+                                "y",
+                                "r",
+                                "\\",
+                                "k",
+                                "h",
+                                "r",
+                                "◤",
+                                "q",
                                 // draw up right
-                                "q", "u", "r", "/", "k", "l", "r", "◥", "q",
+                                "q",
+                                "u",
+                                "r",
+                                "/",
+                                "k",
+                                "l",
+                                "r",
+                                "◥",
+                                "q",
                                 // draw lower right
-                                "q", "n", "r", "\\", "j", "l", "r", "◢", "q",
+                                "q",
+                                "n",
+                                "r",
+                                "\\",
+                                "j",
+                                "l",
+                                "r",
+                                "◢",
+                                "q",
                                 // draw lower left
-                                "q", "b", "r", "/", "j", "h", "r", "◣", "q",
+                                "q",
+                                "b",
+                                "r",
+                                "/",
+                                "j",
+                                "h",
+                                "r",
+                                "◣",
+                                "q",
                             ]
                         }
                     ],
@@ -264,36 +562,204 @@
                     "workbench.colorTheme": "Default Light+",
                     "vim.normalModeKeyBindingsNonRecursive": [
                         {
-                            "before": ["J"],
-                            "after": ["r", "|", "j", "r", "▼"]
+                            "before": [
+                                "J"
+                            ],
+                            "after": [
+                                "r",
+                                "■",
+                                "j",
+                                "r",
+                                "■"
+                            ]
                         },
                         {
-                            "before": ["H"],
-                            "after": ["r", "-", "h", "r", "◀"]
+                            "before": [
+                                "H"
+                            ],
+                            "after": [
+                                "r",
+                                "■",
+                                "h",
+                                "r",
+                                "■"
+                            ]
                         },
                         {
-                            "before": ["K"],
-                            "after": ["r", "|", "k", "r", "▲"]
+                            "before": [
+                                "K"
+                            ],
+                            "after": [
+                                "r",
+                                "■",
+                                "k",
+                                "r",
+                                "■"
+                            ]
                         },
                         {
-                            "before": ["L"],
-                            "after": ["r", "-", "l", "r", "▶"]
+                            "before": [
+                                "L"
+                            ],
+                            "after": [
+                                "r",
+                                "■",
+                                "l",
+                                "r",
+                                "■"
+                            ]
                         },
                         {
-                            "before": ["Y"],
-                            "after": ["r", "\\", "k", "h", "r", "◤"]
+                            "before": [
+                                "Y"
+                            ],
+                            "after": [
+                                "r",
+                                "■",
+                                "k",
+                                "h",
+                                "r",
+                                "■"
+                            ]
                         },
                         {
-                            "before": ["U"],
-                            "after": ["r", "/", "k", "l", "r", "◥"]
+                            "before": [
+                                "U"
+                            ],
+                            "after": [
+                                "r",
+                                "■",
+                                "k",
+                                "l",
+                                "r",
+                                "■"
+                            ]
                         },
                         {
-                            "before": ["B"],
-                            "after": ["r", "/", "j", "h", "r", "◣"]
+                            "before": [
+                                "B"
+                            ],
+                            "after": [
+                                "r",
+                                "■",
+                                "j",
+                                "h",
+                                "r",
+                                "■"
+                            ]
                         },
                         {
-                            "before": ["N"],
-                            "after": ["r", "\\", "j", "l", "r", "◢"]
+                            "before": [
+                                "N"
+                            ],
+                            "after": [
+                                "r",
+                                "■",
+                                "j",
+                                "l",
+                                "r",
+                                "■"
+                            ]
+                        },
+                        {
+                            "before": [
+                                "j"
+                            ],
+                            "after": [
+                                "r",
+                                "|",
+                                "j",
+                                "r",
+                                "▼"
+                            ]
+                        },
+                        {
+                            "before": [
+                                "h"
+                            ],
+                            "after": [
+                                "r",
+                                "-",
+                                "h",
+                                "r",
+                                "◀"
+                            ]
+                        },
+                        {
+                            "before": [
+                                "k"
+                            ],
+                            "after": [
+                                "r",
+                                "|",
+                                "k",
+                                "r",
+                                "▲"
+                            ]
+                        },
+                        {
+                            "before": [
+                                "l"
+                            ],
+                            "after": [
+                                "r",
+                                "-",
+                                "l",
+                                "r",
+                                "▶"
+                            ]
+                        },
+                        {
+                            "before": [
+                                "y"
+                            ],
+                            "after": [
+                                "r",
+                                "\\",
+                                "k",
+                                "h",
+                                "r",
+                                "◤"
+                            ]
+                        },
+                        {
+                            "before": [
+                                "u"
+                            ],
+                            "after": [
+                                "r",
+                                "/",
+                                "k",
+                                "l",
+                                "r",
+                                "◥"
+                            ]
+                        },
+                        {
+                            "before": [
+                                "b"
+                            ],
+                            "after": [
+                                "r",
+                                "/",
+                                "j",
+                                "h",
+                                "r",
+                                "◣"
+                            ]
+                        },
+                        {
+                            "before": [
+                                "n"
+                            ],
+                            "after": [
+                                "r",
+                                "\\",
+                                "j",
+                                "l",
+                                "r",
+                                "◢"
+                            ]
                         },
                     ],
                 }
@@ -302,9 +768,7 @@
         {
             "id": "main.2", 
             "values": [
-                {
-
-                }
+                {}
             ]
         },
     ],
