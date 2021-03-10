@@ -138,8 +138,23 @@
         "when": "editorFocus"
     },
     {
+        "key": "ctrl+a o",
+        "command": "workbench.action.focusNextGroup",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+a shift+o",
+        "command": "workbench.action.focusPreviousGroup",
+        "when": "editorFocus"
+    },
+    {
         "key": "alt+o",
         "command": "workbench.action.focusNextGroup",
+        "when": "editorFocus"
+    },
+    {
+        "key": "shift+alt+o",
+        "command": "workbench.action.focusPreviousGroup",
         "when": "editorFocus"
     },
     {
@@ -251,10 +266,6 @@
     {
         "key": "ctrl+a e",
         "command": "workbench.action.navigateToLastEditLocation"
-    },
-    {
-        "key": "ctrl+a o",
-        "command": "workbench.action.navigateLast"
     },
     {
         "key": "ctrl+u ctrl+n",
