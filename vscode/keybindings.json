@@ -1114,14 +1114,6 @@
         "command": "bookmarks.clear"
     },
     {
-        "key": "ctrl+m ctrl+e",
-        "command": "bookmarks.editLabel"
-    },
-    {
-        "key": "ctrl+m ctrl+d",
-        "command": "bookmarks.deleteBookmark"
-    },
-    {
         "key": "ctrl+m ctrl+n",
         "command": "bookmarks.jumpToNext",
         "when": "editorTextFocus"
