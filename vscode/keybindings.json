@@ -51,7 +51,7 @@
     },
     {
         "key": "ctrl+shift+9",
-        "command": "workbench.action.navigateBack"
+        "command": "workbench.action.navigateBack",
     },
     {
         "key": "ctrl+shift+0",
@@ -1546,6 +1546,22 @@
     {
         "key": "ctrl+shift+s",
         "command": "-workbench.action.files.saveAs"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u000c"
+        }
+    },
+    {
+        "key": "ctrl+x",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0003cc"
+        }
     },
     {
         "key": "ctrl+shift+s",
