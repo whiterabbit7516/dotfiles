@@ -690,6 +690,10 @@
         "when": "editorFocus && findWidgetVisible"
     },
     {
+        "key": "ctrl+s ctrl+x",
+        "command": "search.action.clearSearchResults"
+    },
+    {
         "key": "ctrl+f ctrl+x",
         "command": "closeFindWidget",
         "when": "editorFocus && findWidgetVisible"
