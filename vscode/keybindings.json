@@ -341,22 +341,22 @@
     {
         "key": "ctrl+alt+h",
         "command": "workbench.action.terminal.resizePaneLeft",
-        "when": "terminalFocus"
+        "when": "panelFocus"
     },
     {
         "key": "ctrl+alt+l",
         "command": "workbench.action.terminal.resizePaneRight",
-        "when": "terminalFocus"
+        "when": "panelFocus"
     },
     {
         "key": "ctrl+alt+j",
         "command": "workbench.action.terminal.resizePaneDown",
-        "when": "terminalFocus"
+        "when": "panelFocus"
     },
     {
         "key": "ctrl+alt+k",
         "command": "workbench.action.terminal.resizePaneUp",
-        "when": "terminalFocus"
+        "when": "panelFocus"
     },
     {
         "key": "ctrl+alt+h",
