@@ -202,11 +202,11 @@
         "command": "workbench.action.toggleActivityBarVisibility"
     },
     {
-        "key": "ctrl+i ctrl+a",
+        "key": "ctrl+i ctrl+i",
         "command": "workbench.action.toggleFullScreen"
     },
     {
-        "key": "ctrl+w a",
+        "key": "ctrl+w i",
         "command": "workbench.action.toggleFullScreen"
     },
     {
@@ -1250,7 +1250,7 @@
         "command": "workbench.action.toggleEditorGroupLayout"
     },
     {
-        "key": "ctrl+a a",
+        "key": "ctrl+a ctrl+i",
         "command": "workbench.action.toggleEditorWidths"
     },
     {
