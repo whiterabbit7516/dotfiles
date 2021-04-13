@@ -2153,7 +2153,7 @@
         "when": "!editorIsOpen && !multipleEditorGroups"
     },
     {
-        "key": "ctrl+w ctrl+z",
+        "key": "ctrl+e ctrl+o",
         "command": "workbench.action.reopenClosedEditor"
     },
     {
