@@ -3128,4 +3128,8 @@
         "when": "inQuickOpen",
         "args": ">Problems "
     },
+    {
+        "key": "ctrl+w a",
+        "command": "workbench.action.addRootFolder"
+    },
 ]
