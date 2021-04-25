@@ -210,6 +210,14 @@
         "command": "workbench.action.toggleFullScreen"
     },
     {
+        "key": "ctrl+w a",
+        "command": "workbench.action.addRootFolder"
+    },
+    {
+        "key": "ctrl+w o",
+        "command": "workbench.action.openWorkspace"
+    },
+    {
         "key": "ctrl+i ctrl+e",
         "command": "workbench.files.action.focusOpenEditorsView",
         "when": "workbench.explorer.openEditorsView.active"
@@ -3127,9 +3135,5 @@
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
         "args": ">Problems "
-    },
-    {
-        "key": "ctrl+w a",
-        "command": "workbench.action.addRootFolder"
     },
 ]
