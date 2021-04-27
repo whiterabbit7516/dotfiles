@@ -2256,6 +2256,11 @@
         "args": ">Remote-Containers: Rebuild "
     },
     {
+        "key": "ctrl+r o",
+        "command": "workbench.action.quickOpen",
+        "args": ">Remote-Containers: Open "
+    },
+    {
         "key": "ctrl+r c",
         "command": "workbench.action.quickOpen",
         "args": ">Remote-Containers: "
