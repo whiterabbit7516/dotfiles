@@ -2271,6 +2271,10 @@
         "args": ">Remote-SSH: "
     },
     {
+        "key": "ctrl+r z",
+        "command": "remote-containers.openDevContainerFile"
+    },
+    {
         "key": "ctrl+t c",
         "command": "fileutils.duplicateFile",
     },
