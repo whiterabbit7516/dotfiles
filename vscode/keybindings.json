@@ -2268,7 +2268,25 @@
     {
         "key": "ctrl+k l",
         "command": "workbench.action.quickOpen",
+        "args": ">Kubernetes: Log "
+    },
+    {
+        "key": "ctrl+q l",
+        "command": "workbench.action.quickOpen",
         "args": ">Developer: Log "
+    },
+    {
+        "key": "ctrl+q r",
+        "command": "workbench.action.quickOpen",
+        "args": ">Developer: Reload "
+    },
+    {
+        "key": "ctrl+q",
+        "command": "-workbench.action.quit"
+    },
+    {
+        "key": "ctrl+q ctrl+q",
+        "command": "workbench.action.quit"
     },
     {
         "key": "ctrl+r c",
@@ -2871,6 +2889,11 @@
         "when": "inQuickOpen"
     },
     {
+        "key": "alt+q",
+        "command": "workbench.action.showLogs",
+        "when": "inQuickOpen"
+    },
+    {
         "key": "alt+m",
         "command": "bookmarks.listFromAllFiles",
         "when": "inQuickOpen"
@@ -3040,6 +3063,12 @@
         "args": ">Docker "
     },
     {
+        "key": "ctrl+shift+k",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Kubernetes "
+    },
+    {
         "key": "ctrl+f",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
@@ -3130,7 +3159,7 @@
         "args": ">Preferences "
     },
     {
-        "key": "ctrl+shift+k",
+        "key": "ctrl+q",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
         "args": ">Developer "
