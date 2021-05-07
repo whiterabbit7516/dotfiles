@@ -2261,6 +2261,16 @@
         "args": ">Remote-Containers: Open "
     },
     {
+        "key": "ctrl+r l",
+        "command": "workbench.action.quickOpen",
+        "args": ">Remote-Containers: Log "
+    },
+    {
+        "key": "ctrl+k l",
+        "command": "workbench.action.quickOpen",
+        "args": ">Developer: Log "
+    },
+    {
         "key": "ctrl+r c",
         "command": "workbench.action.quickOpen",
         "args": ">Remote-Containers: "
@@ -2496,6 +2506,10 @@
     {
         "key": "ctrl+i d",
         "command": "dockerContainers.focus",
+    },
+    {
+        "key": "ctrl+i k",
+        "command": "extension.vsKubernetesExplorer.focus"
     },
     {
         "key": "ctrl+k ctrl+j",
