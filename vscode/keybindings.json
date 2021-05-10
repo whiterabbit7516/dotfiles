@@ -138,22 +138,22 @@
     {
         "key": "x",
         "command": "workbench.action.terminal.killInstance",
-        "when": "terminalIsOpen && terminalTabsFocus"
+        "when": "!inQuickOpen && terminalIsOpen && terminalTabsFocus"
     },
     {
         "key": "s",
         "command": "workbench.action.terminal.splitInstance",
-        "when": "terminalIsOpen && terminalTabsFocus"
+        "when": "!inQuickOpen && terminalIsOpen && terminalTabsFocus"
     },
     {
         "key": "n",
         "command": "workbench.action.terminal.newInActiveWorkspace",
-        "when": "terminalIsOpen && terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection"
+        "when": "!inQuickOpen && terminalIsOpen && terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection"
     },
     {
         "key": "r",
         "command": "workbench.action.terminal.renameInstance",
-        "when": "terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection"
+        "when": "!inQuickOpen && terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection"
     },
     {
         "key": "ctrl+shift+5",
