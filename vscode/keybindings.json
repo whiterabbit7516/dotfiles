@@ -2857,7 +2857,7 @@
         "key": "ctrl+w",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": ">Window "
+        "args": ">Workspaces "
     },
     {
         "key": "ctrl+a",
@@ -3026,7 +3026,7 @@
         "key": "ctrl+shift+w",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": ">Workspace "
+        "args": ">Window "
     },
     {
         "key": "ctrl+e",
