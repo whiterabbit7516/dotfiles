@@ -34,7 +34,7 @@
         "when": "terminalFocus"
     },
     {
-        "key": "ctrl+shift+a",
+        "key": "ctrl+shift+n",
         "command": "workbench.action.terminal.newInActiveWorkspace"
     },
     {
@@ -127,14 +127,48 @@
         "when": "terminalFocus && terminalProcessSupported || terminalProcessSupported && terminalTabsFocus"
     },
     {
+        "key": "delete",
+        "command": "-workbench.action.terminal.killInstance",
+        "when": "terminalIsOpen && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus"
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "-workbench.action.newWindow"
+    },
+    {
+        "key": "x",
+        "command": "workbench.action.terminal.killInstance",
+        "when": "terminalIsOpen && terminalTabsFocus"
+    },
+    {
+        "key": "s",
+        "command": "workbench.action.terminal.splitInstance",
+        "when": "terminalIsOpen && terminalTabsFocus"
+    },
+    {
+        "key": "n",
+        "command": "workbench.action.terminal.newInActiveWorkspace",
+        "when": "terminalIsOpen && terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection"
+    },
+    {
+        "key": "r",
+        "command": "workbench.action.terminal.renameInstance",
+        "when": "terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection"
+    },
+    {
+        "key": "ctrl+shift+5",
+        "command": "-workbench.action.terminal.splitInstance",
+        "when": "terminalProcessSupported && terminalTabsFocus"
+    },
+    {
+        "key": "f2",
+        "command": "-workbench.action.terminal.renameInstance",
+        "when": "terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection"
+    },
+    {
         "key": "ctrl+i ctrl+y",
         "command": "workbench.action.terminal.focusTabs",
         "when": "terminalFocus"
-    },
-    {
-        "key": "ctrl+i ctrl+j",
-        "command": "workbench.action.terminal.focusTabs",
-        "when": "panelFocus"
     },
     {
         "key": "ctrl+shift+y",
