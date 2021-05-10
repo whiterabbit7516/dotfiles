@@ -122,6 +122,21 @@
         "command": "workbench.action.terminal.focus"
     },
     {
+        "key": "ctrl+shift+\\",
+        "command": "-workbench.action.terminal.focusTabs",
+        "when": "terminalFocus && terminalProcessSupported || terminalProcessSupported && terminalTabsFocus"
+    },
+    {
+        "key": "ctrl+i ctrl+y",
+        "command": "workbench.action.terminal.focusTabs",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+i ctrl+j",
+        "command": "workbench.action.terminal.focusTabs",
+        "when": "panelFocus"
+    },
+    {
         "key": "ctrl+shift+y",
         "command": "workbench.action.terminal.focus"
     },
