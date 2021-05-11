@@ -2388,6 +2388,11 @@
         "args": ">File Copy "
     },
     {
+        "key": "c",
+        "command": "workbench.scm.action.collapseAllRepositories",
+        "when": "focusedView == workbench.scm && !inputFocus"
+    },
+    {
         "key": "ctrl+o ctrl+g",
         "command": "git-graph.view",
     },
