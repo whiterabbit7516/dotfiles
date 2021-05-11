@@ -2979,7 +2979,7 @@
     },
     {
         "key": "alt+r",
-        "command": "opensshremotes.openEmptyWindow",
+        "command": "workbench.action.remote.showMenu",
         "when": "inQuickOpen"
     },
     {
@@ -3236,5 +3236,5 @@
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
         "args": ">Problems "
-    }
+    },
 ]
