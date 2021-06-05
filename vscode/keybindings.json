@@ -1063,11 +1063,15 @@
         "when": "textInputFocus && !editorReadonly"
     },
     {
-        "key": "ctrl+i ctrl+v",
+        "key": "ctrl+v r",
+        "command": "workbench.action.resetViewLocations"
+    },
+    {
+        "key": "ctrl+v ctrl+i",
         "command": "workbench.action.increaseViewSize"
     },
     {
-        "key": "ctrl+i v",
+        "key": "ctrl+v ctrl+d",
         "command": "workbench.action.decreaseViewSize"
     },
     {
@@ -1077,6 +1081,22 @@
     {
         "key": "ctrl+[Minus]",
         "command": "workbench.action.decreaseViewSize"
+    },
+    {
+        "key": "ctrl+v j",
+        "command": "workbench.action.increaseViewHeight"
+    },
+    {
+        "key": "ctrl+v l",
+        "command": "workbench.action.increaseViewWidth"
+    },
+    {
+        "key": "ctrl+v k",
+        "command": "workbench.action.decreaseViewHeight"
+    },
+    {
+        "key": "ctrl+v h",
+        "command": "workbench.action.decreaseViewWidth"
     },
     {
         "key": "ctrl+=",
@@ -1285,8 +1305,36 @@
     },
     {
         "key": "ctrl+v",
-        "command": "-editor.action.clipboardPasteAction",
-        "when": "textInputFocus && !editorReadonly"
+        "command": "-editor.action.clipboardPasteAction"
+    },
+    {
+        "key": "ctrl+v ctrl+v",
+        "command": "editor.action.clipboardPasteAction"
+    },
+    {
+        "key": "alt+v",
+        "command": "workbench.action.moveView",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+[",
+        "command": "workbench.action.previousPanelView",
+        "when": "panelFocus"
+    },
+    {
+        "key": "ctrl+[",
+        "command": "workbench.action.previousSideBarView",
+        "when": "sideBarFocus"
+    },
+    {
+        "key": "ctrl+]",
+        "command": "workbench.action.nextPanelView",
+        "when": "panelFocus"
+    },
+    {
+        "key": "ctrl+]",
+        "command": "workbench.action.nextSideBarView",
+        "when": "sideBarFocus"
     },
     {
         "key": "d",
