@@ -141,7 +141,7 @@
     //     "when": "!inQuickOpen && terminalIsOpen && terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection"
     // },
     // {
-    //     "key": "r",
+    //     "key": "b",
     //     "command": "workbench.action.terminal.renameInstance",
     //     "when": "!inQuickOpen && terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection"
     // },
@@ -179,7 +179,7 @@
         "command": "workbench.debug.action.toggleRepl"
     },
     {
-        "key": "ctrl+shift+r",
+        "key": "ctrl+shift+b",
         "command": "workbench.action.terminal.rename",
         "when": "terminalFocus"
     },
@@ -545,7 +545,7 @@
         "when": "explorerViewletFocus && !inputFocus"
     },
     {
-        "key": "r",
+        "key": "b",
         "command": "renameFile",
         "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
     },
@@ -1342,7 +1342,7 @@
         "when": "watchExpressionsFocused && !expressionSelected"
     },
     {
-        "key": "r",
+        "key": "b",
         "command": "debug.renameWatchExpression",
         "when": "watchExpressionsFocused"
     },
@@ -1456,7 +1456,7 @@
         "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
     },
     {
-        "key": "ctrl+e ctrl+r",
+        "key": "ctrl+e ctrl+b",
         "command": "editor.action.rename",
         "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
     },
@@ -2412,8 +2412,16 @@
         "command": "fileutils.moveFile",
     },
     {
-        "key": "ctrl+t r",
+        "key": "ctrl+t b",
         "command": "fileutils.renameFile",
+    },
+    {
+        "key": "ctrl+t r",
+        "command": "workbench.action.files.revert"
+    },
+    {
+        "key": "ctrl+e r",
+        "command": "workbench.action.files.revert"
     },
     {
         "key": "ctrl+t n",
@@ -2576,7 +2584,7 @@
         "command": "codeFragments.insertCodeFragment",
     },
     {
-        "key": "ctrl+u r",
+        "key": "ctrl+u b",
         "command": "codeFragments.renameCodeFragment",
     },
     {
