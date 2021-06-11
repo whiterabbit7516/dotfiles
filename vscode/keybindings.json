@@ -276,6 +276,10 @@
         "command": "outline.focus"
     },
     {
+        "key": "alt+r",
+        "command": "-workbench.action.terminal.toggleFindRegex",
+    },
+    {
         "key": "ctrl+shift+s",
         "command": "workbench.action.terminal.split",
         "when": "terminalFocus"
