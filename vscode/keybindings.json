@@ -2937,24 +2937,6 @@
         }
     },
     {
-        // tmux select window
-        "key": "ctrl+w",
-        "command": "workbench.action.terminal.sendSequence",
-        "when": "terminalFocus",
-        "args": {
-            "text": "\u0002w"
-        }
-    },
-    {
-        // tmux select pane
-        "key": "ctrl+q",
-        "command": "workbench.action.terminal.sendSequence",
-        "when": "terminalFocus",
-        "args": {
-            "text": "\u0002q"
-        }
-    },
-    {
         "key": "ctrl+w",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
