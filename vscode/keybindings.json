@@ -15,11 +15,6 @@
     "when": "terminalFocus"
   },
   {
-    "key": "alt+o",
-    "command": "workbench.action.terminal.focusNextPane",
-    "when": "terminalFocus"
-  },
-  {
     "key": "ctrl+shift+h",
     "command": "workbench.action.terminal.focusPreviousPane",
     "when": "terminalFocus"
@@ -88,6 +83,10 @@
   {
     "key": "ctrl+i ctrl+f",
     "command": "workbench.explorer.fileView.focus"
+  },
+  {
+    "key": "ctrl+i ctrl+w",
+    "command": "workbench.view.windows" // non existant
   },
   {
     "key": "ctrl+i ctrl+o",
@@ -443,8 +442,7 @@
   },
   {
     "key": "alt+l",
-    "command": "workbench.action.navigateRight",
-    "when": "!editorHasSelection"
+    "command": "workbench.action.navigateRight"
   },
   {
     "key": "ctrl+alt+k",
@@ -2920,7 +2918,7 @@
   },
   {
     // tmux select next pane
-    "key": "ctrl+o",
+    "key": "alt+o",
     "command": "workbench.action.terminal.sendSequence",
     "when": "terminalFocus",
     "args": {
@@ -2929,11 +2927,20 @@
   },
   {
     // tmux select previous pane
-    "key": "ctrl+shift+o",
+    "key": "alt+shift+o",
     "command": "workbench.action.terminal.sendSequence",
     "when": "terminalFocus",
     "args": {
       "text": "\u0002O"
+    }
+  },
+  {
+    // tmux choose tree windows
+    "key": "ctrl+i ctrl+w",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus",
+    "args": {
+      "text": "\u0002w"
     }
   },
   {
