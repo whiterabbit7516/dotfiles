@@ -500,11 +500,6 @@
     "args": ""
   },
   {
-    "key": "ctrl+p",
-    "command": "workbench.action.quickOpen",
-    "args": ""
-  },
-  {
     "key": "alt+l",
     "command": "breadcrumbs.focusNext",
     "when": "breadcrumbsActive && breadcrumbsVisible"
@@ -1003,6 +998,22 @@
   {
     "key": "ctrl+g t",
     "command": "editor.action.peekTypeDefinition"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpen",
+    "args": ""
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpen",
+    "when": "inQuickOpen",
+    "args": "?"
+  },
+  {
+    "key": "ctrl+shift+p",
+    "command": "workbench.action.quickOpen",
+    "args": ">"
   },
   {
     "key": "ctrl+i ctrl+p",
