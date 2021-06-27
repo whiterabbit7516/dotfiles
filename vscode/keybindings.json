@@ -178,6 +178,10 @@
     "command": "workbench.debug.action.toggleRepl"
   },
   {
+    "key": "ctrl+d ctrl+l",
+    "command": "workbench.debug.panel.action.clearReplAction"
+  },
+  {
     "key": "ctrl+shift+b",
     "command": "workbench.action.terminal.rename",
     "when": "terminalFocus"
