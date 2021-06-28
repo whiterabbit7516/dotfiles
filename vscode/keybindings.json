@@ -20,6 +20,16 @@
     "when": "terminalFocus"
   },
   {
+    "key": "alt+o",
+    "command": "workbench.action.terminal.focusNextPane",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "alt+shift+o",
+    "command": "workbench.action.terminal.focusPreviousPane",
+    "when": "terminalFocus"
+  },
+  {
     "key": "ctrl+h",
     "command": "workbench.action.toggleMaximizedPanel"
   },
@@ -2945,26 +2955,8 @@
     }
   },
   {
-    // tmux select next pane
-    "key": "alt+o",
-    "command": "workbench.action.terminal.sendSequence",
-    "when": "terminalFocus",
-    "args": {
-      "text": "\u0002o"
-    }
-  },
-  {
     // tmux select previous pane
     "key": "ctrl+shift+o",
-    "command": "workbench.action.terminal.sendSequence",
-    "when": "terminalFocus",
-    "args": {
-      "text": "\u0002O"
-    }
-  },
-  {
-    // tmux select previous pane
-    "key": "alt+shift+o",
     "command": "workbench.action.terminal.sendSequence",
     "when": "terminalFocus",
     "args": {
