@@ -89,12 +89,8 @@
     "command": "workbench.view.windows" // non existant
   },
   {
-    "key": "ctrl+i ctrl+o",
+    "key": "ctrl+i ctrl+v",
     "command": "workbench.view.scm"
-  },
-  {
-    "key": "ctrl+o ctrl+m",
-    "command": "workbench.view.scm",
   },
   {
     "key": "ctrl+i ctrl+l",
@@ -761,10 +757,6 @@
     "command": "workbench.files.action.refreshFilesExplorer"
   },
   {
-    "key": "ctrl+o r",
-    "command": "git.refresh",
-  },
-  {
     "key": "ctrl+x",
     "command": "closeMarkersNavigation",
     "when": "editorFocus && markersNavigationVisible"
@@ -885,14 +877,131 @@
     "when": "editorTextFocus && hasWordHighlights"
   },
   {
-    "key": "ctrl+g n",
+    "key": "ctrl+v ctrl+r",
+    "command": "workbench.action.resetViewLocations"
+  },
+  {
+    "key": "ctrl+v ctrl+m",
+    "command": "workbench.action.moveView"
+  },
+  {
+    "key": "ctrl+v ctrl+i",
+    "command": "workbench.action.increaseViewSize"
+  },
+  {
+    "key": "ctrl+v ctrl+d",
+    "command": "workbench.action.decreaseViewSize"
+  },
+  {
+    "key": "ctrl+=",
+    "command": "workbench.action.increaseViewSize"
+  },
+  {
+    "key": "ctrl+[Minus]",
+    "command": "workbench.action.decreaseViewSize"
+  },
+  {
+    "key": "ctrl+v ctrl+j",
+    "command": "workbench.action.increaseViewHeight"
+  },
+  {
+    "key": "ctrl+v ctrl+l",
+    "command": "workbench.action.increaseViewWidth"
+  },
+  {
+    "key": "ctrl+v ctrl+k",
+    "command": "workbench.action.decreaseViewHeight"
+  },
+  {
+    "key": "ctrl+v ctrl+h",
+    "command": "workbench.action.decreaseViewWidth"
+  },
+  {
+    "key": "ctrl+v ctrl+n",
     "command": "editor.action.diffReview.next",
     "when": "isInDiffEditor"
   },
   {
-    "key": "ctrl+g p",
+    "key": "ctrl+v ctrl+p",
     "command": "editor.action.diffReview.prev",
     "when": "isInDiffEditor"
+  },
+  {
+    "key": "ctrl+v ctrl+b",
+    "command": "gitlens.views.branches.focus",
+  },
+  {
+    "key": "ctrl+v ctrl+f",
+    "command": "gitlens.views.searchAndCompare.focus",
+  },
+  {
+    "key": "ctrl+v ctrl+t",
+    "command": "gitlens.views.tags.focus",
+  },
+  {
+    "key": "ctrl+v ctrl+c",
+    "command": "gitlens.views.commits.focus",
+  },
+  {
+    "key": "ctrl+v ctrl+s",
+    "command": "gitlens.views.stashes.focus",
+  },
+  {
+    "key": "ctrl+v ctrl+g",
+    "command": "git-graph.view",
+  },
+  {
+    "key": "ctrl+v b",
+    "command": "git.checkout",
+  },
+  {
+    "key": "ctrl+v c",
+    "command": "workbench.action.quickOpen",
+    "args": ">Git Commit ",
+  },
+  {
+    "key": "ctrl+v s",
+    "command": "workbench.action.quickOpen",
+    "args": ">Git Stage ",
+  },
+  {
+    "key": "ctrl+v p",
+    "command": "workbench.action.quickOpen",
+    "args": ">Git ",
+  },
+  {
+    "key": "ctrl+v u",
+    "command": "workbench.action.quickOpen",
+    "args": ">Git Unstage ",
+  },
+  {
+    "key": "ctrl+v d",
+    "command": "workbench.action.quickOpen",
+    "args": ">Git Discard ",
+  },
+  {
+    "key": "ctrl+v h",
+    "command": "workbench.action.quickOpen",
+    "args": ">Git History ",
+  },
+  {
+    "key": "ctrl+v l",
+    "command": "workbench.action.quickOpen",
+    "args": ">GitLens ",
+  },
+  {
+    "key": "ctrl+v g",
+    "command": "workbench.action.quickOpen",
+    "args": ">Git Graph ",
+  },
+  {
+    "key": "ctrl+v o",
+    "command": "workbench.action.quickOpen",
+    "args": ">Git Open ",
+  },
+  {
+    "key": "ctrl+v r",
+    "command": "git.refresh",
   },
   {
     "key": "ctrl+d ctrl+d",
@@ -1020,11 +1129,6 @@
     "args": ">"
   },
   {
-    "key": "ctrl+i ctrl+p",
-    "command": "togglePeekWidgetFocus",
-    "when": "inReferenceSearchEditor || referenceSearchVisible"
-  },
-  {
     "key": "ctrl+alt+n",
     "command": "editor.action.nextMatchFindAction",
     "when": "editorFocus"
@@ -1078,42 +1182,6 @@
     "key": "ctrl+x",
     "command": "-editor.action.clipboardCutAction",
     "when": "textInputFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+v r",
-    "command": "workbench.action.resetViewLocations"
-  },
-  {
-    "key": "ctrl+v ctrl+i",
-    "command": "workbench.action.increaseViewSize"
-  },
-  {
-    "key": "ctrl+v ctrl+d",
-    "command": "workbench.action.decreaseViewSize"
-  },
-  {
-    "key": "ctrl+=",
-    "command": "workbench.action.increaseViewSize"
-  },
-  {
-    "key": "ctrl+[Minus]",
-    "command": "workbench.action.decreaseViewSize"
-  },
-  {
-    "key": "ctrl+v j",
-    "command": "workbench.action.increaseViewHeight"
-  },
-  {
-    "key": "ctrl+v l",
-    "command": "workbench.action.increaseViewWidth"
-  },
-  {
-    "key": "ctrl+v k",
-    "command": "workbench.action.decreaseViewHeight"
-  },
-  {
-    "key": "ctrl+v h",
-    "command": "workbench.action.decreaseViewWidth"
   },
   {
     "key": "ctrl+=",
@@ -1246,6 +1314,15 @@
     "command": "workbench.action.problems.focus"
   },
   {
+    "key": "ctrl+i ctrl+o",
+    "command": "workbench.panel.output.focus"
+  },
+  {
+    "key": "ctrl+i ctrl+p",
+    "command": "togglePeekWidgetFocus",
+    "when": "inReferenceSearchEditor || referenceSearchVisible"
+  },
+  {
     "key": "alt+j",
     "command": "list.focusDown",
     "when": "listFocus && !inputFocus"
@@ -1330,7 +1407,7 @@
   },
   {
     "key": "alt+v",
-    "command": "workbench.action.moveView",
+    "command": "gitlens.gitCommands",
     "when": "inQuickOpen"
   },
   {
@@ -1376,7 +1453,7 @@
     "command": "workbench.action.toggleEditorWidths"
   },
   {
-    "key": "ctrl+a r",
+    "key": "ctrl+a ctrl+r",
     "command": "workbench.action.evenEditorWidths"
   },
   {
@@ -1977,59 +2054,6 @@
     "when": "focusedView == workbench.scm && !inputFocus"
   },
   {
-    "key": "ctrl+o ctrl+g",
-    "command": "git-graph.view",
-  },
-  {
-    "key": "ctrl+o b",
-    "command": "git.checkout",
-  },
-  {
-    "key": "ctrl+o c",
-    "command": "workbench.action.quickOpen",
-    "args": ">Git Commit ",
-  },
-  {
-    "key": "ctrl+o s",
-    "command": "workbench.action.quickOpen",
-    "args": ">Git Stage ",
-  },
-  {
-    "key": "ctrl+o p",
-    "command": "workbench.action.quickOpen",
-    "args": ">Git ",
-  },
-  {
-    "key": "ctrl+o u",
-    "command": "workbench.action.quickOpen",
-    "args": ">Git Unstage ",
-  },
-  {
-    "key": "ctrl+o d",
-    "command": "workbench.action.quickOpen",
-    "args": ">Git Discard ",
-  },
-  {
-    "key": "ctrl+o h",
-    "command": "workbench.action.quickOpen",
-    "args": ">Git History ",
-  },
-  {
-    "key": "ctrl+o l",
-    "command": "workbench.action.quickOpen",
-    "args": ">GitLens ",
-  },
-  {
-    "key": "ctrl+o g",
-    "command": "workbench.action.quickOpen",
-    "args": ">Git Graph ",
-  },
-  {
-    "key": "ctrl+o o",
-    "command": "workbench.action.quickOpen",
-    "args": ">Git Open ",
-  },
-  {
     "key": "ctrl+m c",
     "command": "vim.showQuickpickCmdLine",
   },
@@ -2116,42 +2140,6 @@
     "command": "codeFragments.renameCodeFragment",
   },
   {
-    "key": "ctrl+o ctrl+b",
-    "command": "gitlens.views.branches.focus",
-  },
-  {
-    "key": "ctrl+o ctrl+l",
-    "command": "gitlens.views.lineHistory.focus",
-  },
-  {
-    "key": "ctrl+o ctrl+h",
-    "command": "gitlens.views.fileHistory.focus",
-  },
-  {
-    "key": "ctrl+o ctrl+r",
-    "command": "gitlens.views.remotes.focus",
-  },
-  {
-    "key": "ctrl+o ctrl+f",
-    "command": "gitlens.views.searchAndCompare.focus",
-  },
-  {
-    "key": "ctrl+o ctrl+t",
-    "command": "gitlens.views.tags.focus",
-  },
-  {
-    "key": "ctrl+o ctrl+c",
-    "command": "gitlens.views.commits.focus",
-  },
-  {
-    "key": "ctrl+o ctrl+s",
-    "command": "gitlens.views.stashes.focus",
-  },
-  {
-    "key": "ctrl+o ctrl+p",
-    "command": "workbench.scm.repositories.focus",
-  },
-  {
     "key": "ctrl+t ctrl+o",
     "command": "workbench.action.files.openFile",
   },
@@ -2175,10 +2163,6 @@
   {
     "key": "ctrl+k ctrl+9",
     "command": "editor.unfoldAll",
-  },
-  {
-    "key": "ctrl+o ctrl+g",
-    "command": "git-graph.view",
   },
   {
     "key": "ctrl+k ctrl+b",
@@ -2996,8 +2980,9 @@
   },
   {
     "key": "alt+o",
-    "command": "gitlens.gitCommands",
+    "command": "workbench.action.quickOpen",
     "when": "inQuickOpen",
+    "args": "view output "
   },
   {
     "key": "alt+p",
@@ -3109,12 +3094,6 @@
     "args": ">Refresh "
   },
   {
-    "key": "ctrl+o",
-    "command": "workbench.action.quickOpen",
-    "when": "inQuickOpen",
-    "args": ">Git "
-  },
-  {
     "key": "ctrl+v",
     "command": "workbench.action.quickOpen",
     "when": "inQuickOpen",
@@ -3182,7 +3161,7 @@
     "key": "ctrl+shift+o",
     "command": "workbench.action.quickOpen",
     "when": "inQuickOpen",
-    "args": ">Source Control "
+    "args": ">Open "
   },
   {
     "key": "ctrl+shift+a",
@@ -3339,6 +3318,12 @@
     "command": "workbench.action.quickOpen",
     "when": "inQuickOpen",
     "args": ">Fragment "
+  },
+  {
+    "key": "ctrl+o",
+    "command": "workbench.action.quickOpen",
+    "when": "inQuickOpen",
+    "args": ">Output "
   },
   {
     "key": "ctrl+shift+u",
