@@ -222,6 +222,16 @@
     "when": "editorFocus"
   },
   {
+    "key": "ctrl+o",
+    "command": "workbench.action.focusNextGroup",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+shift+o",
+    "command": "workbench.action.focusPreviousGroup",
+    "when": "editorFocus"
+  },
+  {
     "key": "ctrl+i ctrl+b",
     "command": "workbench.action.toggleSidebarVisibility"
   },
@@ -2931,6 +2941,24 @@
   {
     // tmux select previous pane
     "key": "alt+shift+o",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus",
+    "args": {
+      "text": "\u0002O"
+    }
+  },
+  {
+    // tmux select next pane
+    "key": "ctrl+o",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus",
+    "args": {
+      "text": "\u0002o"
+    }
+  },
+  {
+    // tmux select previous pane
+    "key": "ctrl+shift+o",
     "command": "workbench.action.terminal.sendSequence",
     "when": "terminalFocus",
     "args": {
