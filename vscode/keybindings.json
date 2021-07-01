@@ -197,11 +197,6 @@
         "command": "workbench.action.focusActiveEditorGroup"
     },
     {
-        "key": "ctrl+i ctrl+h",
-        "command": "workbench.action.focusNextGroup",
-        "when": "editorFocus"
-    },
-    {
         "key": "ctrl+a o",
         "command": "workbench.action.focusNextGroup",
         "when": "editorFocus"
