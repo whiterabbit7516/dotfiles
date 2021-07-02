@@ -974,6 +974,11 @@
         "args": ">Git Stage ",
     },
     {
+        "key": "ctrl+v z",
+        "command": "workbench.action.quickOpen",
+        "args": ">Git Revert ",
+    },
+    {
         "key": "ctrl+v p",
         "command": "workbench.action.quickOpen",
         "args": ">Git ",
