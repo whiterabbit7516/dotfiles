@@ -979,6 +979,10 @@
         "args": ">Git Revert ",
     },
     {
+        "key": "ctrl+k ctrl+r",
+        "command": "-git.revertSelectedRanges",
+    },
+    {
         "key": "ctrl+v p",
         "command": "workbench.action.quickOpen",
         "args": ">Git ",
