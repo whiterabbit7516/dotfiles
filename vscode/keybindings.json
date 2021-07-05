@@ -631,17 +631,22 @@
         "when": "inDebugMode"
     },
     {
+        "key": "ctrl+d r",
+        "command": "workbench.action.debug.start",
+        "when": "!inDebugMode"
+    },
+    {
+        "key": "ctrl+d d",
+        "command": "workbench.action.debug.selectandstart",
+        "when": "!inDebugMode"
+    },
+    {
         "key": "ctrl+d w",
         "command": "editor.debug.action.selectionToWatch",
     },
     {
         "key": "ctrl+d t",
         "command": "debug.enableOrDisableBreakpoint"
-    },
-    {
-        "key": "ctrl+d d",
-        "command": "workbench.action.debug.start",
-        "when": "!inDebugMode"
     },
     {
         "key": "ctrl+d j",
