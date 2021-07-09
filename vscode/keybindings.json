@@ -971,12 +971,12 @@
     {
         "key": "ctrl+v c",
         "command": "workbench.action.quickOpen",
-        "args": ">Git Commit ",
+        "args": ">Git Commit Staged ",
     },
     {
         "key": "ctrl+v s",
         "command": "workbench.action.quickOpen",
-        "args": ">Git Stage ",
+        "args": ">Git Stage All ",
     },
     {
         "key": "ctrl+v z",
