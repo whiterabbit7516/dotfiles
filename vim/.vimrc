@@ -38,6 +38,7 @@ vnoremap B 4b
 nnoremap U <C-r>
 nnoremap Y y$
 nnoremap , @@
+nnoremap Q @q
 nnoremap > xp
 nnoremap < hxph
 
