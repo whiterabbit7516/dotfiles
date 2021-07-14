@@ -267,6 +267,10 @@
         "command": "workbench.action.toggleFullScreen"
     },
     {
+        "key": "ctrl+w w",
+        "command": "workbench.action.switchWindow",
+    },
+    {
         "key": "ctrl+w a",
         "command": "workbench.action.addRootFolder"
     },
