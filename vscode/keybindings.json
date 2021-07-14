@@ -3005,12 +3005,12 @@
     },
     {
         "key": "ctrl+tab",
-        "command": "workbench.action.quickOpenSelectNext",
+        "command": "workbench.action.quickOpenNavigateNext",
         "when": "inQuickOpen"
     },
     {
         "key": "ctrl+shift+tab",
-        "command": "workbench.action.quickOpenSelectPrevious",
+        "command": "workbench.action.quickOpenNavigatePrevious",
         "when": "inQuickOpen"
     },
     {
