@@ -3004,6 +3004,16 @@
         "args": ">View Editor Group "
     },
     {
+        "key": "ctrl+tab",
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen"
+    },
+    {
         "key": "alt+j",
         "command": "workbench.action.quickOpenSelectNext",
         "when": "inQuickOpen"
