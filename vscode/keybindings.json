@@ -271,6 +271,14 @@
         "command": "workbench.action.switchWindow",
     },
     {
+        "key": "ctrl+w ctrl+tab",
+        "command": "workbench.action.switchWindow",
+    },
+    {
+        "key": "ctrl+w ctrl+shift+tab",
+        "command": "workbench.action.switchWindow",
+    },
+    {
         "key": "ctrl+w a",
         "command": "workbench.action.addRootFolder"
     },
