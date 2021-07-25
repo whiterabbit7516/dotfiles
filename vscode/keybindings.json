@@ -1250,6 +1250,11 @@
         "when": "textInputFocus && !editorReadonly"
     },
     {
+        "key": "ctrl+l ctrl+s",
+        "command": "editor.action.sortLinesAscending",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
         "key": "ctrl+l ctrl+l",
         "command": "expandLineSelection",
         "when": "textInputFocus"
