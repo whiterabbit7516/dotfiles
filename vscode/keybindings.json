@@ -1956,6 +1956,10 @@
         "when": "listFocus && !inputFocus"
     },
     {
+        "key": "ctrl+t t",
+        "command": "workbench.action.tasks.runTask",
+    },
+    {
         "key": "ctrl+t ctrl+t",
         "command": "workbench.action.showAllSymbols"
     },
