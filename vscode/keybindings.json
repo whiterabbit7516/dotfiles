@@ -953,6 +953,10 @@
         "when": "isInDiffEditor"
     },
     {
+        "key": "ctrl+v v",
+        "command": "gitlens.gitCommands",
+    },
+    {
         "key": "ctrl+v ctrl+b",
         "command": "gitlens.views.branches.focus",
     },
