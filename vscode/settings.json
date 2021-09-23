@@ -1,11 +1,44 @@
 {
-    "terminal.integrated.shell.linux": "/usr/bin/pwsh",
-    "terminal.integrated.shellArgs.linux": [
-        "-nol"
-    ],
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+        },
+        "zsh": {
+            "path": "zsh"
+        },
+        "fish": {
+            "path": "fish"
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell",
+            "args": ["-nol"]
+        }
+    },
     // "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
-    "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Git Bash": {
+            "source": "Git Bash"
+        }
+    },
     "terminal.external.windowsExec": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
     "workbench.colorTheme": "Horizon",
     "vim.highlightedyank.enable": true,
@@ -781,4 +814,6 @@
             ]
         },
     ],
+    "terminal.integrated.defaultProfile.linux": "pwsh",
+    "terminal.integrated.defaultProfile.windows": "PowerShell"
 }
