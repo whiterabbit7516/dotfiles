@@ -3099,7 +3099,7 @@
     },
     {
         "key": "alt+c",
-        "command": "workbench.action.showCommands",
+        "command": "remote-containers.attachToRunningContainer",
         "when": "inQuickOpen"
     },
     {
@@ -3134,7 +3134,7 @@
     },
     {
         "key": "alt+s",
-        "command": "workbench.action.showAllSymbols",
+        "command": "opensshremotes.openEmptyWindow",
         "when": "inQuickOpen"
     },
     {
