@@ -15,6 +15,16 @@
         "when": "terminalFocus"
     },
     {
+        "key": "ctrl+o",
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+o",
+        "command": "workbench.action.terminal.focusPreviousPane",
+        "when": "terminalFocus"
+    },
+    {
         "key": "ctrl+shift+h",
         "command": "workbench.action.terminal.focusPreviousPane",
         "when": "terminalFocus"
@@ -2986,24 +2996,6 @@
         }
     },
     {
-        // tmux select next pane
-        "key": "ctrl+o",
-        "command": "workbench.action.terminal.sendSequence",
-        "when": "terminalFocus",
-        "args": {
-            "text": "\u0002o"
-        }
-    },
-    {
-        // tmux select previous pane
-        "key": "ctrl+shift+o",
-        "command": "workbench.action.terminal.sendSequence",
-        "when": "terminalFocus",
-        "args": {
-            "text": "\u0002O"
-        }
-    },
-    {
         // tmux choose tree windows
         "key": "ctrl+i ctrl+w",
         "command": "workbench.action.terminal.sendSequence",
@@ -3053,6 +3045,12 @@
         "key": "alt+f",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen"
+    },
+    {
+        "key": "alt+b",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">"
     },
     {
         "key": "alt+o",
@@ -3309,7 +3307,7 @@
         "key": "ctrl+c",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": ">"
+        "args": ">Copy "
     },
     {
         "key": "ctrl+shift+g",
@@ -3351,7 +3349,7 @@
         "key": "ctrl+b",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": ">View Bar "
+        "args": ">"
     },
     {
         "key": "ctrl+j",
