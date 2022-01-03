@@ -15,16 +15,6 @@
         "when": "terminalFocus"
     },
     {
-        "key": "ctrl+o",
-        "command": "workbench.action.terminal.focusNextPane",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "ctrl+shift+o",
-        "command": "workbench.action.terminal.focusPreviousPane",
-        "when": "terminalFocus"
-    },
-    {
         "key": "ctrl+shift+h",
         "command": "workbench.action.terminal.focusPreviousPane",
         "when": "terminalFocus"
@@ -2976,6 +2966,24 @@
     {
         "key": "ctrl+shift+o",
         "command": "-workbench.action.gotoSymbol"
+    },
+    {
+        // tmux select next pane
+        "key": "ctrl+o",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0002o"
+        }
+    },
+    {
+        // tmux select previous pane
+        "key": "ctrl+shift+o",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "\u0002O"
+        }
     },
     {
         // tmux select next pane
