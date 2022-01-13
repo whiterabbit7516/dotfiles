@@ -2829,6 +2829,15 @@
         }
     },
     {
+        // tmux new
+        "key": "ctrl+shift+m",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "tmux new;\u000a"
+        }
+    },
+    {
         // tmux prefix
         "key": "ctrl+space",
         "command": "workbench.action.terminal.sendSequence",
