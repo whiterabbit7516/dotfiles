@@ -1459,11 +1459,6 @@
         "when": "inQuickOpen"
     },
     {
-        "key": "alt+b",
-        "command": "gitlens.views.switchToBranch",
-        "when": "inQuickOpen"
-    },
-    {
         "key": "ctrl+[",
         "command": "workbench.action.previousPanelView",
         "when": "panelFocus"
