@@ -24,6 +24,10 @@
         "command": "workbench.action.toggleMaximizedPanel"
     },
     {
+        "key": "ctrl+n",
+        "command": "workbench.action.toggleAuxiliaryBar"
+    },
+    {
         "key": "ctrl+shift+x",
         "command": "workbench.action.terminal.kill",
         "when": "terminalFocus"
@@ -1452,6 +1456,11 @@
     {
         "key": "alt+v",
         "command": "gitlens.gitCommands",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "alt+b",
+        "command": "gitlens.views.switchToBranch",
         "when": "inQuickOpen"
     },
     {
@@ -3062,12 +3071,6 @@
         "key": "alt+f",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen"
-    },
-    {
-        "key": "alt+b",
-        "command": "workbench.action.quickOpen",
-        "when": "inQuickOpen",
-        "args": "view bar "
     },
     {
         "key": "alt+o",
