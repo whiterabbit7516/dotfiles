@@ -231,11 +231,7 @@
         "when": "editorFocus"
     },
     {
-        "key": "ctrl+i ctrl+b",
-        "command": "workbench.action.toggleSidebarVisibility"
-    },
-    {
-        "key": "ctrl+i ctrl+n",
+        "key": "ctrl+i n",
         "command": "notifications.clearAll"
     },
     {
@@ -707,6 +703,10 @@
         "key": "s",
         "command": "filesExplorer.findInFolder",
         "when": "explorerResourceIsFolder && explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "ctrl+x",
+        "command": "-editor.action.clipboardCutAction"
     },
     {
         "key": "ctrl+x",
@@ -1394,6 +1394,14 @@
         "key": "ctrl+i ctrl+c",
         "command": "breadcrumbs.focusAndSelect",
         "when": "breadcrumbsPossible"
+    },
+    {
+        "key": "ctrl+i ctrl+b",
+        "command": "workbench.action.focusSideBar"
+    },
+    {
+        "key": "ctrl+i ctrl+n",
+        "command": "workbench.action.focusAuxiliaryBar"
     },
     {
         "key": "ctrl+alt+j",
@@ -2226,6 +2234,10 @@
     },
     {
         "key": "ctrl+k ctrl+s",
+        "command": "workbench.action.openSettings",
+    },
+    {
+        "key": "ctrl+i ctrl+k",
         "command": "workbench.action.openSettings",
     },
     {
@@ -3106,6 +3118,10 @@
         "when": "inQuickOpen"
     },
     {
+        "key": "alt+a",
+        "command": "workbench.action.customizeLayout"
+    },
+    {
         "key": "alt+i",
         "command": "workbench.action.openView",
         "when": "inQuickOpen"
@@ -3340,7 +3356,7 @@
         "key": "ctrl+n",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": ">New "
+        "args": ">Notifications "
     },
     {
         "key": "ctrl+shift+n",
