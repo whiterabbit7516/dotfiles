@@ -3202,7 +3202,7 @@
         "key": "ctrl+v",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": ">View "
+        "args": ">Source Control "
     },
     {
         "key": "ctrl+shift+v",
