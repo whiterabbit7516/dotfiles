@@ -232,6 +232,10 @@
     },
     {
         "key": "ctrl+i n",
+        "command": "notifications.toggleList"
+    },
+    {
+        "key": "ctrl+w ctrl+n",
         "command": "notifications.clearAll"
     },
     {
