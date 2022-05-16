@@ -916,7 +916,7 @@
     },
     {
         "key": "ctrl+v ctrl+m",
-        "command": "workbench.action.moveView"
+        "command": "workbench.action.moveFocusedView"
     },
     {
         "key": "ctrl+v ctrl+i",
@@ -1923,7 +1923,7 @@
         "when": "!editorIsOpen && !multipleEditorGroups"
     },
     {
-        "key": "ctrl+e ctrl+o",
+        "key": "ctrl+e ctrl+r",
         "command": "workbench.action.reopenClosedEditor"
     },
     {
