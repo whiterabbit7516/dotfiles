@@ -289,170 +289,15 @@
     "settings.cycle": [
         {
             "id": "main.0",
-            "values": [
-                {
-                    "workbench.colorTheme": "Horizon Bright",
-                    "vim.normalModeKeyBindingsNonRecursive": [
-                        {
-                            "before": [ "J" ],
-                            "after": [ "8", "j" ]
-                        },
-                        {
-                            "before": [ "K" ],
-                            "after": [ "8", "k" ]
-                        },
-                        {
-                            "before": [ "H" ],
-                            "after": [ "8", "h" ]
-                        },
-                        {
-                            "before": [ "L" ],
-                            "after": [ "8", "l" ]
-                        },
-                        {
-                            "before": [ "W" ],
-                            "after": [ "4", "w" ]
-                        },
-                        {
-                            "before": [ "E" ],
-                            "after": [ "4", "e" ]
-                        },
-                        {
-                            "before": [ "B" ],
-                            "after": [ "4", "b" ]
-                        },
-                        {
-                            "before": [ "s" ],
-                            "after": [ "i", " ", "<Esc>" ]
-                        },
-                        {
-                            "before": [ "S" ],
-                            "after": [ "a", " ", "<Esc>" ]
-                        },
-                        {
-                            "before": [ "Y" ],
-                            "after": [ "y", "$" ]
-                        },
-                        {
-                            "before": [ "U" ],
-                            "after": [ "<C-r>" ]
-                        },
-                        {
-                            "before": [ "," ],
-                            "after": [ "@", "@" ]
-                        },
-                        {
-                            "before": [ ">" ],
-                            "after": [ "x", "p" ]
-                        },
-                        {
-                            "before": [ "<" ],
-                            "after": [ "h", "x", "p", "h" ]
-                        },
-                        {
-                            "before": [ "<leader>", "q" ],
-                            "after": [ 
-                                // draw left
-                                "q", "h", "r", "-", "h", "r", "◀", "q",
-                                // draw right
-                                "q", "l", "r", "-", "l", "r", "▶", "q",
-                                // draw down
-                                "q", "j", "r", "|", "j", "r", "▼", "q",
-                                // draw up
-                                "q", "k", "r", "|", "k", "r", "▲", "q",
-                                // draw up left
-                                "q", "y", "r", "\\", "k", "h", "r", "◤", "q",
-                                // draw up right
-                                "q", "u", "r", "/", "k", "l", "r", "◥", "q",
-                                // draw lower right
-                                "q", "n", "r", "\\", "j", "l", "r", "◢", "q",
-                                // draw lower left
-                                "q", "b", "r", "/", "j", "h", "r", "◣", "q",
-                            ]
-                        }
-                    ],
-                }
-            ]
+            "values": [ { } ]
         },
         {
             "id": "main.1",
-            "values": [
-                {
-                    "workbench.colorTheme": "Default Light+",
-                    "vim.normalModeKeyBindingsNonRecursive": [
-                        {
-                            "before": [ "J" ],
-                            "after": [ "r", "■", "j", "r", "■" ]
-                        },
-                        {
-                            "before": [ "H" ],
-                            "after": [ "r", "■", "h", "r", "■" ]
-                        },
-                        {
-                            "before": [ "K" ],
-                            "after": [ "r", "■", "k", "r", "■" ]
-                        },
-                        {
-                            "before": [ "L" ],
-                            "after": [ "r", "■", "l", "r", "■" ]
-                        },
-                        {
-                            "before": [ "Y" ],
-                            "after": [ "r", "■", "k", "h", "r", "■" ]
-                        },
-                        {
-                            "before": [ "U" ],
-                            "after": [ "r", "■", "k", "l", "r", "■" ]
-                        },
-                        {
-                            "before": [ "B" ],
-                            "after": [ "r", "■", "j", "h", "r", "■" ]
-                        },
-                        {
-                            "before": [ "N" ],
-                            "after": [ "r", "■", "j", "l", "r", "■" ]
-                        },
-                        {
-                            "before": [ "j" ],
-                            "after": [ "r", "|", "j", "r", "▼" ]
-                        },
-                        {
-                            "before": [ "h" ],
-                            "after": [ "r", "-", "h", "r", "◀" ]
-                        },
-                        {
-                            "before": [ "k" ],
-                            "after": [ "r", "|", "k", "r", "▲" ]
-                        },
-                        {
-                            "before": [ "l" ],
-                            "after": [ "r", "-", "l", "r", "▶" ]
-                        },
-                        {
-                            "before": [ "y" ],
-                            "after": [ "r", "\\", "k", "h", "r", "◤" ]
-                        },
-                        {
-                            "before": [ "u" ],
-                            "after": [ "r", "/", "k", "l", "r", "◥" ]
-                        },
-                        {
-                            "before": [ "b" ],
-                            "after": [ "r", "/", "j", "h", "r", "◣" ]
-                        },
-                        {
-                            "before": [ "n" ],
-                            "after": [ "r", "\\", "j", "l", "r", "◢" ]
-                        },
-                    ],
-                }
-            ]
+            "values": [ { } ]
         },
         {
             "id": "main.2",
-            "values": [
-                {}
-            ]
+            "values": [ { } ]
         },
     ],
     "editor.multiCursorModifier": "ctrlCmd",
@@ -512,5 +357,7 @@
         "!Split sequence"
     ],
     "editor.minimap.enabled": false,
-    "vim.foldfix": true
+    "vim.foldfix": true,
+    "remote.autoForwardPorts": false,
+    "files.insertFinalNewline": true,
 }
