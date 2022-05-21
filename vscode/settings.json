@@ -43,7 +43,7 @@
     },
     "editor.fontLigatures": true,
     "terminal.external.windowsExec": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
-    "workbench.colorTheme": "Amethyst",
+    "workbench.colorTheme": "Horizon Bright",
     "vim.highlightedyank.enable": true,
     "vim.useCtrlKeys": false,
     "vim.handleKeys": {
@@ -115,29 +115,29 @@
             "before": [ "<leader>", "q" ],
             "after": [
                 // draw left -
-                "q", "h", "r", "-", "h", "r", "◀", "q",
+                "q", "h", "r", "-", "h", "r", "◀", "q", "l",
                 // draw down |
-                "q", "j", "r", "|", "j", "r", "▼", "q",
+                "q", "j", "r", "|", "j", "r", "▼", "q", "k",
                 // draw up |
-                "q", "k", "r", "|", "k", "r", "▲", "q",
+                "q", "k", "r", "|", "k", "r", "▲", "q", "j",
                 // draw right -
-                "q", "l", "r", "-", "l", "r", "▶", "q",
+                "q", "l", "r", "-", "l", "r", "▶", "q", "h",
                 // draw upper left \
-                "q", "y", "r", "\\", "k", "h", "r", "◤", "q",
+                "q", "y", "r", "\\", "k", "h", "r", "◤", "q", "j", "l",
                 // draw upper right /
-                "q", "u", "r", "/", "k", "l", "r", "◥", "q",
+                "q", "u", "r", "/", "k", "l", "r", "◥", "q", "j", "h",
                 // draw lower left \
-                "q", "b", "r", "/", "j", "h", "r", "◣", "q",
+                "q", "b", "r", "/", "j", "h", "r", "◣", "q", "k", "l",
                 // draw lower right /
-                "q", "n", "r", "\\", "j", "l", "r", "◢", "q",
+                "q", "n", "r", "\\", "j", "l", "r", "◢", "q", "k", "h",
                 // draw left +
-                "q", "i", "r", "+", "h", "r", "◀", "q",
+                "q", "i", "r", "+", "h", "r", "◀", "q", "l",
                 // draw right +
-                "q", "o", "r", "+", "j", "r", "▼", "q",
+                "q", "o", "r", "+", "j", "r", "▼", "q", "h",
                 // draw left ■
-                "q", "f", "r", "■", "h", "r", "◀", "q",
+                "q", "f", "r", "■", "h", "r", "◀", "q", "l",
                 // draw right ■
-                "q", "g", "r", "■", "j", "r", "▼", "q",
+                "q", "g", "r", "■", "j", "r", "▼", "q", "h",
             ]
         }
     ],
