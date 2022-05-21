@@ -114,14 +114,30 @@
         {
             "before": [ "<leader>", "q" ],
             "after": [
+                // draw left -
                 "q", "h", "r", "-", "h", "r", "◀", "q",
+                // draw down |
                 "q", "j", "r", "|", "j", "r", "▼", "q",
+                // draw up |
                 "q", "k", "r", "|", "k", "r", "▲", "q",
+                // draw right -
                 "q", "l", "r", "-", "l", "r", "▶", "q",
+                // draw upper left \
                 "q", "y", "r", "\\", "k", "h", "r", "◤", "q",
+                // draw upper right /
                 "q", "u", "r", "/", "k", "l", "r", "◥", "q",
+                // draw lower left \
                 "q", "b", "r", "/", "j", "h", "r", "◣", "q",
+                // draw lower right /
                 "q", "n", "r", "\\", "j", "l", "r", "◢", "q",
+                // draw left +
+                "q", "i", "r", "+", "h", "r", "◀", "q",
+                // draw right +
+                "q", "o", "r", "+", "j", "r", "▼", "q",
+                // draw left ■
+                "q", "f", "r", "■", "h", "r", "◀", "q",
+                // draw right ■
+                "q", "g", "r", "■", "j", "r", "▼", "q",
             ]
         }
     ],
