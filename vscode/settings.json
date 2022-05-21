@@ -512,4 +512,5 @@
         "!Split sequence"
     ],
     "editor.minimap.enabled": false,
+    "vim.foldfix": true
 }
