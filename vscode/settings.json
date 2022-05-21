@@ -130,14 +130,42 @@
                 "q", "b", "r", "/", "j", "h", "r", "◣", "q", "k", "l",
                 // draw lower right /
                 "q", "n", "r", "\\", "j", "l", "r", "◢", "q", "k", "h",
-                // draw left +
-                "q", "i", "r", "+", "h", "r", "◀", "q", "l",
-                // draw right +
-                "q", "o", "r", "+", "l", "r", "▶", "q", "h",
+
                 // draw left ■
-                "q", "f", "r", "■", "h", "r", "◀", "q", "l",
+                "q", "s", "r", "■", "h", "r", "◀", "q", "l",
+                // draw down ■
+                "q", "d", "r", "■", "j", "r", "▼", "q", "k",
+                // draw up ■
+                "q", "f", "r", "■", "k", "r", "▲", "q", "j",
                 // draw right ■
                 "q", "g", "r", "■", "l", "r", "▶", "q", "h",
+
+                // draw left +
+                "q", "w", "r", "+", "h", "r", "◀", "q", "l",
+                // draw down +
+                "q", "e", "r", "+", "j", "r", "▼", "q", "k",
+                // draw up +
+                "q", "r", "r", "+", "k", "r", "▲", "q", "j",
+                // draw right +
+                "q", "t", "r", "+", "l", "r", "▶", "q", "h",
+
+                // draw left ●
+                "q", "z", "r", "●", "h", "r", "◀", "q", "l",
+                // draw down ●
+                "q", "x", "r", "●", "j", "r", "▼", "q", "k",
+                // draw up ●
+                "q", "c", "r", "●", "k", "r", "▲", "q", "j",
+                // draw right ●
+                "q", "v", "r", "●", "l", "r", "▶", "q", "h",
+
+                // draw left =
+                "q", "m", "r", "=", "h", "r", "◀", "q", "l",
+                // draw down ǁ
+                "q", "i", "r", "ǁ", "j", "r", "▼", "q", "k",
+                // draw up ǁ
+                "q", "o", "r", "ǁ", "k", "r", "▲", "q", "j",
+                // draw right =
+                "q", "p", "r", "=", "l", "r", "▶", "q", "h",
             ]
         }
     ],
@@ -483,4 +511,5 @@
         "!Split",
         "!Split sequence"
     ],
+    "editor.minimap.enabled": false,
 }
