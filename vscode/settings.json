@@ -126,9 +126,9 @@
                 "q", "y", "r", "\\", "k", "h", "r", "◤", "q", "j", "l",
                 // draw upper right /
                 "q", "u", "r", "/", "k", "l", "r", "◥", "q", "j", "h",
-                // draw lower left \
+                // draw lower left /
                 "q", "b", "r", "/", "j", "h", "r", "◣", "q", "k", "l",
-                // draw lower right /
+                // draw lower right \
                 "q", "n", "r", "\\", "j", "l", "r", "◢", "q", "k", "h",
 
                 // draw left =
@@ -285,7 +285,6 @@
             }
         ]
     },
-    "editor.renderIndentGuides": false,
     "settings.cycle": [
         {
             "id": "main.0",
@@ -360,4 +359,5 @@
     "vim.foldfix": true,
     "remote.autoForwardPorts": false,
     "files.insertFinalNewline": true,
+    "editor.guides.indentation": false,
 }
