@@ -287,6 +287,10 @@
         "command": "workbench.action.addRootFolder"
     },
     {
+        "key": "ctrl+w d",
+        "command": "workbench.action.removeRootFolder"
+    },
+    {
         "key": "ctrl+w o",
         "command": "workbench.action.openWorkspace"
     },
