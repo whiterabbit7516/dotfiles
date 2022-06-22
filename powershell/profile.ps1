@@ -16,6 +16,7 @@ elseif ($(get-command code-insiders -ErrorAction SilentlyContinue) -ne $null)
 #########################################
 # paths
 #########################################
+$ENV:PATH = "$($ENV:PATH):/root/.cargo/bin"
 #########################################
 # argument completers
 #########################################
