@@ -905,6 +905,15 @@
         "when": "inputFocus && notebookEditorFocused"
     },
     {
+        "key": "ctrl+g ctrl+e",
+        "command": "workbench.action.gotoSymbol",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+g ctrl+w",
+        "command": "workbench.action.showAllSymbols"
+    },
+    {
         "key": "ctrl+g ctrl+n",
         "command": "editor.action.wordHighlight.next",
         "when": "editorTextFocus && hasWordHighlights"
@@ -1004,7 +1013,7 @@
     {
         "key": "ctrl+v s",
         "command": "workbench.action.quickOpen",
-        "args": ">Git Stage All ",
+        "args": ">Git Stage ",
     },
     {
         "key": "ctrl+v z",
@@ -1984,10 +1993,6 @@
         "command": "workbench.action.tasks.runTask",
     },
     {
-        "key": "ctrl+t ctrl+t",
-        "command": "workbench.action.showAllSymbols"
-    },
-    {
         "key": "ctrl+l ctrl+a",
         "command": "editor.action.insertCursorAtEndOfEachLineSelected",
         "when": "editorTextFocus"
@@ -2260,6 +2265,11 @@
     {
         "key": "ctrl+k ctrl+t",
         "command": "workbench.action.selectTheme",
+    },
+    {
+        "key": "ctrl+k t",
+        "command": "workbench.action.toggleLightDarkThemes",
+        "when": "!inQuickOpen",
     },
     {
         "key": "ctrl+k ctrl+t",
