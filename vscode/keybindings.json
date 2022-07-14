@@ -656,6 +656,10 @@
         "when": "!inDebugMode"
     },
     {
+        "key": "ctrl+d y",
+        "command": "workbench.action.debug.selectDebugConsole"
+    },
+    {
         "key": "ctrl+d d",
         "command": "workbench.action.debug.selectandstart",
         "when": "!inDebugMode"
