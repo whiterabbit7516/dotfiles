@@ -3224,7 +3224,7 @@
         "key": "ctrl+v",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": ">Source Control "
+        "args": ">Paste "
     },
     {
         "key": "ctrl+shift+v",
@@ -3266,11 +3266,6 @@
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
         "args": ">File "
-    },
-    {
-        "key": "ctrl+q",
-        "command": "workbench.action.closeQuickOpen",
-        "when": "inQuickOpen"
     },
     {
         "key": "ctrl+i",
@@ -3427,6 +3422,12 @@
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
         "args": ">Developer "
+    },
+    {
+        "key": "ctrl+shift+q",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Code "
     },
     {
         "key": "ctrl+l",
