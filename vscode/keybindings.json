@@ -2002,6 +2002,10 @@
         "when": "editorTextFocus"
     },
     {
+        "key": "ctrl+e ctrl+t",
+        "command": "workbench.action.reopenWithEditor"
+    },
+    {
         "key": "ctrl+e ctrl+l",
         "command": "workbench.action.editor.changeLanguageMode"
     },
