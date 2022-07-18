@@ -3446,7 +3446,7 @@
         "args": ">Line "
     },
     {
-        "key": "ctrl+u",
+        "key": "ctrl+shift+u",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
         "args": ">Fragment "
@@ -3458,7 +3458,7 @@
         "args": ">Output "
     },
     {
-        "key": "ctrl+shift+u",
+        "key": "ctrl+u",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
         "args": ">Problems "
