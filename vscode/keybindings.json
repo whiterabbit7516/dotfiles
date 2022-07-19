@@ -369,11 +369,11 @@
         "command": "workbench.action.focusBelowGroup"
     },
     {
-        "key": "ctrl+a e",
+        "key": "ctrl+e ctrl+e",
         "command": "workbench.action.navigateToLastEditLocation"
     },
     {
-        "key": "ctrl+a b",
+        "key": "ctrl+e ctrl+o",
         "command": "workbench.action.navigateLast"
     },
     {
