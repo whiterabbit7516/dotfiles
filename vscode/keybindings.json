@@ -392,6 +392,14 @@
         "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
     },
     {
+        "key": "ctrl+e ctrl+w",
+        "command": "editor.action.toggleWordWrap"
+    },
+    {
+        "key": "ctrl+e ctrl+s",
+        "command": "editor.action.toggleRenderWhitespace"
+    },
+    {
         "key": "ctrl+.",
         "command": "editor.action.quickFix",
         "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
@@ -1458,14 +1466,6 @@
         "key": "ctrl+alt+l",
         "command": "-bookmarks.jumpToNext",
         "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+e ctrl+w",
-        "command": "editor.action.toggleWordWrap"
-    },
-    {
-        "key": "ctrl+e ctrl+s",
-        "command": "editor.action.toggleRenderWhitespace"
     },
     {
         "key": "alt+z",
