@@ -113,10 +113,6 @@
         "command": "workbench.action.focusPanel"
     },
     {
-        "key": "ctrl+i o",
-        "command": "workbench.panel.output.focus"
-    },
-    {
         "key": "ctrl+i ctrl+y",
         "command": "workbench.action.terminal.focus"
     },
