@@ -406,6 +406,19 @@
     "command": "editor.action.toggleRenderWhitespace"
   },
   {
+    "key": "ctrl+e s",
+    "command": "workbench.action.toggleSplitEditorInGroup"
+  },
+  {
+    "key": "ctrl+k ctrl+shift+\\",
+    "command": "-workbench.action.splitEditorInGroup",
+    "when": "activeEditorCanSplitInGroup"
+  },
+  {
+    "key": "ctrl+e o",
+    "command": "workbench.action.focusOtherSideEditor"
+  },
+  {
     "key": "ctrl+.",
     "command": "editor.action.quickFix",
     "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
