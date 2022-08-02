@@ -1,14 +1,13 @@
-// Place your key bindings in this file to override the defaultsauto[]
 /*
 q - developer, code, quit
 w - workspace, window, close
 e - editor
-r - refresh, reload, remote
+r - remote, reload, refresh
 t - tasks, file
 y - terminal, debug console
 u - problems, copy-paste
-i - focus, insert
-o - output, other, cycle
+i - interface, insert
+o - output, other, cycle, toggle, open
 p - previous, quick open
 a - editor group, cursor
 s - select, search
@@ -16,16 +15,16 @@ d - debug, remove
 f - find, folder
 g - symbols, goto
 h - help, left
-j - panel, live share, down
+j - panel, down
 k - preferences, fold, format, up
-l - line, right
+l - live share, line, right
 z - zen, settings, undo
-x - extensions, cancel, cut
+x - extensions, cinsertancel, cut
 c - copy
 v - version control, paste
 b - side bar, rename
 n - notification, secondary side bar, next, new
-m - marks, selection achor, macros
+m - marks, selection achor, macros, move
 */
 [
   {
@@ -3326,7 +3325,7 @@ m - marks, selection achor, macros
     "key": "ctrl+shift+o",
     "command": "workbench.action.quickOpen",
     "when": "inQuickOpen",
-    "args": ">Open "
+    "args": ">Output "
   },
   {
     "key": "ctrl+shift+a",
@@ -3482,7 +3481,7 @@ m - marks, selection achor, macros
     "key": "ctrl+o",
     "command": "workbench.action.quickOpen",
     "when": "inQuickOpen",
-    "args": ">Output "
+    "args": ">Toggle "
   },
   {
     "key": "ctrl+u",
