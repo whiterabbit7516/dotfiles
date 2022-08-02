@@ -2269,6 +2269,15 @@ m - marks, selection achor, macros
   },
   {
     "key": "ctrl+k ctrl+9",
+    "command": "editor.foldAll"
+  },
+  {
+    "key": "ctrl+k ctrl+0",
+    "command": "-editor.foldAll",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "ctrl+k ctrl+0",
     "command": "editor.unfoldAll",
   },
   {
