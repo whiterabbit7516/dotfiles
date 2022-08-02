@@ -2276,6 +2276,10 @@ m - marks, selection achor, macros
     "command": "workbench.action.openGlobalKeybindings",
   },
   {
+    "key": "ctrl+k b",
+    "command": "workbench.action.openGlobalKeybindingsFile"
+  },
+  {
     "key": "ctrl+k ctrl+s",
     "command": "-workbench.action.openGlobalKeybindings"
   },
