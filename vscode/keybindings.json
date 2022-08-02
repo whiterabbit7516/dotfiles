@@ -5,7 +5,7 @@ e - editor
 r - remote, reload, refresh
 t - tasks, file
 y - terminal, debug console
-u - problems, copy-paste
+u - problems, snippets
 i - interface, insert
 o - output, other, cycle, toggle, open
 p - previous, quick open
@@ -1508,34 +1508,6 @@ m - marks, selection achor, macros, move
     "command": "-editor.action.toggleWordWrap"
   },
   {
-    "key": "ctrl+x",
-    "command": "-copy-copy-paste.cut",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+u ctrl+c",
-    "command": "copy-copy-paste.copy",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+c",
-    "command": "-copy-copy-paste.copy",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+shift+v",
-    "command": "-copy-copy-paste.history",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+u ctrl+w",
-    "command": "copy-copy-paste.clear"
-  },
-  {
-    "key": "ctrl+u ctrl+x",
-    "command": "copy-copy-paste.cut"
-  },
-  {
     "key": "ctrl+v",
     "command": "-editor.action.clipboardPasteAction"
   },
@@ -2142,6 +2114,10 @@ m - marks, selection achor, macros, move
     "command": "remote-containers.openDevContainerFile"
   },
   {
+    "key": "ctrl+u z",
+    "command": "workbench.action.openSnippets"
+  },
+  {
     "key": "ctrl+t c",
     "command": "fileutils.duplicateFile",
   },
@@ -2228,30 +2204,6 @@ m - marks, selection achor, macros, move
   {
     "key": "ctrl+n",
     "command": "-workbench.action.files.newUntitledFile"
-  },
-  {
-    "key": "ctrl+u w",
-    "command": "codeFragments.deleteAllFragments",
-  },
-  {
-    "key": "ctrl+i u",
-    "command": "codeFragments.focus",
-  },
-  {
-    "key": "ctrl+u c",
-    "command": "codeFragments.saveSelectedCodeFragment",
-  },
-  {
-    "key": "ctrl+u d",
-    "command": "codeFragments.deleteCodeFragment",
-  },
-  {
-    "key": "ctrl+u v",
-    "command": "codeFragments.insertCodeFragment",
-  },
-  {
-    "key": "ctrl+u b",
-    "command": "codeFragments.renameCodeFragment",
   },
   {
     "key": "ctrl+t ctrl+o",
@@ -3139,6 +3091,11 @@ m - marks, selection achor, macros, move
     "when": "inQuickOpen"
   },
   {
+    "key": "alt+u",
+    "command": "editor.action.insertSnippet",
+    "when": "inQuickOpen"
+  },
+  {
     "key": "alt+f",
     "command": "workbench.action.quickOpen",
     "when": "inQuickOpen"
@@ -3213,11 +3170,6 @@ m - marks, selection achor, macros, move
   {
     "key": "alt+t",
     "command": "workbench.action.tasks.runTask",
-    "when": "inQuickOpen"
-  },
-  {
-    "key": "alt+u",
-    "command": "copy-copy-paste.history",
     "when": "inQuickOpen"
   },
   {
@@ -3475,7 +3427,7 @@ m - marks, selection achor, macros, move
     "key": "ctrl+shift+u",
     "command": "workbench.action.quickOpen",
     "when": "inQuickOpen",
-    "args": ">Fragment "
+    "args": ">Snippet "
   },
   {
     "key": "ctrl+o",
