@@ -1,4 +1,32 @@
 // Place your key bindings in this file to override the defaultsauto[]
+/*
+q - developer, code, quit
+w - workspace, window, close
+e - editor
+r - refresh, reload, remote
+t - tasks, file
+y - terminal, debug console
+u - problems, copy-paste
+i - focus, insert
+o - output, other, cycle
+p - previous, quick open
+a - editor group, cursor
+s - select, search
+d - debug, remove
+f - find, folder
+g - symbols, goto
+h - help, left
+j - panel, live share, down
+k - preferences, fold, up
+l - line, right
+z - zen, undo
+x - cancel
+c - copy
+v - version control, paste
+b - side bar, rename
+n - notification, secondary side bar, next, new
+m - marks, selection achor, macros
+*/
 [
   {
     "key": "ctrl+shift+j",
@@ -2093,11 +2121,6 @@
     "args": ">Remote-Containers: Log "
   },
   {
-    "key": "ctrl+k l",
-    "command": "workbench.action.quickOpen",
-    "args": ">Kubernetes: Log "
-  },
-  {
     "key": "ctrl+q l",
     "command": "workbench.action.quickOpen",
     "args": ">Developer: Log "
@@ -2271,14 +2294,6 @@
   {
     "key": "ctrl+o",
     "command": "-workbench.action.files.openFile"
-  },
-  {
-    "key": "ctrl+i d",
-    "command": "dockerContainers.focus",
-  },
-  {
-    "key": "ctrl+i k",
-    "command": "extension.vsKubernetesExplorer.focus"
   },
   {
     "key": "ctrl+k ctrl+j",
@@ -3362,18 +3377,6 @@
     "command": "workbench.action.quickOpen",
     "when": "inQuickOpen",
     "args": ">Debug "
-  },
-  {
-    "key": "ctrl+shift+d",
-    "command": "workbench.action.quickOpen",
-    "when": "inQuickOpen",
-    "args": ">Docker "
-  },
-  {
-    "key": "ctrl+shift+k",
-    "command": "workbench.action.quickOpen",
-    "when": "inQuickOpen",
-    "args": ">Kubernetes "
   },
   {
     "key": "ctrl+f",
