@@ -2207,7 +2207,7 @@ m - marks, selection achor, macros
     "when": "editorTextFocus && foldingEnabled"
   },
   {
-    "key": "ctrl+k ctrl+l",
+    "key": "ctrl+k ctrl+s",
     "command": "editor.action.formatSelection",
     "when": "editorHasDocumentSelectionFormattingProvider && editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
   },
@@ -2280,7 +2280,7 @@ m - marks, selection achor, macros
     "command": "-workbench.action.openGlobalKeybindings"
   },
   {
-    "key": "ctrl+k ctrl+s",
+    "key": "ctrl+k ctrl+z",
     "command": "workbench.action.openSettings",
   },
   {
