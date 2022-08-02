@@ -3436,12 +3436,6 @@ m - marks, selection achor, macros
     "args": ">Preferences "
   },
   {
-    "key": "ctrl+shift+k",
-    "command": "workbench.action.quickOpen",
-    "when": "inQuickOpen",
-    "args": ">Fold "
-  },
-  {
     "key": "ctrl+q",
     "command": "workbench.action.quickOpen",
     "when": "inQuickOpen",
