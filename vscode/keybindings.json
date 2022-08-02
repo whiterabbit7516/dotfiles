@@ -17,9 +17,9 @@ f - find, folder
 g - symbols, goto
 h - help, left
 j - panel, live share, down
-k - preferences, fold, up
+k - preferences, fold, format, up
 l - line, right
-z - zen, undo
+z - zen, settings, undo
 x - extensions, cancel, cut
 c - copy
 v - version control, paste
@@ -2212,11 +2212,6 @@ m - marks, selection achor, macros
     "when": "editorHasDocumentSelectionFormattingProvider && editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
   },
   {
-    "key": "ctrl+k ctrl+f",
-    "command": "editor.action.formatSelection",
-    "when": "editorHasDocumentSelectionFormattingProvider && editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
-  },
-  {
     "key": "ctrl+a ctrl+p",
     "command": "workbench.action.keepEditor",
     "when": "!activeEditorIsNotPreview"
@@ -3439,6 +3434,12 @@ m - marks, selection achor, macros
     "command": "workbench.action.quickOpen",
     "when": "inQuickOpen",
     "args": ">Preferences "
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "workbench.action.quickOpen",
+    "when": "inQuickOpen",
+    "args": ">Fold "
   },
   {
     "key": "ctrl+q",
