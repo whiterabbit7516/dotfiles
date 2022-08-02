@@ -20,7 +20,7 @@ j - panel, live share, down
 k - preferences, fold, up
 l - line, right
 z - zen, undo
-x - cancel
+x - extensions, cancel, cut
 c - copy
 v - version control, paste
 b - side bar, rename
@@ -1143,16 +1143,6 @@ m - marks, selection achor, macros
     "command": "git.refresh",
   },
   {
-    "key": "ctrl+d ctrl+d",
-    "command": "extension.vim_ctrl+d",
-    "when": "editorTextFocus && vim.active && !inDebugRepl"
-  },
-  {
-    "key": "ctrl+u ctrl+u",
-    "command": "extension.vim_ctrl+u",
-    "when": "editorTextFocus && vim.active && vim.use<C-u> && !inDebugRepl"
-  },
-  {
     "key": "ctrl+alt+y",
     "command": "scrollLineUp",
     "when": "textInputFocus"
@@ -2200,24 +2190,6 @@ m - marks, selection achor, macros
     "key": "c",
     "command": "workbench.scm.action.collapseAllRepositories",
     "when": "focusedView == workbench.scm && !inputFocus"
-  },
-  {
-    "key": "ctrl+m c",
-    "command": "vim.showQuickpickCmdLine",
-  },
-  {
-    "key": "ctrl+m v",
-    "command": "toggleVim",
-  },
-  {
-    "key": "ctrl+m ctrl+v",
-    "command": "extension.vim_ctrl+v",
-    "when": "editorTextFocus && vim.active && !inDebugRepl"
-  },
-  {
-    "key": "ctrl+m ctrl+r",
-    "command": "extension.vim_ctrl+r",
-    "when": "editorTextFocus && vim.active && !inDebugRepl"
   },
   {
     "key": "ctrl+k ctrl+d",
