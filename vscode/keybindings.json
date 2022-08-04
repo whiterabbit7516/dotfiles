@@ -8,7 +8,7 @@ y - terminal, debug console
 u - problems, snippets
 i - interface, insert
 o - output, other, cycle, toggle, open
-p - previous, quick open
+p - previous, command prompt
 a - editor group, cursor
 s - select, search
 d - debug, remove
@@ -20,7 +20,7 @@ k - preferences, fold, format, up
 l - live share, line, right
 z - zen, settings, undo
 x - extensions, cut, cancel
-c - copy
+c - cancel, copy
 v - version control, paste
 b - side bar, rename
 n - notification, secondary side bar, next, new
@@ -1446,6 +1446,36 @@ m - marks, selection achor, macros, move
     "key": "ctrl+m ctrl+p",
     "command": "bookmarks.jumpToPrevious",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+m o",
+    "command": "toggleVim",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+m ctrl+d",
+    "command": "extension.vim_ctrl+d",
+    "when": "editorTextFocus && vim.active"
+  },
+  {
+    "key": "ctrl+m ctrl+u",
+    "command": "extension.vim_ctrl+u",
+    "when": "editorTextFocus && vim.active"
+  },
+  {
+    "key": "ctrl+m ctrl+e",
+    "command": "extension.vim_ctrl+e",
+    "when": "editorTextFocus && vim.active"
+  },
+  {
+    "key": "ctrl+m ctrl+y",
+    "command": "extension.vim_ctrl+y",
+    "when": "editorTextFocus && vim.active"
+  },
+  {
+    "key": "ctrl+m ctrl+v",
+    "command": "extension.vim_ctrl+v",
+    "when": "editorTextFocus && vim.active"
   },
   {
     "key": "ctrl+i ctrl+u",
