@@ -1,11 +1,14 @@
 {
     "folders": [
-        {
-            "path": ".."
-        },
-        {
-            "path": "../.."
-        },
+      {
+        "path": ".."
+      },
+      {
+        "path": "../.."
+      },
+      {
+        "path": "../../vscode"
+      }
     ],
     "settings": {
         "window.title": "dotfiles | ${rootName}"

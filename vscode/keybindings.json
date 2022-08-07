@@ -3124,11 +3124,6 @@ m - marks, selection achor, macros, vim, tmux, move
     "when": "inQuickOpen"
   },
   {
-    "key": "alt+h",
-    "command": "workbench.action.terminal.goToRecentDirectory",
-    "when": "inQuickOpen"
-  },
-  {
     "key": "alt+f",
     "command": "workbench.action.quickOpen",
     "when": "inQuickOpen"
