@@ -14,7 +14,7 @@ s - select, search
 d - debug, remove
 f - find, folder
 g - symbols, goto
-h - help, left
+h - help, history, left
 j - panel, down
 k - preferences, fold, format, up
 l - live share, line, right
@@ -22,9 +22,9 @@ z - zen, settings, undo, zoom
 x - extensions, cut, cancel
 c - cancel, copy
 v - version control, paste
-b - side bar, rename
+b - side bar, command, rename
 n - notification, secondary side bar, next, new
-m - marks, selection achor, macros, move
+m - marks, selection achor, macros, vim, tmux, move
 */
 [
   {
@@ -34,6 +34,16 @@ m - marks, selection achor, macros, move
   {
     "key": "ctrl+shift+j",
     "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "workbench.action.terminal.focusNextPane",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+o",
+    "command": "workbench.action.terminal.focusPreviousPane",
     "when": "terminalFocus"
   },
   {
@@ -220,6 +230,11 @@ m - marks, selection achor, macros, move
     "when": "editorFocus"
   },
   {
+    "key": "ctrl+y b",
+    "command": "workbench.action.terminal.rename",
+    "when": "terminalFocus"
+  },
+  {
     "key": "ctrl+i ctrl+h",
     "command": "workbench.action.focusActiveEditorGroup"
   },
@@ -230,16 +245,6 @@ m - marks, selection achor, macros, move
   },
   {
     "key": "ctrl+a shift+o",
-    "command": "workbench.action.focusPreviousGroup",
-    "when": "editorFocus"
-  },
-  {
-    "key": "alt+o",
-    "command": "workbench.action.focusNextGroup",
-    "when": "editorFocus"
-  },
-  {
-    "key": "shift+alt+o",
     "command": "workbench.action.focusPreviousGroup",
     "when": "editorFocus"
   },
@@ -806,11 +811,6 @@ m - marks, selection achor, macros, move
   },
   {
     "key": "ctrl+x",
-    "command": "workbench.action.terminal.clearSelection",
-    "when": "terminalFocus && terminalTextSelected && !terminalFindWidgetVisible"
-  },
-  {
-    "key": "ctrl+x",
     "command": "workbench.action.terminal.navigationModeExit",
     "when": "accessibilityModeEnabled && terminalA11yTreeFocus"
   },
@@ -976,6 +976,11 @@ m - marks, selection achor, macros, move
     "key": "ctrl+x",
     "command": "workbench.action.notebook.hideFind",
     "when": "notebookEditorFocused && notebookFindWidgetFocused"
+  },
+  {
+    "key": "ctrl+x",
+    "command": "workbench.action.terminal.clearSelection",
+    "when": "terminalFocus && terminalHasBeenCreated && terminalTextSelected && !terminalFindVisible || terminalFocus && terminalProcessSupported && terminalTextSelected && !terminalFindVisible"
   },
   {
     "key": "ctrl+x",
@@ -1568,11 +1573,6 @@ m - marks, selection achor, macros, move
   {
     "key": "ctrl+z ctrl+r",
     "command": "editor.action.fontZoomReset"
-  },
-  {
-    "key": "alt+v",
-    "command": "gitlens.gitCommands",
-    "when": "inQuickOpen"
   },
   {
     "key": "ctrl+[",
@@ -3063,42 +3063,6 @@ m - marks, selection achor, macros, move
     "command": "-workbench.action.gotoSymbol"
   },
   {
-    // tmux select next pane
-    "key": "ctrl+o",
-    "command": "workbench.action.terminal.sendSequence",
-    "when": "terminalFocus",
-    "args": {
-      "text": "\u0002o"
-    }
-  },
-  {
-    // tmux select previous pane
-    "key": "ctrl+shift+o",
-    "command": "workbench.action.terminal.sendSequence",
-    "when": "terminalFocus",
-    "args": {
-      "text": "\u0002O"
-    }
-  },
-  {
-    // tmux select next pane
-    "key": "alt+o",
-    "command": "workbench.action.terminal.sendSequence",
-    "when": "terminalFocus",
-    "args": {
-      "text": "\u0002o"
-    }
-  },
-  {
-    // tmux select previous pane
-    "key": "alt+shift+o",
-    "command": "workbench.action.terminal.sendSequence",
-    "when": "terminalFocus",
-    "args": {
-      "text": "\u0002O"
-    }
-  },
-  {
     // tmux choose tree windows
     "key": "ctrl+i ctrl+w",
     "command": "workbench.action.terminal.sendSequence",
@@ -3150,6 +3114,21 @@ m - marks, selection achor, macros, move
     "when": "inQuickOpen"
   },
   {
+    "key": "alt+v",
+    "command": "gitlens.gitCommands",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "alt+b",
+    "command": "workbench.action.terminal.runRecentCommand",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "alt+h",
+    "command": "workbench.action.terminal.goToRecentDirectory",
+    "when": "inQuickOpen"
+  },
+  {
     "key": "alt+f",
     "command": "workbench.action.quickOpen",
     "when": "inQuickOpen"
@@ -3194,7 +3173,8 @@ m - marks, selection achor, macros, move
   },
   {
     "key": "alt+a",
-    "command": "workbench.action.customizeLayout"
+    "command": "workbench.action.customizeLayout",
+    "when": "inQuickOpen"
   },
   {
     "key": "alt+i",
@@ -3433,6 +3413,12 @@ m - marks, selection achor, macros, move
     "key": "ctrl+b",
     "command": "workbench.action.quickOpen",
     "when": "inQuickOpen",
+    "args": ">Command "
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "workbench.action.quickOpen",
+    "when": "inQuickOpen",
     "args": ">Rename "
   },
   {
@@ -3446,6 +3432,12 @@ m - marks, selection achor, macros, move
     "command": "workbench.action.quickOpen",
     "when": "inQuickOpen",
     "args": ">Help "
+  },
+  {
+    "key": "ctrl+shift+h",
+    "command": "workbench.action.quickOpen",
+    "when": "inQuickOpen",
+    "args": ">History "
   },
   {
     "key": "ctrl+k",
