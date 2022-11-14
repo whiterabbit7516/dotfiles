@@ -2123,17 +2123,17 @@ m - marks, selection achor, macros, vim, tmux, move
   {
     "key": "ctrl+r r",
     "command": "workbench.action.quickOpen",
-    "args": ">Remote-Containers: Rebuild "
+    "args": ">Dev Containers: Rebuild "
   },
   {
     "key": "ctrl+r o",
     "command": "workbench.action.quickOpen",
-    "args": ">Remote-Containers: Open "
+    "args": ">Dev Containers: Open "
   },
   {
     "key": "ctrl+r l",
     "command": "workbench.action.quickOpen",
-    "args": ">Remote-Containers: Log "
+    "args": ">Dev Containers: Log "
   },
   {
     "key": "ctrl+q l",
@@ -2156,7 +2156,7 @@ m - marks, selection achor, macros, vim, tmux, move
   {
     "key": "ctrl+r c",
     "command": "workbench.action.quickOpen",
-    "args": ">Remote-Containers: "
+    "args": ">Dev Containers: "
   },
   {
     "key": "ctrl+r s",
