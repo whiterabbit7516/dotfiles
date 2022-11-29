@@ -222,12 +222,12 @@ m - marks, selection achor, macros, vim, tmux, move
   {
     "key": "ctrl+shift+r",
     "command": "workbench.action.terminal.runSelectedText",
-    "when": "editorFocus"
+    "when": "editorFocus || terminalFocus"
   },
   {
     "key": "ctrl+y r",
     "command": "workbench.action.terminal.runSelectedText",
-    "when": "editorFocus"
+    "when": "editorFocus || terminalFocus"
   },
   {
     "key": "ctrl+y b",
