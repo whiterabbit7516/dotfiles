@@ -430,6 +430,11 @@ m - marks, selection achor, macros, vim, tmux, move
     "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
   },
   {
+    "key": "ctrl+e a",
+    "command": "editor.action.sourceAction",
+    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+  },
+  {
     "key": "ctrl+e ctrl+w",
     "command": "editor.action.toggleWordWrap"
   },
