@@ -18,7 +18,7 @@ h - help, history, left
 j - panel, down
 k - preferences, fold, format, up
 l - live share, line, right
-z - zen, settings, undo, zoom
+z - zen, profiles, settings, undo, zoom
 x - extensions, cut, cancel
 c - cancel, copy
 v - version control, paste
@@ -2500,46 +2500,6 @@ m - marks, selection achor, macros, vim, tmux, move
     }
   },
   {
-    "key": "ctrl+k 0",
-    "command": "settings.cycle.main.0",
-  },
-  {
-    "key": "ctrl+k 1",
-    "command": "settings.cycle.main.1",
-  },
-  {
-    "key": "ctrl+k 2",
-    "command": "settings.cycle.main.2",
-  },
-  {
-    "key": "ctrl+k 3",
-    "command": "settings.cycle.main.3",
-  },
-  {
-    "key": "ctrl+k 4",
-    "command": "settings.cycle.main.4",
-  },
-  {
-    "key": "ctrl+k 5",
-    "command": "settings.cycle.main.5",
-  },
-  {
-    "key": "ctrl+k 6",
-    "command": "settings.cycle.main.6",
-  },
-  {
-    "key": "ctrl+k 7",
-    "command": "settings.cycle.main.7",
-  },
-  {
-    "key": "ctrl+k 8",
-    "command": "settings.cycle.main.8",
-  },
-  {
-    "key": "ctrl+k 9",
-    "command": "settings.cycle.main.9",
-  },
-  {
     "key": "ctrl+w ctrl+a",
     "command": "workbench.action.closeEditorsAndGroup"
   },
@@ -3151,9 +3111,8 @@ m - marks, selection achor, macros, vim, tmux, move
   },
   {
     "key": "alt+z",
-    "command": "workbench.action.quickOpen",
+    "command": "workbench.profiles.actions.switchProfile",
     "when": "inQuickOpen",
-    "args": "undo "
   },
   {
     "key": "alt+l",
@@ -3363,7 +3322,7 @@ m - marks, selection achor, macros, vim, tmux, move
     "key": "ctrl+z",
     "command": "workbench.action.quickOpen",
     "when": "inQuickOpen",
-    "args": ">Zen "
+    "args": ">Profiles "
   },
   {
     "key": "ctrl+shift+z",
