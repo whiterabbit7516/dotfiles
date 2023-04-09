@@ -286,20 +286,6 @@
           }
       ]
   },
-  "settings.cycle": [
-      {
-          "id": "main.0",
-          "values": [ { } ]
-      },
-      {
-          "id": "main.1",
-          "values": [ { } ]
-      },
-      {
-          "id": "main.2",
-          "values": [ { } ]
-      },
-  ],
   "editor.multiCursorModifier": "ctrlCmd",
   "git.allowForcePush": true,
   "git.confirmForcePush": false,
