@@ -1,0 +1,49 @@
+{
+  "name": "main",
+  "image": "ghcr.io/ha07z7xe/devcontainers/devenv-main:latest",
+  "workspaceFolder": "/workspaces/dotfiles",
+  "runArgs": [
+    "--network=host",
+    // "--cap-add=NET_RAW",
+    // "--cap-add=NET_ADMIN"
+  ],
+  "initializeCommand": [
+    "docker",
+    "pull",
+    "ghcr.io/ha07z7xe/devcontainers/devenv-main:latest"
+  ],
+  "postCreateCommand": "/usr/bin/pwsh -nop -nol -f /devcontainer/docker-context/postCreate.ps1",
+  "containerEnv": {},
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "pwsh",
+        "terminal.integrated.profiles.linux": {
+          "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+          },
+          "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell",
+            "args": [
+              "-nol"
+            ]
+          }
+        },
+        "omnisharp.autoStart": false
+      },
+      "extensions": [
+        "vscodevim.vim",
+        "alefragnani.bookmarks",
+        "eamodio.gitlens"
+      ]
+    }
+  },
+  "mounts": [
+    // "source=${localEnv:HOME}/.aws,target=/root/.aws,type=bind,consistency=cached",
+    // "source=${localEnv:HOME}/.kube,target=/root/.kube,type=bind,consistency=cached",
+    // "source=${localWorkspaceFolder}/../../,target=/workspaces/repo-this,type=bind",
+    // "source=${localWorkspaceFolder}/../../../repo-other,target=/workspaces/repo-other,type=bind",
+  ]
+}
