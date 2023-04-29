@@ -802,6 +802,11 @@ m - marks, selection achor, macros, vim, tmux, move
   },
   {
     "key": "ctrl+x",
+    "command": "editor.action.escapeFocusHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "ctrl+x",
     "command": "-editor.action.clipboardCutAction"
   },
   {
