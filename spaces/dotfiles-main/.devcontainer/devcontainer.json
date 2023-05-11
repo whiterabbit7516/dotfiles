@@ -17,6 +17,8 @@
   "customizations": {
     "vscode": {
       "settings": {
+        "window.title": "${rootName}${separator}${profileName}",
+        "window.titleSeparator": " | ",
         "terminal.integrated.defaultProfile.linux": "pwsh",
         "terminal.integrated.profiles.linux": {
           "tmux": {
