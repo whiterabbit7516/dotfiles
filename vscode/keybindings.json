@@ -2186,6 +2186,10 @@ m - marks, selection achor, macros, vim, tmux, move
     "command": "workbench.action.openSnippets"
   },
   {
+    "key": "ctrl+z b",
+    "command": "workbench.profiles.actions.renameProfile",
+  },
+  {
     "key": "ctrl+t c",
     "command": "fileutils.duplicateFile",
   },
