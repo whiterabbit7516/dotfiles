@@ -1,3 +1,4 @@
 {
-  "window.title": "${rootName}${separator}${profileName}"
+  "window.titleSeparator": " | ",
+  "window.title": "${rootName}${separator}${profileName}",
 }

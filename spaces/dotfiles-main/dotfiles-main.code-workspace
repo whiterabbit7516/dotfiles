@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "path": ".."
+    },
+    {
+      "path": "../.."
+    },
+    {
+      "path": "../../vscode"
+    }
+  ],
+  "settings": {
+    "window.titleSeparator": " | ",
+    "window.title": "${rootName}${separator}${profileName}"
+  }
+}

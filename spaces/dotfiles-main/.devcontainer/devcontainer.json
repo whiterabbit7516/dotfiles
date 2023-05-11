@@ -1,5 +1,5 @@
 {
-  "name": "main",
+  "name": "dotfiles-main",
   "image": "ghcr.io/ha07z7xe/devcontainers/devenv-main:latest",
   "workspaceFolder": "/workspaces/dotfiles",
   "runArgs": [
