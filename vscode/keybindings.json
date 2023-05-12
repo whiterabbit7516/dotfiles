@@ -57,6 +57,10 @@ m - marks, selection achor, macros, vim, tmux, move
     "when": "terminalFocus"
   },
   {
+    "key": "ctrl+j",
+    "command": "workbench.action.togglePanel"
+  },
+  {
     "key": "ctrl+h",
     "command": "workbench.action.toggleMaximizedPanel"
   },
