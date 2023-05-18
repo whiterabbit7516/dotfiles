@@ -3,6 +3,7 @@
   "window.titleSeparator": " | ",
   "terminal.integrated.defaultProfile.linux": "pwsh",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "editor.stickyScroll.enabled": true,
   "terminal.integrated.profiles.linux": {
     "bash": {
       "path": "bash",
