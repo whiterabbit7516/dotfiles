@@ -1330,8 +1330,51 @@ m - marks, selection achor, macros, vim, tmux, move
     "when": "textInputFocus && !editorReadonly"
   },
   {
-    "key": "ctrl+x",
-    "command": "-editor.action.clipboardCutAction",
+    "key": "ctrl+c ctrl+c",
+    "command": "workbench.action.terminal.copySelection",
+    "when": "terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected"
+  },
+  {
+    "key": "ctrl+u ctrl+c",
+    "command": "workbench.action.terminal.copySelection",
+    "when": "terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected"
+  },
+  {
+    "key": "ctrl+u ctrl+v",
+    "command": "workbench.action.terminal.paste",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+v ctrl+v",
+    "command": "workbench.action.terminal.paste",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "-editor.action.clipboardCopyAction"
+  },
+  {
+    "key": "ctrl+u ctrl+c",
+    "command": "editor.action.clipboardCopyAction",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+c ctrl+c",
+    "command": "editor.action.clipboardCopyAction",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+v",
+    "command": "-editor.action.clipboardPasteAction"
+  },
+  {
+    "key": "ctrl+u ctrl+v",
+    "command": "editor.action.clipboardPasteAction",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+v ctrl+v",
+    "command": "editor.action.clipboardPasteAction",
     "when": "textInputFocus && !editorReadonly"
   },
   {
@@ -1561,22 +1604,6 @@ m - marks, selection achor, macros, vim, tmux, move
     "command": "-editor.action.toggleWordWrap"
   },
   {
-    "key": "ctrl+c",
-    "command": "-editor.action.clipboardCopyAction"
-  },
-  {
-    "key": "ctrl+c ctrl+c",
-    "command": "editor.action.clipboardCopyAction"
-  },
-  {
-    "key": "ctrl+v",
-    "command": "-editor.action.clipboardPasteAction"
-  },
-  {
-    "key": "ctrl+v ctrl+v",
-    "command": "editor.action.clipboardPasteAction"
-  },
-  {
     "key": "ctrl+z ctrl+z",
     "command": "undo"
   },
@@ -1649,11 +1676,6 @@ m - marks, selection achor, macros, vim, tmux, move
   {
     "key": "ctrl+i c",
     "command": "breadcrumbs.toggle"
-  },
-  {
-    "key": "ctrl+u ctrl+v",
-    "command": "editor.action.clipboardPasteAction",
-    "when": "textInputFocus && !editorReadonly"
   },
   {
     "key": "ctrl+l ctrl+i",
