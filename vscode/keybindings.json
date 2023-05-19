@@ -1561,6 +1561,14 @@ m - marks, selection achor, macros, vim, tmux, move
     "command": "-editor.action.toggleWordWrap"
   },
   {
+    "key": "ctrl+c",
+    "command": "-editor.action.clipboardCopyAction"
+  },
+  {
+    "key": "ctrl+c ctrl+c",
+    "command": "editor.action.clipboardCopyAction"
+  },
+  {
     "key": "ctrl+v",
     "command": "-editor.action.clipboardPasteAction"
   },
