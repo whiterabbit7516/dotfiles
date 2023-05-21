@@ -1325,11 +1325,6 @@ m - marks, selection achor, macros, vim, tmux, move
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+shift+x",
-    "command": "editor.action.clipboardCutAction",
-    "when": "textInputFocus && !editorReadonly"
-  },
-  {
     "key": "ctrl+shift+c",
     "command": "-workbench.action.terminal.copySelection",
     "when": "terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected"
@@ -1385,6 +1380,11 @@ m - marks, selection achor, macros, vim, tmux, move
   {
     "key": "ctrl+v ctrl+v",
     "command": "editor.action.clipboardPasteAction",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+u ctrl+x",
+    "command": "editor.action.clipboardCutAction",
     "when": "textInputFocus && !editorReadonly"
   },
   {
