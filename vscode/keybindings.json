@@ -20,7 +20,7 @@ k - preferences, fold, format, up
 l - live share, line, right
 z - zen, profiles, settings, undo, zoom
 x - extensions, cut, cancel
-c - cancel, copy
+c - copy, crumbs
 v - version control, paste
 b - side bar, command, rename
 n - notification, secondary side bar, next, new
@@ -2025,7 +2025,7 @@ m - marks, selection achor, macros, vim, tmux, move
     "when": "terminalFindVisible && terminalFocus"
   },
   {
-    "key": "ctrl+i x",
+    "key": "ctrl+i ctrl+x",
     "command": "workbench.view.extensions"
   },
   {
