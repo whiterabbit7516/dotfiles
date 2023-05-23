@@ -1276,8 +1276,7 @@ m - marks, selection achor, macros, vim, tmux, move
   },
   {
     "key": "ctrl+shift+p",
-    "command": "workbench.action.quickOpen",
-    "args": ">"
+    "command": "workbench.action.showCommands"
   },
   {
     "key": "ctrl+alt+n",
@@ -3146,7 +3145,7 @@ m - marks, selection achor, macros, vim, tmux, move
   },
   {
     "key": "alt+b",
-    "command": "workbench.action.terminal.runRecentCommand",
+    "command": "workbench.action.showCommands",
     "when": "inQuickOpen"
   },
   {
