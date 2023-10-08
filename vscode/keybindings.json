@@ -20,7 +20,7 @@ k - preferences, fold, format, up
 l - live share, line, right
 z - zen, profiles, settings, undo, zoom
 x - extensions, cut, cancel
-c - copy, crumbs
+c - codespaces, copy, crumbs
 v - version control, paste
 b - side bar, command, rename
 n - notification, secondary side bar, next, new
@@ -1090,7 +1090,7 @@ m - marks, selection achor, macros, vim, tmux, move
     },
     {
         "key": "ctrl+v v",
-      "command": "gitlens.gitCommands",
+        "command": "gitlens.gitCommands",
     },
     {
         "key": "ctrl+v ctrl+b",
@@ -1969,12 +1969,16 @@ m - marks, selection achor, macros, vim, tmux, move
         "when": "!terminalFocus"
     },
     {
-        "key": "ctrl+r ctrl+c",
+        "key": "ctrl+r ctrl+d",
         "command": "targetsContainers.focus",
     },
     {
+        "key": "ctrl+r ctrl+c",
+        "command": "github.codespaces.explorer.focus"
+    },
+    {
         "key": "ctrl+r ctrl+s",
-        "command": "sshHosts.focus",
+        "command": "remoteTargets.focus"
     },
     {
         "key": "ctrl+i ctrl+r",
@@ -2225,9 +2229,14 @@ m - marks, selection achor, macros, vim, tmux, move
         "command": "workbench.action.quit"
     },
     {
-        "key": "ctrl+r c",
+        "key": "ctrl+r d",
         "command": "workbench.action.quickOpen",
         "args": ">Dev Containers: "
+    },
+    {
+        "key": "ctrl+r c",
+        "command": "workbench.action.quickOpen",
+        "args": ">Codespaces: "
     },
     {
         "key": "ctrl+r s",
@@ -2241,6 +2250,10 @@ m - marks, selection achor, macros, vim, tmux, move
     {
         "key": "ctrl+s z",
         "command": "opensshremotes.openConfigFile"
+    },
+    {
+        "key": "ctrl+c z",
+        "command": "workbench.action.openRemoteSettingsFile"
     },
     {
         "key": "ctrl+u z",
@@ -3211,13 +3224,13 @@ m - marks, selection achor, macros, vim, tmux, move
         "when": "inQuickOpen"
     },
     {
-        "key": "alt+c",
-        "command": "remote-containers.attachToRunningContainer",
+        "key": "alt+d",
+        "command": "workbench.action.debug.selectandstart",
         "when": "inQuickOpen"
     },
     {
-        "key": "alt+d",
-        "command": "workbench.action.debug.selectandstart",
+        "key": "alt+c",
+        "command": "github.codespaces.connect",
         "when": "inQuickOpen"
     },
     {
@@ -3279,6 +3292,12 @@ m - marks, selection achor, macros, vim, tmux, move
     },
     {
         "key": "ctrl+v",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Source Control "
+    },
+    {
+        "key": "ctrl+shift+v",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
         "args": ">Paste "
@@ -3352,13 +3371,13 @@ m - marks, selection achor, macros, vim, tmux, move
         "key": "ctrl+s",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": ">Search "
+        "args": ">Remote-SSH "
     },
     {
         "key": "ctrl+shift+s",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": ">Select "
+        "args": ">Search "
     },
     {
         "key": "ctrl+shift+x",
@@ -3371,6 +3390,12 @@ m - marks, selection achor, macros, vim, tmux, move
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
         "args": ">Debug "
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Dev Contaners "
     },
     {
         "key": "ctrl+f",
@@ -3400,7 +3425,7 @@ m - marks, selection achor, macros, vim, tmux, move
         "key": "ctrl+c",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": ">Copy "
+        "args": ">Codespaces "
     },
     {
         "key": "ctrl+shift+g",
@@ -3515,5 +3540,5 @@ m - marks, selection achor, macros, vim, tmux, move
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
         "args": ">Problems "
-    }
+    },
 ]
