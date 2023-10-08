@@ -11,7 +11,7 @@ o - output, other, cycle, toggle, open
 p - previous, command prompt
 a - editor group, cursor
 s - select, search
-d - debug, remove
+d - debug, dev containers, remove
 f - find, folder
 g - symbols, goto
 h - help, history, left
@@ -1090,7 +1090,7 @@ m - marks, selection achor, macros, vim, tmux, move
     },
     {
         "key": "ctrl+v v",
-        "command": "gitlens.gitCommands",
+      "command": "gitlens.gitCommands",
     },
     {
         "key": "ctrl+v ctrl+b",
@@ -2211,6 +2211,23 @@ m - marks, selection achor, macros, vim, tmux, move
         "args": ">Dev Containers: Log "
     },
     {
+        "key": "ctrl+c r",
+        "command": "workbench.action.quickOpen",
+        "args": ">Codespaces: Rebuild "
+    },
+    {
+        "key": "ctrl+c c",
+        "command": "github.codespaces.connect",
+    },
+    {
+        "key": "ctrl+c x",
+        "command": "github.codespaces.disconnectSuspend"
+    },
+    {
+        "key": "ctrl+c n",
+        "command": "github.codespaces.addEnvironment"
+    },
+    {
         "key": "ctrl+q l",
         "command": "workbench.action.quickOpen",
         "args": ">Developer: Log "
@@ -2252,8 +2269,8 @@ m - marks, selection achor, macros, vim, tmux, move
         "command": "opensshremotes.openConfigFile"
     },
     {
-        "key": "ctrl+c z",
-        "command": "workbench.action.openRemoteSettingsFile"
+      "key": "ctrl+c z",
+      "command": "workbench.action.openRemoteSettingsFile"
     },
     {
         "key": "ctrl+u z",
