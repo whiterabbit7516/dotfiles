@@ -28,6 +28,52 @@ m - marks, selection achor, macros, vim, tmux, move
 */
 [
     ///////////////////////////////////////////////////////////////
+    // unbinds
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+alt+j",
+        "command": "-bookmarks.jumpToPrevious",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+l",
+        "command": "-bookmarks.jumpToNext",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+z",
+        "command": "-editor.action.toggleWordWrap"
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "-workbench.action.newWindow"
+    },
+    {
+        "key": "ctrl+shift+5",
+        "command": "-workbench.action.terminal.splitInstance",
+        "when": "terminalProcessSupported && terminalTabsFocus"
+    },
+    {
+        "key": "f2",
+        "command": "-workbench.action.terminal.renameInstance",
+        "when": "terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection"
+    },
+    {
+        "key": "ctrl+shift+\\",
+        "command": "-workbench.action.terminal.focusTabs",
+        "when": "terminalFocus && terminalProcessSupported || terminalProcessSupported && terminalTabsFocus"
+    },
+    {
+        "key": "delete",
+        "command": "-workbench.action.terminal.killInstance",
+        "when": "terminalIsOpen && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+shift+\\",
+        "command": "-workbench.action.splitEditorInGroup",
+        "when": "activeEditorCanSplitInGroup"
+    },
+    ///////////////////////////////////////////////////////////////
     // terminal
     ///////////////////////////////////////////////////////////////
     {
@@ -63,6 +109,9 @@ m - marks, selection achor, macros, vim, tmux, move
         "command": "workbench.action.terminal.focusPreviousPane",
         "when": "terminalFocus"
     },
+    ///////////////////////////////////////////////////////////////
+    // panel
+    ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+j",
         "command": "workbench.action.togglePanel"
@@ -78,6 +127,43 @@ m - marks, selection achor, macros, vim, tmux, move
     {
         "key": "ctrl+n",
         "command": "workbench.action.toggleAuxiliaryBar"
+    },
+    ///////////////////////////////////////////////////////////////
+    // remote - general
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+r x",
+        "command": "workbench.action.remote.close"
+    },
+    {
+        "key": "alt+r",
+        "command": "workbench.action.remote.showMenu",
+        "when": "inQuickOpen"
+    },
+    ///////////////////////////////////////////////////////////////
+    // remote - dev containers
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+r d",
+        "command": "workbench.action.quickOpen",
+        "args": ">Dev Containers: "
+    },
+    {
+        "key": "ctrl+r z",
+        "command": "remote-containers.openDevContainerFile"
+    },
+    ///////////////////////////////////////////////////////////////
+    // remote - ssh
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+r s",
+        "command": "workbench.action.quickOpen",
+        "args": ">Remote-SSH: "
+    },
+    {
+        "key": "alt+s",
+        "command": "opensshremotes.openEmptyWindow",
+        "when": "inQuickOpen"
     },
     {
         "key": "ctrl+shift+x",
@@ -168,10 +254,6 @@ m - marks, selection achor, macros, vim, tmux, move
         "key": "ctrl+i ctrl+y",
         "command": "workbench.action.terminal.focus"
     },
-    {
-        "key": "ctrl+shift+n",
-        "command": "-workbench.action.newWindow"
-    },
     // {
     //     "key": "x",
     //     "command": "workbench.action.terminal.killInstance",
@@ -192,26 +274,6 @@ m - marks, selection achor, macros, vim, tmux, move
     //     "command": "workbench.action.terminal.renameInstance",
     //     "when": "!inQuickOpen && terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection"
     // },
-    {
-        "key": "ctrl+shift+5",
-        "command": "-workbench.action.terminal.splitInstance",
-        "when": "terminalProcessSupported && terminalTabsFocus"
-    },
-    {
-        "key": "f2",
-        "command": "-workbench.action.terminal.renameInstance",
-        "when": "terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection"
-    },
-    {
-        "key": "ctrl+shift+\\",
-        "command": "-workbench.action.terminal.focusTabs",
-        "when": "terminalFocus && terminalProcessSupported || terminalProcessSupported && terminalTabsFocus"
-    },
-    {
-        "key": "delete",
-        "command": "-workbench.action.terminal.killInstance",
-        "when": "terminalIsOpen && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus"
-    },
     {
         "key": "ctrl+i ctrl+y",
         "command": "workbench.action.terminal.focusTabs",
@@ -460,11 +522,6 @@ m - marks, selection achor, macros, vim, tmux, move
     {
         "key": "ctrl+e s",
         "command": "workbench.action.toggleSplitEditorInGroup"
-    },
-    {
-        "key": "ctrl+k ctrl+shift+\\",
-        "command": "-workbench.action.splitEditorInGroup",
-        "when": "activeEditorCanSplitInGroup"
     },
     {
         "key": "ctrl+e o",
@@ -1616,20 +1673,6 @@ m - marks, selection achor, macros, vim, tmux, move
         "command": "workbench.action.focusAuxiliaryBar"
     },
     {
-        "key": "ctrl+alt+j",
-        "command": "-bookmarks.jumpToPrevious",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+alt+l",
-        "command": "-bookmarks.jumpToNext",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "alt+z",
-        "command": "-editor.action.toggleWordWrap"
-    },
-    {
         "key": "ctrl+z ctrl+z",
         "command": "undo"
     },
@@ -2249,23 +2292,9 @@ m - marks, selection achor, macros, vim, tmux, move
         "command": "workbench.action.quit"
     },
     {
-        "key": "ctrl+r d",
-        "command": "workbench.action.quickOpen",
-        "args": ">Dev Containers: "
-    },
-    {
         "key": "ctrl+r c",
         "command": "workbench.action.quickOpen",
         "args": ">Codespaces: "
-    },
-    {
-        "key": "ctrl+r s",
-        "command": "workbench.action.quickOpen",
-        "args": ">Remote-SSH: "
-    },
-    {
-        "key": "ctrl+r z",
-        "command": "remote-containers.openDevContainerFile"
     },
     {
         "key": "ctrl+s z",
@@ -3280,11 +3309,6 @@ m - marks, selection achor, macros, vim, tmux, move
         "when": "inQuickOpen"
     },
     {
-        "key": "alt+s",
-        "command": "opensshremotes.openEmptyWindow",
-        "when": "inQuickOpen"
-    },
-    {
         "key": "alt+w",
         "command": "workbench.action.switchWindow",
         "when": "inQuickOpen"
@@ -3292,11 +3316,6 @@ m - marks, selection achor, macros, vim, tmux, move
     {
         "key": "alt+n",
         "command": "workbench.action.openRecent",
-        "when": "inQuickOpen"
-    },
-    {
-        "key": "alt+r",
-        "command": "workbench.action.remote.showMenu",
         "when": "inQuickOpen"
     },
     {
