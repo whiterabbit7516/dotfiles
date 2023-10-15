@@ -27,6 +27,9 @@ n - notification, secondary side bar, next, new
 m - marks, selection achor, macros, vim, tmux, move
 */
 [
+    ///////////////////////////////////////////////////////////////
+    // terminal
+    ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+shift+j",
         "command": "workbench.action.terminal.focus"
@@ -2276,6 +2279,14 @@ m - marks, selection achor, macros, vim, tmux, move
         "key": "ctrl+u z",
         "command": "workbench.action.openSnippets"
     },
+    ///////////////////////////////////////////////////////////////
+    // profiles
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "alt+z",
+        "command": "workbench.profiles.actions.switchProfile",
+        "when": "inQuickOpen",
+    },
     {
         "key": "ctrl+z b",
         "command": "workbench.profiles.actions.renameProfile",
@@ -3206,11 +3217,6 @@ m - marks, selection achor, macros, vim, tmux, move
         "args": "?"
     },
     {
-        "key": "alt+z",
-        "command": "workbench.profiles.actions.switchProfile",
-        "when": "inQuickOpen",
-    },
-    {
         "key": "alt+l",
         "command": "workbench.action.acceptSelectedQuickOpenItem",
         "when": "inQuickOpen"
@@ -3255,6 +3261,9 @@ m - marks, selection achor, macros, vim, tmux, move
         "command": "workbench.action.showLogs",
         "when": "inQuickOpen"
     },
+    ///////////////////////////////////////////////////////////////
+    // marks
+    ///////////////////////////////////////////////////////////////
     {
         "key": "alt+m",
         "command": "bookmarks.listFromAllFiles",
