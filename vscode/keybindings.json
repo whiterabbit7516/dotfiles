@@ -9,7 +9,7 @@ u - problems, snippets
 i - interface, insert
 o - output, other, cycle, toggle, open
 p - previous, command prompt
-a - editor group, cursor
+a - editor group, cursor, activity bar
 s - select, search
 d - debug, dev containers, remove
 f - find, folder
@@ -109,6 +109,72 @@ m - marks, selection achor, macros, vim, tmux, move
         "command": "workbench.action.terminal.focusPreviousPane",
         "when": "terminalFocus"
     },
+    {
+        "key": "ctrl+shift+x",
+        "command": "workbench.action.terminal.kill",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "workbench.action.terminal.newInActiveWorkspace"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "workbench.action.terminal.focusPrevious"
+    },
+    {
+        "key": "ctrl+shift+9",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "push-location; set-location ..; clear-host;\u000a"
+        }
+    },
+    {
+        "key": "ctrl+shift+0",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+            "text": "pop-location; clear-host;\u000a"
+        }
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "terminalHere.create",
+    },
+    {
+        "key": "ctrl+i ctrl+y",
+        "command": "workbench.action.terminal.focus"
+    },
+    // {
+    //     "key": "x",
+    //     "command": "workbench.action.terminal.killInstance",
+    //     "when": "!inQuickOpen && terminalIsOpen && terminalTabsFocus"
+    // },
+    // {
+    //     "key": "s",
+    //     "command": "workbench.action.terminal.splitInstance",
+    //     "when": "!inQuickOpen && terminalIsOpen && terminalTabsFocus"
+    // },
+    // {
+    //     "key": "n",
+    //     "command": "workbench.action.terminal.newInActiveWorkspace",
+    //     "when": "!inQuickOpen && terminalIsOpen && terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection"
+    // },
+    // {
+    //     "key": "b",
+    //     "command": "workbench.action.terminal.renameInstance",
+    //     "when": "!inQuickOpen && terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection"
+    // },
+    {
+        "key": "ctrl+i ctrl+y",
+        "command": "workbench.action.terminal.focusTabs",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+y",
+        "command": "workbench.action.terminal.focus"
+    },
     ///////////////////////////////////////////////////////////////
     // panel
     ///////////////////////////////////////////////////////////////
@@ -165,19 +231,16 @@ m - marks, selection achor, macros, vim, tmux, move
         "command": "opensshremotes.openEmptyWindow",
         "when": "inQuickOpen"
     },
+    ///////////////////////////////////////////////////////////////
+    // activity bar
+    ///////////////////////////////////////////////////////////////
     {
-        "key": "ctrl+shift+x",
-        "command": "workbench.action.terminal.kill",
-        "when": "terminalFocus"
+        "key": "ctrl+i ctrl+a",
+        "command": "workbench.action.focusActivityBar"
     },
-    {
-        "key": "ctrl+shift+n",
-        "command": "workbench.action.terminal.newInActiveWorkspace"
-    },
-    {
-        "key": "ctrl+shift+k",
-        "command": "workbench.action.terminal.focusPrevious"
-    },
+    ///////////////////////////////////////////////////////////////
+    // navigation
+    ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+,",
         "command": "workbench.action.navigateBack"
@@ -195,22 +258,6 @@ m - marks, selection achor, macros, vim, tmux, move
         "command": "workbench.action.navigateForward"
     },
     {
-        "key": "ctrl+shift+9",
-        "command": "workbench.action.terminal.sendSequence",
-        "when": "terminalFocus",
-        "args": {
-            "text": "push-location; set-location ..; clear-host;\u000a"
-        }
-    },
-    {
-        "key": "ctrl+shift+0",
-        "command": "workbench.action.terminal.sendSequence",
-        "when": "terminalFocus",
-        "args": {
-            "text": "pop-location; clear-host;\u000a"
-        }
-    },
-    {
         "key": "alt+left",
         "command": "workbench.action.navigateBack"
     },
@@ -218,30 +265,37 @@ m - marks, selection achor, macros, vim, tmux, move
         "key": "alt+right",
         "command": "workbench.action.navigateForward"
     },
-    {
-        "key": "ctrl+shift+t",
-        "command": "terminalHere.create",
-    },
-    {
-        "key": "ctrl+i ctrl+f",
-        "command": "workbench.explorer.fileView.focus"
-    },
-    {
-        "key": "ctrl+i ctrl+w",
-        "command": "workbench.view.windows" // non existant
-    },
-    {
-        "key": "ctrl+i ctrl+v",
-        "command": "workbench.view.scm"
-    },
-    {
-        "key": "ctrl+i ctrl+l",
-        "command": "workbench.view.extension.liveshare"
-    },
+    ///////////////////////////////////////////////////////////////
+    // debug
+    ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i ctrl+d",
         "command": "workbench.view.debug"
     },
+    ///////////////////////////////////////////////////////////////
+    // source control
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+i ctrl+v",
+        "command": "workbench.view.scm"
+    },
+    ///////////////////////////////////////////////////////////////
+    // live share
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+i ctrl+l",
+        "command": "workbench.view.extension.liveshare"
+    },
+    ///////////////////////////////////////////////////////////////
+    // windows
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+i ctrl+w",
+        "command": "workbench.view.windows" // non existant
+    },
+    ///////////////////////////////////////////////////////////////
+    // panel
+    ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i ctrl+j",
         "command": "workbench.action.focusPanel"
@@ -251,37 +305,8 @@ m - marks, selection achor, macros, vim, tmux, move
         "command": "workbench.action.focusPanel"
     },
     {
-        "key": "ctrl+i ctrl+y",
-        "command": "workbench.action.terminal.focus"
-    },
-    // {
-    //     "key": "x",
-    //     "command": "workbench.action.terminal.killInstance",
-    //     "when": "!inQuickOpen && terminalIsOpen && terminalTabsFocus"
-    // },
-    // {
-    //     "key": "s",
-    //     "command": "workbench.action.terminal.splitInstance",
-    //     "when": "!inQuickOpen && terminalIsOpen && terminalTabsFocus"
-    // },
-    // {
-    //     "key": "n",
-    //     "command": "workbench.action.terminal.newInActiveWorkspace",
-    //     "when": "!inQuickOpen && terminalIsOpen && terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection"
-    // },
-    // {
-    //     "key": "b",
-    //     "command": "workbench.action.terminal.renameInstance",
-    //     "when": "!inQuickOpen && terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection"
-    // },
-    {
-        "key": "ctrl+i ctrl+y",
-        "command": "workbench.action.terminal.focusTabs",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "ctrl+shift+y",
-        "command": "workbench.action.terminal.focus"
+        "key": "ctrl+i ctrl+f",
+        "command": "workbench.explorer.fileView.focus"
     },
     {
         "key": "ctrl+d ctrl+y",
@@ -358,10 +383,6 @@ m - marks, selection achor, macros, vim, tmux, move
     {
         "key": "ctrl+i g",
         "command": "references-view.tree.focus"
-    },
-    {
-        "key": "ctrl+i a",
-        "command": "workbench.action.toggleActivityBarVisibility"
     },
     {
         "key": "ctrl+i ctrl+i",
