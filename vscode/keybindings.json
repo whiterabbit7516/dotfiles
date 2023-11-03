@@ -243,6 +243,10 @@ m - marks, selection achor, macros, vim, tmux, move
         "key": "ctrl+i ctrl+a",
         "command": "workbench.action.focusActivityBar"
     },
+    {
+        "key": "ctrl+i a",
+        "command": "workbench.action.toggleActivityBarVisibility"
+    },
     ///////////////////////////////////////////////////////////////
     // navigation
     ///////////////////////////////////////////////////////////////
