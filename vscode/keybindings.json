@@ -323,6 +323,22 @@ m - marks, selection achor, macros, vim, tmux, move
     // editor groups
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+a s",
+        "command": "workbench.action.toggleSplitEditorInGroup"
+    },
+    {
+        "key": "ctrl+a p",
+        "command": "workbench.action.toggleEditorGroupLock"
+    },
+    {
+        "key": "ctrl+w ctrl+a",
+        "command": "workbench.action.closeEditorsAndGroup"
+    },
+    {
+        "key": "ctrl+a ctrl+x",
+        "command": "workbench.action.closeEditorsAndGroup"
+    },
+    {
         "key": "ctrl+a ctrl+m",
         "command": "workbench.action.joinTwoGroups",
         "when": "editorTextFocus"
@@ -567,10 +583,6 @@ m - marks, selection achor, macros, vim, tmux, move
     {
         "key": "ctrl+e ctrl+s",
         "command": "editor.action.toggleRenderWhitespace"
-    },
-    {
-        "key": "ctrl+e s",
-        "command": "workbench.action.toggleSplitEditorInGroup"
     },
     {
         "key": "ctrl+e o",
@@ -2678,10 +2690,6 @@ m - marks, selection achor, macros, vim, tmux, move
                 }
             ]
         }
-    },
-    {
-        "key": "ctrl+w ctrl+a",
-        "command": "workbench.action.closeEditorsAndGroup"
     },
     {
         "key": "ctrl+/",
