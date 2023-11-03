@@ -31,6 +31,11 @@ m - marks, selection achor, macros, vim, tmux, move
     // unbinds
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+k ctrl+m",
+        "command": "-workbench.action.toggleMaximizeEditorGroup",
+        "when": "maximizedEditorGroup || multipleEditorGroups"
+    },
+    {
         "key": "ctrl+alt+j",
         "command": "-bookmarks.jumpToPrevious",
         "when": "editorTextFocus"
@@ -304,6 +309,84 @@ m - marks, selection achor, macros, vim, tmux, move
         "key": "ctrl+9",
         "command": "workbench.action.focusPanel"
     },
+    ///////////////////////////////////////////////////////////////
+    // editor groups
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+a ctrl+m",
+        "command": "workbench.action.joinTwoGroups",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+a ctrl+i",
+        "command": "workbench.action.toggleMaximizeEditorGroup",
+        "when": "maximizedEditorGroup || multipleEditorGroups"
+    },
+    {
+        "key": "ctrl+a ctrl+h",
+        "command": "workbench.action.moveEditorToLeftGroup",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+a ctrl+l",
+        "command": "workbench.action.moveEditorToRightGroup",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+a ctrl+s",
+        "command": "workbench.action.splitEditor",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+a ctrl+j",
+        "command": "workbench.action.moveEditorToBelowGroup",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+a ctrl+k",
+        "command": "workbench.action.moveEditorToAboveGroup",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+a h",
+        "command": "workbench.action.focusLeftGroup"
+    },
+    {
+        "key": "ctrl+a l",
+        "command": "workbench.action.focusRightGroup"
+    },
+    {
+        "key": "ctrl+a k",
+        "command": "workbench.action.focusAboveGroup"
+    },
+    {
+        "key": "ctrl+a j",
+        "command": "workbench.action.focusBelowGroup"
+    },
+    {
+        "key": "ctrl+i ctrl+h",
+        "command": "workbench.action.focusActiveEditorGroup"
+    },
+    {
+        "key": "ctrl+a o",
+        "command": "workbench.action.focusNextGroup",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+a shift+o",
+        "command": "workbench.action.focusPreviousGroup",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "workbench.action.focusNextGroup",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+shift+o",
+        "command": "workbench.action.focusPreviousGroup",
+        "when": "editorFocus"
+    },
     {
         "key": "ctrl+i ctrl+f",
         "command": "workbench.explorer.fileView.focus"
@@ -335,30 +418,6 @@ m - marks, selection achor, macros, vim, tmux, move
         "key": "ctrl+y b",
         "command": "workbench.action.terminal.rename",
         "when": "terminalFocus"
-    },
-    {
-        "key": "ctrl+i ctrl+h",
-        "command": "workbench.action.focusActiveEditorGroup"
-    },
-    {
-        "key": "ctrl+a o",
-        "command": "workbench.action.focusNextGroup",
-        "when": "editorFocus"
-    },
-    {
-        "key": "ctrl+a shift+o",
-        "command": "workbench.action.focusPreviousGroup",
-        "when": "editorFocus"
-    },
-    {
-        "key": "ctrl+o",
-        "command": "workbench.action.focusNextGroup",
-        "when": "editorFocus"
-    },
-    {
-        "key": "ctrl+shift+o",
-        "command": "workbench.action.focusPreviousGroup",
-        "when": "editorFocus"
     },
     {
         "key": "ctrl+i n",
@@ -464,47 +523,6 @@ m - marks, selection achor, macros, vim, tmux, move
         "when": "textInputFocus"
     },
     {
-        "key": "ctrl+a ctrl+h",
-        "command": "workbench.action.moveEditorToLeftGroup",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+a ctrl+l",
-        "command": "workbench.action.moveEditorToRightGroup",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+a ctrl+s",
-        "command": "workbench.action.splitEditor",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+a ctrl+j",
-        "command": "workbench.action.moveEditorToBelowGroup",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+a ctrl+k",
-        "command": "workbench.action.moveEditorToAboveGroup",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+a h",
-        "command": "workbench.action.focusLeftGroup"
-    },
-    {
-        "key": "ctrl+a l",
-        "command": "workbench.action.focusRightGroup"
-    },
-    {
-        "key": "ctrl+a k",
-        "command": "workbench.action.focusAboveGroup"
-    },
-    {
-        "key": "ctrl+a j",
-        "command": "workbench.action.focusBelowGroup"
-    },
-    {
         "key": "ctrl+e ctrl+e",
         "command": "workbench.action.navigateToLastEditLocation"
     },
@@ -577,11 +595,6 @@ m - marks, selection achor, macros, vim, tmux, move
         "key": "ctrl+a ctrl+l",
         "command": "workbench.action.positionPanelRight",
         "when": "panelFocus"
-    },
-    {
-        "key": "ctrl+a ctrl+m",
-        "command": "workbench.action.joinTwoGroups",
-        "when": "editorTextFocus"
     },
     {
         "key": "ctrl+a ctrl+h",
@@ -1754,10 +1767,6 @@ m - marks, selection achor, macros, vim, tmux, move
     {
         "key": "ctrl+a ctrl+o",
         "command": "workbench.action.toggleEditorGroupLayout"
-    },
-    {
-        "key": "ctrl+a ctrl+i",
-        "command": "workbench.action.toggleEditorWidths"
     },
     {
         "key": "ctrl+a ctrl+r",
