@@ -31,6 +31,10 @@ m - marks, selection achor, macros, vim, tmux, move
     // unbinds
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+x",
+        "command": "-editor.action.clipboardCutAction"
+    },
+    {
         "key": "ctrl+k ctrl+m",
         "command": "-workbench.action.toggleMaximizeEditorGroup",
         "when": "maximizedEditorGroup || multipleEditorGroups"
@@ -81,6 +85,26 @@ m - marks, selection achor, macros, vim, tmux, move
     ///////////////////////////////////////////////////////////////
     // terminal
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+shift+b",
+        "command": "workbench.action.terminal.rename",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+r",
+        "command": "workbench.action.terminal.runSelectedText",
+        "when": "editorFocus || terminalFocus"
+    },
+    {
+        "key": "ctrl+y r",
+        "command": "workbench.action.terminal.runSelectedText",
+        "when": "editorFocus || terminalFocus"
+    },
+    {
+        "key": "ctrl+y b",
+        "command": "workbench.action.terminal.rename",
+        "when": "terminalFocus"
+    },
     {
         "key": "ctrl+shift+j",
         "command": "workbench.action.terminal.focus"
@@ -151,26 +175,6 @@ m - marks, selection achor, macros, vim, tmux, move
         "key": "ctrl+i ctrl+y",
         "command": "workbench.action.terminal.focus"
     },
-    // {
-    //     "key": "x",
-    //     "command": "workbench.action.terminal.killInstance",
-    //     "when": "!inQuickOpen && terminalIsOpen && terminalTabsFocus"
-    // },
-    // {
-    //     "key": "s",
-    //     "command": "workbench.action.terminal.splitInstance",
-    //     "when": "!inQuickOpen && terminalIsOpen && terminalTabsFocus"
-    // },
-    // {
-    //     "key": "n",
-    //     "command": "workbench.action.terminal.newInActiveWorkspace",
-    //     "when": "!inQuickOpen && terminalIsOpen && terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection"
-    // },
-    // {
-    //     "key": "b",
-    //     "command": "workbench.action.terminal.renameInstance",
-    //     "when": "!inQuickOpen && terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection"
-    // },
     {
         "key": "ctrl+i ctrl+y",
         "command": "workbench.action.terminal.focusTabs",
@@ -183,6 +187,14 @@ m - marks, selection achor, macros, vim, tmux, move
     ///////////////////////////////////////////////////////////////
     // panel
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+i ctrl+j",
+        "command": "workbench.action.focusPanel"
+    },
+    {
+        "key": "ctrl+9",
+        "command": "workbench.action.focusPanel"
+    },
     {
         "key": "ctrl+j",
         "command": "workbench.action.togglePanel"
@@ -287,6 +299,14 @@ m - marks, selection achor, macros, vim, tmux, move
         "key": "ctrl+i ctrl+d",
         "command": "workbench.view.debug"
     },
+    {
+        "key": "ctrl+d ctrl+y",
+        "command": "workbench.debug.action.toggleRepl"
+    },
+    {
+        "key": "ctrl+d ctrl+l",
+        "command": "workbench.debug.panel.action.clearReplAction"
+    },
     ///////////////////////////////////////////////////////////////
     // source control
     ///////////////////////////////////////////////////////////////
@@ -308,16 +328,17 @@ m - marks, selection achor, macros, vim, tmux, move
         "key": "ctrl+i ctrl+w",
         "command": "workbench.view.windows" // non existant
     },
-    ///////////////////////////////////////////////////////////////
-    // panel
-    ///////////////////////////////////////////////////////////////
     {
-        "key": "ctrl+i ctrl+j",
-        "command": "workbench.action.focusPanel"
+        "key": "ctrl+w w",
+        "command": "workbench.action.switchWindow",
     },
     {
-        "key": "ctrl+9",
-        "command": "workbench.action.focusPanel"
+        "key": "ctrl+w ctrl+tab",
+        "command": "workbench.action.switchWindow",
+    },
+    {
+        "key": "ctrl+w ctrl+shift+tab",
+        "command": "workbench.action.switchWindow",
     },
     ///////////////////////////////////////////////////////////////
     // editor groups
@@ -413,38 +434,16 @@ m - marks, selection achor, macros, vim, tmux, move
         "command": "workbench.action.focusPreviousGroup",
         "when": "editorFocus"
     },
+    ///////////////////////////////////////////////////////////////
+    // minimap
+    ///////////////////////////////////////////////////////////////
     {
-        "key": "ctrl+i ctrl+f",
-        "command": "workbench.explorer.fileView.focus"
+        "key": "ctrl+i m",
+        "command": "editor.action.toggleMinimap"
     },
-    {
-        "key": "ctrl+d ctrl+y",
-        "command": "workbench.debug.action.toggleRepl"
-    },
-    {
-        "key": "ctrl+d ctrl+l",
-        "command": "workbench.debug.panel.action.clearReplAction"
-    },
-    {
-        "key": "ctrl+shift+b",
-        "command": "workbench.action.terminal.rename",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "ctrl+shift+r",
-        "command": "workbench.action.terminal.runSelectedText",
-        "when": "editorFocus || terminalFocus"
-    },
-    {
-        "key": "ctrl+y r",
-        "command": "workbench.action.terminal.runSelectedText",
-        "when": "editorFocus || terminalFocus"
-    },
-    {
-        "key": "ctrl+y b",
-        "command": "workbench.action.terminal.rename",
-        "when": "terminalFocus"
-    },
+    ///////////////////////////////////////////////////////////////
+    // notifications
+    ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i n",
         "command": "notifications.toggleList"
@@ -454,21 +453,33 @@ m - marks, selection achor, macros, vim, tmux, move
         "command": "notifications.clearAll"
     },
     {
-        "key": "ctrl+i m",
-        "command": "editor.action.toggleMinimap"
-    },
-    {
         "key": "ctrl+i ctrl+z",
         "command": "workbench.action.toggleZenMode"
     },
+    ///////////////////////////////////////////////////////////////
+    // file explorer
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+i ctrl+f",
+        "command": "workbench.explorer.fileView.focus"
+    },
+    ///////////////////////////////////////////////////////////////
+    // search
+    ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i ctrl+s",
         "command": "search.action.focusSearchList"
     },
+    ///////////////////////////////////////////////////////////////
+    // references
+    ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i g",
         "command": "references-view.tree.focus"
     },
+    ///////////////////////////////////////////////////////////////
+    // full screen
+    ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i ctrl+i",
         "command": "workbench.action.toggleFullScreen"
@@ -480,18 +491,6 @@ m - marks, selection achor, macros, vim, tmux, move
     {
         "key": "ctrl+w f",
         "command": "workbench.action.toggleFullScreen"
-    },
-    {
-        "key": "ctrl+w w",
-        "command": "workbench.action.switchWindow",
-    },
-    {
-        "key": "ctrl+w ctrl+tab",
-        "command": "workbench.action.switchWindow",
-    },
-    {
-        "key": "ctrl+w ctrl+shift+tab",
-        "command": "workbench.action.switchWindow",
     },
     {
         "key": "ctrl+w a",
@@ -785,7 +784,7 @@ m - marks, selection achor, macros, vim, tmux, move
     {
         "key": "b",
         "command": "renameFile",
-        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+        "when": "filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
     },
     {
         "key": "ctrl+alt+y",
@@ -911,31 +910,27 @@ m - marks, selection achor, macros, vim, tmux, move
     {
         "key": "n",
         "command": "explorer.newFile",
-        "when": "explorerViewletFocus && !inputFocus"
+        "when": "filesExplorerFocus && !inputFocus"
     },
     {
         "key": "shift+n",
         "command": "explorer.newFolder",
-        "when": "explorerViewletFocus && !inputFocus"
+        "when": "filesExplorerFocus && !inputFocus"
     },
     {
         "key": "d",
         "command": "deleteFile",
-        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+        "when": "filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
     },
     {
         "key": "s",
         "command": "filesExplorer.findInFolder",
-        "when": "explorerResourceIsFolder && explorerViewletVisible && filesExplorerFocus && !inputFocus"
+        "when": "explorerResourceIsFolder && filesExplorerFocus && !inputFocus"
     },
     {
         "key": "ctrl+x",
         "command": "editor.action.escapeFocusHover",
         "when": "editorHoverFocused"
-    },
-    {
-        "key": "ctrl+x",
-        "command": "-editor.action.clipboardCutAction"
     },
     {
         "key": "ctrl+x",
