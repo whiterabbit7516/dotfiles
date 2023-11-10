@@ -492,6 +492,40 @@ m - marks, selection achor, macros, vim, tmux, move
         "key": "ctrl+w f",
         "command": "workbench.action.toggleFullScreen"
     },
+    ///////////////////////////////////////////////////////////////
+    // goto
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+g ctrl+d",
+        "command": "editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "ctrl+g ctrl+t",
+        "command": "editor.action.goToTypeDefinition"
+    },
+    {
+        "key": "ctrl+g ctrl+l",
+        "command": "workbench.action.gotoLine"
+    },
+    {
+        "key": "ctrl+g ctrl+i",
+        "command": "editor.action.goToImplementation",
+        "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "ctrl+g ctrl+n",
+        "command": "editor.action.wordHighlight.next",
+        "when": "editorTextFocus && hasWordHighlights"
+    },
+    {
+        "key": "ctrl+g ctrl+p",
+        "command": "editor.action.wordHighlight.prev",
+        "when": "editorTextFocus && hasWordHighlights"
+    },
+    ///////////////////////////////////////////////////////////////
+    // 
+    ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+w a",
         "command": "workbench.action.addRootFolder"
@@ -1130,16 +1164,6 @@ m - marks, selection achor, macros, vim, tmux, move
         "command": "workbench.action.showAllSymbols"
     },
     {
-        "key": "ctrl+g ctrl+n",
-        "command": "editor.action.wordHighlight.next",
-        "when": "editorTextFocus && hasWordHighlights"
-    },
-    {
-        "key": "ctrl+g ctrl+p",
-        "command": "editor.action.wordHighlight.prev",
-        "when": "editorTextFocus && hasWordHighlights"
-    },
-    {
         "key": "ctrl+v ctrl+r",
         "command": "workbench.action.resetViewLocations"
     },
@@ -1318,24 +1342,6 @@ m - marks, selection achor, macros, vim, tmux, move
         "key": "ctrl+alt+y",
         "command": "list.scrollUp",
         "when": "listFocus && !inputFocus"
-    },
-    {
-        "key": "ctrl+g ctrl+d",
-        "command": "editor.action.revealDefinition",
-        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
-    },
-    {
-        "key": "ctrl+g ctrl+t",
-        "command": "editor.action.goToTypeDefinition"
-    },
-    {
-        "key": "ctrl+g ctrl+g",
-        "command": "workbench.action.gotoLine"
-    },
-    {
-        "key": "ctrl+g ctrl+i",
-        "command": "editor.action.goToImplementation",
-        "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
     },
     {
         "key": "ctrl+g ctrl+h",
@@ -3333,9 +3339,6 @@ m - marks, selection achor, macros, vim, tmux, move
         "command": "workbench.action.showLogs",
         "when": "inQuickOpen"
     },
-    ///////////////////////////////////////////////////////////////
-    // marks
-    ///////////////////////////////////////////////////////////////
     {
         "key": "alt+m",
         "command": "bookmarks.listFromAllFiles",
