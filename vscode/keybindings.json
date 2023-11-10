@@ -496,6 +496,19 @@ m - marks, selection achor, macros, vim, tmux, move
     // goto
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+g ctrl+e",
+        "command": "workbench.action.gotoSymbol",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+g ctrl+w",
+        "command": "workbench.action.showAllSymbols"
+    },
+    {
+        "key": "ctrl+g ctrl+g",
+        "command": "workbench.action.gotoSymbol"
+    },
+    {
         "key": "ctrl+g ctrl+d",
         "command": "editor.action.revealDefinition",
         "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
@@ -1153,15 +1166,6 @@ m - marks, selection achor, macros, vim, tmux, move
         "key": "ctrl+x",
         "command": "workbench.action.quitNotebookEdit",
         "when": "inputFocus && notebookEditorFocused"
-    },
-    {
-        "key": "ctrl+g ctrl+e",
-        "command": "workbench.action.gotoSymbol",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+g ctrl+w",
-        "command": "workbench.action.showAllSymbols"
     },
     {
         "key": "ctrl+v ctrl+r",
