@@ -31,6 +31,10 @@ m - marks, selection achor, macros, vim, tmux, move
     // unbinds
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+shift+f",
+        "command": "-workbench.action.findInFiles"
+    },
+    {
         "key": "ctrl+x",
         "command": "-editor.action.clipboardCutAction"
     },
@@ -1923,8 +1927,8 @@ m - marks, selection achor, macros, vim, tmux, move
         "command": "workbench.action.findInFiles",
     },
     {
-        "key": "ctrl+shift+f",
-        "command": "-workbench.action.findInFiles"
+        "key": "ctrl+s ctrl+f",
+        "command": "workbench.action.experimental.quickTextSearch"
     },
     {
         "key": "ctrl+i s",
@@ -3283,7 +3287,7 @@ m - marks, selection achor, macros, vim, tmux, move
     },
     {
         "key": "alt+f",
-        "command": "workbench.action.quickOpen",
+        "command": "workbench.action.experimental.quickTextSearch",
         "when": "inQuickOpen"
     },
     {
