@@ -37,6 +37,7 @@ $ENV:PATH = "$($ENV:PATH):/usr/local/foundry/"
 #########################################
 Set-PSReadLineOption -EditMode Vi -ViModeIndicator Cursor
 Set-PSReadLineKeyHandler -Chord Ctrl+c -Function ViCommandMode
+Set-PSReadLineOption -PredictionViewStyle ListView
 #########################################
 # FZF
 #########################################
