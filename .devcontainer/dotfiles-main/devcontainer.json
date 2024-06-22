@@ -11,7 +11,7 @@
     "pull",
     "ghcr.io/ha07z7xe/devcontainers/devenv-main-amd64:latest"
   ],
-  "postCreateCommand": "/usr/bin/pwsh -nop -nol -f /devcontainer/docker-context/scripts/postCreate.ps1",
+//   "postCreateCommand": "/usr/bin/pwsh -nop -nol -f /devcontainer/docker-context/scripts/postCreate.ps1",
   "containerEnv": {},
   "remoteUser": "root",
   "customizations": {
