@@ -35,11 +35,11 @@ $ENV:PATH = "$($ENV:PATH):/usr/local/foundry/"
 #########################################
 # PSReadLine
 #########################################
-Set-PSReadLineOption -EditMode Vi -ViModeIndicator Cursor
-Set-PSReadLineKeyHandler -Chord Ctrl+c -Function ViCommandMode
-Set-PSReadLineOption -PredictionViewStyle ListView
+Set-PSReadLineOption -EditMode Vi -ViModeIndicator Cursor;
+Set-PSReadLineKeyHandler -Chord Ctrl+c -Function ViCommandMode;
+Set-PSReadLineOption -PredictionViewStyle ListView;
 #########################################
-# FZF
+# fzf
 #########################################
 Import-Module PSFzf -ArgumentList 'Ctrl+t','Ctrl+r' -ErrorAction SilentlyContinue
 # Set-PSReadLineKeyHandler -Key Tab -ScriptBlock { Invoke-FzfTabCompletion }
@@ -47,48 +47,70 @@ Set-Alias -Name fe -Value 'Invoke-FuzzyEdit'
 Set-Alias -Name fd -Value 'Invoke-FuzzySetLocation'
 Set-Alias -Name fh -Value 'Invoke-FuzzyHistory'
 #########################################
-# PoshGit
+# colors
 #########################################
-# Import-Module posh-git -ErrorAction SilentlyContinue
-# if ($?)
-# {
-#     $GitPromptSettings.DefaultForegroundColor = [ConsoleColor]::Magenta
-#     $GitPromptSettings.DefaultPromptPrefix = "`$ENV:USER@`$(hostname) "
-#     # $GitPromptSettings.DefaultPromptPath = "`$(Get-Location | Split-Path -Leaf)"
-#     $GitPromptSettings.DefaultPromptSuffix = " `n■ ■ ■ "
-# }
+# [System.Enum]::GetValues("ConsoleColor") | foreach-object {write-host $_ -ForegroundColor $_}
+$Host.UI.RawUI.ForegroundColor = "DarkGray";
+$PSStyle.FileInfo.Directory = $PSStyle.Foreground.Blue;
+$PSStyle.Formatting.CustomTableHeaderLabel = $PSStyle.Foreground.BrightGreen;
 #########################################
-# Prompt
+# prompt
 #########################################
-# else
-# {
-$HOST.UI.RawUI.ForegroundColor = 6
+function get-gitbranch {
+    $errorpattern = "^(fatal|error)\:.+$";
+    $branchpattern = "^.+branch (?<branch>.+)$";
+    $commitpattern = "^.+detached at (?<commit>.+)$";
+    $tagpattern = "^.+tag (?<tag>.+)$";
+    $r = iex "/usr/local/bin/git status 2>&1" -ErrorAction SilentlyContinue;
+    if (-not $?)
+    {
+        return $null;
+    }
+    if ($r -eq $null)
+    {
+        return $null;
+    }
+    $r = $r | select-object -first 1 # get first line
+    if ($r -eq $null)
+    {
+        return $null;
+    }
+    if ($r.GetType().Name -ne "String")
+    {
+        return $null;
+    }
+    elseif ($r -match $errorpattern)
+    {
+        return $null;
+    }
+    elseif ($r -match $branchpattern)
+    {
+        return $Matches["branch"];
+    }
+    elseif ($r -match $commitpattern)
+    {
+        return $Matches["commit"];
+    }
+    elseif ($r -match $tagpattern)
+    {
+        return $Matches["tag"];
+    }
+    return $null;
+}
 function prompt {
   $path = Get-Location # | Split-Path -Leaf
-  $username = $ENV:USER ?? $(whoami)
-  $hostname = $ENV:HOST ?? $(hostname)
-  $prompt = "$username | $hostname | $path`n■ ■ ■ "
-  return $prompt
-}
-# }
-#########################################
-# VPN
-#########################################
-$nordvpn = get-command nordvpn -ErrorAction SilentlyContinue
-if ($nordvpn -ne $null)
-{
-  nordvpn status | select-string -Pattern "Status|IP|server" -NoEmphasis
-}
-else
-{
-  Write-Warning "VPN Unavailable"
+  $username = $ENV:USER ?? $(whoami);
+  $hostname = $ENV:HOST ?? $(hostname);
+  $gitbranch = get-gitbranch ?? "????";
+  $prompt = "$username | $hostname | $gitbranch | $path`n■ ■ ■ ";
+  return $prompt;
 }
 #########################################
 # .local/powershell/profile.ps1
 #########################################
 if (Test-Path ~/.local/dotfiles/powershell/profile.ps1)
 {
-  Write-Information "Reading ~/.local/dotfiles/powershell/profile.ps1"
-  Invoke-Expression -Command ~/.local/dotfiles/powershell/profile.ps1
+  Write-Information "Reading ~/.local/dotfiles/powershell/profile.ps1";
+  Invoke-Expression -Command ~/.local/dotfiles/powershell/profile.ps1;
 }
 #########################################
