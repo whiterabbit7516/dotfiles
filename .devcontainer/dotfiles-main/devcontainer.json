@@ -1,7 +1,6 @@
 {
   "name": "dotfiles-main",
-  "image": "ghcr.io/ha07z7xe/devcontainers/devenv-main:latest",
-  "workspaceFolder": "/workspaces/dotfiles",
+  "image": "ghcr.io/ha07z7xe/devcontainers/devenv-main-amd64:latest",
   "runArgs": [
     "--network=host",
     // "--cap-add=NET_RAW",
@@ -10,10 +9,11 @@
   "initializeCommand": [
     "docker",
     "pull",
-    "ghcr.io/ha07z7xe/devcontainers/devenv-main:latest"
+    "ghcr.io/ha07z7xe/devcontainers/devenv-main-amd64:latest"
   ],
-  "postCreateCommand": "/usr/bin/pwsh -nop -nol -f /devcontainer/docker-context/postCreate.ps1",
+  "postCreateCommand": "/usr/bin/pwsh -nop -nol -f /devcontainer/docker-context/scripts/postCreate.ps1",
   "containerEnv": {},
+  "remoteUser": "root",
   "customizations": {
     "vscode": {
       "settings": {
@@ -33,7 +33,9 @@
             ]
           }
         },
-        "omnisharp.autoStart": false
+        "omnisharp.autoStart": false,
+        "dotfiles.repository": "https://github.com/ha07z7xe/dotfiles.git",
+        "dotfiles.installCommand": "install.ps1"
       },
       "extensions": [
         "vscodevim.vim",
