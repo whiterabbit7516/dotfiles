@@ -102,7 +102,7 @@ function prompt {
   $username = $ENV:USER ?? $(whoami);
   $hostname = $ENV:HOST ?? $(hostname);
   $gitbranch = get-gitbranch ?? "????";
-  $prompt = "$username | $hostname | $gitbranch | $path`n■ ■ ■ ";
+  $prompt = "$username | $hostname | $gitbranch | $path`n■ ■ ■ ■ ";
   return $prompt;
 }
 #########################################
