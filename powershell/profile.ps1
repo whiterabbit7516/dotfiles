@@ -52,7 +52,8 @@ Set-Alias -Name fh -Value 'Invoke-FuzzyHistory'
 # [System.Enum]::GetValues("ConsoleColor") | foreach-object {write-host $_ -ForegroundColor $_}
 $Host.UI.RawUI.ForegroundColor = "DarkGray";
 $PSStyle.FileInfo.Directory = $PSStyle.Foreground.Blue;
-$PSStyle.Formatting.CustomTableHeaderLabel = $PSStyle.Foreground.BrightGreen;
+# doesnt work on mac
+# $PSStyle.Formatting.CustomTableHeaderLabel = $PSStyle.Foreground.BrightGreen;
 #########################################
 # prompt
 #########################################
