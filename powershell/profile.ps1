@@ -71,30 +71,32 @@ function get-gitbranch {
     {
         return $null;
     }
-    $r = $r | select-object -first 1 # get first line
-    if ($r -eq $null)
+    foreach ($line in $r) 
     {
-        return $null;
-    }
-    if ($r.GetType().Name -ne "String")
-    {
-        return $null;
-    }
-    elseif ($r -match $errorpattern)
-    {
-        return $null;
-    }
-    elseif ($r -match $branchpattern)
-    {
-        return $Matches["branch"];
-    }
-    elseif ($r -match $commitpattern)
-    {
-        return $Matches["commit"];
-    }
-    elseif ($r -match $tagpattern)
-    {
-        return $Matches["tag"];
+        if ($line -eq $null)
+        {
+            continue;
+        }
+        if ($line.GetType().Name -ne "String")
+        {
+            continue;
+        }
+        # elseif ($line -match $errorpattern)
+        # {
+        #     continue;
+        # }
+        elseif ($line -match $branchpattern)
+        {
+            return $Matches["branch"];
+        }
+        elseif ($line -match $commitpattern)
+        {
+            return $Matches["commit"];
+        }
+        elseif ($line -match $tagpattern)
+        {
+            return $Matches["tag"];
+        }
     }
     return $null;
 }
