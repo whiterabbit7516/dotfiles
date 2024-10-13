@@ -62,6 +62,11 @@ keybind sections
     // unbinds
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+i",
+        "command": "-workbench.action.terminal.chat.start",
+        "when": "terminalChatAgentRegistered && terminalFocusInAny && terminalHasBeenCreated || terminalChatAgentRegistered && terminalFocusInAny && terminalProcessSupported"
+    },
+    {
         "key": "ctrl+l",
         "command": "-workbench.action.chat.newChat",
         "when": "chatIsEnabled && inChat"
@@ -154,6 +159,11 @@ keybind sections
     // terminal
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+y l",
+        "command": "workbench.action.terminal.chat.start",
+        "when": "terminalChatAgentRegistered && terminalHasBeenCreated || terminalChatAgentRegistered && terminalProcessSupported"
+    },
+    {
         "key": "ctrl+shift+b",
         "command": "workbench.action.terminal.rename",
         "when": "terminalFocus"
@@ -193,16 +203,6 @@ keybind sections
     },
     {
         "key": "ctrl+shift+o",
-        "command": "workbench.action.terminal.focusPreviousPane",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "ctrl+shift+l",
-        "command": "workbench.action.terminal.focusNextPane",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "ctrl+shift+h",
         "command": "workbench.action.terminal.focusPreviousPane",
         "when": "terminalFocus"
     },
@@ -705,6 +705,11 @@ keybind sections
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+x",
+        "command": "workbench.action.terminal.chat.close",
+        "when": "terminalChatFocus && terminalChatVisible"
+    },
+    {
+        "key": "ctrl+x",
         "command": "closeMarkersNavigation",
         "when": "editorFocus && markersNavigationVisible"
     },
@@ -952,6 +957,11 @@ keybind sections
         "key": "ctrl+l ctrl+n",
         "command": "workbench.action.chat.newChat",
         "when": "chatIsEnabled && inChat"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "workbench.action.terminal.chat.start",
+        "when": "terminalChatAgentRegistered && terminalFocusInAny && terminalHasBeenCreated || terminalChatAgentRegistered && terminalFocusInAny && terminalProcessSupported"
     },
     ///////////////////////////////////////////////////////////////
     // 
@@ -3737,5 +3747,10 @@ keybind sections
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
         "args": ">Problems "
+    },
+    {
+        "key": "escape",
+        "command": "-workbench.action.terminal.chat.close",
+        "when": "terminalChatFocus && terminalChatVisible"
     },
 ]
