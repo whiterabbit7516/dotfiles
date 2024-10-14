@@ -28,39 +28,48 @@ command groups
     m - marks, selection achor, macros, vim, tmux, move
 
 keybind sections
-    unbinds
-    terminal
-    panel
-    remote - general
-    remote - dev containers
-    remote - ssh
-    activity bar
-    navigation
-    debug
-    source control
-    live share
-    windows
-    editor groups
-    minimap
-    notifications
-    file explorer
-    search
-    references
-    full screen
-    goto
-    workspace
-    outline
-    select
-    quit
-    cancel
-    developer
-    logs
-    copilot
+    unbinds                             t1113
+    terminal                            t8233
+    panel                               t1566
+    remote - general                    t2900
+    remote - dev containers             t6291
+    remote - ssh                        t9391
+    activity bar                        t6913
+    navigation                          t3508
+    debug                               t3216
+    source control                      t7077
+    live share                          t5930
+    windows                             t5091
+    editor groups                       t4355
+    minimap                             t1725
+    notifications                       t6821
+    file explorer                       t4428
+    search                              t4141
+    references                          t2275
+    full screen                         t2530
+    goto                                t2985
+    workspace                           t6870
+    outline                             t6000
+    select                              t2119
+    quit                                t1951
+    cancel                              t4680
+    developer                           t2758
+    logs                                t4752
+    copilot                             t7259
+    problems                            t7119
+    toggle                              t2530
+    marks / bookmarks                   t0604
+    editor                              t8500
 */
 [
     ///////////////////////////////////////////////////////////////
-    // unbinds
+    // unbinds t1113
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+alt+k",
+        "command": "-bookmarks.toggle",
+        "when": "editorTextFocus"
+    },
     {
         "key": "ctrl+i",
         "command": "-workbench.action.terminal.chat.start",
@@ -156,7 +165,7 @@ keybind sections
         "when": "activeEditorCanSplitInGroup"
     },
     ///////////////////////////////////////////////////////////////
-    // terminal
+    // terminal t8233
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+y l",
@@ -263,7 +272,7 @@ keybind sections
         "when": "explorerResourceIsFolder"
     },
     ///////////////////////////////////////////////////////////////
-    // panel
+    // panel t1566
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i ctrl+j",
@@ -290,7 +299,7 @@ keybind sections
         "command": "workbench.action.toggleAuxiliaryBar"
     },
     ///////////////////////////////////////////////////////////////
-    // remote - general
+    // remote - general t2900
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+r x",
@@ -302,7 +311,7 @@ keybind sections
         "when": "inQuickOpen"
     },
     ///////////////////////////////////////////////////////////////
-    // remote - dev containers
+    // remote - dev containers t6291
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+r d",
@@ -314,7 +323,7 @@ keybind sections
         "command": "remote-containers.openDevContainerFile"
     },
     ///////////////////////////////////////////////////////////////
-    // remote - ssh
+    // remote - ssh t9391
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+r s",
@@ -322,7 +331,7 @@ keybind sections
         "args": ">Remote-SSH: "
     },
     ///////////////////////////////////////////////////////////////
-    // activity bar
+    // activity bar t6913
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i ctrl+a",
@@ -333,8 +342,26 @@ keybind sections
         "command": "workbench.action.toggleActivityBarVisibility"
     },
     ///////////////////////////////////////////////////////////////
-    // navigation
+    // navigation t3508
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+e ctrl+e",
+        "command": "workbench.action.navigateToLastEditLocation"
+    },
+    {
+        "key": "ctrl+e ctrl+o",
+        "command": "workbench.action.navigateLast"
+    },
+    {
+        "key": "ctrl+e ctrl+n",
+        "command": "editor.action.marker.next",
+        "when": "editorFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+e ctrl+p",
+        "command": "editor.action.marker.prev",
+        "when": "editorFocus && !editorReadonly"
+    },
     {
         "key": "ctrl+,",
         "command": "workbench.action.navigateBack",
@@ -366,7 +393,7 @@ keybind sections
         "when": "editorFocus"
     },
     ///////////////////////////////////////////////////////////////
-    // debug
+    // debug t3216
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i ctrl+d",
@@ -381,14 +408,14 @@ keybind sections
         "command": "workbench.debug.panel.action.clearReplAction"
     },
     ///////////////////////////////////////////////////////////////
-    // source control
+    // source control t7077
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i ctrl+v",
         "command": "workbench.view.scm"
     },
     ///////////////////////////////////////////////////////////////
-    // live share
+    // live share t5930
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i l",
@@ -401,7 +428,7 @@ keybind sections
         "args": ">Live Share "
     },
     ///////////////////////////////////////////////////////////////
-    // windows
+    // windows t5091
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i ctrl+w",
@@ -420,15 +447,7 @@ keybind sections
         "command": "workbench.action.switchWindow",
     },
     ///////////////////////////////////////////////////////////////
-    // editor
-    ///////////////////////////////////////////////////////////////
-    {
-        "key": "ctrl+i ctrl+e",
-        "command": "workbench.files.action.focusOpenEditorsView",
-        "when": "workbench.explorer.openEditorsView.active"
-    },
-    ///////////////////////////////////////////////////////////////
-    // editor groups
+    // editor groups t4355
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+e s",
@@ -526,14 +545,14 @@ keybind sections
         "when": "editorFocus"
     },
     ///////////////////////////////////////////////////////////////
-    // minimap
+    // minimap t1725
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i m",
         "command": "editor.action.toggleMinimap"
     },
     ///////////////////////////////////////////////////////////////
-    // notifications
+    // notifications t6821
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i n",
@@ -548,14 +567,14 @@ keybind sections
         "command": "workbench.action.toggleZenMode"
     },
     ///////////////////////////////////////////////////////////////
-    // file explorer
+    // file explorer t4428
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i ctrl+f",
         "command": "workbench.explorer.fileView.focus"
     },
     ///////////////////////////////////////////////////////////////
-    // search
+    // search t4141
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i ctrl+s",
@@ -583,14 +602,14 @@ keybind sections
         "command": "search.action.clearSearchResults"
     },
     ///////////////////////////////////////////////////////////////
-    // references
+    // references t2275
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i r",
         "command": "references-view.tree.focus"
     },
     ///////////////////////////////////////////////////////////////
-    // full screen
+    // full screen t2530
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i ctrl+i",
@@ -605,7 +624,7 @@ keybind sections
         "command": "workbench.action.toggleFullScreen"
     },
     ///////////////////////////////////////////////////////////////
-    // goto
+    // goto t2985
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+g ctrl+e",
@@ -649,7 +668,7 @@ keybind sections
         "when": "editorTextFocus && hasWordHighlights"
     },
     ///////////////////////////////////////////////////////////////
-    // workspace
+    // workspace t6870
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+w a",
@@ -664,14 +683,14 @@ keybind sections
         "command": "workbench.action.openWorkspace"
     },
     ///////////////////////////////////////////////////////////////
-    // outline
+    // outline t6000
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i ctrl+g",
         "command": "outline.focus"
     },
     ///////////////////////////////////////////////////////////////
-    // select
+    // select t2119
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+s ctrl+a",
@@ -694,14 +713,14 @@ keybind sections
         "when": "textInputFocus"
     },
     ///////////////////////////////////////////////////////////////
-    // quit
+    // quit t1951
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+q ctrl+q",
         "command": "workbench.action.quit"
     },
     ///////////////////////////////////////////////////////////////
-    // cancel / ctrl+x
+    // cancel / ctrl+x t4680
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+x",
@@ -909,7 +928,7 @@ keybind sections
         "when": "editorFocus && findWidgetVisible"
     },
     ///////////////////////////////////////////////////////////////
-    // developer
+    // developer t2758
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+q l",
@@ -928,7 +947,7 @@ keybind sections
         "args": ">Developer "
     },
     ///////////////////////////////////////////////////////////////
-    // logs
+    // logs t4752
     ///////////////////////////////////////////////////////////////
     {
         "key": "alt+q",
@@ -936,7 +955,7 @@ keybind sections
         "when": "inQuickOpen"
     },
     ///////////////////////////////////////////////////////////////
-    // chat / copilot
+    // chat / copilot t7259
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i ctrl+l",
@@ -964,25 +983,85 @@ keybind sections
         "when": "terminalChatAgentRegistered && terminalFocusInAny && terminalHasBeenCreated || terminalChatAgentRegistered && terminalFocusInAny && terminalProcessSupported"
     },
     ///////////////////////////////////////////////////////////////
-    // 
+    // problems t7119
     ///////////////////////////////////////////////////////////////
     {
-        "key": "ctrl+e ctrl+e",
-        "command": "workbench.action.navigateToLastEditLocation"
+        "key": "ctrl+u",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Problems "
     },
     {
-        "key": "ctrl+e ctrl+o",
-        "command": "workbench.action.navigateLast"
+        "key": "ctrl+i ctrl+u",
+        "command": "workbench.action.problems.focus"
     },
     {
-        "key": "ctrl+e ctrl+n",
+        "key": "ctrl+u ctrl+n",
         "command": "editor.action.marker.next",
         "when": "editorFocus && !editorReadonly"
     },
     {
-        "key": "ctrl+e ctrl+p",
+        "key": "ctrl+u ctrl+p",
         "command": "editor.action.marker.prev",
         "when": "editorFocus && !editorReadonly"
+    },
+    ///////////////////////////////////////////////////////////////
+    // toggle t2530
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+o",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Toggle "
+    },
+    ///////////////////////////////////////////////////////////////
+    // marks / bookmarks t0604
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+m ctrl+w",
+        "command": "bookmarks.clearFromAllFiles"
+    },
+    {
+        "key": "ctrl+m ctrl+l",
+        "command": "bookmarks.toggleLabeled"
+    },
+    {
+        "key": "ctrl+m ctrl+m",
+        "command": "bookmarks.toggle",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+m ctrl+x",
+        "command": "bookmarks.clear"
+    },
+    {
+        "key": "ctrl+m ctrl+n",
+        "command": "bookmarks.jumpToNext",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+m ctrl+p",
+        "command": "bookmarks.jumpToPrevious",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+m",
+        "command": "bookmarks.listFromAllFiles",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+m",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Bookmarks "
+    },
+    ///////////////////////////////////////////////////////////////
+    // editor t8500
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+i ctrl+e",
+        "command": "workbench.files.action.focusOpenEditorsView",
+        "when": "workbench.explorer.openEditorsView.active"
     },
     {
         "key": "ctrl+e ctrl+a",
@@ -1007,16 +1086,14 @@ keybind sections
         "command": "editor.action.quickFix",
         "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
     },
-    {
-        "key": "ctrl+u ctrl+n",
-        "command": "editor.action.marker.next",
-        "when": "editorFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+u ctrl+p",
-        "command": "editor.action.marker.prev",
-        "when": "editorFocus && !editorReadonly"
-    },
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+a ctrl+h",
         "command": "workbench.action.positionPanelLeft",
@@ -1800,38 +1877,6 @@ keybind sections
         "command": "workbench.debug.action.focusBreakpointsView"
     },
     {
-        "key": "ctrl+m ctrl+w",
-        "command": "bookmarks.clearFromAllFiles"
-    },
-    {
-        "key": "ctrl+m ctrl+l",
-        "command": "bookmarks.toggleLabeled"
-    },
-    {
-        "key": "ctrl+alt+k",
-        "command": "-bookmarks.toggle",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+m ctrl+m",
-        "command": "bookmarks.toggle",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+m ctrl+x",
-        "command": "bookmarks.clear"
-    },
-    {
-        "key": "ctrl+m ctrl+n",
-        "command": "bookmarks.jumpToNext",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+m ctrl+p",
-        "command": "bookmarks.jumpToPrevious",
-        "when": "editorTextFocus"
-    },
-    {
         "key": "ctrl+m o",
         "command": "toggleVim",
         "when": "editorTextFocus"
@@ -1860,10 +1905,6 @@ keybind sections
         "key": "ctrl+m ctrl+v",
         "command": "extension.vim_ctrl+v",
         "when": "editorTextFocus && vim.active"
-    },
-    {
-        "key": "ctrl+i ctrl+u",
-        "command": "workbench.action.problems.focus"
     },
     {
         "key": "ctrl+i ctrl+o",
@@ -3480,11 +3521,6 @@ keybind sections
         "when": "inQuickOpen"
     },
     {
-        "key": "alt+m",
-        "command": "bookmarks.listFromAllFiles",
-        "when": "inQuickOpen"
-    },
-    {
         "key": "alt+t",
         "command": "workbench.action.tasks.runTask",
         "when": "inQuickOpen"
@@ -3683,12 +3719,6 @@ keybind sections
         "args": ">Next "
     },
     {
-        "key": "ctrl+m",
-        "command": "workbench.action.quickOpen",
-        "when": "inQuickOpen",
-        "args": ">Bookmarks "
-    },
-    {
         "key": "ctrl+shift+m",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
@@ -3735,22 +3765,5 @@ keybind sections
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
         "args": ">Snippet "
-    },
-    {
-        "key": "ctrl+o",
-        "command": "workbench.action.quickOpen",
-        "when": "inQuickOpen",
-        "args": ">Toggle "
-    },
-    {
-        "key": "ctrl+u",
-        "command": "workbench.action.quickOpen",
-        "when": "inQuickOpen",
-        "args": ">Problems "
-    },
-    {
-        "key": "escape",
-        "command": "-workbench.action.terminal.chat.close",
-        "when": "terminalChatFocus && terminalChatVisible"
     },
 ]
