@@ -958,6 +958,10 @@ keybind sections
     // chat / copilot t7259
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+l o",
+        "command": "github.copilot.toggleCopilot"
+    },
+    {
         "key": "ctrl+i ctrl+l",
         "command": "workbench.panel.chat.view.copilot.focus"
     },
