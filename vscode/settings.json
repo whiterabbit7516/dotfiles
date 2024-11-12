@@ -550,7 +550,7 @@
   "window.customMenuBarAltFocus": false,
   "editor.find.autoFindInSelection": "multiline",
   "window.enableMenuBarMnemonics": false,
-  "dotfiles.repository": "https://github.com/HA07Z7XE/dotfiles.git",
+  "dotfiles.repository": "https://github.com/whiterabbit7516/dotfiles.git",
   "editor.cursorSurroundingLines": 3,
   "peacock.favoriteColors": [
     {
