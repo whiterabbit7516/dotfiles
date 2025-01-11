@@ -57,14 +57,21 @@ keybind sections
     logs                                t4752
     copilot                             t7259
     problems                            t7119
-    toggle                              t2530
+    toggle                              t3584
     marks / bookmarks                   t0604
     editor                              t8500
+    sidebar                             t5715
+    file                                t3459
+    codespaces                          t3134
 */
 [
     ///////////////////////////////////////////////////////////////
     // unbinds t1113
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+n",
+        "command": "-workbench.action.files.newUntitledFile"
+    },
     {
         "key": "ctrl+alt+k",
         "command": "-bookmarks.toggle",
@@ -163,6 +170,10 @@ keybind sections
         "key": "ctrl+k ctrl+shift+\\",
         "command": "-workbench.action.splitEditorInGroup",
         "when": "activeEditorCanSplitInGroup"
+    },
+    {
+        "key": "insert",
+        "command": "-editor.action.toggleOvertypeInsertMode"
     },
     ///////////////////////////////////////////////////////////////
     // terminal t8233
@@ -291,12 +302,23 @@ keybind sections
         "command": "workbench.action.toggleMaximizedPanel"
     },
     {
-        "key": "ctrl+b",
-        "command": "workbench.action.toggleSidebarVisibility"
-    },
-    {
         "key": "ctrl+n",
         "command": "workbench.action.toggleAuxiliaryBar"
+    },
+    {
+        "key": "ctrl+a ctrl+h",
+        "command": "workbench.action.positionPanelLeft",
+        "when": "panelFocus"
+    },
+    {
+        "key": "ctrl+a ctrl+j",
+        "command": "workbench.action.positionPanelBottom",
+        "when": "panelFocus"
+    },
+    {
+        "key": "ctrl+a ctrl+l",
+        "command": "workbench.action.positionPanelRight",
+        "when": "panelFocus"
     },
     ///////////////////////////////////////////////////////////////
     // remote - general t2900
@@ -600,6 +622,10 @@ keybind sections
     {
         "key": "ctrl+s ctrl+x",
         "command": "search.action.clearSearchResults"
+    },
+    {
+        "key": "ctrl+s r",
+        "command": "search.action.refreshSearchResults"
     },
     ///////////////////////////////////////////////////////////////
     // references t2275
@@ -1010,7 +1036,7 @@ keybind sections
         "when": "editorFocus && !editorReadonly"
     },
     ///////////////////////////////////////////////////////////////
-    // toggle t2530
+    // toggle t3584
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+o",
@@ -1090,28 +1116,16 @@ keybind sections
         "command": "editor.action.quickFix",
         "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
     },
-    ///////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////
     {
-        "key": "ctrl+a ctrl+h",
-        "command": "workbench.action.positionPanelLeft",
-        "when": "panelFocus"
+        "key": "ctrl+e ctrl+i",
+        "command": "editor.action.toggleOvertypeInsertMode"
     },
+    ///////////////////////////////////////////////////////////////
+    // sidebar t5715
+    ///////////////////////////////////////////////////////////////
     {
-        "key": "ctrl+a ctrl+j",
-        "command": "workbench.action.positionPanelBottom",
-        "when": "panelFocus"
-    },
-    {
-        "key": "ctrl+a ctrl+l",
-        "command": "workbench.action.positionPanelRight",
-        "when": "panelFocus"
+        "key": "ctrl+b",
+        "command": "workbench.action.toggleSidebarVisibility"
     },
     {
         "key": "ctrl+a ctrl+h",
@@ -1123,10 +1137,9 @@ keybind sections
         "command": "workbench.action.toggleSidebarPosition",
         "when": "sideBarFocus"
     },
-    {
-        "key": "ctrl+s r",
-        "command": "search.action.refreshSearchResults"
-    },
+    ///////////////////////////////////////////////////////////////
+    // file t3459
+    ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+a ctrl+n",
         "command": "workbench.action.files.newUntitledFile",
@@ -1134,6 +1147,109 @@ keybind sections
             "viewType": "default"
         }
     },
+    {
+        "key": "ctrl+t ctrl+n",
+        "command": "workbench.action.files.newUntitledFile",
+        "args": {
+            "viewType": "default"
+        }
+    },
+    {
+        "key": "ctrl+t ctrl+o",
+        "command": "workbench.action.files.openFile",
+    },
+    {
+        "key": "ctrl+t n",
+        "command": "workbench.action.quickOpen",
+        "args": ">File New "
+    },
+    {
+        "key": "ctrl+t o",
+        "command": "workbench.action.quickOpen",
+        "args": ">File Open "
+    },
+    {
+        "key": "ctrl+t s",
+        "command": "workbench.action.quickOpen",
+        "args": ">File Save "
+    },
+    {
+        "key": "ctrl+t u",
+        "command": "workbench.action.quickOpen",
+        "args": ">File Copy "
+    },
+    {
+        "key": "ctrl+t c",
+        "command": "fileutils.duplicateFile",
+    },
+    {
+        "key": "ctrl+t d",
+        "command": "fileutils.removeFile",
+    },
+    {
+        "key": "ctrl+t m",
+        "command": "fileutils.moveFile",
+    },
+    {
+        "key": "ctrl+t b",
+        "command": "fileutils.renameFile",
+    },
+    {
+        "key": "ctrl+t r",
+        "command": "workbench.action.files.revert"
+    },
+    {
+        "key": "ctrl+e r",
+        "command": "workbench.action.files.revert"
+    },
+    ///////////////////////////////////////////////////////////////
+    // codespaces t3134
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+c r",
+        "command": "workbench.action.quickOpen",
+        "args": ">Codespaces: Rebuild "
+    },
+    {
+        "key": "ctrl+c c",
+        "command": "github.codespaces.connect",
+    },
+    {
+        "key": "ctrl+c x",
+        "command": "github.codespaces.disconnectSuspend"
+    },
+    {
+        "key": "ctrl+c n",
+        "command": "github.codespaces.addEnvironment"
+    },
+    {
+        "key": "ctrl+r c",
+        "command": "workbench.action.quickOpen",
+        "args": ">Codespaces: "
+    },
+    {
+        "key": "ctrl+r ctrl+c",
+        "command": "github.codespaces.explorer.focus"
+    },
+    {
+        "key": "alt+c",
+        "command": "github.codespaces.connect",
+        "when": "inQuickOpen"
+    },
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+alt+h",
         "command": "workbench.action.terminal.resizePaneLeft",
@@ -2287,10 +2403,6 @@ keybind sections
         "command": "targetsContainers.focus",
     },
     {
-        "key": "ctrl+r ctrl+c",
-        "command": "github.codespaces.explorer.focus"
-    },
-    {
         "key": "ctrl+r ctrl+s",
         "command": "remoteTargets.focus"
     },
@@ -2525,28 +2637,6 @@ keybind sections
         "args": ">Dev Containers: Log "
     },
     {
-        "key": "ctrl+c r",
-        "command": "workbench.action.quickOpen",
-        "args": ">Codespaces: Rebuild "
-    },
-    {
-        "key": "ctrl+c c",
-        "command": "github.codespaces.connect",
-    },
-    {
-        "key": "ctrl+c x",
-        "command": "github.codespaces.disconnectSuspend"
-    },
-    {
-        "key": "ctrl+c n",
-        "command": "github.codespaces.addEnvironment"
-    },
-    {
-        "key": "ctrl+r c",
-        "command": "workbench.action.quickOpen",
-        "args": ">Codespaces: "
-    },
-    {
         "key": "ctrl+s z",
         "command": "opensshremotes.openConfigFile"
     },
@@ -2562,50 +2652,6 @@ keybind sections
         "key": "alt+z",
         "command": "workbench.profiles.actions.switchProfile",
         "when": "inQuickOpen",
-    },
-    {
-        "key": "ctrl+t c",
-        "command": "fileutils.duplicateFile",
-    },
-    {
-        "key": "ctrl+t d",
-        "command": "fileutils.removeFile",
-    },
-    {
-        "key": "ctrl+t m",
-        "command": "fileutils.moveFile",
-    },
-    {
-        "key": "ctrl+t b",
-        "command": "fileutils.renameFile",
-    },
-    {
-        "key": "ctrl+t r",
-        "command": "workbench.action.files.revert"
-    },
-    {
-        "key": "ctrl+e r",
-        "command": "workbench.action.files.revert"
-    },
-    {
-        "key": "ctrl+t n",
-        "command": "workbench.action.quickOpen",
-        "args": ">File New "
-    },
-    {
-        "key": "ctrl+t o",
-        "command": "workbench.action.quickOpen",
-        "args": ">File Open "
-    },
-    {
-        "key": "ctrl+t s",
-        "command": "workbench.action.quickOpen",
-        "args": ">File Save "
-    },
-    {
-        "key": "ctrl+t u",
-        "command": "workbench.action.quickOpen",
-        "args": ">File Copy "
     },
     {
         "key": "c",
@@ -2646,14 +2692,6 @@ keybind sections
         "key": "ctrl+a ctrl+p",
         "command": "workbench.action.unpinEditor",
         "when": "activeEditorIsPinned"
-    },
-    {
-        "key": "ctrl+n",
-        "command": "-workbench.action.files.newUntitledFile"
-    },
-    {
-        "key": "ctrl+t ctrl+o",
-        "command": "workbench.action.files.openFile",
     },
     {
         "key": "ctrl+o",
@@ -3517,11 +3555,6 @@ keybind sections
     {
         "key": "alt+d",
         "command": "workbench.action.debug.selectandstart",
-        "when": "inQuickOpen"
-    },
-    {
-        "key": "alt+c",
-        "command": "github.codespaces.connect",
         "when": "inQuickOpen"
     },
     {
