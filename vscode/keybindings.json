@@ -74,6 +74,7 @@ keybind sections
     find                                t4038
     extensions                          t5157
     profiles                            t6992
+    zoom                                t2167
     dump                                t0377
 
 contextual tags
@@ -426,6 +427,12 @@ contextual tags
     // terminal t8233
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+y",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Terminal "
+    },
+    {
         "key": "ctrl+y l",
         "when": "terminalChatAgentRegistered && terminalHasBeenCreated || terminalChatAgentRegistered && terminalProcessSupported",
         "command": "workbench.action.terminal.chat.start",
@@ -636,6 +643,12 @@ contextual tags
         "command": "workbench.action.quickOpen",
         "args": ">Remote-SSH: ",
     },
+    {
+        "key": "ctrl+s",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Remote-SSH "
+    },
     ///////////////////////////////////////////////////////////////
     // activity bar t6913
     ///////////////////////////////////////////////////////////////
@@ -705,6 +718,12 @@ contextual tags
     ///////////////////////////////////////////////////////////////
     // debug t3216
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+d",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Debug "
+    },
     {
         "key": "ctrl+i ctrl+d",
         "when": "!inQuickOpen",
@@ -916,6 +935,12 @@ contextual tags
     ///////////////////////////////////////////////////////////////
     // search t4141
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+shift+s",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Search "
+    },
     {
         "key": "ctrl+i ctrl+s",
         "when": "!inQuickOpen",
@@ -1505,6 +1530,12 @@ contextual tags
     // file t3459
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+shift+f",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Folder "
+    },
+    {
         "key": "ctrl+a ctrl+n",
         "when": "!inQuickOpen",
         "command": "workbench.action.files.newUntitledFile",
@@ -1714,6 +1745,12 @@ contextual tags
     // quick open t8929
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+shift+v",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Paste "
+    },
+    {
         "key": "ctrl+shift+h",
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpen",
@@ -1730,6 +1767,12 @@ contextual tags
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpen",
         "args": ">Next "
+    },
+    {
+        "key": "ctrl+shift+i",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Insert "
     },
     ///////////////////////////////////////////////////////////////
     // find t4038
@@ -1784,7 +1827,14 @@ contextual tags
         "args": ">Profiles "
     },
     ///////////////////////////////////////////////////////////////
+    // zoom t2167
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+shift+z",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Zoom "
+    },
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
@@ -3975,20 +4025,8 @@ contextual tags
     },
     {
         "key": "ctrl+shift+v",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Paste "
-    },
-    {
-        "key": "ctrl+shift+v",
-        "when": "inQuickOpen",
+        "when": "!inQuickOpen",
         "command": "editor.action.clipboardPasteAction",
-    },
-    {
-        "key": "ctrl+y",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Terminal "
     },
     {
         "key": "ctrl+shift+w",
@@ -4015,12 +4053,6 @@ contextual tags
         "args": ">Focus "
     },
     {
-        "key": "ctrl+shift+i",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Insert "
-    },
-    {
         "key": "ctrl+shift+o",
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpen",
@@ -4033,39 +4065,9 @@ contextual tags
         "args": ">Cursor "
     },
     {
-        "key": "ctrl+s",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Remote-SSH "
-    },
-    {
-        "key": "ctrl+shift+s",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Search "
-    },
-    {
-        "key": "ctrl+d",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Debug "
-    },
-    {
         "key": "ctrl+shift+d",
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpen",
         "args": ">Dev Contaners "
-    },
-    {
-        "key": "ctrl+shift+f",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Folder "
-    },
-    {
-        "key": "ctrl+shift+z",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Zoom "
     },
 ]
