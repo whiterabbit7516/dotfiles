@@ -758,6 +758,116 @@ contextual tags
     // source control t7077
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+v v",
+        "when": "!inQuickOpen",
+        "command": "gitlens.gitCommands",
+    },
+    {
+        "key": "ctrl+v ctrl+b",
+        "when": "!inQuickOpen",
+        "command": "gitlens.views.branches.focus",
+    },
+    {
+        "key": "ctrl+v ctrl+f",
+        "when": "!inQuickOpen",
+        "command": "gitlens.views.searchAndCompare.focus",
+    },
+    {
+        "key": "ctrl+v ctrl+t",
+        "when": "!inQuickOpen",
+        "command": "gitlens.views.tags.focus",
+    },
+    {
+        "key": "ctrl+v ctrl+c",
+        "when": "!inQuickOpen",
+        "command": "gitlens.views.commits.focus",
+    },
+    {
+        "key": "ctrl+v ctrl+s",
+        "when": "!inQuickOpen",
+        "command": "gitlens.views.stashes.focus",
+    },
+    {
+        "key": "ctrl+v ctrl+g",
+        "when": "!inQuickOpen",
+        "command": "git-graph.view",
+    },
+    {
+        "key": "ctrl+v b",
+        "when": "!inQuickOpen",
+        "command": "git.checkout",
+    },
+    {
+        "key": "ctrl+v c",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Git Commit Staged ",
+    },
+    {
+        "key": "ctrl+v s",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Git Stage ",
+    },
+    {
+        "key": "ctrl+v z",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Git Revert ",
+    },
+    {
+        "key": "ctrl+v p",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Git ",
+    },
+    {
+        "key": "ctrl+v u",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Git Unstage ",
+    },
+    {
+        "key": "ctrl+v d",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Git Discard ",
+    },
+    {
+        "key": "ctrl+v h",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Git History ",
+    },
+    {
+        "key": "ctrl+v l",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">GitLens ",
+    },
+    {
+        "key": "ctrl+v g",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Git Graph ",
+    },
+    {
+        "key": "ctrl+v o",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Git Open ",
+    },
+    {
+        "key": "ctrl+v r",
+        "when": "!inQuickOpen",
+        "command": "git.refresh",
+    },
+    {
+        "key": "alt+v",
+        "when": "inQuickOpen",
+        "command": "gitlens.gitCommands",
+    },
+    {
         "key": "ctrl+v",
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpen",
@@ -2268,111 +2378,6 @@ contextual tags
         "key": "ctrl+v ctrl+p",
         "when": "isInDiffEditor",
         "command": "editor.action.diffReview.prev",
-    },
-    {
-        "key": "ctrl+v v",
-        "when": "!inQuickOpen",
-        "command": "gitlens.gitCommands",
-    },
-    {
-        "key": "ctrl+v ctrl+b",
-        "when": "!inQuickOpen",
-        "command": "gitlens.views.branches.focus",
-    },
-    {
-        "key": "ctrl+v ctrl+f",
-        "when": "!inQuickOpen",
-        "command": "gitlens.views.searchAndCompare.focus",
-    },
-    {
-        "key": "ctrl+v ctrl+t",
-        "when": "!inQuickOpen",
-        "command": "gitlens.views.tags.focus",
-    },
-    {
-        "key": "ctrl+v ctrl+c",
-        "when": "!inQuickOpen",
-        "command": "gitlens.views.commits.focus",
-    },
-    {
-        "key": "ctrl+v ctrl+s",
-        "when": "!inQuickOpen",
-        "command": "gitlens.views.stashes.focus",
-    },
-    {
-        "key": "ctrl+v ctrl+g",
-        "when": "!inQuickOpen",
-        "command": "git-graph.view",
-    },
-    {
-        "key": "ctrl+v b",
-        "when": "!inQuickOpen",
-        "command": "git.checkout",
-    },
-    {
-        "key": "ctrl+v c",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Git Commit Staged ",
-    },
-    {
-        "key": "ctrl+v s",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Git Stage ",
-    },
-    {
-        "key": "ctrl+v z",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Git Revert ",
-    },
-    {
-        "key": "ctrl+v p",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Git ",
-    },
-    {
-        "key": "ctrl+v u",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Git Unstage ",
-    },
-    {
-        "key": "ctrl+v d",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Git Discard ",
-    },
-    {
-        "key": "ctrl+v h",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Git History ",
-    },
-    {
-        "key": "ctrl+v l",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">GitLens ",
-    },
-    {
-        "key": "ctrl+v g",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Git Graph ",
-    },
-    {
-        "key": "ctrl+v o",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Git Open ",
-    },
-    {
-        "key": "ctrl+v r",
-        "when": "!inQuickOpen",
-        "command": "git.refresh",
     },
     {
         "key": "ctrl+alt+y",
@@ -3994,11 +3999,6 @@ contextual tags
         "key": "alt+y",
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpenTerm",
-    },
-    {
-        "key": "alt+v",
-        "when": "inQuickOpen",
-        "command": "gitlens.gitCommands",
     },
     {
         "key": "alt+b",
