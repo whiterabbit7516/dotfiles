@@ -72,6 +72,13 @@ keybind sections
     macros                              t7096
     dump                                t0377
     quick open                          t8929
+
+contextual tags
+    panelFocus
+    editorFocus
+    terminalFocus
+    sidebarFocus
+    inQuickOpen
 */
 [
     ///////////////////////////////////////////////////////////////
@@ -1270,6 +1277,7 @@ keybind sections
     {
         "key": "ctrl+c c",
         "command": "github.codespaces.connect",
+        "when": "editorFocus"
     },
     {
         "key": "ctrl+c x",
