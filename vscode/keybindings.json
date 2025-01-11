@@ -85,6 +85,221 @@ contextual tags
     // unbinds t1113
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+shift+c",
+        "when": "terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected",
+        "command": "-workbench.action.terminal.copySelection",
+    },
+    {
+        "key": "ctrl+shift+v",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported",
+        "command": "-workbench.action.terminal.paste",
+    },
+    {
+        "key": "ctrl+=",
+        "when": "!inQuickOpen",
+        "command": "-workbench.action.zoomIn"
+    },
+    {
+        "key": "ctrl+-",
+        "when": "!inQuickOpen",
+        "command": "-workbench.action.zoomOut"
+    },
+    {
+        "key": "ctrl+z",
+        "when": "!inQuickOpen",
+        "command": "-undo"
+    },
+    {
+        "key": "ctrl+]",
+        "when": "editorTextFocus && !editorReadonly",
+        "command": "-editor.action.indentLines",
+    },
+    {
+        "key": "ctrl+[",
+        "when": "editorTextFocus && !editorReadonly",
+        "command": "-editor.action.outdentLines",
+    },
+    {
+        "key": "ctrl+h",
+        "when": "!inQuickOpen",
+        "command": "-editor.action.startFindReplaceAction"
+    },
+    {
+        "key": "ctrl+shift+[",
+        "when": "editorTextFocus && foldingEnabled",
+        "command": "-editor.fold",
+    },
+    {
+        "key": "ctrl+shift+]",
+        "when": "editorTextFocus && foldingEnabled",
+        "command": "-editor.unfold",
+    },
+    {
+        "key": "ctrl+shift+r",
+        "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly",
+        "command": "-editor.action.refactor",
+    },
+    {
+        "key": "ctrl+shift+h",
+        "when": "!inQuickOpen",
+        "command": "-workbench.action.replaceInFiles"
+    },
+    {
+        "key": "ctrl+shift+[",
+        "when": "editorTextFocus",
+        "command": "-guid.insert",
+    },
+    {
+        "key": "ctrl+shift+alt+[",
+        "when": "editorTextFocus",
+        "command": "-guid.insertMany",
+    },
+    {
+        "key": "ctrl+shift+enter",
+        "when": "fileMatchFocus && replaceActive && searchViewletVisible",
+        "command": "-search.action.replaceAllInFile",
+    },
+    {
+        "key": "ctrl+shift+enter",
+        "when": "folderMatchFocus && replaceActive && searchViewletVisible",
+        "command": "-search.action.replaceAllInFolder",
+    },
+    {
+        "key": "ctrl+shift+1",
+        "when": "fileMatchFocus && replaceActive && searchViewletVisible",
+        "command": "-search.action.replaceAllInFile",
+    },
+    {
+        "key": "ctrl+shift+1",
+        "when": "folderMatchFocus && replaceActive && searchViewletVisible",
+        "command": "-search.action.replaceAllInFolder",
+    },
+    {
+        "key": "ctrl+alt+enter",
+        "when": "replaceActive && searchViewletVisible && !findWidgetVisible",
+        "command": "-search.action.replaceAll",
+    },
+    {
+        "key": "ctrl+shift+1",
+        "when": "matchFocus && replaceActive && searchViewletVisible",
+        "command": "-search.action.replace",
+    },
+    {
+        "key": "alt+l",
+        "when": "editorFocus",
+        "command": "-toggleFindInSelection",
+    },
+    {
+        "key": "alt+c",
+        "when": "editorFocus",
+        "command": "-toggleFindCaseSensitive",
+    },
+    {
+        "key": "alt+r",
+        "when": "editorFocus",
+        "command": "-toggleFindRegex",
+    },
+    {
+        "key": "alt+w",
+        "when": "editorFocus",
+        "command": "-toggleFindWholeWord",
+    },
+    {
+        "key": "alt+c",
+        "when": "terminalFindFocused || terminalFocus",
+        "command": "-workbench.action.terminal.toggleFindCaseSensitive",
+    },
+    {
+        "key": "alt+r",
+        "when": "terminalFindFocused || terminalFocus",
+        "command": "-workbench.action.terminal.toggleFindRegex",
+    },
+    {
+        "key": "alt+w",
+        "when": "terminalFindFocused || terminalFocus",
+        "command": "-workbench.action.terminal.toggleFindWholeWord",
+    },
+    {
+        "key": "ctrl+r",
+        "when": "!inQuickOpen",
+        "command": "-workbench.action.openRecent"
+    },
+    {
+        "key": "ctrl+shift+s",
+        "when": "!inQuickOpen",
+        "command": "-workbench.action.files.saveAs"
+    },
+    {
+        "key": "ctrl+shift+x",
+        "when": "!inQuickOpen",
+        "command": "-workbench.view.extensions"
+    },
+    {
+        "key": "ctrl+k ctrl+l",
+        "when": "editorTextFocus && foldingEnabled",
+        "command": "-editor.toggleFold",
+    },
+    {
+        "key": "ctrl+o",
+        "when": "!inQuickOpen",
+        "command": "-workbench.action.files.openFile"
+    },
+    {
+        "key": "ctrl+k ctrl+j",
+        "when": "editorTextFocus && foldingEnabled",
+        "command": "-editor.unfoldAll",
+    },
+    {
+        "key": "ctrl+k ctrl+0",
+        "when": "editorTextFocus && foldingEnabled",
+        "command": "-editor.foldAll",
+    },
+    {
+        "key": "ctrl+k ctrl+s",
+        "when": "!inQuickOpen",
+        "command": "-workbench.action.openGlobalKeybindings"
+    },
+    {
+        "key": "ctrl+,",
+        "when": "!inQuickOpen",
+        "command": "-workbench.action.openSettings"
+    },
+    {
+        "key": "ctrl+shift+.",
+        "when": "breadcrumbsPossible",
+        "command": "-breadcrumbs.focusAndSelect",
+    },
+    {
+        "key": "shift+alt+/",
+        "when": "editorTextFocus",
+        "command": "-metaGo.selectSmart",
+    },
+    {
+        "key": "ctrl+k ctrl+t",
+        "when": "!inQuickOpen",
+        "command": "-workbench.action.selectTheme"
+    },
+    {
+        "key": "alt+/",
+        "when": "!inQuickOpen",
+        "command": "-metaGo.gotoSmart"
+    },
+    {
+        "key": "ctrl+alt+/",
+        "when": "!inQuickOpen",
+        "command": "-metaGo.addCursorSmart"
+    },
+    {
+        "key": "ctrl+shift+p",
+        "when": "inFilesPicker && inQuickOpen",
+        "command": "-workbench.action.quickOpenNavigatePreviousInFilePicker",
+    },
+    {
+        "key": "ctrl+k ctrl+r",
+        "when": "!inQuickOpen",
+        "command": "-git.revertSelectedRanges",
+    },
+    {
         "key": "ctrl+shift+o",
         "command": "-workbench.action.gotoSymbol"
     },
@@ -1921,11 +2136,6 @@ contextual tags
         "args": ">Git Revert ",
     },
     {
-        "key": "ctrl+k ctrl+r",
-        "when": "!inQuickOpen",
-        "command": "-git.revertSelectedRanges",
-    },
-    {
         "key": "ctrl+v p",
         "when": "!inQuickOpen",
         "command": "workbench.action.quickOpen",
@@ -2120,11 +2330,6 @@ contextual tags
         "command": "workbench.action.terminal.findPrevious",
     },
     {
-        "key": "ctrl+shift+c",
-        "when": "terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected",
-        "command": "-workbench.action.terminal.copySelection",
-    },
-    {
         "key": "ctrl+c ctrl+c",
         "when": "terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected",
         "command": "workbench.action.terminal.copySelection",
@@ -2133,11 +2338,6 @@ contextual tags
         "key": "ctrl+u ctrl+c",
         "when": "terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected",
         "command": "workbench.action.terminal.copySelection",
-    },
-    {
-        "key": "ctrl+shift+v",
-        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported",
-        "command": "-workbench.action.terminal.paste",
     },
     {
         "key": "ctrl+u ctrl+v",
@@ -2173,16 +2373,6 @@ contextual tags
         "key": "ctrl+u ctrl+x",
         "when": "textInputFocus && !editorReadonly",
         "command": "editor.action.clipboardCutAction",
-    },
-    {
-        "key": "ctrl+=",
-        "when": "!inQuickOpen",
-        "command": "-workbench.action.zoomIn"
-    },
-    {
-        "key": "ctrl+-",
-        "when": "!inQuickOpen",
-        "command": "-workbench.action.zoomOut"
     },
     {
         "key": "ctrl+shift+=",
@@ -2370,11 +2560,6 @@ contextual tags
         "command": "undo"
     },
     {
-        "key": "ctrl+z",
-        "when": "!inQuickOpen",
-        "command": "-undo"
-    },
-    {
         "key": "ctrl+z o",
         "when": "!inQuickOpen",
         "command": "workbench.action.toggleZenMode"
@@ -2450,19 +2635,9 @@ contextual tags
         "command": "editor.action.indentLines",
     },
     {
-        "key": "ctrl+]",
-        "when": "editorTextFocus && !editorReadonly",
-        "command": "-editor.action.indentLines",
-    },
-    {
         "key": "ctrl+l ctrl+o",
         "when": "editorTextFocus && !editorReadonly",
         "command": "editor.action.outdentLines",
-    },
-    {
-        "key": "ctrl+[",
-        "when": "editorTextFocus && !editorReadonly",
-        "command": "-editor.action.outdentLines",
     },
     {
         "key": "ctrl+f ctrl+n",
@@ -2473,11 +2648,6 @@ contextual tags
         "key": "ctrl+f ctrl+p",
         "when": "editorFocus",
         "command": "editor.action.previousSelectionMatchFindAction",
-    },
-    {
-        "key": "ctrl+h",
-        "when": "!inQuickOpen",
-        "command": "-editor.action.startFindReplaceAction"
     },
     {
         "key": "ctrl+]",
@@ -2505,29 +2675,14 @@ contextual tags
         "command": "editor.fold",
     },
     {
-        "key": "ctrl+shift+[",
-        "when": "editorTextFocus && foldingEnabled",
-        "command": "-editor.fold",
-    },
-    {
         "key": "ctrl+alt+]",
         "when": "editorTextFocus && foldingEnabled",
         "command": "editor.unfold",
     },
     {
-        "key": "ctrl+shift+]",
-        "when": "editorTextFocus && foldingEnabled",
-        "command": "-editor.unfold",
-    },
-    {
         "key": "ctrl+e ctrl+g",
         "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly",
         "command": "editor.action.refactor",
-    },
-    {
-        "key": "ctrl+shift+r",
-        "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly",
-        "command": "-editor.action.refactor",
     },
     {
         "key": "ctrl+e ctrl+b",
@@ -2558,11 +2713,6 @@ contextual tags
         "key": "ctrl+s ctrl+b",
         "when": "!inQuickOpen",
         "command": "workbench.action.replaceInFiles"
-    },
-    {
-        "key": "ctrl+shift+h",
-        "when": "!inQuickOpen",
-        "command": "-workbench.action.replaceInFiles"
     },
     {
         "key": "ctrl+i s",
@@ -2610,16 +2760,6 @@ contextual tags
         "command": "workbench.action.terminal.focusAtIndex8"
     },
     {
-        "key": "ctrl+shift+[",
-        "when": "editorTextFocus",
-        "command": "-guid.insert",
-    },
-    {
-        "key": "ctrl+shift+alt+[",
-        "when": "editorTextFocus",
-        "command": "-guid.insertMany",
-    },
-    {
         "key": "b",
         "when": "matchFocus && replaceActive && searchViewletVisible",
         "command": "search.action.replace",
@@ -2635,36 +2775,6 @@ contextual tags
         "command": "search.action.replaceAllInFolder",
     },
     {
-        "key": "ctrl+shift+enter",
-        "when": "fileMatchFocus && replaceActive && searchViewletVisible",
-        "command": "-search.action.replaceAllInFile",
-    },
-    {
-        "key": "ctrl+shift+enter",
-        "when": "folderMatchFocus && replaceActive && searchViewletVisible",
-        "command": "-search.action.replaceAllInFolder",
-    },
-    {
-        "key": "ctrl+shift+1",
-        "when": "fileMatchFocus && replaceActive && searchViewletVisible",
-        "command": "-search.action.replaceAllInFile",
-    },
-    {
-        "key": "ctrl+shift+1",
-        "when": "folderMatchFocus && replaceActive && searchViewletVisible",
-        "command": "-search.action.replaceAllInFolder",
-    },
-    {
-        "key": "ctrl+alt+enter",
-        "when": "replaceActive && searchViewletVisible && !findWidgetVisible",
-        "command": "-search.action.replaceAll",
-    },
-    {
-        "key": "ctrl+shift+1",
-        "when": "matchFocus && replaceActive && searchViewletVisible",
-        "command": "-search.action.replace",
-    },
-    {
         "key": "d",
         "when": "fileMatchOrMatchFocus && searchViewletVisible",
         "command": "search.action.remove",
@@ -2673,46 +2783,6 @@ contextual tags
         "key": "ctrl+f s",
         "when": "editorFocus",
         "command": "toggleFindInSelection",
-    },
-    {
-        "key": "alt+l",
-        "when": "editorFocus",
-        "command": "-toggleFindInSelection",
-    },
-    {
-        "key": "alt+c",
-        "when": "editorFocus",
-        "command": "-toggleFindCaseSensitive",
-    },
-    {
-        "key": "alt+r",
-        "when": "editorFocus",
-        "command": "-toggleFindRegex",
-    },
-    {
-        "key": "alt+w",
-        "when": "editorFocus",
-        "command": "-toggleFindWholeWord",
-    },
-    {
-        "key": "alt+c",
-        "when": "terminalFindFocused || terminalFocus",
-        "command": "-workbench.action.terminal.toggleFindCaseSensitive",
-    },
-    {
-        "key": "alt+r",
-        "when": "terminalFindFocused || terminalFocus",
-        "command": "-workbench.action.terminal.toggleFindRegex",
-    },
-    {
-        "key": "alt+w",
-        "when": "terminalFindFocused || terminalFocus",
-        "command": "-workbench.action.terminal.toggleFindWholeWord",
-    },
-    {
-        "key": "ctrl+r",
-        "when": "!inQuickOpen",
-        "command": "-workbench.action.openRecent"
     },
     {
         "key": "ctrl+r ctrl+r",
@@ -2733,11 +2803,6 @@ contextual tags
         "key": "ctrl+i ctrl+r",
         "when": "!terminalFocus",
         "command": "workbench.view.remote",
-    },
-    {
-        "key": "ctrl+shift+s",
-        "when": "!inQuickOpen",
-        "command": "-workbench.action.files.saveAs"
     },
     {
         "key": "ctrl+l",
@@ -2800,11 +2865,6 @@ contextual tags
         "key": "ctrl+i z",
         "when": "!inQuickOpen",
         "command": "workbench.view.undostack" // non existant
-    },
-    {
-        "key": "ctrl+shift+x",
-        "when": "!inQuickOpen",
-        "command": "-workbench.view.extensions"
     },
     {
         "key": "ctrl+w x",
@@ -2985,11 +3045,6 @@ contextual tags
         "command": "editor.toggleFold",
     },
     {
-        "key": "ctrl+k ctrl+l",
-        "when": "editorTextFocus && foldingEnabled",
-        "command": "-editor.toggleFold",
-    },
-    {
         "key": "ctrl+k ctrl+s",
         "when": "editorHasDocumentSelectionFormattingProvider && editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly",
         "command": "editor.action.formatSelection",
@@ -3010,24 +3065,9 @@ contextual tags
         "command": "workbench.action.unpinEditor",
     },
     {
-        "key": "ctrl+o",
-        "when": "!inQuickOpen",
-        "command": "-workbench.action.files.openFile"
-    },
-    {
-        "key": "ctrl+k ctrl+j",
-        "when": "editorTextFocus && foldingEnabled",
-        "command": "-editor.unfoldAll",
-    },
-    {
         "key": "ctrl+k ctrl+9",
         "when": "!inQuickOpen",
         "command": "editor.foldAll"
-    },
-    {
-        "key": "ctrl+k ctrl+0",
-        "when": "editorTextFocus && foldingEnabled",
-        "command": "-editor.foldAll",
     },
     {
         "key": "ctrl+k ctrl+0",
@@ -3045,11 +3085,6 @@ contextual tags
         "command": "workbench.action.openGlobalKeybindingsFile"
     },
     {
-        "key": "ctrl+k ctrl+s",
-        "when": "!inQuickOpen",
-        "command": "-workbench.action.openGlobalKeybindings"
-    },
-    {
         "key": "ctrl+k ctrl+z",
         "when": "!inQuickOpen",
         "command": "workbench.action.openSettings",
@@ -3060,16 +3095,6 @@ contextual tags
         "command": "workbench.action.openSettings",
     },
     {
-        "key": "ctrl+,",
-        "when": "!inQuickOpen",
-        "command": "-workbench.action.openSettings"
-    },
-    {
-        "key": "ctrl+shift+.",
-        "when": "breadcrumbsPossible",
-        "command": "-breadcrumbs.focusAndSelect",
-    },
-    {
         "key": "ctrl+k ctrl+t",
         "when": "!inQuickOpen",
         "command": "workbench.action.selectTheme",
@@ -3078,11 +3103,6 @@ contextual tags
         "key": "ctrl+k t",
         "when": "!inQuickOpen",
         "command": "workbench.action.toggleLightDarkThemes",
-    },
-    {
-        "key": "ctrl+k ctrl+t",
-        "when": "!inQuickOpen",
-        "command": "-workbench.action.selectTheme"
     },
     {
         "key": "ctrl+w z",
@@ -3260,29 +3280,14 @@ contextual tags
         "command": "metaGo.gotoSmart"
     },
     {
-        "key": "alt+/",
-        "when": "!inQuickOpen",
-        "command": "-metaGo.gotoSmart"
-    },
-    {
         "key": "ctrl+shift+/",
         "when": "editorTextFocus",
         "command": "metaGo.selectSmart",
     },
     {
         "key": "shift+alt+/",
-        "when": "editorTextFocus",
-        "command": "-metaGo.selectSmart",
-    },
-    {
-        "key": "shift+alt+/",
         "when": "!inQuickOpen",
         "command": "metaGo.addCursorSmart"
-    },
-    {
-        "key": "ctrl+alt+/",
-        "when": "!inQuickOpen",
-        "command": "-metaGo.addCursorSmart"
     },
     {
         "key": "ctrl+y ctrl+a",
@@ -3904,11 +3909,6 @@ contextual tags
         "key": "alt+n",
         "when": "inQuickOpen",
         "command": "workbench.action.openRecent",
-    },
-    {
-        "key": "ctrl+shift+p",
-        "when": "inFilesPicker && inQuickOpen",
-        "command": "-workbench.action.quickOpenNavigatePreviousInFilePicker",
     },
     {
         "key": "ctrl+r",
