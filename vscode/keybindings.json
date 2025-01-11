@@ -75,6 +75,9 @@ keybind sections
     extensions                          t5157
     profiles                            t6992
     zoom                                t2167
+    output                              t2786
+    cursor                              t3075
+    paste                               t7118
     dump                                t0377
 
 contextual tags
@@ -611,6 +614,12 @@ contextual tags
     // remote - general t2900
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+r",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Remote "
+    },
+    {
         "key": "ctrl+r x",
         "when": "!inQuickOpen",
         "command": "workbench.action.remote.close",
@@ -623,6 +632,12 @@ contextual tags
     ///////////////////////////////////////////////////////////////
     // remote - dev containers t6291
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+shift+d",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Dev Contaners "
+    },
     {
         "key": "ctrl+r d",
         "when": "!inQuickOpen",
@@ -743,6 +758,12 @@ contextual tags
     // source control t7077
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+v",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Source Control "
+    },
+    {
         "key": "ctrl+i ctrl+v",
         "when": "!inQuickOpen",
         "command": "workbench.view.scm",
@@ -764,6 +785,17 @@ contextual tags
     ///////////////////////////////////////////////////////////////
     // windows t5091
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "alt+w",
+        "when": "inQuickOpen",
+        "command": "workbench.action.switchWindow",
+    },
+    {
+        "key": "ctrl+shift+w",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Window "
+    },
     {
         "key": "ctrl+i ctrl+w",
         "when": "!inQuickOpen",
@@ -1745,12 +1777,6 @@ contextual tags
     // quick open t8929
     ///////////////////////////////////////////////////////////////
     {
-        "key": "ctrl+shift+v",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Paste "
-    },
-    {
         "key": "ctrl+shift+h",
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpen",
@@ -1835,6 +1861,52 @@ contextual tags
         "command": "workbench.action.quickOpen",
         "args": ">Zoom "
     },
+    ///////////////////////////////////////////////////////////////
+    // output t2786
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "alt+o",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": "view output "
+    },
+    {
+        "key": "ctrl+i ctrl+o",
+        "when": "!inQuickOpen",
+        "command": "workbench.panel.output.focus"
+    },
+    {
+        "key": "ctrl+shift+o",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Output "
+    },
+    ///////////////////////////////////////////////////////////////
+    // cursor t3075
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+shift+a",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Cursor "
+    },
+    ///////////////////////////////////////////////////////////////
+    // paste t7118
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+shift+v",
+        "when": "!inQuickOpen",
+        "command": "editor.action.clipboardPasteAction",
+    },
+    {
+        "key": "ctrl+shift+v",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Paste "
+    },
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
@@ -2613,11 +2685,6 @@ contextual tags
         "key": "ctrl+m ctrl+v",
         "when": "editorTextFocus && vim.active",
         "command": "extension.vim_ctrl+v",
-    },
-    {
-        "key": "ctrl+i ctrl+o",
-        "when": "!inQuickOpen",
-        "command": "workbench.panel.output.focus"
     },
     {
         "key": "ctrl+i ctrl+p",
@@ -3944,12 +4011,6 @@ contextual tags
         "command": "workbench.action.experimental.quickTextSearch",
     },
     {
-        "key": "alt+o",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": "view output "
-    },
-    {
         "key": "alt+p",
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpen",
@@ -3996,43 +4057,15 @@ contextual tags
         "command": "workbench.action.gotoSymbol",
     },
     {
-        "key": "alt+w",
-        "when": "inQuickOpen",
-        "command": "workbench.action.switchWindow",
-    },
-    {
         "key": "alt+n",
         "when": "inQuickOpen",
         "command": "workbench.action.openRecent",
-    },
-    {
-        "key": "ctrl+r",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Remote "
     },
     {
         "key": "ctrl+shift+r",
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpen",
         "args": ">Refresh "
-    },
-    {
-        "key": "ctrl+v",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Source Control "
-    },
-    {
-        "key": "ctrl+shift+v",
-        "when": "!inQuickOpen",
-        "command": "editor.action.clipboardPasteAction",
-    },
-    {
-        "key": "ctrl+shift+w",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Window "
     },
     {
         "key": "ctrl+e",
@@ -4051,23 +4084,5 @@ contextual tags
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpen",
         "args": ">Focus "
-    },
-    {
-        "key": "ctrl+shift+o",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Output "
-    },
-    {
-        "key": "ctrl+shift+a",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Cursor "
-    },
-    {
-        "key": "ctrl+shift+d",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Dev Contaners "
     },
 ]
