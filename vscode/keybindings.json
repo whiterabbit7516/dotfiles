@@ -1616,6 +1616,16 @@ contextual tags
     // editor t8500
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+alt+h",
+        "when": "editorFocus && !editorReadonly && !inDebugMode",
+        "command": "editor.action.outdentLines",
+    },
+    {
+        "key": "ctrl+alt+l",
+        "when": "editorFocus && !editorReadonly && !inDebugMode",
+        "command": "editor.action.indentLines",
+    },
+    {
         "key": "ctrl+i ctrl+e",
         "when": "workbench.explorer.openEditorsView.active",
         "command": "workbench.files.action.focusOpenEditorsView",
@@ -2031,16 +2041,6 @@ contextual tags
     ///////////////////////////////////////////////////////////////
     // dump t0377
     ///////////////////////////////////////////////////////////////
-    {
-        "key": "ctrl+alt+h",
-        "when": "editorFocus && !editorReadonly && !inDebugMode",
-        "command": "editor.action.outdentLines",
-    },
-    {
-        "key": "ctrl+alt+l",
-        "when": "editorFocus && !editorReadonly && !inDebugMode",
-        "command": "editor.action.indentLines",
-    },
     {
         "key": "alt+j",
         "when": "!inQuickOpen",
