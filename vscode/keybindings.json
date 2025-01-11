@@ -70,8 +70,9 @@ keybind sections
     help                                t3118
     commands                            t6712
     macros                              t7096
-    dump                                t0377
     quick open                          t8929
+    find                                t4038
+    dump                                t0377
 
 contextual tags
     panelFocus
@@ -1688,7 +1689,55 @@ contextual tags
         "args": ">Macros "
     },
     ///////////////////////////////////////////////////////////////
+    // quick open t8929
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+shift+h",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">History "
+    },
+    {
+        "key": "ctrl+shift+b",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Rename "
+    },
+    {
+        "key": "ctrl+shift+n",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Next "
+    },
+    ///////////////////////////////////////////////////////////////
+    // find t4038
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+f",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Find "
+    },
+    {
+        "key": "ctrl+f ctrl+f",
+        "when": "editorFocus",
+        "command": "actions.find",
+    },
+    {
+        "key": "ctrl+f s",
+        "when": "editorFocus",
+        "command": "toggleFindInSelection",
+    },
+    {
+        "key": "ctrl+f ctrl+s",
+        "when": "editorFocus",
+        "command": "actions.findWithSelection",
+    },
+    {
+        "key": "ctrl+f ctrl+r",
+        "when": "editorFocus && editorHasReferenceProvider",
+        "command": "references-view.find",
+    },
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
@@ -2445,16 +2494,6 @@ contextual tags
         "command": "actions.find",
     },
     {
-        "key": "ctrl+f ctrl+f",
-        "when": "editorFocus",
-        "command": "actions.find",
-    },
-    {
-        "key": "ctrl+f ctrl+r",
-        "when": "editorFocus && editorHasReferenceProvider",
-        "command": "references-view.find",
-    },
-    {
         "key": "ctrl+f ctrl+i",
         "when": "editorFocus",
         "command": "references-view.findImplementations",
@@ -2468,11 +2507,6 @@ contextual tags
         "key": "ctrl+f ctrl+b",
         "when": "editorFocus",
         "command": "editor.action.startFindReplaceAction",
-    },
-    {
-        "key": "ctrl+f ctrl+s",
-        "when": "editorFocus",
-        "command": "actions.findWithSelection",
     },
     {
         "key": "ctrl+d ctrl+b",
@@ -2778,11 +2812,6 @@ contextual tags
         "key": "d",
         "when": "fileMatchOrMatchFocus && searchViewletVisible",
         "command": "search.action.remove",
-    },
-    {
-        "key": "ctrl+f s",
-        "when": "editorFocus",
-        "command": "toggleFindInSelection",
     },
     {
         "key": "ctrl+r ctrl+r",
@@ -4018,12 +4047,6 @@ contextual tags
         "args": ">Dev Contaners "
     },
     {
-        "key": "ctrl+f",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Find "
-    },
-    {
         "key": "ctrl+shift+f",
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpen",
@@ -4040,26 +4063,5 @@ contextual tags
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpen",
         "args": ">Zoom "
-    },
-    ///////////////////////////////////////////////////////////////
-    // quick open t8929
-    ///////////////////////////////////////////////////////////////
-    {
-        "key": "ctrl+shift+h",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">History "
-    },
-    {
-        "key": "ctrl+shift+b",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Rename "
-    },
-    {
-        "key": "ctrl+shift+n",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Next "
     },
 ]
