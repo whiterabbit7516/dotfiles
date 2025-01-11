@@ -72,6 +72,8 @@ keybind sections
     macros                              t7096
     quick open                          t8929
     find                                t4038
+    extensions                          t5157
+    profiles                            t6992
     dump                                t0377
 
 contextual tags
@@ -532,6 +534,26 @@ contextual tags
     ///////////////////////////////////////////////////////////////
     // panel t1566
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+alt+h",
+        "when": "panelFocus",
+        "command": "workbench.action.terminal.resizePaneLeft",
+    },
+    {
+        "key": "ctrl+alt+l",
+        "when": "panelFocus",
+        "command": "workbench.action.terminal.resizePaneRight",
+    },
+    {
+        "key": "ctrl+alt+j",
+        "when": "panelFocus",
+        "command": "workbench.action.terminal.resizePaneDown",
+    },
+    {
+        "key": "ctrl+alt+k",
+        "when": "panelFocus",
+        "command": "workbench.action.terminal.resizePaneUp",
+    },
     {
         "key": "ctrl+j",
         "when": "inQuickOpen",
@@ -1739,9 +1761,28 @@ contextual tags
         "command": "references-view.find",
     },
     ///////////////////////////////////////////////////////////////
+    // extensions t5157
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+shift+x",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Extensions "
+    },
+    {
+        "key": "ctrl+i ctrl+x",
+        "when": "!inQuickOpen",
+        "command": "workbench.view.extensions"
+    },
     ///////////////////////////////////////////////////////////////
+    // profiles t6992
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+z",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Profiles "
+    },
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
@@ -1758,26 +1799,6 @@ contextual tags
     ///////////////////////////////////////////////////////////////
     // dump t0377
     ///////////////////////////////////////////////////////////////
-    {
-        "key": "ctrl+alt+h",
-        "when": "panelFocus",
-        "command": "workbench.action.terminal.resizePaneLeft",
-    },
-    {
-        "key": "ctrl+alt+l",
-        "when": "panelFocus",
-        "command": "workbench.action.terminal.resizePaneRight",
-    },
-    {
-        "key": "ctrl+alt+j",
-        "when": "panelFocus",
-        "command": "workbench.action.terminal.resizePaneDown",
-    },
-    {
-        "key": "ctrl+alt+k",
-        "when": "panelFocus",
-        "command": "workbench.action.terminal.resizePaneUp",
-    },
     {
         "key": "ctrl+alt+h",
         "when": "editorFocus && !editorReadonly && !inDebugMode",
@@ -2884,11 +2905,6 @@ contextual tags
         "key": "ctrl+f ctrl+x",
         "when": "terminalFindVisible && terminalFocus",
         "command": "workbench.action.terminal.hideFind",
-    },
-    {
-        "key": "ctrl+i ctrl+x",
-        "when": "!inQuickOpen",
-        "command": "workbench.view.extensions"
     },
     {
         "key": "ctrl+i z",
@@ -4029,12 +4045,6 @@ contextual tags
         "args": ">Search "
     },
     {
-        "key": "ctrl+shift+x",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Extensions "
-    },
-    {
         "key": "ctrl+d",
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpen",
@@ -4051,12 +4061,6 @@ contextual tags
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpen",
         "args": ">Folder "
-    },
-    {
-        "key": "ctrl+z",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Profiles "
     },
     {
         "key": "ctrl+shift+z",
