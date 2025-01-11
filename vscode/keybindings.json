@@ -46,6 +46,7 @@ keybind sections
     file explorer                       t4428
     search                              t4141
     references                          t2275
+    symbols                             t4807
     full screen                         t2530
     goto                                t2985
     workspace                           t6870
@@ -63,11 +64,43 @@ keybind sections
     sidebar                             t5715
     file                                t3459
     codespaces                          t3134
+    tasks                               t3388
+    snippets                            t5608
+    preferences                         t1917
+    help                                t3118
+    commands                            t6712
+    macros                              t7096
+    dump                                t0377
+    quick open                          t8929
 */
 [
     ///////////////////////////////////////////////////////////////
     // unbinds t1113
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+/",
+        "command": "-editor.action.commentLine",
+    },
+    {
+        "key": "ctrl+k ctrl+c",
+        "command": "-editor.action.addCommentLine",
+    },
+    {
+        "key": "ctrl+k ctrl+u",
+        "command": "-editor.action.removeCommentLine",
+    },
+    {
+        "key": "ctrl+k m",
+        "command": "-workbench.action.editor.changeLanguageMode"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "-editor.action.clipboardCopyAction"
+    },
+    {
+        "key": "ctrl+v",
+        "command": "-editor.action.clipboardPasteAction"
+    },
     {
         "key": "ctrl+n",
         "command": "-workbench.action.files.newUntitledFile"
@@ -75,37 +108,30 @@ keybind sections
     {
         "key": "ctrl+alt+k",
         "command": "-bookmarks.toggle",
-        "when": "editorTextFocus"
     },
     {
         "key": "ctrl+i",
         "command": "-workbench.action.terminal.chat.start",
-        "when": "terminalChatAgentRegistered && terminalFocusInAny && terminalHasBeenCreated || terminalChatAgentRegistered && terminalFocusInAny && terminalProcessSupported"
     },
     {
         "key": "ctrl+l",
         "command": "-workbench.action.chat.newChat",
-        "when": "chatIsEnabled && inChat"
     },
     {
         "key": "ctrl+k i",
         "command": "-inlineChat.start",
-        "when": "editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly"
     },
     {
         "key": "ctrl+enter",
         "command": "-workbench.action.chat.insertCodeBlock",
-        "when": "accessibleViewInCodeBlock && chatIsEnabled || chatIsEnabled && inChat && !inChatInput"
     },
     {
         "key": "ctrl+enter",
         "command": "-workbench.action.chat.applyInEditor",
-        "when": "accessibleViewInCodeBlock && chatIsEnabled || chatIsEnabled && inChat && !inChatInput"
     },
     {
         "key": "ctrl+enter",
         "command": "-github.copilot.generate",
-        "when": "editorTextFocus && github.copilot.activated && !commentEditorFocused && !inInteractiveInput && !interactiveEditorFocused"
     },
     {
         "key": "ctrl+q",
@@ -126,17 +152,14 @@ keybind sections
     {
         "key": "ctrl+k ctrl+m",
         "command": "-workbench.action.toggleMaximizeEditorGroup",
-        "when": "maximizedEditorGroup || multipleEditorGroups"
     },
     {
         "key": "ctrl+alt+j",
         "command": "-bookmarks.jumpToPrevious",
-        "when": "editorTextFocus"
     },
     {
         "key": "ctrl+alt+l",
         "command": "-bookmarks.jumpToNext",
-        "when": "editorTextFocus"
     },
     {
         "key": "alt+z",
@@ -149,27 +172,22 @@ keybind sections
     {
         "key": "ctrl+shift+5",
         "command": "-workbench.action.terminal.splitInstance",
-        "when": "terminalProcessSupported && terminalTabsFocus"
     },
     {
         "key": "f2",
         "command": "-workbench.action.terminal.renameInstance",
-        "when": "terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection"
     },
     {
         "key": "ctrl+shift+\\",
         "command": "-workbench.action.terminal.focusTabs",
-        "when": "terminalFocus && terminalProcessSupported || terminalProcessSupported && terminalTabsFocus"
     },
     {
         "key": "delete",
         "command": "-workbench.action.terminal.killInstance",
-        "when": "terminalIsOpen && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus"
     },
     {
         "key": "ctrl+k ctrl+shift+\\",
         "command": "-workbench.action.splitEditorInGroup",
-        "when": "activeEditorCanSplitInGroup"
     },
     {
         "key": "insert",
@@ -285,6 +303,12 @@ keybind sections
     ///////////////////////////////////////////////////////////////
     // panel t1566
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">View Panel "
+    },
     {
         "key": "ctrl+i ctrl+j",
         "command": "workbench.action.focusPanel"
@@ -577,6 +601,12 @@ keybind sections
     // notifications t6821
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+n",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Notifications "
+    },
+    {
         "key": "ctrl+i n",
         "command": "notifications.toggleList"
     },
@@ -635,6 +665,15 @@ keybind sections
         "command": "references-view.tree.focus"
     },
     ///////////////////////////////////////////////////////////////
+    // symbols t4807
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+g",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Symbol "
+    },
+    ///////////////////////////////////////////////////////////////
     // full screen t2530
     ///////////////////////////////////////////////////////////////
     {
@@ -652,6 +691,12 @@ keybind sections
     ///////////////////////////////////////////////////////////////
     // goto t2985
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+shift+g",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Go To "
+    },
     {
         "key": "ctrl+g ctrl+e",
         "command": "workbench.action.gotoSymbol",
@@ -1202,9 +1247,21 @@ keybind sections
         "key": "ctrl+e r",
         "command": "workbench.action.files.revert"
     },
+    {
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">File "
+    },
     ///////////////////////////////////////////////////////////////
     // codespaces t3134
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+c",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Codespaces "
+    },
     {
         "key": "ctrl+c r",
         "command": "workbench.action.quickOpen",
@@ -1237,6 +1294,81 @@ keybind sections
         "when": "inQuickOpen"
     },
     ///////////////////////////////////////////////////////////////
+    // tasks t3388
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+t t",
+        "command": "workbench.action.tasks.runTask",
+    },
+    {
+        "key": "ctrl+t z",
+        "command": "workbench.action.tasks.configureTaskRunner",
+    },
+    {
+        "key": "alt+t",
+        "command": "workbench.action.tasks.runTask",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Task "
+    },
+    ///////////////////////////////////////////////////////////////
+    // snippets t5608
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+u z",
+        "command": "workbench.action.openSnippets"
+    },
+    {
+        "key": "alt+u",
+        "command": "editor.action.insertSnippet",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+shift+u",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Snippet "
+    },
+    ///////////////////////////////////////////////////////////////
+    // preferences t1917
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Preferences "
+    },
+    ///////////////////////////////////////////////////////////////
+    // help t3118
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Help "
+    },
+    ///////////////////////////////////////////////////////////////
+    // commands t6712
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+b",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Command "
+    },
+    ///////////////////////////////////////////////////////////////
+    // macros t7096
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+shift+m",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen",
+        "args": ">Macros "
+    },
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
@@ -1249,6 +1381,15 @@ keybind sections
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    // dump t0377
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+alt+h",
@@ -1860,10 +2001,6 @@ keybind sections
         "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
     },
     {
-        "key": "ctrl+c",
-        "command": "-editor.action.clipboardCopyAction"
-    },
-    {
         "key": "ctrl+u ctrl+c",
         "command": "editor.action.clipboardCopyAction",
         "when": "textInputFocus"
@@ -1872,10 +2009,6 @@ keybind sections
         "key": "ctrl+c ctrl+c",
         "command": "editor.action.clipboardCopyAction",
         "when": "textInputFocus"
-    },
-    {
-        "key": "ctrl+v",
-        "command": "-editor.action.clipboardPasteAction"
     },
     {
         "key": "ctrl+u ctrl+v",
@@ -2581,10 +2714,6 @@ keybind sections
         "when": "listFocus && !inputFocus"
     },
     {
-        "key": "ctrl+t t",
-        "command": "workbench.action.tasks.runTask",
-    },
-    {
         "key": "ctrl+l ctrl+a",
         "command": "editor.action.insertCursorAtEndOfEachLineSelected",
         "when": "editorTextFocus"
@@ -2601,25 +2730,6 @@ keybind sections
         "key": "ctrl+l ctrl+c",
         "command": "editor.action.commentLine",
         "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+/",
-        "command": "-editor.action.commentLine",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+k ctrl+c",
-        "command": "-editor.action.addCommentLine",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+k ctrl+u",
-        "command": "-editor.action.removeCommentLine",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+k m",
-        "command": "-workbench.action.editor.changeLanguageMode"
     },
     {
         "key": "ctrl+r r",
@@ -2642,11 +2752,8 @@ keybind sections
     },
     {
         "key": "ctrl+c z",
-        "command": "workbench.action.openRemoteSettingsFile"
-    },
-    {
-        "key": "ctrl+u z",
-        "command": "workbench.action.openSnippets"
+        "command": "workbench.action.openRemoteSettingsFile",
+        "when": "editorFocus"
     },
     {
         "key": "alt+z",
@@ -2764,10 +2871,6 @@ keybind sections
     {
         "key": "ctrl+k z",
         "command": "workbench.action.openSettingsJson",
-    },
-    {
-        "key": "ctrl+t z",
-        "command": "workbench.action.tasks.configureTaskRunner",
     },
     {
         "key": "ctrl+a 1",
@@ -3491,11 +3594,6 @@ keybind sections
         "when": "inQuickOpen"
     },
     {
-        "key": "alt+u",
-        "command": "editor.action.insertSnippet",
-        "when": "inQuickOpen"
-    },
-    {
         "key": "alt+v",
         "command": "gitlens.gitCommands",
         "when": "inQuickOpen"
@@ -3555,11 +3653,6 @@ keybind sections
     {
         "key": "alt+d",
         "command": "workbench.action.debug.selectandstart",
-        "when": "inQuickOpen"
-    },
-    {
-        "key": "alt+t",
-        "command": "workbench.action.tasks.runTask",
         "when": "inQuickOpen"
     },
     {
@@ -3634,18 +3727,6 @@ keybind sections
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
         "args": ">Explorer "
-    },
-    {
-        "key": "ctrl+t",
-        "command": "workbench.action.quickOpen",
-        "when": "inQuickOpen",
-        "args": ">Task "
-    },
-    {
-        "key": "ctrl+shift+t",
-        "command": "workbench.action.quickOpen",
-        "when": "inQuickOpen",
-        "args": ">File "
     },
     {
         "key": "ctrl+i",
@@ -3725,47 +3806,14 @@ keybind sections
         "when": "inQuickOpen",
         "args": ">Zoom "
     },
+    ///////////////////////////////////////////////////////////////
+    // quick open t8929
+    ///////////////////////////////////////////////////////////////
     {
-        "key": "ctrl+c",
+        "key": "ctrl+shift+h",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": ">Codespaces "
-    },
-    {
-        "key": "ctrl+shift+g",
-        "command": "workbench.action.quickOpen",
-        "when": "inQuickOpen",
-        "args": ">Go To "
-    },
-    {
-        "key": "ctrl+g",
-        "command": "workbench.action.quickOpen",
-        "when": "inQuickOpen",
-        "args": ">Symbol "
-    },
-    {
-        "key": "ctrl+n",
-        "command": "workbench.action.quickOpen",
-        "when": "inQuickOpen",
-        "args": ">Notifications "
-    },
-    {
-        "key": "ctrl+shift+n",
-        "command": "workbench.action.quickOpen",
-        "when": "inQuickOpen",
-        "args": ">Next "
-    },
-    {
-        "key": "ctrl+shift+m",
-        "command": "workbench.action.quickOpen",
-        "when": "inQuickOpen",
-        "args": ">Macros "
-    },
-    {
-        "key": "ctrl+b",
-        "command": "workbench.action.quickOpen",
-        "when": "inQuickOpen",
-        "args": ">Command "
+        "args": ">History "
     },
     {
         "key": "ctrl+shift+b",
@@ -3774,33 +3822,9 @@ keybind sections
         "args": ">Rename "
     },
     {
-        "key": "ctrl+j",
+        "key": "ctrl+shift+n",
         "command": "workbench.action.quickOpen",
         "when": "inQuickOpen",
-        "args": ">View Panel "
-    },
-    {
-        "key": "ctrl+h",
-        "command": "workbench.action.quickOpen",
-        "when": "inQuickOpen",
-        "args": ">Help "
-    },
-    {
-        "key": "ctrl+shift+h",
-        "command": "workbench.action.quickOpen",
-        "when": "inQuickOpen",
-        "args": ">History "
-    },
-    {
-        "key": "ctrl+k",
-        "command": "workbench.action.quickOpen",
-        "when": "inQuickOpen",
-        "args": ">Preferences "
-    },
-    {
-        "key": "ctrl+shift+u",
-        "command": "workbench.action.quickOpen",
-        "when": "inQuickOpen",
-        "args": ">Snippet "
+        "args": ">Next "
     },
 ]
