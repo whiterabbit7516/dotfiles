@@ -3,6 +3,7 @@ command groups
     unbinds                         -    t1113
     dump                                 t0377
     navigation                      -    t3508
+    scrolling                       -    t7776
     suggestions                     -    t3420
     editor groups                   a    t4355
     activity bar                    a    t6913
@@ -69,6 +70,7 @@ command groups
     problems                        u    t7119
     snippets                        u    t5608
     source control                  v    t7077
+    view                            v    t8489
     paste                           v    t7118
     windows                         w    t5091
     workspace                       w    t6870
@@ -773,6 +775,39 @@ command groups
         "command": "hideSuggestWidget",
     },
     ///////////////////////////////////////////////////////////////
+    // scrolling                       -    t7776
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+alt+y",
+        "when": "textInputFocus",
+        "command": "scrollLineUp",
+    },
+    {
+        "key": "ctrl+alt+e",
+        "when": "textInputFocus",
+        "command": "scrollLineDown",
+    },
+    {
+        "key": "ctrl+alt+d",
+        "when": "textInputFocus",
+        "command": "scrollPageDown",
+    },
+    {
+        "key": "ctrl+alt+u",
+        "when": "textInputFocus",
+        "command": "scrollPageUp",
+    },
+    {
+        "key": "ctrl+alt+e",
+        "when": "listFocus && !inputFocus",
+        "command": "list.scrollDown",
+    },
+    {
+        "key": "ctrl+alt+y",
+        "when": "listFocus && !inputFocus",
+        "command": "list.scrollUp",
+    },
+    ///////////////////////////////////////////////////////////////
     // navigation                      -    t3508
     ///////////////////////////////////////////////////////////////
     {
@@ -925,8 +960,81 @@ command groups
         "command": "workbench.action.debug.configure",
     },
     ///////////////////////////////////////////////////////////////
-    // source control t7077
+    // view                            v    t8489
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+v ctrl+r",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.resetViewLocations"
+    },
+    {
+        "key": "ctrl+v ctrl+m",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.moveFocusedView"
+    },
+    {
+        "key": "ctrl+v ctrl+i",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.increaseViewSize"
+    },
+    {
+        "key": "ctrl+v ctrl+o",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.decreaseViewSize"
+    },
+    {
+        "key": "ctrl+=",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.increaseViewSize"
+    },
+    {
+        "key": "ctrl+[Minus]",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.decreaseViewSize"
+    },
+    {
+        "key": "ctrl+v ctrl+j",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.increaseViewHeight"
+    },
+    {
+        "key": "ctrl+v ctrl+l",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.increaseViewWidth"
+    },
+    {
+        "key": "ctrl+v ctrl+k",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.decreaseViewHeight"
+    },
+    {
+        "key": "ctrl+v ctrl+h",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.decreaseViewWidth"
+    },
+    ///////////////////////////////////////////////////////////////
+    // source control                  v    t7077
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+v ctrl+n",
+        "when": "editorTextFocus && !textCompareEditorActive",
+        "command": "workbench.action.editor.nextChange",
+    },
+    {
+        "key": "ctrl+v ctrl+p",
+        "when": "editorTextFocus && !textCompareEditorActive",
+        "command": "workbench.action.editor.previousChange",
+    },
+    {
+        "key": "ctrl+v ctrl+n",
+        "when": "isInDiffEditor",
+        "command": "editor.action.diffReview.next",
+    },
+    {
+        "key": "ctrl+v ctrl+p",
+        "when": "isInDiffEditor",
+        "command": "editor.action.diffReview.prev",
+    },
     {
         "key": "ctrl+v v",
         "when": "!inQuickOpen",
@@ -1254,6 +1362,31 @@ command groups
         "when": "filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus",
         "command": "renameFile",
     },
+    {
+        "key": "n",
+        "when": "filesExplorerFocus && !inputFocus",
+        "command": "explorer.newFile",
+    },
+    {
+        "key": "shift+n",
+        "when": "filesExplorerFocus && !inputFocus",
+        "command": "explorer.newFolder",
+    },
+    {
+        "key": "d",
+        "when": "filesExplorerFocus && !explorerResourceReadonly && !inputFocus",
+        "command": "deleteFile",
+    },
+    {
+        "key": "s",
+        "when": "explorerResourceIsFolder && filesExplorerFocus && !inputFocus",
+        "command": "filesExplorer.findInFolder",
+    },
+    {
+        "key": "ctrl+f r",
+        "when": "!inQuickOpen",
+        "command": "workbench.files.action.refreshFilesExplorer"
+    },
     ///////////////////////////////////////////////////////////////
     // search                          s    t4141
     ///////////////////////////////////////////////////////////////
@@ -1305,6 +1438,11 @@ command groups
         "key": "ctrl+i r",
         "when": "!inQuickOpen",
         "command": "references-view.tree.focus"
+    },
+    {
+        "key": "ctrl+g ctrl+r",
+        "when": "editorHasReferenceProvider",
+        "command": "references-view.findReferences",
     },
     ///////////////////////////////////////////////////////////////
     // symbols                         g    t4807
@@ -1801,6 +1939,16 @@ command groups
     // editor t8500
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+g ctrl+h",
+        "when": "editorTextFocus",
+        "command": "editor.action.showHover",
+    },
+    {
+        "key": "ctrl+g ctrl+o",
+        "when": "editorTextFocus",
+        "command": "editor.action.jumpToBracket",
+    },
+    {
         "key": "ctrl+alt+k",
         "when": "editorTextFocus && !editorReadonly && !inDebugMode",
         "command": "editor.action.moveLinesUpAction",
@@ -2067,6 +2215,18 @@ command groups
         "args": ""
     },
     {
+        "key": "ctrl+p",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ""
+    },
+    {
+        "key": "ctrl+p",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": "?"
+    },
+    {
         "key": "ctrl+tab",
         "when": "!inQuickOpen",
         "command": "workbench.action.quickOpen",
@@ -2082,30 +2242,6 @@ command groups
     // commands                        b    t6712
     ///////////////////////////////////////////////////////////////
     {
-        "key": "ctrl+shift+h",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">History "
-    },
-    {
-        "key": "ctrl+shift+b",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Rename "
-    },
-    {
-        "key": "ctrl+shift+n",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Next "
-    },
-    {
-        "key": "ctrl+shift+i",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Insert "
-    },
-    {
         "key": "alt+b",
         "when": "inQuickOpen",
         "command": "workbench.action.showCommands",
@@ -2115,6 +2251,11 @@ command groups
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpen",
         "args": ">Command "
+    },
+    {
+        "key": "ctrl+shift+p",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.showCommands"
     },
     ///////////////////////////////////////////////////////////////
     // macros                          m    t7096
@@ -2186,6 +2327,16 @@ command groups
         "command": "workbench.action.quickOpen",
         "args": ">Zoom "
     },
+    {
+        "key": "ctrl+shift+=",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.zoomIn"
+    },
+    {
+        "key": "ctrl+shift+[Minus]",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.zoomOut"
+    },
     ///////////////////////////////////////////////////////////////
     // output                          o    t2786
     ///////////////////////////////////////////////////////////////
@@ -2254,9 +2405,21 @@ command groups
     ///////////////////////////////////////////////////////////////
     // interface                       i    t4780
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+i",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Focus "
+    },
     ///////////////////////////////////////////////////////////////
     // next                            n    t1390
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+shift+n",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Next "
+    },
     ///////////////////////////////////////////////////////////////
     // previous                        p    t8477
     ///////////////////////////////////////////////////////////////
@@ -2298,6 +2461,12 @@ command groups
     ///////////////////////////////////////////////////////////////
     // insert                          i    t8063
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+shift+i",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Insert "
+    },
     ///////////////////////////////////////////////////////////////
     // open                            o    t2669
     ///////////////////////////////////////////////////////////////
@@ -2307,6 +2476,12 @@ command groups
     ///////////////////////////////////////////////////////////////
     // rename                          b    t5262
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+shift+b",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Rename "
+    },
     ///////////////////////////////////////////////////////////////
     // new                             n    t1619
     ///////////////////////////////////////////////////////////////
@@ -2338,6 +2513,12 @@ command groups
     ///////////////////////////////////////////////////////////////
     // history                         h    t5797
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+shift+h",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">History "
+    },
     ///////////////////////////////////////////////////////////////
     // line                            l    t5788
     ///////////////////////////////////////////////////////////////
@@ -2359,146 +2540,6 @@ command groups
     ///////////////////////////////////////////////////////////////
     // dump                                 t0377
     ///////////////////////////////////////////////////////////////
-    {
-        "key": "n",
-        "when": "filesExplorerFocus && !inputFocus",
-        "command": "explorer.newFile",
-    },
-    {
-        "key": "shift+n",
-        "when": "filesExplorerFocus && !inputFocus",
-        "command": "explorer.newFolder",
-    },
-    {
-        "key": "d",
-        "when": "filesExplorerFocus && !explorerResourceReadonly && !inputFocus",
-        "command": "deleteFile",
-    },
-    {
-        "key": "s",
-        "when": "explorerResourceIsFolder && filesExplorerFocus && !inputFocus",
-        "command": "filesExplorer.findInFolder",
-    },
-    {
-        "key": "ctrl+f r",
-        "when": "!inQuickOpen",
-        "command": "workbench.files.action.refreshFilesExplorer"
-    },
-    {
-        "key": "ctrl+v ctrl+r",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.resetViewLocations"
-    },
-    {
-        "key": "ctrl+v ctrl+m",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.moveFocusedView"
-    },
-    {
-        "key": "ctrl+v ctrl+i",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.increaseViewSize"
-    },
-    {
-        "key": "ctrl+v ctrl+o",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.decreaseViewSize"
-    },
-    {
-        "key": "ctrl+=",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.increaseViewSize"
-    },
-    {
-        "key": "ctrl+[Minus]",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.decreaseViewSize"
-    },
-    {
-        "key": "ctrl+v ctrl+j",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.increaseViewHeight"
-    },
-    {
-        "key": "ctrl+v ctrl+l",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.increaseViewWidth"
-    },
-    {
-        "key": "ctrl+v ctrl+k",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.decreaseViewHeight"
-    },
-    {
-        "key": "ctrl+v ctrl+h",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.decreaseViewWidth"
-    },
-    {
-        "key": "ctrl+v ctrl+n",
-        "when": "editorTextFocus && !textCompareEditorActive",
-        "command": "workbench.action.editor.nextChange",
-    },
-    {
-        "key": "ctrl+v ctrl+p",
-        "when": "editorTextFocus && !textCompareEditorActive",
-        "command": "workbench.action.editor.previousChange",
-    },
-    {
-        "key": "ctrl+v ctrl+n",
-        "when": "isInDiffEditor",
-        "command": "editor.action.diffReview.next",
-    },
-    {
-        "key": "ctrl+v ctrl+p",
-        "when": "isInDiffEditor",
-        "command": "editor.action.diffReview.prev",
-    },
-    {
-        "key": "ctrl+alt+y",
-        "when": "textInputFocus",
-        "command": "scrollLineUp",
-    },
-    {
-        "key": "ctrl+alt+e",
-        "when": "textInputFocus",
-        "command": "scrollLineDown",
-    },
-    {
-        "key": "ctrl+alt+d",
-        "when": "textInputFocus",
-        "command": "scrollPageDown",
-    },
-    {
-        "key": "ctrl+alt+u",
-        "when": "textInputFocus",
-        "command": "scrollPageUp",
-    },
-    {
-        "key": "ctrl+alt+e",
-        "when": "listFocus && !inputFocus",
-        "command": "list.scrollDown",
-    },
-    {
-        "key": "ctrl+alt+y",
-        "when": "listFocus && !inputFocus",
-        "command": "list.scrollUp",
-    },
-    {
-        "key": "ctrl+g ctrl+h",
-        "when": "editorTextFocus",
-        "command": "editor.action.showHover",
-    },
-    {
-        "key": "ctrl+g ctrl+o",
-        "when": "editorTextFocus",
-        "command": "editor.action.jumpToBracket",
-    },
-    {
-        "key": "ctrl+g ctrl+r",
-        "when": "editorHasReferenceProvider",
-        "command": "references-view.findReferences",
-    },
     {
         "key": "ctrl+g ctrl+a",
         "when": "!inQuickOpen",
@@ -2538,23 +2579,6 @@ command groups
         "key": "ctrl+g t",
         "when": "!inQuickOpen",
         "command": "editor.action.peekTypeDefinition"
-    },
-    {
-        "key": "ctrl+p",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ""
-    },
-    {
-        "key": "ctrl+p",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": "?"
-    },
-    {
-        "key": "ctrl+shift+p",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.showCommands"
     },
     {
         "key": "ctrl+alt+n",
@@ -2645,16 +2669,6 @@ command groups
         "key": "ctrl+u ctrl+x",
         "when": "textInputFocus && !editorReadonly",
         "command": "editor.action.clipboardCutAction",
-    },
-    {
-        "key": "ctrl+shift+=",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.zoomIn"
-    },
-    {
-        "key": "ctrl+shift+[Minus]",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.zoomOut"
     },
     {
         "key": "ctrl+l ctrl+j",
@@ -2793,7 +2807,7 @@ command groups
     },
     {
         "key": "ctrl+i ctrl+c",
-        "when": "breadcrumbsPossible",
+        "when": "!inQuickOpen && breadcrumbsPossible",
         "command": "breadcrumbs.focusAndSelect",
     },
     {
@@ -3048,7 +3062,7 @@ command groups
     },
     {
         "key": "ctrl+i ctrl+r",
-        "when": "!terminalFocus",
+        "when": "!inQuickOpen && !terminalFocus",
         "command": "workbench.view.remote",
     },
     {
@@ -4148,11 +4162,5 @@ command groups
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpen",
         "args": ">Explorer "
-    },
-    {
-        "key": "ctrl+i",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Focus "
     },
 ]
