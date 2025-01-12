@@ -13,7 +13,6 @@ command groups
     rename                          b    t5262
     remote - codespaces             c    t3134
     crumbs                          c    t4616
-    copy                            c    t5700
     debug                           d    t3216
     remote - dev containers         d    t6291
     remove                          d    t3636
@@ -67,17 +66,16 @@ command groups
     select                          s    t2119
     tasks                           t    t3388
     file / folder                   t    t3459
-    problems                        u    t7119
+    clipboard / copy / paste / cut  u    t6904
     snippets                        u    t5608
+    problems                        u    t7119
     source control                  v    t7077
     view                            v    t8489
-    paste                           v    t7118
     windows                         w    t5091
     workspace                       w    t6870
     close                           w    t6648
     cancel                          x    t4680
     extensions                      x    t5157
-    cut                             x    t5968
     terminal                        y    t8233
     settings                        z    t8662
     profiles                        z    t6992
@@ -1405,6 +1403,16 @@ command groups
         "when": "!inQuickOpen",
         "command": "editor.action.referenceSearch.trigger"
     },
+    {
+        "key": "ctrl+g ctrl+c",
+        "when": "editorHasCallHierarchyProvider",
+        "command": "references-view.showCallHierarchy",
+    },
+    {
+        "key": "ctrl+g c",
+        "when": "editorHasCallHierarchyProvider && editorTextFocus && !inReferenceSearchEditor",
+        "command": "editor.showCallHierarchy",
+    },
     ///////////////////////////////////////////////////////////////
     // symbols                         g    t4807
     ///////////////////////////////////////////////////////////////
@@ -1418,6 +1426,26 @@ command groups
         "key": "ctrl+g ctrl+a",
         "when": "!inQuickOpen",
         "command": "editor.action.revealDeclaration"
+    },
+    {
+        "key": "ctrl+g d",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor",
+        "command": "editor.action.peekDefinition",
+    },
+    {
+        "key": "ctrl+g i",
+        "when": "editorHasImplementationProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor",
+        "command": "editor.action.peekImplementation",
+    },
+    {
+        "key": "ctrl+g a",
+        "when": "!inQuickOpen",
+        "command": "editor.action.peekDeclaration"
+    },
+    {
+        "key": "ctrl+g t",
+        "when": "!inQuickOpen",
+        "command": "editor.action.peekTypeDefinition"
     },
     ///////////////////////////////////////////////////////////////
     // full screen                     i    t2530
@@ -1556,6 +1584,16 @@ command groups
     ///////////////////////////////////////////////////////////////
     // cancel / ctrl+x t4680
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "alt+x",
+        "when": "inQuickOpen",
+        "command": "workbench.action.closeQuickOpen",
+    },
+    {
+        "key": "ctrl+x",
+        "when": "inQuickOpen",
+        "command": "workbench.action.closeQuickOpen",
+    },
     {
         "key": "ctrl+x",
         "when": "terminalChatFocus && terminalChatVisible",
@@ -2020,6 +2058,66 @@ command groups
     ///////////////////////////////////////////////////////////////
     // secondary sidebar               n    t9392
     ///////////////////////////////////////////////////////////////
+
+    ///////////////////////////////////////////////////////////////
+    // clipboard / copy / paste / cut  u    t6904
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+c ctrl+c",
+        "when": "terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected",
+        "command": "workbench.action.terminal.copySelection",
+    },
+    {
+        "key": "ctrl+u ctrl+c",
+        "when": "terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected",
+        "command": "workbench.action.terminal.copySelection",
+    },
+    {
+        "key": "ctrl+u ctrl+v",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported",
+        "command": "workbench.action.terminal.paste",
+    },
+    {
+        "key": "ctrl+v ctrl+v",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported",
+        "command": "workbench.action.terminal.paste",
+    },
+    {
+        "key": "ctrl+u ctrl+c",
+        "when": "textInputFocus",
+        "command": "editor.action.clipboardCopyAction",
+    },
+    {
+        "key": "ctrl+c ctrl+c",
+        "when": "textInputFocus",
+        "command": "editor.action.clipboardCopyAction",
+    },
+    {
+        "key": "ctrl+u ctrl+v",
+        "when": "textInputFocus && !editorReadonly",
+        "command": "editor.action.clipboardPasteAction",
+    },
+    {
+        "key": "ctrl+v ctrl+v",
+        "when": "textInputFocus && !editorReadonly",
+        "command": "editor.action.clipboardPasteAction",
+    },
+    {
+        "key": "ctrl+u ctrl+x",
+        "when": "textInputFocus && !editorReadonly",
+        "command": "editor.action.clipboardCutAction",
+    },
+    {
+        "key": "ctrl+shift+v",
+        "when": "!inQuickOpen",
+        "command": "editor.action.clipboardPasteAction",
+    },
+    {
+        "key": "ctrl+shift+v",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Paste "
+    },
     ///////////////////////////////////////////////////////////////
     // file / folder                   t    t3459
     ///////////////////////////////////////////////////////////////
@@ -2387,20 +2485,6 @@ command groups
         "command": "editor.action.insertCursorAbove",
     },
     ///////////////////////////////////////////////////////////////
-    // paste                           v    t7118
-    ///////////////////////////////////////////////////////////////
-    {
-        "key": "ctrl+shift+v",
-        "when": "!inQuickOpen",
-        "command": "editor.action.clipboardPasteAction",
-    },
-    {
-        "key": "ctrl+shift+v",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Paste "
-    },
-    ///////////////////////////////////////////////////////////////
     // close                           w   t6648
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
@@ -2481,9 +2565,6 @@ command groups
     // open                            o    t2669
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
-    // copy                            c    t5700
-    ///////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////
     // rename                          b    t5262
     ///////////////////////////////////////////////////////////////
     {
@@ -2500,9 +2581,6 @@ command groups
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
     // format                          k    t4704
-    ///////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////
-    // cut                             x    t5968
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
     // crumbs                          c    t4616
@@ -2550,81 +2628,6 @@ command groups
     ///////////////////////////////////////////////////////////////
     // dump                                 t0377
     ///////////////////////////////////////////////////////////////
-    {
-        "key": "ctrl+g ctrl+c",
-        "when": "editorHasCallHierarchyProvider",
-        "command": "references-view.showCallHierarchy",
-    },
-    {
-        "key": "ctrl+g c",
-        "when": "editorHasCallHierarchyProvider && editorTextFocus && !inReferenceSearchEditor",
-        "command": "editor.showCallHierarchy",
-    },
-    {
-        "key": "ctrl+g d",
-        "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor",
-        "command": "editor.action.peekDefinition",
-    },
-    {
-        "key": "ctrl+g i",
-        "when": "editorHasImplementationProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor",
-        "command": "editor.action.peekImplementation",
-    },
-    {
-        "key": "ctrl+g a",
-        "when": "!inQuickOpen",
-        "command": "editor.action.peekDeclaration"
-    },
-    {
-        "key": "ctrl+g t",
-        "when": "!inQuickOpen",
-        "command": "editor.action.peekTypeDefinition"
-    },
-    {
-        "key": "ctrl+c ctrl+c",
-        "when": "terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected",
-        "command": "workbench.action.terminal.copySelection",
-    },
-    {
-        "key": "ctrl+u ctrl+c",
-        "when": "terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected",
-        "command": "workbench.action.terminal.copySelection",
-    },
-    {
-        "key": "ctrl+u ctrl+v",
-        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported",
-        "command": "workbench.action.terminal.paste",
-    },
-    {
-        "key": "ctrl+v ctrl+v",
-        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported",
-        "command": "workbench.action.terminal.paste",
-    },
-    {
-        "key": "ctrl+u ctrl+c",
-        "when": "textInputFocus",
-        "command": "editor.action.clipboardCopyAction",
-    },
-    {
-        "key": "ctrl+c ctrl+c",
-        "when": "textInputFocus",
-        "command": "editor.action.clipboardCopyAction",
-    },
-    {
-        "key": "ctrl+u ctrl+v",
-        "when": "textInputFocus && !editorReadonly",
-        "command": "editor.action.clipboardPasteAction",
-    },
-    {
-        "key": "ctrl+v ctrl+v",
-        "when": "textInputFocus && !editorReadonly",
-        "command": "editor.action.clipboardPasteAction",
-    },
-    {
-        "key": "ctrl+u ctrl+x",
-        "when": "textInputFocus && !editorReadonly",
-        "command": "editor.action.clipboardCutAction",
-    },
     {
         "key": "ctrl+l ctrl+j",
         "when": "editorFocus",
@@ -4059,16 +4062,6 @@ command groups
         "key": "alt+l",
         "when": "inQuickOpen",
         "command": "workbench.action.acceptSelectedQuickOpenItem",
-    },
-    {
-        "key": "alt+x",
-        "when": "inQuickOpen",
-        "command": "workbench.action.closeQuickOpen",
-    },
-    {
-        "key": "ctrl+x",
-        "when": "inQuickOpen",
-        "command": "workbench.action.closeQuickOpen",
     },
     {
         "key": "alt+e",
