@@ -1,86 +1,85 @@
 /*
-command groups
+    command groups
     unbinds                         -    t1113
     dump                                 t0377
-
     navigation                      -    t3508
-    activity bar                    a    t6913
-    terminal                        y    t8233
-    panel                           j    t1566
-    remote - general                r    t2900
-    remote - dev containers         r d  t6291
-    remote - ssh                    r s  t9391
-    remote - codespaces             r c  t3134
-    debug                           d    t3216
-    source control                  v    t7077
-    live share                      l    t5930
-    windows                         w    t5091
     editor groups                   a    t4355
-    minimap                         m    t1725
-    notifications                   n    t6821
-    file explorer                   f    t4428
-    search                          s    t4141
-    references                      r    t2275
-    symbols                         g    t4807
-    full screen                     i    t2530
-    goto                            g    t2985
-    workspace                       w    t6870
-    outline                         g    t6000
-    select                          s    t2119
-    quit                            q    t1951
-    developer                       q    t2758
-    logs                            q    t4752
-    chat / copilot                  l    t7259
-    problems                        u    t7119
-    marks / bookmarks               m    t0604
-    editor                          e    t8500
+    activity bar                    a    t6913
+    cursor                          a    t3075
     sidebar                         b    t5715
-    secondary sidebar               n    t9392
-    file / folder                   t    t3459
-    tasks                           t    t3388
-    snippets                        u    t5608
-    preferences                     k    t1917
+    commands                        b    t6712
+    rename                          b    t5262
+    remote - codespaces             c    t3134
+    crumbs                          c    t4616
+    copy                            c    t5700
+    debug                           d    t3216
+    remote - dev containers         d    t6291
+    remove                          d    t3636
+    editor                          e    t8500
+    file explorer                   f    t4428
+    find                            f    t4038
+    symbols                         g    t4807
+    goto                            g    t2985
+    outline                         g    t6000
+    left                            h    t7773
     help                            h    t3118
+    history                         h    t5797
+    interface                       i    t4780
+    full screen                     i    t2530
+    insert                          i    t8063
+    panel                           j    t1566
+    down                            j    t8854
+    preferences                     k    t1917
+    fold                            k    t3866
+    format                          k    t4704
+    up                              k    t9017
+    chat / copilot                  l    t7259
+    live share                      l    t5930
+    line                            l    t5788
+    right                           l    t5632
+    marks / bookmarks               m    t0604
+    minimap                         m    t1725
+    macros                          m    t7096
+    move                            m    t9910
     tmux                            m    t7299
     vim                             m    t0286
-    zen                             z    t0176
-    settings                        z    t8662
-    quick open                      p    t3167
-    zoom                            z    t2167
-    line                            l    t5788
-    macros                          m    t7096
-    find                            f    t4038
-    extensions                      x    t5157
-    profiles                        z    t6992
-    output                          o    t2786
-    cursor                          a    t3075
-    crumbs                          c    t4616
-    format                          k    t4704
-    fold                            k    t3866
-    interface                       i    t4780
-    refresh                         r    t2581
-    insert                          i    t8063
-    next                            n    t1390
-    previous                        p    t8477
-    cycle                           o    t6078
-    toggle                          o    t3584
-    up                              k    t9017
-    down                            j    t8854
-    left                            h    t7773
-    right                           l    t5632
-    open                            o    t2669
-    copy                            c    t5700
-    rename                          b    t5262
+    notifications                   n    t6821
+    secondary sidebar               n    t9392
     new                             n    t1619
-    close                           w    t6648
+    next                            n    t1390
+    output                          o    t2786
+    toggle                          o    t3584
+    cycle                           o    t6078
+    open                            o    t2669
+    quick open                      p    t3167
+    previous                        p    t8477
+    developer                       q    t2758
+    logs                            q    t4752
+    quit                            q    t1951
+    remote - general                r    t2900
+    references                      r    t2275
     reload                          r    t2391
-    move                            m    t9910
-    history                         h    t5797
-    commands                        b    t6712
-    remove                          d    t3636
+    refresh                         r    t2581
+    search                          s    t4141
+    remote - ssh                    s    t9391
+    select                          s    t2119
+    tasks                           t    t3388
+    file / folder                   t    t3459
+    problems                        u    t7119
+    snippets                        u    t5608
+    source control                  v    t7077
     paste                           v    t7118
+    windows                         w    t5091
+    workspace                       w    t6870
+    close                           w    t6648
     cancel                          x    t4680
+    extensions                      x    t5157
     cut                             x    t5968
+    terminal                        y    t8233
+    settings                        z    t8662
+    profiles                        z    t6992
+    zoom                            z    t2167
+    zen                             z    t0176
     undo                            z    t5347
 */
 [
@@ -1185,14 +1184,14 @@ command groups
         "command": "workbench.action.gotoSymbol",
     },
     {
-        "key": "ctrl+g ctrl+s",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.showAllSymbols"
-    },
-    {
         "key": "ctrl+g ctrl+g",
         "when": "!inQuickOpen",
         "command": "workbench.action.gotoSymbol"
+    },
+    {
+        "key": "ctrl+g ctrl+s",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.showAllSymbols"
     },
     {
         "key": "ctrl+g ctrl+d",
