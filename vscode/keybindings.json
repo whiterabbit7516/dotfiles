@@ -1,91 +1,79 @@
 /*
 command groups
-    q - developer, logs, quit
-    w - workspace, window, close
-    e - editor
-    r - remote, reload, refresh, references
+    unbinds                         -   t1113
+    dump                                t0377
+    navigation                      -   t3508
+    activity bar                    a   t6913
+    cancel                          x   t4680
+    terminal                        y   t8233
+    panel                           j   t1566
+    remote - general                r   t2900
+    remote - dev containers         r   t6291
+    remote - ssh                    r   t9391
+    debug                           d   t3216
+    source control                  v   t7077
+    live share                      l   t5930
+    windows                         w   t5091
+    editor groups                   a   t4355
+    minimap                         m   t1725
+    notifications                   n   t6821
+    file explorer                   f   t4428
+    search                          s   t4141
+    references                      r   t2275
+    symbols                         g   t4807
+    full screen                     i   t2530
+    goto                            g   t2985
+    workspace                       w   t6870
+    outline                         g   t6000
+    select                          s   t2119
+    quit                            q   t1951
+    developer                       q   t2758
+    logs                            q   t4752
+    chat / copilot                  l   t7259
+    problems                        u   t7119
+    toggle                          o   t3584
+    marks / bookmarks               m   t0604
+    editor                          e   t8500
+    sidebar                         b   t5715
+    file / folder                   t   t3459
+    codespaces                      c   t3134
+    tasks                           t   t3388
+    snippets                        u   t5608
+    preferences                     k   t1917
+    help                            h   t3118
+    commands                        b   t6712
+    macros                          m   t7096
+    find                            f   t4038
+    extensions                      x   t5157
+    profiles                        z   t6992
+    zoom                            z   t2167
+    output                          o   t2786
+    cursor                          a   t3075
+    paste                           v   t7118
+    close                           w   t6648
+
+
+    r - reload, refresh, references
     t - tasks, file
-    y - terminal, debug console
+    y - debug console
     u - problems, snippets
     i - interface, insert
     o - output, other, cycle, toggle, open
     p - previous, command prompt
-    a - editor group, cursor, activity bar
+    a - cursor, activity bar
     s - select, search
-    d - debug, dev containers, remove
-    f - find, folder
-    g - symbols, goto
+    d - remove
     h - help, history, left
     j - panel, down
     k - preferences, fold, format, up
-    l - chat, live share, line, right
+    l - chat, line, right
     z - zen, profiles, settings, undo, zoom
     x - extensions, cut, cancel
     c - codespaces, copy, crumbs
-    v - version control, paste
+    v - paste
     b - side bar, command, rename
     n - notifications, secondary side bar, next, new
     m - marks, selection achor, macros, vim, tmux, move
-
-keybind sections
-    unbinds                             t1113
-    terminal                            t8233
-    panel                               t1566
-    remote - general                    t2900
-    remote - dev containers             t6291
-    remote - ssh                        t9391
-    activity bar                        t6913
-    navigation                          t3508
-    debug                               t3216
-    source control                      t7077
-    live share                          t5930
-    windows                             t5091
-    editor groups                       t4355
-    minimap                             t1725
-    notifications                       t6821
-    file explorer                       t4428
-    search                              t4141
-    references                          t2275
-    symbols                             t4807
-    full screen                         t2530
-    goto                                t2985
-    workspace                           t6870
-    outline                             t6000
-    select                              t2119
-    quit                                t1951
-    cancel                              t4680
-    developer                           t2758
-    logs                                t4752
-    copilot                             t7259
-    problems                            t7119
-    toggle                              t3584
-    marks / bookmarks                   t0604
-    editor                              t8500
-    sidebar                             t5715
-    file                                t3459
-    codespaces                          t3134
-    tasks                               t3388
-    snippets                            t5608
-    preferences                         t1917
-    help                                t3118
-    commands                            t6712
-    macros                              t7096
-    quick open                          t8929
-    find                                t4038
-    extensions                          t5157
-    profiles                            t6992
-    zoom                                t2167
-    output                              t2786
-    cursor                              t3075
-    paste                               t7118
-    dump                                t0377
-
-contextual tags
-    panelFocus
-    editorFocus
-    terminalFocus
-    sideBarFocus
-    inQuickOpen
 */
 [
     ///////////////////////////////////////////////////////////////
@@ -1148,11 +1136,6 @@ contextual tags
         "when": "!inQuickOpen",
         "command": "workbench.action.toggleFullScreen"
     },
-    {
-        "key": "ctrl+w f",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.toggleFullScreen"
-    },
     ///////////////////////////////////////////////////////////////
     // goto t2985
     ///////////////////////////////////////////////////////////////
@@ -1879,24 +1862,6 @@ contextual tags
     // commands t6712
     ///////////////////////////////////////////////////////////////
     {
-        "key": "ctrl+b",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Command "
-    },
-    ///////////////////////////////////////////////////////////////
-    // macros t7096
-    ///////////////////////////////////////////////////////////////
-    {
-        "key": "ctrl+shift+m",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Macros "
-    },
-    ///////////////////////////////////////////////////////////////
-    // quick open t8929
-    ///////////////////////////////////////////////////////////////
-    {
         "key": "ctrl+shift+h",
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpen",
@@ -1919,6 +1884,26 @@ contextual tags
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpen",
         "args": ">Insert "
+    },
+    {
+        "key": "alt+b",
+        "when": "inQuickOpen",
+        "command": "workbench.action.showCommands",
+    },
+    {
+        "key": "ctrl+b",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Command "
+    },
+    ///////////////////////////////////////////////////////////////
+    // macros t7096
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+shift+m",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Macros "
     },
     ///////////////////////////////////////////////////////////////
     // find t4038
@@ -2025,6 +2010,7 @@ contextual tags
         "args": ">Paste "
     },
     ///////////////////////////////////////////////////////////////
+    // close t6648
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
@@ -3999,11 +3985,6 @@ contextual tags
         "key": "alt+y",
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpenTerm",
-    },
-    {
-        "key": "alt+b",
-        "when": "inQuickOpen",
-        "command": "workbench.action.showCommands",
     },
     {
         "key": "alt+f",
