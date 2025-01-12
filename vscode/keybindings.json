@@ -1,83 +1,91 @@
 /*
 command groups
-    unbinds                         -   t1113
-    dump                                t0377
-    navigation                      -   t3508
-    activity bar                    a   t6913
-    cancel                          x   t4680
-    terminal                        y   t8233
-    panel                           j   t1566
-    remote - general                r   t2900
-    remote - dev containers         r   t6291
-    remote - ssh                    r   t9391
-    debug                           d   t3216
-    source control                  v   t7077
-    live share                      l   t5930
-    windows                         w   t5091
-    editor groups                   a   t4355
-    minimap                         m   t1725
-    notifications                   n   t6821
-    file explorer                   f   t4428
-    search                          s   t4141
-    references                      r   t2275
-    symbols                         g   t4807
-    full screen                     i   t2530
-    goto                            g   t2985
-    workspace                       w   t6870
-    outline                         g   t6000
-    select                          s   t2119
-    quit                            q   t1951
-    developer                       q   t2758
-    logs                            q   t4752
-    chat / copilot                  l   t7259
-    problems                        u   t7119
-    toggle                          o   t3584
-    marks / bookmarks               m   t0604
-    editor                          e   t8500
-    sidebar                         b   t5715
-    file / folder                   t   t3459
-    codespaces                      c   t3134
-    tasks                           t   t3388
-    snippets                        u   t5608
-    preferences                     k   t1917
-    help                            h   t3118
-    commands                        b   t6712
-    macros                          m   t7096
-    find                            f   t4038
-    extensions                      x   t5157
-    profiles                        z   t6992
-    zoom                            z   t2167
-    output                          o   t2786
-    cursor                          a   t3075
-    paste                           v   t7118
-    close                           w   t6648
+    unbinds                         -    t1113
+    dump                                 t0377
 
-
-    r - reload, refresh, references
-    t - tasks, file
-    y - debug console
-    u - problems, snippets
-    i - interface, insert
-    o - output, other, cycle, toggle, open
-    p - previous, command prompt
-    a - cursor, activity bar
-    s - select, search
-    d - remove
-    h - help, history, left
-    j - panel, down
-    k - preferences, fold, format, up
-    l - chat, line, right
-    z - zen, profiles, settings, undo, zoom
-    x - extensions, cut, cancel
-    c - codespaces, copy, crumbs
-    v - paste
-    b - side bar, command, rename
-    n - notifications, secondary side bar, next, new
-    m - marks, selection achor, macros, vim, tmux, move
+    navigation                      -    t3508
+    activity bar                    a    t6913
+    terminal                        y    t8233
+    panel                           j    t1566
+    remote - general                r    t2900
+    remote - dev containers         r d  t6291
+    remote - ssh                    r s  t9391
+    remote - codespaces             r c  t3134
+    debug                           d    t3216
+    source control                  v    t7077
+    live share                      l    t5930
+    windows                         w    t5091
+    editor groups                   a    t4355
+    minimap                         m    t1725
+    notifications                   n    t6821
+    file explorer                   f    t4428
+    search                          s    t4141
+    references                      r    t2275
+    symbols                         g    t4807
+    full screen                     i    t2530
+    goto                            g    t2985
+    workspace                       w    t6870
+    outline                         g    t6000
+    select                          s    t2119
+    quit                            q    t1951
+    developer                       q    t2758
+    logs                            q    t4752
+    chat / copilot                  l    t7259
+    problems                        u    t7119
+    marks / bookmarks               m    t0604
+    editor                          e    t8500
+    sidebar                         b    t5715
+    secondary sidebar               n    t9392
+    file / folder                   t    t3459
+    tasks                           t    t3388
+    snippets                        u    t5608
+    preferences                     k    t1917
+    help                            h    t3118
+    tmux                            m    t7299
+    vim                             m    t0286
+    zen                             z    t0176
+    settings                        z    t8662
+    quick open                      p    t3167
+    zoom                            z    t2167
+    line                            l    t5788
+    macros                          m    t7096
+    find                            f    t4038
+    extensions                      x    t5157
+    profiles                        z    t6992
+    output                          o    t2786
+    cursor                          a    t3075
+    crumbs                          c    t4616
+    format                          k    t4704
+    fold                            k    t3866
+    interface                       i    t4780
+    refresh                         r    t2581
+    insert                          i    t8063
+    next                            n    t1390
+    previous                        p    t8477
+    cycle                           o    t6078
+    toggle                          o    t3584
+    up                              k    t9017
+    down                            j    t8854
+    left                            h    t7773
+    right                           l    t5632
+    open                            o    t2669
+    copy                            c    t5700
+    rename                          b    t5262
+    new                             n    t1619
+    close                           w    t6648
+    reload                          r    t2391
+    move                            m    t9910
+    history                         h    t5797
+    commands                        b    t6712
+    remove                          d    t3636
+    paste                           v    t7118
+    cancel                          x    t4680
+    cut                             x    t5968
+    undo                            z    t5347
 */
 [
     ///////////////////////////////////////////////////////////////
-    // unbinds t1113
+    // unbinds                         -   t1113
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+shift+c",
@@ -530,7 +538,7 @@ command groups
         "command": "openInTerminal",
     },
     ///////////////////////////////////////////////////////////////
-    // panel t1566
+    // panel                           j    t1566
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+alt+h",
@@ -599,7 +607,7 @@ command groups
         "command": "workbench.action.positionPanelRight",
     },
     ///////////////////////////////////////////////////////////////
-    // remote - general t2900
+    // remote - general                r    t2900
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+r",
@@ -618,7 +626,7 @@ command groups
         "command": "workbench.action.remote.showMenu",
     },
     ///////////////////////////////////////////////////////////////
-    // remote - dev containers t6291
+    // remote - dev containers         r d  t6291
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+shift+d",
@@ -638,7 +646,7 @@ command groups
         "command": "remote-containers.openDevContainerFile",
     },
     ///////////////////////////////////////////////////////////////
-    // remote - ssh t9391
+    // remote - ssh                    r s  t9391
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+r s",
@@ -653,7 +661,53 @@ command groups
         "args": ">Remote-SSH "
     },
     ///////////////////////////////////////////////////////////////
-    // activity bar t6913
+    // remote - codespaces             r c  t3134
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+c",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Codespaces "
+    },
+    {
+        "key": "ctrl+c r",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Codespaces: Rebuild "
+    },
+    {
+        "key": "ctrl+c c",
+        "when": "editorFocus",
+        "command": "github.codespaces.connect",
+    },
+    {
+        "key": "ctrl+c x",
+        "when": "!inQuickOpen",
+        "command": "github.codespaces.disconnectSuspend"
+    },
+    {
+        "key": "ctrl+c n",
+        "when": "!inQuickOpen",
+        "command": "github.codespaces.addEnvironment"
+    },
+    {
+        "key": "ctrl+r c",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Codespaces: "
+    },
+    {
+        "key": "ctrl+r ctrl+c",
+        "when": "!inQuickOpen",
+        "command": "github.codespaces.explorer.focus"
+    },
+    {
+        "key": "alt+c",
+        "when": "inQuickOpen",
+        "command": "github.codespaces.connect",
+    },
+    ///////////////////////////////////////////////////////////////
+    // activity bar                    a    t6913
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i ctrl+a",
@@ -666,28 +720,8 @@ command groups
         "command": "workbench.action.toggleActivityBarVisibility",
     },
     ///////////////////////////////////////////////////////////////
-    // navigation t3508
+    // navigation                      -    t3508
     ///////////////////////////////////////////////////////////////
-    {
-        "key": "ctrl+e ctrl+e",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.navigateToLastEditLocation",
-    },
-    {
-        "key": "ctrl+e ctrl+o",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.navigateLast",
-    },
-    {
-        "key": "ctrl+e ctrl+n",
-        "when": "editorFocus && !editorReadonly",
-        "command": "editor.action.marker.next",
-    },
-    {
-        "key": "ctrl+e ctrl+p",
-        "when": "editorFocus && !editorReadonly",
-        "command": "editor.action.marker.prev",
-    },
     {
         "key": "ctrl+,",
         "when": "editorFocus",
@@ -719,7 +753,7 @@ command groups
         "command": "workbench.action.navigateForward",
     },
     ///////////////////////////////////////////////////////////////
-    // debug t3216
+    // debug                           d    t3216
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+d",
@@ -915,7 +949,7 @@ command groups
         "command": "workbench.action.switchWindow",
     },
     ///////////////////////////////////////////////////////////////
-    // editor groups t4355
+    // editor groups                   a   t4355
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+e s",
@@ -1023,7 +1057,7 @@ command groups
         "command": "workbench.action.focusPreviousGroup",
     },
     ///////////////////////////////////////////////////////////////
-    // minimap t1725
+    // minimap                         m    t1725
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i m",
@@ -1031,7 +1065,7 @@ command groups
         "command": "editor.action.toggleMinimap"
     },
     ///////////////////////////////////////////////////////////////
-    // notifications t6821
+    // notifications                   n    t6821
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+n",
@@ -1055,7 +1089,7 @@ command groups
         "command": "workbench.action.toggleZenMode"
     },
     ///////////////////////////////////////////////////////////////
-    // file explorer t4428
+    // file explorer                   f    t4428
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i ctrl+f",
@@ -1063,7 +1097,7 @@ command groups
         "command": "workbench.explorer.fileView.focus"
     },
     ///////////////////////////////////////////////////////////////
-    // search t4141
+    // search                          s    t4141
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+shift+s",
@@ -1107,7 +1141,7 @@ command groups
         "command": "search.action.refreshSearchResults"
     },
     ///////////////////////////////////////////////////////////////
-    // references t2275
+    // references                      r    t2275
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i r",
@@ -1115,7 +1149,7 @@ command groups
         "command": "references-view.tree.focus"
     },
     ///////////////////////////////////////////////////////////////
-    // symbols t4807
+    // symbols                         g    t4807
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+g",
@@ -1124,7 +1158,7 @@ command groups
         "args": ">Symbol "
     },
     ///////////////////////////////////////////////////////////////
-    // full screen t2530
+    // full screen                     i    t2530
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i ctrl+i",
@@ -1137,7 +1171,7 @@ command groups
         "command": "workbench.action.toggleFullScreen"
     },
     ///////////////////////////////////////////////////////////////
-    // goto t2985
+    // goto                            g    t2985
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+shift+g",
@@ -1191,7 +1225,7 @@ command groups
         "command": "editor.action.wordHighlight.prev",
     },
     ///////////////////////////////////////////////////////////////
-    // workspace t6870
+    // workspace                       w    t6870
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+w a",
@@ -1209,7 +1243,7 @@ command groups
         "command": "workbench.action.openWorkspace"
     },
     ///////////////////////////////////////////////////////////////
-    // outline t6000
+    // outline                         g    t6000
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i ctrl+g",
@@ -1217,7 +1251,7 @@ command groups
         "command": "outline.focus"
     },
     ///////////////////////////////////////////////////////////////
-    // select t2119
+    // select                          s    t2119
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+s ctrl+a",
@@ -1519,7 +1553,7 @@ command groups
         "command": "workbench.action.terminal.chat.start",
     },
     ///////////////////////////////////////////////////////////////
-    // problems t7119
+    // problems                        u    t7119
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+u",
@@ -1543,7 +1577,7 @@ command groups
         "command": "editor.action.marker.prev",
     },
     ///////////////////////////////////////////////////////////////
-    // toggle t3584
+    // toggle                          o    t3584
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+o",
@@ -1552,7 +1586,7 @@ command groups
         "args": ">Toggle "
     },
     ///////////////////////////////////////////////////////////////
-    // marks / bookmarks t0604
+    // marks / bookmarks               m    t0604
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+m ctrl+w",
@@ -1599,6 +1633,26 @@ command groups
     // editor t8500
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+e ctrl+e",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.navigateToLastEditLocation",
+    },
+    {
+        "key": "ctrl+e ctrl+o",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.navigateLast",
+    },
+    {
+        "key": "ctrl+e ctrl+n",
+        "when": "editorFocus && !editorReadonly",
+        "command": "editor.action.marker.next",
+    },
+    {
+        "key": "ctrl+e ctrl+p",
+        "when": "editorFocus && !editorReadonly",
+        "command": "editor.action.marker.prev",
+    },
+    {
         "key": "ctrl+alt+h",
         "when": "editorFocus && !editorReadonly && !inDebugMode",
         "command": "editor.action.outdentLines",
@@ -1644,7 +1698,7 @@ command groups
         "command": "editor.action.toggleOvertypeInsertMode"
     },
     ///////////////////////////////////////////////////////////////
-    // sidebar t5715
+    // sidebar                         b    t5715
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+b",
@@ -1662,7 +1716,10 @@ command groups
         "command": "workbench.action.toggleSidebarPosition",
     },
     ///////////////////////////////////////////////////////////////
-    // file t3459
+    // secondary sidebar               n    t9392
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    // file / folder                   t    t3459
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+shift+f",
@@ -1752,53 +1809,7 @@ command groups
         "args": ">File "
     },
     ///////////////////////////////////////////////////////////////
-    // codespaces t3134
-    ///////////////////////////////////////////////////////////////
-    {
-        "key": "ctrl+c",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Codespaces "
-    },
-    {
-        "key": "ctrl+c r",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Codespaces: Rebuild "
-    },
-    {
-        "key": "ctrl+c c",
-        "when": "editorFocus",
-        "command": "github.codespaces.connect",
-    },
-    {
-        "key": "ctrl+c x",
-        "when": "!inQuickOpen",
-        "command": "github.codespaces.disconnectSuspend"
-    },
-    {
-        "key": "ctrl+c n",
-        "when": "!inQuickOpen",
-        "command": "github.codespaces.addEnvironment"
-    },
-    {
-        "key": "ctrl+r c",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Codespaces: "
-    },
-    {
-        "key": "ctrl+r ctrl+c",
-        "when": "!inQuickOpen",
-        "command": "github.codespaces.explorer.focus"
-    },
-    {
-        "key": "alt+c",
-        "when": "inQuickOpen",
-        "command": "github.codespaces.connect",
-    },
-    ///////////////////////////////////////////////////////////////
-    // tasks t3388
+    // tasks                           t   t3388
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+t t",
@@ -1822,7 +1833,7 @@ command groups
         "args": ">Task "
     },
     ///////////////////////////////////////////////////////////////
-    // snippets t5608
+    // snippets                        u    t5608
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+u z",
@@ -1841,7 +1852,7 @@ command groups
         "args": ">Snippet "
     },
     ///////////////////////////////////////////////////////////////
-    // preferences t1917
+    // preferences                     k    t1917
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+k",
@@ -1850,7 +1861,7 @@ command groups
         "args": ">Preferences "
     },
     ///////////////////////////////////////////////////////////////
-    // help t3118
+    // help                            h    t3118
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+h",
@@ -1859,7 +1870,10 @@ command groups
         "args": ">Help "
     },
     ///////////////////////////////////////////////////////////////
-    // commands t6712
+    // quick open                      p    t3167
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    // commands                        b    t6712
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+shift+h",
@@ -1897,7 +1911,7 @@ command groups
         "args": ">Command "
     },
     ///////////////////////////////////////////////////////////////
-    // macros t7096
+    // macros                          m    t7096
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+shift+m",
@@ -1906,7 +1920,7 @@ command groups
         "args": ">Macros "
     },
     ///////////////////////////////////////////////////////////////
-    // find t4038
+    // find                            f    t4038
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+f",
@@ -1935,7 +1949,7 @@ command groups
         "command": "references-view.find",
     },
     ///////////////////////////////////////////////////////////////
-    // extensions t5157
+    // extensions                      x    t5157
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+shift+x",
@@ -1949,7 +1963,7 @@ command groups
         "command": "workbench.view.extensions"
     },
     ///////////////////////////////////////////////////////////////
-    // profiles t6992
+    // profiles                        z    t6992
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+z",
@@ -1958,7 +1972,7 @@ command groups
         "args": ">Profiles "
     },
     ///////////////////////////////////////////////////////////////
-    // zoom t2167
+    // zoom                            z    t2167
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+shift+z",
@@ -1967,7 +1981,7 @@ command groups
         "args": ">Zoom "
     },
     ///////////////////////////////////////////////////////////////
-    // output t2786
+    // output                          o    t2786
     ///////////////////////////////////////////////////////////////
     {
         "key": "alt+o",
@@ -1987,7 +2001,7 @@ command groups
         "args": ">Output "
     },
     ///////////////////////////////////////////////////////////////
-    // cursor t3075
+    // cursor                          a    t3075
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+shift+a",
@@ -1996,7 +2010,7 @@ command groups
         "args": ">Cursor "
     },
     ///////////////////////////////////////////////////////////////
-    // paste t7118
+    // paste                           v    t7118
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+shift+v",
@@ -2010,22 +2024,94 @@ command groups
         "args": ">Paste "
     },
     ///////////////////////////////////////////////////////////////
-    // close t6648
+    // close                           w   t6648
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
+    // reload                          r   t2391
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
+    // refresh                         r   t2581
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
+    // remove                          d   t3636
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
+    // interface                       i    t4780
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
+    // next                            n    t1390
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
+    // previous                        p    t8477
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
-    // dump t0377
+    // cycle                           o    t6078
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    // up                              k    t9017
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    // down                            j    t8854
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    // left                            h    t7773
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    // right                           l    t5632
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    // insert                          i    t8063
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    // open                            o    t2669
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    // copy                            c    t5700
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    // rename                          b    t5262
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    // new                             n    t1619
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    // fold                            k    t3866
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    // format                          k    t4704
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    // cut                             x    t5968
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    // crumbs                          c    t4616
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    // move                            m    t9910
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    // history                         h    t5797
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    // line                            l    t5788
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    // settings                        z    t8662
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    // undo                            z    t5347
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    // tmux                            m    t7299
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    // vim                             m    t0286
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    // zen                             z    t0176
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    // dump                                 t0377
     ///////////////////////////////////////////////////////////////
     {
         "key": "alt+j",
