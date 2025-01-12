@@ -400,11 +400,6 @@ command groups
         "command": "workbench.action.terminal.chat.start",
     },
     {
-        "key": "ctrl+shift+b",
-        "when": "terminalFocus",
-        "command": "workbench.action.terminal.rename",
-    },
-    {
         "key": "ctrl+shift+r",
         "when": "editorFocus || terminalFocus",
         "command": "workbench.action.terminal.runSelectedText",
@@ -1405,6 +1400,11 @@ command groups
         "when": "editorHasReferenceProvider",
         "command": "references-view.findReferences",
     },
+    {
+        "key": "ctrl+g r",
+        "when": "!inQuickOpen",
+        "command": "editor.action.referenceSearch.trigger"
+    },
     ///////////////////////////////////////////////////////////////
     // symbols                         g    t4807
     ///////////////////////////////////////////////////////////////
@@ -2215,8 +2215,12 @@ command groups
     {
         "key": "ctrl+b",
         "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Command "
+        "command": "workbench.action.showCommands",
+    },
+    {
+        "key": "ctrl+shift+b",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.showCommands"
     },
     ///////////////////////////////////////////////////////////////
     // macros                          m    t7096
@@ -2230,6 +2234,51 @@ command groups
     ///////////////////////////////////////////////////////////////
     // find                            f    t4038
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+alt+n",
+        "when": "editorFocus",
+        "command": "editor.action.nextMatchFindAction",
+    },
+    {
+        "key": "ctrl+alt+n",
+        "when": "editorFocus && findInputFocussed",
+        "command": "editor.action.nextMatchFindAction",
+    },
+    {
+        "key": "ctrl+alt+n",
+        "when": "terminalFindWidgetFocused",
+        "command": "workbench.action.terminal.findNext",
+    },
+    {
+        "key": "ctrl+alt+n",
+        "when": "terminalFocus",
+        "command": "workbench.action.terminal.findNext",
+    },
+    {
+        "key": "ctrl+alt+n",
+        "when": "webviewFindWidgetFocused && !editorFocus && activeEditor == 'WebviewEditor'",
+        "command": "editor.action.webvieweditor.findNext",
+    },
+    {
+        "key": "ctrl+alt+p",
+        "when": "editorFocus",
+        "command": "editor.action.previousMatchFindAction",
+    },
+    {
+        "key": "ctrl+alt+p",
+        "when": "editorFocus && findInputFocussed",
+        "command": "editor.action.previousMatchFindAction",
+    },
+    {
+        "key": "ctrl+alt+p",
+        "when": "terminalFindWidgetFocused",
+        "command": "workbench.action.terminal.findPrevious",
+    },
+    {
+        "key": "ctrl+alt+p",
+        "when": "terminalFocus",
+        "command": "workbench.action.terminal.findPrevious",
+    },
     {
         "key": "ctrl+f",
         "when": "inQuickOpen",
@@ -2527,59 +2576,9 @@ command groups
         "command": "editor.action.peekDeclaration"
     },
     {
-        "key": "ctrl+g r",
-        "when": "!inQuickOpen",
-        "command": "editor.action.referenceSearch.trigger"
-    },
-    {
         "key": "ctrl+g t",
         "when": "!inQuickOpen",
         "command": "editor.action.peekTypeDefinition"
-    },
-    {
-        "key": "ctrl+alt+n",
-        "when": "editorFocus",
-        "command": "editor.action.nextMatchFindAction",
-    },
-    {
-        "key": "ctrl+alt+n",
-        "when": "editorFocus && findInputFocussed",
-        "command": "editor.action.nextMatchFindAction",
-    },
-    {
-        "key": "ctrl+alt+n",
-        "when": "terminalFindWidgetFocused",
-        "command": "workbench.action.terminal.findNext",
-    },
-    {
-        "key": "ctrl+alt+n",
-        "when": "terminalFocus",
-        "command": "workbench.action.terminal.findNext",
-    },
-    {
-        "key": "ctrl+alt+n",
-        "when": "webviewFindWidgetFocused && !editorFocus && activeEditor == 'WebviewEditor'",
-        "command": "editor.action.webvieweditor.findNext",
-    },
-    {
-        "key": "ctrl+alt+p",
-        "when": "editorFocus",
-        "command": "editor.action.previousMatchFindAction",
-    },
-    {
-        "key": "ctrl+alt+p",
-        "when": "editorFocus && findInputFocussed",
-        "command": "editor.action.previousMatchFindAction",
-    },
-    {
-        "key": "ctrl+alt+p",
-        "when": "terminalFindWidgetFocused",
-        "command": "workbench.action.terminal.findPrevious",
-    },
-    {
-        "key": "ctrl+alt+p",
-        "when": "terminalFocus",
-        "command": "workbench.action.terminal.findPrevious",
     },
     {
         "key": "ctrl+c ctrl+c",
