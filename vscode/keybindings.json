@@ -2283,7 +2283,7 @@ command groups
     },
     {
         "key": "ctrl+d c",
-        "when": "inDebugMode",
+        "when": "!inQuickOpen && inDebugMode",
         "command": "workbench.action.debug.continue",
     },
     {
@@ -2308,7 +2308,7 @@ command groups
     },
     {
         "key": "ctrl+d r",
-        "when": "!inDebugMode",
+        "when": "!inDebugMode && !inQuickOpen",
         "command": "workbench.action.debug.start",
     },
     {
@@ -2318,7 +2318,7 @@ command groups
     },
     {
         "key": "ctrl+d d",
-        "when": "!inDebugMode",
+        "when": "!inDebugMode && !inQuickOpen",
         "command": "workbench.action.debug.selectandstart",
     },
     {
@@ -2338,7 +2338,7 @@ command groups
     },
     {
         "key": "ctrl+d e",
-        "when": "!inDebugMode",
+        "when": "!inDebugMode && !inQuickOpen",
         "command": "workbench.action.debug.run",
     },
     {
