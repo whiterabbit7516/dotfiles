@@ -551,7 +551,7 @@
   "editor.find.autoFindInSelection": "multiline",
   "window.enableMenuBarMnemonics": false,
   "dotfiles.repository": "https://github.com/whiterabbit7516/dotfiles.git",
-  "editor.cursorSurroundingLines": 3,
+  "editor.cursorSurroundingLines": 12,
   "peacock.favoriteColors": [
     {
       "name": "Angular Red",

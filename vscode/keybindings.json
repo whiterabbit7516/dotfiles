@@ -1,8 +1,9 @@
 /*
-    command groups
+command groups
     unbinds                         -    t1113
     dump                                 t0377
     navigation                      -    t3508
+    suggestions                     -    t3420
     editor groups                   a    t4355
     activity bar                    a    t6913
     cursor                          a    t3075
@@ -536,6 +537,36 @@
         "when": "explorerResourceIsFolder",
         "command": "openInTerminal",
     },
+    {
+        "key": "ctrl+alt+y",
+        "when": "terminalFocus",
+        "command": "workbench.action.terminal.scrollUp",
+    },
+    {
+        "key": "ctrl+alt+e",
+        "when": "terminalFocus",
+        "command": "workbench.action.terminal.scrollDown",
+    },
+    {
+        "key": "ctrl+alt+u",
+        "when": "terminalFocus",
+        "command": "workbench.action.terminal.scrollUpPage",
+    },
+    {
+        "key": "ctrl+alt+d",
+        "when": "terminalFocus",
+        "command": "workbench.action.terminal.scrollDownPage",
+    },
+    {
+        "key": "shift+alt+j",
+        "when": "terminalFocus",
+        "command": "workbench.action.terminal.selectToNextLine",
+    },
+    {
+        "key": "shift+alt+k",
+        "when": "terminalFocus",
+        "command": "workbench.action.terminal.selectToPreviousLine",
+    },
     ///////////////////////////////////////////////////////////////
     // panel                           j    t1566
     ///////////////////////////////////////////////////////////////
@@ -719,6 +750,29 @@
         "command": "workbench.action.toggleActivityBarVisibility",
     },
     ///////////////////////////////////////////////////////////////
+    // suggestions                     -    t3420
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "alt+k",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus",
+        "command": "selectPrevSuggestion",
+    },
+    {
+        "key": "alt+j",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus",
+        "command": "selectNextSuggestion",
+    },
+    {
+        "key": "alt+l",
+        "when": "suggestWidgetVisible && textInputFocus",
+        "command": "acceptSelectedSuggestion",
+    },
+    {
+        "key": "ctrl+space",
+        "when": "suggestWidgetVisible && textInputFocus",
+        "command": "hideSuggestWidget",
+    },
+    ///////////////////////////////////////////////////////////////
     // navigation                      -    t3508
     ///////////////////////////////////////////////////////////////
     {
@@ -774,6 +828,101 @@
         "key": "ctrl+d ctrl+l",
         "when": "!inQuickOpen",
         "command": "workbench.debug.panel.action.clearReplAction",
+    },
+    {
+        "key": "ctrl+alt+j",
+        "when": "debugState == 'stopped'",
+        "command": "workbench.action.debug.stepOver",
+    },
+    {
+        "key": "ctrl+alt+l",
+        "when": "debugState != 'inactive'",
+        "command": "workbench.action.debug.stepInto",
+    },
+    {
+        "key": "ctrl+alt+h",
+        "when": "debugState == 'stopped'",
+        "command": "workbench.action.debug.stepOut",
+    },
+    {
+        "key": "ctrl+alt+k",
+        "when": "debugState == 'stopped'",
+        "command": "workbench.action.debug.stepBack",
+    },
+    {
+        "key": "ctrl+d c",
+        "when": "!inQuickOpen && inDebugMode",
+        "command": "workbench.action.debug.continue",
+    },
+    {
+        "key": "ctrl+d x",
+        "when": "inDebugMode",
+        "command": "workbench.action.debug.stop",
+    },
+    {
+        "key": "ctrl+d s",
+        "when": "debugState == 'running'",
+        "command": "workbench.action.debug.pause",
+    },
+    {
+        "key": "ctrl+d b",
+        "when": "editorTextFocus",
+        "command": "editor.debug.action.toggleBreakpoint",
+    },
+    {
+        "key": "ctrl+d r",
+        "when": "inDebugMode",
+        "command": "workbench.action.debug.restart",
+    },
+    {
+        "key": "ctrl+d r",
+        "when": "!inDebugMode && !inQuickOpen",
+        "command": "workbench.action.debug.start",
+    },
+    {
+        "key": "ctrl+d y",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.debug.selectDebugConsole"
+    },
+    {
+        "key": "ctrl+d d",
+        "when": "!inDebugMode && !inQuickOpen",
+        "command": "workbench.action.debug.selectandstart",
+    },
+    {
+        "key": "ctrl+d w",
+        "when": "!inQuickOpen",
+        "command": "editor.debug.action.selectionToWatch",
+    },
+    {
+        "key": "ctrl+d t",
+        "when": "!inQuickOpen",
+        "command": "debug.enableOrDisableBreakpoint"
+    },
+    {
+        "key": "ctrl+d j",
+        "when": "inDebugMode",
+        "command": "editor.debug.action.runToCursor",
+    },
+    {
+        "key": "ctrl+d e",
+        "when": "!inDebugMode && !inQuickOpen",
+        "command": "workbench.action.debug.run",
+    },
+    {
+        "key": "ctrl+d h",
+        "when": "editorTextFocus && inDebugMode",
+        "command": "editor.debug.action.showDebugHover",
+    },
+    {
+        "key": "ctrl+d k",
+        "when": "inDebugMode",
+        "command": "debug.jumpToCursor",
+    },
+    {
+        "key": "ctrl+d z",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.debug.configure",
     },
     ///////////////////////////////////////////////////////////////
     // source control t7077
@@ -1095,6 +1244,16 @@
         "when": "!inQuickOpen",
         "command": "workbench.explorer.fileView.focus"
     },
+    {
+        "key": "c",
+        "when": "explorerViewletFocus && !inputFocus",
+        "command": "workbench.files.action.collapseExplorerFolders",
+    },
+    {
+        "key": "b",
+        "when": "filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus",
+        "command": "renameFile",
+    },
     ///////////////////////////////////////////////////////////////
     // search                          s    t4141
     ///////////////////////////////////////////////////////////////
@@ -1252,6 +1411,16 @@
     ///////////////////////////////////////////////////////////////
     // select                          s    t2119
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "shift+alt+l",
+        "when": "editorTextFocus",
+        "command": "editor.action.smartSelect.expand",
+    },
+    {
+        "key": "shift+alt+h",
+        "when": "editorTextFocus",
+        "command": "editor.action.smartSelect.shrink",
+    },
     {
         "key": "ctrl+s ctrl+a",
         "when": "textInputFocus",
@@ -1632,6 +1801,26 @@
     // editor t8500
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+alt+k",
+        "when": "editorTextFocus && !editorReadonly && !inDebugMode",
+        "command": "editor.action.moveLinesUpAction",
+    },
+    {
+        "key": "ctrl+alt+j",
+        "when": "editorTextFocus && !editorReadonly && !inDebugMode",
+        "command": "editor.action.moveLinesDownAction",
+    },
+    {
+        "key": "ctrl+shift+alt+j",
+        "when": "editorTextFocus && !editorReadonly",
+        "command": "editor.action.copyLinesDownAction",
+    },
+    {
+        "key": "ctrl+shift+alt+k",
+        "when": "editorTextFocus && !editorReadonly",
+        "command": "editor.action.copyLinesUpAction",
+    },
+    {
         "key": "ctrl+e ctrl+e",
         "when": "!inQuickOpen",
         "command": "workbench.action.navigateToLastEditLocation",
@@ -1871,6 +2060,24 @@
     ///////////////////////////////////////////////////////////////
     // quick open                      p    t3167
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "alt+p",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ""
+    },
+    {
+        "key": "ctrl+tab",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": "edt mru "
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": "edt mru "
+    },
     ///////////////////////////////////////////////////////////////
     // commands                        b    t6712
     ///////////////////////////////////////////////////////////////
@@ -2008,6 +2215,16 @@
         "command": "workbench.action.quickOpen",
         "args": ">Cursor "
     },
+    {
+        "key": "shift+alt+j",
+        "when": "editorTextFocus",
+        "command": "editor.action.insertCursorBelow",
+    },
+    {
+        "key": "shift+alt+k",
+        "when": "editorTextFocus",
+        "command": "editor.action.insertCursorAbove",
+    },
     ///////////////////////////////////////////////////////////////
     // paste                           v    t7118
     ///////////////////////////////////////////////////////////////
@@ -2049,15 +2266,35 @@
     ///////////////////////////////////////////////////////////////
     // up                              k    t9017
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "alt+k",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.navigateUp"
+    },
     ///////////////////////////////////////////////////////////////
     // down                            j    t8854
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "alt+j",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.navigateDown"
+    },
     ///////////////////////////////////////////////////////////////
     // left                            h    t7773
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "alt+h",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.navigateLeft"
+    },
     ///////////////////////////////////////////////////////////////
     // right                           l    t5632
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "alt+l",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.navigateRight"
+    },
     ///////////////////////////////////////////////////////////////
     // insert                          i    t8063
     ///////////////////////////////////////////////////////////////
@@ -2085,6 +2322,16 @@
     ///////////////////////////////////////////////////////////////
     // crumbs                          c    t4616
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "alt+l",
+        "when": "breadcrumbsActive && breadcrumbsVisible",
+        "command": "breadcrumbs.focusNext",
+    },
+    {
+        "key": "alt+h",
+        "when": "breadcrumbsActive && breadcrumbsVisible",
+        "command": "breadcrumbs.focusPrevious",
+    },
     ///////////////////////////////////////////////////////////////
     // move                            m    t9910
     ///////////////////////////////////////////////////////////////
@@ -2112,249 +2359,6 @@
     ///////////////////////////////////////////////////////////////
     // dump                                 t0377
     ///////////////////////////////////////////////////////////////
-    {
-        "key": "alt+j",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.navigateDown"
-    },
-    {
-        "key": "alt+k",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.navigateUp"
-    },
-    {
-        "key": "alt+h",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.navigateLeft"
-    },
-    {
-        "key": "alt+l",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.navigateRight"
-    },
-    {
-        "key": "ctrl+alt+k",
-        "when": "editorTextFocus && !editorReadonly && !inDebugMode",
-        "command": "editor.action.moveLinesUpAction",
-    },
-    {
-        "key": "ctrl+alt+j",
-        "when": "editorTextFocus && !editorReadonly && !inDebugMode",
-        "command": "editor.action.moveLinesDownAction",
-    },
-    {
-        "key": "ctrl+shift+alt+j",
-        "when": "editorTextFocus && !editorReadonly",
-        "command": "editor.action.copyLinesDownAction",
-    },
-    {
-        "key": "ctrl+shift+alt+k",
-        "when": "editorTextFocus && !editorReadonly",
-        "command": "editor.action.copyLinesUpAction",
-    },
-    {
-        "key": "shift+alt+l",
-        "when": "editorTextFocus",
-        "command": "editor.action.smartSelect.expand",
-    },
-    {
-        "key": "shift+alt+h",
-        "when": "editorTextFocus",
-        "command": "editor.action.smartSelect.shrink",
-    },
-    {
-        "key": "shift+alt+j",
-        "when": "editorTextFocus",
-        "command": "editor.action.insertCursorBelow",
-    },
-    {
-        "key": "shift+alt+k",
-        "when": "editorTextFocus",
-        "command": "editor.action.insertCursorAbove",
-    },
-    {
-        "key": "alt+j",
-        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus",
-        "command": "selectNextSuggestion",
-    },
-    {
-        "key": "alt+k",
-        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus",
-        "command": "selectPrevSuggestion",
-    },
-    {
-        "key": "alt+p",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ""
-    },
-    {
-        "key": "alt+l",
-        "when": "breadcrumbsActive && breadcrumbsVisible",
-        "command": "breadcrumbs.focusNext",
-    },
-    {
-        "key": "alt+h",
-        "when": "breadcrumbsActive && breadcrumbsVisible",
-        "command": "breadcrumbs.focusPrevious",
-    },
-    {
-        "key": "ctrl+tab",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": "edt mru "
-    },
-    {
-        "key": "ctrl+shift+tab",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": "edt mru "
-    },
-    {
-        "key": "alt+l",
-        "when": "suggestWidgetVisible && textInputFocus",
-        "command": "acceptSelectedSuggestion",
-    },
-    {
-        "key": "ctrl+space",
-        "when": "suggestWidgetVisible && textInputFocus",
-        "command": "hideSuggestWidget",
-    },
-    {
-        "key": "c",
-        "when": "explorerViewletFocus && !inputFocus",
-        "command": "workbench.files.action.collapseExplorerFolders",
-    },
-    {
-        "key": "b",
-        "when": "filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus",
-        "command": "renameFile",
-    },
-    {
-        "key": "ctrl+alt+y",
-        "when": "terminalFocus",
-        "command": "workbench.action.terminal.scrollUp",
-    },
-    {
-        "key": "ctrl+alt+e",
-        "when": "terminalFocus",
-        "command": "workbench.action.terminal.scrollDown",
-    },
-    {
-        "key": "ctrl+alt+u",
-        "when": "terminalFocus",
-        "command": "workbench.action.terminal.scrollUpPage",
-    },
-    {
-        "key": "ctrl+alt+d",
-        "when": "terminalFocus",
-        "command": "workbench.action.terminal.scrollDownPage",
-    },
-    {
-        "key": "shift+alt+j",
-        "when": "terminalFocus",
-        "command": "workbench.action.terminal.selectToNextLine",
-    },
-    {
-        "key": "shift+alt+k",
-        "when": "terminalFocus",
-        "command": "workbench.action.terminal.selectToPreviousLine",
-    },
-    {
-        "key": "ctrl+alt+j",
-        "when": "debugState == 'stopped'",
-        "command": "workbench.action.debug.stepOver",
-    },
-    {
-        "key": "ctrl+alt+l",
-        "when": "debugState != 'inactive'",
-        "command": "workbench.action.debug.stepInto",
-    },
-    {
-        "key": "ctrl+alt+h",
-        "when": "debugState == 'stopped'",
-        "command": "workbench.action.debug.stepOut",
-    },
-    {
-        "key": "ctrl+alt+k",
-        "when": "debugState == 'stopped'",
-        "command": "workbench.action.debug.stepBack",
-    },
-    {
-        "key": "ctrl+d c",
-        "when": "!inQuickOpen && inDebugMode",
-        "command": "workbench.action.debug.continue",
-    },
-    {
-        "key": "ctrl+d x",
-        "when": "inDebugMode",
-        "command": "workbench.action.debug.stop",
-    },
-    {
-        "key": "ctrl+d s",
-        "when": "debugState == 'running'",
-        "command": "workbench.action.debug.pause",
-    },
-    {
-        "key": "ctrl+d b",
-        "when": "editorTextFocus",
-        "command": "editor.debug.action.toggleBreakpoint",
-    },
-    {
-        "key": "ctrl+d r",
-        "when": "inDebugMode",
-        "command": "workbench.action.debug.restart",
-    },
-    {
-        "key": "ctrl+d r",
-        "when": "!inDebugMode && !inQuickOpen",
-        "command": "workbench.action.debug.start",
-    },
-    {
-        "key": "ctrl+d y",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.debug.selectDebugConsole"
-    },
-    {
-        "key": "ctrl+d d",
-        "when": "!inDebugMode && !inQuickOpen",
-        "command": "workbench.action.debug.selectandstart",
-    },
-    {
-        "key": "ctrl+d w",
-        "when": "!inQuickOpen",
-        "command": "editor.debug.action.selectionToWatch",
-    },
-    {
-        "key": "ctrl+d t",
-        "when": "!inQuickOpen",
-        "command": "debug.enableOrDisableBreakpoint"
-    },
-    {
-        "key": "ctrl+d j",
-        "when": "inDebugMode",
-        "command": "editor.debug.action.runToCursor",
-    },
-    {
-        "key": "ctrl+d e",
-        "when": "!inDebugMode && !inQuickOpen",
-        "command": "workbench.action.debug.run",
-    },
-    {
-        "key": "ctrl+d h",
-        "when": "editorTextFocus && inDebugMode",
-        "command": "editor.debug.action.showDebugHover",
-    },
-    {
-        "key": "ctrl+d k",
-        "when": "inDebugMode",
-        "command": "debug.jumpToCursor",
-    },
-    {
-        "key": "ctrl+d z",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.debug.configure",
-    },
     {
         "key": "n",
         "when": "filesExplorerFocus && !inputFocus",
