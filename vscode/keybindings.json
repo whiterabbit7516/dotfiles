@@ -65,7 +65,9 @@ command groups
     remote - ssh                    s    t9391
     select                          s    t2119
     tasks                           t    t3388
+    timeline                        t    t9839
     file / folder                   t    t3459
+    menubar                         t    t5664
     clipboard / copy / paste / cut  u    t6904
     snippets                        u    t5608
     problems                        u    t7119
@@ -798,6 +800,21 @@ command groups
     // debug                           d    t3216
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+d ctrl+v",
+        "when": "!inQuickOpen",
+        "command": "workbench.debug.action.focusVariablesView"
+    },
+    {
+        "key": "ctrl+d ctrl+s",
+        "when": "!inQuickOpen",
+        "command": "workbench.debug.action.focusCallStackView"
+    },
+    {
+        "key": "ctrl+d ctrl+w",
+        "when": "!inQuickOpen",
+        "command": "workbench.debug.action.focusWatchView"
+    },
+    {
         "key": "ctrl+d",
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpen",
@@ -1302,6 +1319,12 @@ command groups
     // file explorer                   f    t4428
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+shift+e",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Explorer "
+    },
+    {
         "key": "ctrl+i ctrl+f",
         "when": "!inQuickOpen",
         "command": "workbench.explorer.fileView.focus"
@@ -1412,6 +1435,11 @@ command groups
         "key": "ctrl+g c",
         "when": "editorHasCallHierarchyProvider && editorTextFocus && !inReferenceSearchEditor",
         "command": "editor.showCallHierarchy",
+    },
+    {
+        "key": "ctrl+f ctrl+i",
+        "when": "editorFocus",
+        "command": "references-view.findImplementations",
     },
     ///////////////////////////////////////////////////////////////
     // symbols                         g    t4807
@@ -1572,6 +1600,11 @@ command groups
         "key": "ctrl+s ctrl+o",
         "when": "textInputFocus",
         "command": "editor.action.selectToBracket",
+    },
+    {
+        "key": "ctrl+s ctrl+l",
+        "when": "textInputFocus",
+        "command": "expandLineSelection",
     },
     ///////////////////////////////////////////////////////////////
     // quit t1951
@@ -1899,6 +1932,11 @@ command groups
     // marks / bookmarks               m    t0604
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+i ctrl+m",
+        "when": "!inQuickOpen",
+        "command": "bookmarksExplorer.focus"
+    },
+    {
         "key": "ctrl+m ctrl+w",
         "when": "!inQuickOpen",
         "command": "bookmarks.clearFromAllFiles"
@@ -1942,6 +1980,17 @@ command groups
     ///////////////////////////////////////////////////////////////
     // editor t8500
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+e ctrl+f",
+        "when": "editorFocus",
+        "command": "actions.find",
+    },
+    {
+        "key": "ctrl+e",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">View Editor "
+    },
     {
         "key": "ctrl+g ctrl+h",
         "when": "editorTextFocus",
@@ -2119,6 +2168,14 @@ command groups
         "args": ">Paste "
     },
     ///////////////////////////////////////////////////////////////
+    // menubar                         t    t5664
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+i t",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.toggleMenuBar"
+    },
+    ///////////////////////////////////////////////////////////////
     // file / folder                   t    t3459
     ///////////////////////////////////////////////////////////////
     {
@@ -2207,6 +2264,14 @@ command groups
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpen",
         "args": ">File "
+    },
+    ///////////////////////////////////////////////////////////////
+    // timeline                        t    t9839
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+i ctrl+t",
+        "when": "!inQuickOpen",
+        "command": "timeline.focus"
     },
     ///////////////////////////////////////////////////////////////
     // tasks                           t   t3388
@@ -2493,6 +2558,12 @@ command groups
     ///////////////////////////////////////////////////////////////
     // refresh                         r   t2581
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+shift+r",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Refresh "
+    },
     ///////////////////////////////////////////////////////////////
     // remove                          d   t3636
     ///////////////////////////////////////////////////////////////
@@ -2648,51 +2719,6 @@ command groups
     ///////////////////////////////////////////////////////////////
     // dump                                 t0377
     ///////////////////////////////////////////////////////////////
-    {
-        "key": "ctrl+s ctrl+l",
-        "when": "textInputFocus",
-        "command": "expandLineSelection",
-    },
-    {
-        "key": "ctrl+d ctrl+v",
-        "when": "!inQuickOpen",
-        "command": "workbench.debug.action.focusVariablesView"
-    },
-    {
-        "key": "ctrl+d ctrl+s",
-        "when": "!inQuickOpen",
-        "command": "workbench.debug.action.focusCallStackView"
-    },
-    {
-        "key": "ctrl+d ctrl+w",
-        "when": "!inQuickOpen",
-        "command": "workbench.debug.action.focusWatchView"
-    },
-    {
-        "key": "ctrl+i ctrl+t",
-        "when": "!inQuickOpen",
-        "command": "timeline.focus"
-    },
-    {
-        "key": "ctrl+i t",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.toggleMenuBar"
-    },
-    {
-        "key": "ctrl+i ctrl+m",
-        "when": "!inQuickOpen",
-        "command": "bookmarksExplorer.focus"
-    },
-    {
-        "key": "ctrl+e ctrl+f",
-        "when": "editorFocus",
-        "command": "actions.find",
-    },
-    {
-        "key": "ctrl+f ctrl+i",
-        "when": "editorFocus",
-        "command": "references-view.findImplementations",
-    },
     {
         "key": "ctrl+f ctrl+a",
         "when": "editorFocus",
@@ -4092,23 +4118,5 @@ command groups
         "key": "alt+n",
         "when": "inQuickOpen",
         "command": "workbench.action.openRecent",
-    },
-    {
-        "key": "ctrl+shift+r",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Refresh "
-    },
-    {
-        "key": "ctrl+e",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">View Editor "
-    },
-    {
-        "key": "ctrl+shift+e",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Explorer "
     },
 ]
