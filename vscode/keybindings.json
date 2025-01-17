@@ -5,7 +5,7 @@ command groups
     navigation                      -    t3508
     scrolling                       -    t7776
     suggestions                     -    t3420
-    editor groups                   a    t4355
+    editor groups / layout          a    t4355
     activity bar                    a    t6913
     cursor                          a    t3075
     sidebar                         b    t5715
@@ -22,22 +22,18 @@ command groups
     symbols                         g    t4807
     goto                            g    t2985
     outline                         g    t6000
-    left                            h    t7773
     help                            h    t3118
     history                         h    t5797
     interface                       i    t4780
     full screen                     i    t2530
     insert                          i    t8063
     panel                           j    t1566
-    down                            j    t8854
     preferences                     k    t1917
     fold                            k    t3866
     format                          k    t4704
-    up                              k    t9017
     chat / copilot                  l    t7259
     live share                      l    t5930
     line                            l    t5788
-    right                           l    t5632
     marks / bookmarks               m    t0604
     minimap                         m    t1725
     macros                          m    t7096
@@ -388,6 +384,11 @@ command groups
     ///////////////////////////////////////////////////////////////
     // terminal t8233
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "alt+y",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpenTerm",
+    },
     {
         "key": "ctrl+y",
         "when": "inQuickOpen",
@@ -766,6 +767,51 @@ command groups
     ///////////////////////////////////////////////////////////////
     // navigation                      -    t3508
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "alt+l",
+        "when": "inQuickOpen",
+        "command": "workbench.action.acceptSelectedQuickOpenItem",
+    },
+    {
+        "key": "alt+l",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "alt+l",
+        "when": "listFocus && !inputFocus && !breadcrumbsActive",
+        "command": "list.select",
+    },
+    {
+        "key": "alt+h",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "alt+h",
+        "when": "listFocus && !inputFocus && !breadcrumbsActive",
+        "command": "list.collapse",
+    },
+    {
+        "key": "alt+j",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.navigateDown"
+    },
+    {
+        "key": "alt+j",
+        "when": "listFocus && !inputFocus",
+        "command": "list.focusDown",
+    },
+    {
+        "key": "alt+k",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "alt+k",
+        "when": "listFocus && !inputFocus",
+        "command": "list.focusUp",
+    },
     {
         "key": "ctrl+,",
         "when": "editorFocus",
@@ -1189,6 +1235,11 @@ command groups
     // editor groups                   a   t4355
     ///////////////////////////////////////////////////////////////
     {
+        "key": "alt+a",
+        "when": "inQuickOpen",
+        "command": "workbench.action.customizeLayout",
+    },
+    {
         "key": "ctrl+e s",
         "when": "!inQuickOpen",
         "command": "workbench.action.toggleSplitEditorInGroup"
@@ -1328,6 +1379,11 @@ command groups
     ///////////////////////////////////////////////////////////////
     // file explorer                   f    t4428
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "alt+f",
+        "command": "workbench.action.quickOpen",
+        "when": "inQuickOpen"
+    },
     {
         "key": "ctrl+shift+e",
         "when": "inQuickOpen",
@@ -1940,15 +1996,6 @@ command groups
         "command": "editor.action.marker.prev",
     },
     ///////////////////////////////////////////////////////////////
-    // toggle                          o    t3584
-    ///////////////////////////////////////////////////////////////
-    {
-        "key": "ctrl+o",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Toggle "
-    },
-    ///////////////////////////////////////////////////////////////
     // marks / bookmarks               m    t0604
     ///////////////////////////////////////////////////////////////
     {
@@ -2000,6 +2047,11 @@ command groups
     ///////////////////////////////////////////////////////////////
     // editor t8500
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "alt+e",
+        "when": "inQuickOpen",
+        "command": "workbench.action.showAllEditors",
+    },
     {
         "key": "ctrl+e ctrl+f",
         "when": "editorFocus",
@@ -2368,6 +2420,12 @@ command groups
     ///////////////////////////////////////////////////////////////
     {
         "key": "alt+p",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": "?"
+    },
+    {
+        "key": "alt+p",
         "when": "!inQuickOpen",
         "command": "workbench.action.quickOpen",
         "args": ""
@@ -2570,6 +2628,18 @@ command groups
         "args": ">Output "
     },
     ///////////////////////////////////////////////////////////////
+    // toggle                          o    t3584
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+o",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Toggle "
+    },
+    ///////////////////////////////////////////////////////////////
+    // cycle                           o    t6078
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
     // cursor                          a    t3075
     ///////////////////////////////////////////////////////////////
     {
@@ -2615,6 +2685,11 @@ command groups
         "command": "workbench.action.quickOpen",
         "args": ">Focus "
     },
+    {
+        "key": "alt+i",
+        "when": "inQuickOpen",
+        "command": "workbench.action.openView",
+    },
     ///////////////////////////////////////////////////////////////
     // next                            n    t1390
     ///////////////////////////////////////////////////////////////
@@ -2627,61 +2702,6 @@ command groups
     ///////////////////////////////////////////////////////////////
     // previous                        p    t8477
     ///////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////
-    // cycle                           o    t6078
-    ///////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////
-    // up                              k    t9017
-    ///////////////////////////////////////////////////////////////
-    {
-        "key": "alt+k",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.navigateUp"
-    },
-    {
-        "key": "alt+k",
-        "when": "listFocus && !inputFocus",
-        "command": "list.focusUp",
-    },
-    ///////////////////////////////////////////////////////////////
-    // down                            j    t8854
-    ///////////////////////////////////////////////////////////////
-    {
-        "key": "alt+j",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.navigateDown"
-    },
-    {
-        "key": "alt+j",
-        "when": "listFocus && !inputFocus",
-        "command": "list.focusDown",
-    },
-    ///////////////////////////////////////////////////////////////
-    // left                            h    t7773
-    ///////////////////////////////////////////////////////////////
-    {
-        "key": "alt+h",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.navigateLeft"
-    },
-    {
-        "key": "alt+h",
-        "when": "listFocus && !inputFocus && !breadcrumbsActive",
-        "command": "list.collapse",
-    },
-    ///////////////////////////////////////////////////////////////
-    // right                           l    t5632
-    ///////////////////////////////////////////////////////////////
-    {
-        "key": "alt+l",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.navigateRight"
-    },
-    {
-        "key": "alt+l",
-        "when": "listFocus && !inputFocus && !breadcrumbsActive",
-        "command": "list.select",
-    },
     ///////////////////////////////////////////////////////////////
     // insert                          i    t8063
     ///////////////////////////////////////////////////////////////
@@ -2706,6 +2726,11 @@ command groups
     ///////////////////////////////////////////////////////////////
     // new                             n    t1619
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "alt+n",
+        "when": "inQuickOpen",
+        "command": "workbench.action.openRecent",
+    },
     ///////////////////////////////////////////////////////////////
     // fold                            k    t3866
     ///////////////////////////////////////////////////////////////
@@ -4076,46 +4101,5 @@ command groups
         "key": "alt+k",
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpenSelectPrevious",
-    },
-    {
-        "key": "alt+y",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpenTerm",
-    },
-    {
-        "key": "alt+f",
-        "when": "inQuickOpen",
-        "command": "workbench.action.experimental.quickTextSearch",
-    },
-    {
-        "key": "alt+p",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": "?"
-    },
-    {
-        "key": "alt+l",
-        "when": "inQuickOpen",
-        "command": "workbench.action.acceptSelectedQuickOpenItem",
-    },
-    {
-        "key": "alt+e",
-        "when": "inQuickOpen",
-        "command": "workbench.action.showAllEditors",
-    },
-    {
-        "key": "alt+a",
-        "when": "inQuickOpen",
-        "command": "workbench.action.customizeLayout",
-    },
-    {
-        "key": "alt+i",
-        "when": "inQuickOpen",
-        "command": "workbench.action.openView",
-    },
-    {
-        "key": "alt+n",
-        "when": "inQuickOpen",
-        "command": "workbench.action.openRecent",
     },
 ]
