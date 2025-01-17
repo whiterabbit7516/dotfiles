@@ -45,7 +45,7 @@ command groups
     tmux                            m    t7299
     vim                             m    t0286
     notifications                   n    t6821
-    secondary sidebar               n    t9392
+    auxiliary sidebar               n    t9392
     new                             n    t1619
     next                            n    t1390
     output                          o    t2786
@@ -800,6 +800,11 @@ command groups
     // debug                           d    t3216
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+d ctrl+b",
+        "when": "!inQuickOpen",
+        "command": "workbench.debug.action.focusBreakpointsView"
+    },
+    {
         "key": "ctrl+d ctrl+v",
         "when": "!inQuickOpen",
         "command": "workbench.debug.action.focusVariablesView"
@@ -1411,6 +1416,11 @@ command groups
     ///////////////////////////////////////////////////////////////
     // references                      r    t2275
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+i ctrl+p",
+        "when": "inReferenceSearchEditor || referenceSearchVisible",
+        "command": "togglePeekWidgetFocus",
+    },
     {
         "key": "ctrl+i r",
         "when": "!inQuickOpen",
@@ -2104,10 +2114,19 @@ command groups
         "when": "sideBarFocus",
         "command": "workbench.action.toggleSidebarPosition",
     },
+    {
+        "key": "ctrl+i ctrl+b",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.focusSideBar"
+    },
     ///////////////////////////////////////////////////////////////
-    // secondary sidebar               n    t9392
+    // auxiliary sidebar               n    t9392
     ///////////////////////////////////////////////////////////////
-
+    {
+        "key": "ctrl+i ctrl+n",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.focusAuxiliaryBar"
+    },
     ///////////////////////////////////////////////////////////////
     // clipboard / copy / paste / cut  u    t6904
     ///////////////////////////////////////////////////////////////
@@ -2398,6 +2417,16 @@ command groups
     // find                            f    t4038
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+f ctrl+a",
+        "when": "editorFocus",
+        "command": "editor.action.selectHighlights",
+    },
+    {
+        "key": "ctrl+f ctrl+b",
+        "when": "editorFocus",
+        "command": "editor.action.startFindReplaceAction",
+    },
+    {
         "key": "ctrl+alt+n",
         "when": "editorFocus",
         "command": "editor.action.nextMatchFindAction",
@@ -2599,6 +2628,11 @@ command groups
         "when": "!inQuickOpen",
         "command": "workbench.action.navigateUp"
     },
+    {
+        "key": "alt+k",
+        "when": "listFocus && !inputFocus",
+        "command": "list.focusUp",
+    },
     ///////////////////////////////////////////////////////////////
     // down                            j    t8854
     ///////////////////////////////////////////////////////////////
@@ -2606,6 +2640,11 @@ command groups
         "key": "alt+j",
         "when": "!inQuickOpen",
         "command": "workbench.action.navigateDown"
+    },
+    {
+        "key": "alt+j",
+        "when": "listFocus && !inputFocus",
+        "command": "list.focusDown",
     },
     ///////////////////////////////////////////////////////////////
     // left                            h    t7773
@@ -2615,6 +2654,11 @@ command groups
         "when": "!inQuickOpen",
         "command": "workbench.action.navigateLeft"
     },
+    {
+        "key": "alt+h",
+        "when": "listFocus && !inputFocus && !breadcrumbsActive",
+        "command": "list.collapse",
+    },
     ///////////////////////////////////////////////////////////////
     // right                           l    t5632
     ///////////////////////////////////////////////////////////////
@@ -2622,6 +2666,11 @@ command groups
         "key": "alt+l",
         "when": "!inQuickOpen",
         "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "alt+l",
+        "when": "listFocus && !inputFocus && !breadcrumbsActive",
+        "command": "list.select",
     },
     ///////////////////////////////////////////////////////////////
     // insert                          i    t8063
@@ -2666,6 +2715,11 @@ command groups
         "when": "breadcrumbsActive && breadcrumbsVisible",
         "command": "breadcrumbs.focusPrevious",
     },
+    {
+        "key": "ctrl+i ctrl+c",
+        "when": "!inQuickOpen && breadcrumbsPossible",
+        "command": "breadcrumbs.focusAndSelect",
+    },
     ///////////////////////////////////////////////////////////////
     // move                            m    t9910
     ///////////////////////////////////////////////////////////////
@@ -2707,33 +2761,17 @@ command groups
     ///////////////////////////////////////////////////////////////
     // undo                            z    t5347
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+z ctrl+z",
+        "when": "!inQuickOpen",
+        "command": "undo"
+    },
     ///////////////////////////////////////////////////////////////
     // tmux                            m    t7299
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
     // vim                             m    t0286
     ///////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////
-    // zen                             z    t0176
-    ///////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////
-    // dump                                 t0377
-    ///////////////////////////////////////////////////////////////
-    {
-        "key": "ctrl+f ctrl+a",
-        "when": "editorFocus",
-        "command": "editor.action.selectHighlights",
-    },
-    {
-        "key": "ctrl+f ctrl+b",
-        "when": "editorFocus",
-        "command": "editor.action.startFindReplaceAction",
-    },
-    {
-        "key": "ctrl+d ctrl+b",
-        "when": "!inQuickOpen",
-        "command": "workbench.debug.action.focusBreakpointsView"
-    },
     {
         "key": "ctrl+m o",
         "when": "editorTextFocus",
@@ -2764,51 +2802,12 @@ command groups
         "when": "editorTextFocus && vim.active",
         "command": "extension.vim_ctrl+v",
     },
-    {
-        "key": "ctrl+i ctrl+p",
-        "when": "inReferenceSearchEditor || referenceSearchVisible",
-        "command": "togglePeekWidgetFocus",
-    },
-    {
-        "key": "alt+j",
-        "when": "listFocus && !inputFocus",
-        "command": "list.focusDown",
-    },
-    {
-        "key": "alt+k",
-        "when": "listFocus && !inputFocus",
-        "command": "list.focusUp",
-    },
-    {
-        "key": "alt+l",
-        "when": "listFocus && !inputFocus && !breadcrumbsActive",
-        "command": "list.select",
-    },
-    {
-        "key": "alt+h",
-        "when": "listFocus && !inputFocus && !breadcrumbsActive",
-        "command": "list.collapse",
-    },
-    {
-        "key": "ctrl+i ctrl+c",
-        "when": "!inQuickOpen && breadcrumbsPossible",
-        "command": "breadcrumbs.focusAndSelect",
-    },
-    {
-        "key": "ctrl+i ctrl+b",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.focusSideBar"
-    },
-    {
-        "key": "ctrl+i ctrl+n",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.focusAuxiliaryBar"
-    },
-    {
-        "key": "ctrl+z ctrl+z",
-        "when": "!inQuickOpen",
-        "command": "undo"
-    },
+    ///////////////////////////////////////////////////////////////
+    // zen                             z    t0176
+    ///////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    // dump                                 t0377
+    ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+z o",
         "when": "!inQuickOpen",
