@@ -5,7 +5,7 @@ command groups
     navigation                      -    t3508
     scrolling                       -    t7776
     suggestions                     -    t3420
-    editor groups / layout          a    t4355
+    layout / editor groups          a    t4355
     activity bar                    a    t6913
     cursor                          a    t3075
     sidebar                         b    t5715
@@ -64,6 +64,7 @@ command groups
     timeline                        t    t9839
     file / folder                   t    t3459
     menubar                         t    t5664
+    themes                          t    t2395
     clipboard / copy / paste / cut  u    t6904
     snippets                        u    t5608
     problems                        u    t7119
@@ -988,6 +989,24 @@ command groups
         "when": "!inQuickOpen",
         "command": "remote-containers.openDevContainerFile",
     },
+    {
+        "key": "ctrl+r r",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Dev Containers: Rebuild "
+    },
+    {
+        "key": "ctrl+r o",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Dev Containers: Open "
+    },
+    {
+        "key": "ctrl+r l",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Dev Containers: Log "
+    },
     ///////////////////////////////////////////////////////////////
     // remote - ssh                    r s  t9391
     ///////////////////////////////////////////////////////////////
@@ -1121,6 +1140,16 @@ command groups
     ///////////////////////////////////////////////////////////////
     // navigation                      -    t3508
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "alt+j",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpenSelectNext",
+    },
+    {
+        "key": "alt+k",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpenSelectPrevious",
+    },
     {
         "key": "alt+l",
         "when": "inQuickOpen",
@@ -1586,8 +1615,174 @@ command groups
         "command": "workbench.action.switchWindow",
     },
     ///////////////////////////////////////////////////////////////
-    // editor groups                   a   t4355
+    // layout / editor groups          a    t4355
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+a 1",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.editorLayoutSingle",
+    },
+    {
+        "key": "ctrl+a 2",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.editorLayoutTwoColumns",
+    },
+    {
+        "key": "ctrl+a 3",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.editorLayoutTwoRowsRight",
+    },
+    {
+        "key": "ctrl+a 4",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.editorLayoutTwoByTwoGrid",
+    },
+    {
+        "key": "ctrl+a 5",
+        "when": "!inQuickOpen",
+        "command": "layoutEditorGroups",
+        "args": {
+            "orientation": 0,
+            "groups": [
+                {
+                    "size": 1,
+                    "groups": [
+                        {},
+                        {}
+                    ]
+                },
+                {
+                    "size": 1,
+                    "groups": [
+                        {},
+                        {},
+                        {}
+                    ]
+                },
+            ]
+        }
+    },
+    {
+        "key": "ctrl+a 6",
+        "when": "!inQuickOpen",
+        "command": "layoutEditorGroups",
+        "args": {
+            "orientation": 0,
+            "groups": [
+                {
+                    "size": 1,
+                    "groups": [
+                        {},
+                        {},
+                        {}
+                    ]
+                },
+                {
+                    "size": 1,
+                    "groups": [
+                        {},
+                        {},
+                        {}
+                    ]
+                },
+            ]
+        }
+    },
+    {
+        "key": "ctrl+a 7",
+        "when": "!inQuickOpen",
+        "command": "layoutEditorGroups",
+        "args": {
+            "orientation": 0,
+            "groups": [
+                {
+                    "size": 1,
+                    "groups": [
+                        {},
+                        {},
+                        {}
+                    ]
+                },
+                {
+                    "size": 1,
+                    "groups": [
+                        {},
+                        {},
+                        {},
+                        {}
+                    ]
+                },
+            ]
+        }
+    },
+    {
+        "key": "ctrl+a 8",
+        "when": "!inQuickOpen",
+        "command": "layoutEditorGroups",
+        "args": {
+            "orientation": 0,
+            "groups": [
+                {
+                    "size": 1,
+                    "groups": [
+                        {},
+                        {},
+                        {},
+                        {}
+                    ]
+                },
+                {
+                    "size": 1,
+                    "groups": [
+                        {},
+                        {},
+                        {},
+                        {}
+                    ]
+                },
+            ]
+        }
+    },
+    {
+        "key": "ctrl+a 9",
+        "when": "!inQuickOpen",
+        "command": "layoutEditorGroups",
+        "args": {
+            "orientation": 0,
+            "groups": [
+                {
+                    "size": 1,
+                    "groups": [
+                        {},
+                        {},
+                        {}
+                    ]
+                },
+                {
+                    "size": 1,
+                    "groups": [
+                        {},
+                        {},
+                        {}
+                    ]
+                },
+                {
+                    "size": 1,
+                    "groups": [
+                        {},
+                        {},
+                        {}
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "key": "ctrl+a",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">View Editor Group "
+    },
     {
         "key": "alt+a",
         "when": "inQuickOpen",
@@ -1989,6 +2184,12 @@ command groups
         "key": "ctrl+w o",
         "when": "!inQuickOpen",
         "command": "workbench.action.openWorkspace"
+    },
+    {
+        "key": "ctrl+w",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Workspaces "
     },
     ///////////////////////////////////////////////////////////////
     // outline                         g    t6000
@@ -2611,6 +2812,19 @@ command groups
         "command": "workbench.action.toggleMenuBar"
     },
     ///////////////////////////////////////////////////////////////
+    // themes                          t    t2395
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+k ctrl+t",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.selectTheme",
+    },
+    {
+        "key": "ctrl+k t",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.toggleLightDarkThemes",
+    },
+    ///////////////////////////////////////////////////////////////
     // file / folder                   t    t3459
     ///////////////////////////////////////////////////////////////
     {
@@ -2759,6 +2973,11 @@ command groups
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpen",
         "args": ">Preferences "
+    },
+    {
+        "key": "ctrl+i ctrl+k",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.openSettings",
     },
     ///////////////////////////////////////////////////////////////
     // help                            h    t3118
@@ -2961,6 +3180,21 @@ command groups
         "when": "!inQuickOpen",
         "command": "workbench.action.zoomOut"
     },
+    {
+        "key": "ctrl+z ctrl+i",
+        "when": "!inQuickOpen",
+        "command": "editor.action.fontZoomIn"
+    },
+    {
+        "key": "ctrl+z ctrl+o",
+        "when": "!inQuickOpen",
+        "command": "editor.action.fontZoomOut"
+    },
+    {
+        "key": "ctrl+z ctrl+r",
+        "when": "!inQuickOpen",
+        "command": "editor.action.fontZoomReset"
+    },
     ///////////////////////////////////////////////////////////////
     // output                          o    t2786
     ///////////////////////////////////////////////////////////////
@@ -3098,6 +3332,26 @@ command groups
     ///////////////////////////////////////////////////////////////
     // fold                            k    t3866
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+alt+[",
+        "when": "editorTextFocus && foldingEnabled",
+        "command": "editor.fold",
+    },
+    {
+        "key": "ctrl+alt+]",
+        "when": "editorTextFocus && foldingEnabled",
+        "command": "editor.unfold",
+    },
+    {
+        "key": "ctrl+k ctrl+9",
+        "when": "!inQuickOpen",
+        "command": "editor.foldAll"
+    },
+    {
+        "key": "ctrl+k ctrl+0",
+        "when": "!inQuickOpen",
+        "command": "editor.unfoldAll",
+    },
     ///////////////////////////////////////////////////////////////
     // format                          k    t4704
     ///////////////////////////////////////////////////////////////
@@ -3157,6 +3411,21 @@ command groups
     ///////////////////////////////////////////////////////////////
     // settings                        z    t8662
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+w z",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.openWorkspaceSettingsFile",
+    },
+    {
+        "key": "ctrl+k z",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.openSettingsJson",
+    },
+    {
+        "key": "ctrl+k ctrl+z",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.openSettings",
+    },
     ///////////////////////////////////////////////////////////////
     // undo                            z    t5347
     ///////////////////////////////////////////////////////////////
@@ -3357,29 +3626,14 @@ command groups
     ///////////////////////////////////////////////////////////////
     // zen                             z    t0176
     ///////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////
-    // dump                                 t0377
-    ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+z o",
         "when": "!inQuickOpen",
         "command": "workbench.action.toggleZenMode"
     },
-    {
-        "key": "ctrl+z ctrl+i",
-        "when": "!inQuickOpen",
-        "command": "editor.action.fontZoomIn"
-    },
-    {
-        "key": "ctrl+z ctrl+o",
-        "when": "!inQuickOpen",
-        "command": "editor.action.fontZoomOut"
-    },
-    {
-        "key": "ctrl+z ctrl+r",
-        "when": "!inQuickOpen",
-        "command": "editor.action.fontZoomReset"
-    },
+    ///////////////////////////////////////////////////////////////
+    // dump                                 t0377
+    ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+[",
         "when": "panelFocus",
@@ -3469,16 +3723,6 @@ command groups
         "key": "ctrl+shift+]",
         "when": "editorFocus || openEditorsFocus",
         "command": "workbench.action.moveEditorRightInGroup",
-    },
-    {
-        "key": "ctrl+alt+[",
-        "when": "editorTextFocus && foldingEnabled",
-        "command": "editor.fold",
-    },
-    {
-        "key": "ctrl+alt+]",
-        "when": "editorTextFocus && foldingEnabled",
-        "command": "editor.unfold",
     },
     {
         "key": "ctrl+e ctrl+g",
@@ -3788,24 +4032,6 @@ command groups
         "command": "editor.action.commentLine",
     },
     {
-        "key": "ctrl+r r",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Dev Containers: Rebuild "
-    },
-    {
-        "key": "ctrl+r o",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Dev Containers: Open "
-    },
-    {
-        "key": "ctrl+r l",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Dev Containers: Log "
-    },
-    {
         "key": "ctrl+s z",
         "when": "!inQuickOpen",
         "command": "opensshremotes.openConfigFile"
@@ -3856,16 +4082,6 @@ command groups
         "command": "workbench.action.unpinEditor",
     },
     {
-        "key": "ctrl+k ctrl+9",
-        "when": "!inQuickOpen",
-        "command": "editor.foldAll"
-    },
-    {
-        "key": "ctrl+k ctrl+0",
-        "when": "!inQuickOpen",
-        "command": "editor.unfoldAll",
-    },
-    {
         "key": "ctrl+k ctrl+b",
         "when": "!inQuickOpen",
         "command": "workbench.action.openGlobalKeybindings",
@@ -3874,196 +4090,6 @@ command groups
         "key": "ctrl+k b",
         "when": "!inQuickOpen",
         "command": "workbench.action.openGlobalKeybindingsFile"
-    },
-    {
-        "key": "ctrl+k ctrl+z",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.openSettings",
-    },
-    {
-        "key": "ctrl+i ctrl+k",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.openSettings",
-    },
-    {
-        "key": "ctrl+k ctrl+t",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.selectTheme",
-    },
-    {
-        "key": "ctrl+k t",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.toggleLightDarkThemes",
-    },
-    {
-        "key": "ctrl+w z",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.openWorkspaceSettingsFile",
-    },
-    {
-        "key": "ctrl+k z",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.openSettingsJson",
-    },
-    {
-        "key": "ctrl+a 1",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.editorLayoutSingle",
-    },
-    {
-        "key": "ctrl+a 2",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.editorLayoutTwoColumns",
-    },
-    {
-        "key": "ctrl+a 3",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.editorLayoutTwoRowsRight",
-    },
-    {
-        "key": "ctrl+a 4",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.editorLayoutTwoByTwoGrid",
-    },
-    {
-        "key": "ctrl+a 5",
-        "when": "!inQuickOpen",
-        "command": "layoutEditorGroups",
-        "args": {
-            "orientation": 0,
-            "groups": [
-                {
-                    "size": 1,
-                    "groups": [
-                        {},
-                        {}
-                    ]
-                },
-                {
-                    "size": 1,
-                    "groups": [
-                        {},
-                        {},
-                        {}
-                    ]
-                },
-            ]
-        }
-    },
-    {
-        "key": "ctrl+a 6",
-        "when": "!inQuickOpen",
-        "command": "layoutEditorGroups",
-        "args": {
-            "orientation": 0,
-            "groups": [
-                {
-                    "size": 1,
-                    "groups": [
-                        {},
-                        {},
-                        {}
-                    ]
-                },
-                {
-                    "size": 1,
-                    "groups": [
-                        {},
-                        {},
-                        {}
-                    ]
-                },
-            ]
-        }
-    },
-    {
-        "key": "ctrl+a 7",
-        "when": "!inQuickOpen",
-        "command": "layoutEditorGroups",
-        "args": {
-            "orientation": 0,
-            "groups": [
-                {
-                    "size": 1,
-                    "groups": [
-                        {},
-                        {},
-                        {}
-                    ]
-                },
-                {
-                    "size": 1,
-                    "groups": [
-                        {},
-                        {},
-                        {},
-                        {}
-                    ]
-                },
-            ]
-        }
-    },
-    {
-        "key": "ctrl+a 8",
-        "when": "!inQuickOpen",
-        "command": "layoutEditorGroups",
-        "args": {
-            "orientation": 0,
-            "groups": [
-                {
-                    "size": 1,
-                    "groups": [
-                        {},
-                        {},
-                        {},
-                        {}
-                    ]
-                },
-                {
-                    "size": 1,
-                    "groups": [
-                        {},
-                        {},
-                        {},
-                        {}
-                    ]
-                },
-            ]
-        }
-    },
-    {
-        "key": "ctrl+a 9",
-        "when": "!inQuickOpen",
-        "command": "layoutEditorGroups",
-        "args": {
-            "orientation": 0,
-            "groups": [
-                {
-                    "size": 1,
-                    "groups": [
-                        {},
-                        {},
-                        {}
-                    ]
-                },
-                {
-                    "size": 1,
-                    "groups": [
-                        {},
-                        {},
-                        {}
-                    ]
-                },
-                {
-                    "size": 1,
-                    "groups": [
-                        {},
-                        {},
-                        {}
-                    ]
-                }
-            ]
-        }
     },
     {
         "key": "ctrl+/",
@@ -4079,27 +4105,5 @@ command groups
         "key": "shift+alt+/",
         "when": "!inQuickOpen",
         "command": "metaGo.addCursorSmart"
-    },
-    {
-        "key": "ctrl+w",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Workspaces "
-    },
-    {
-        "key": "ctrl+a",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">View Editor Group "
-    },
-    {
-        "key": "alt+j",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpenSelectNext",
-    },
-    {
-        "key": "alt+k",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpenSelectPrevious",
     },
 ]
