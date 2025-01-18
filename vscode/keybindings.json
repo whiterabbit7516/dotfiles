@@ -2698,7 +2698,7 @@ command groups
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+l o",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "github.copilot.toggleCopilot"
     },
     {
