@@ -105,6 +105,7 @@ function prompt {
   $username = $ENV:USER ?? $(whoami);
   $hostname = $ENV:HOST ?? $(hostname);
   $gitbranch = get-gitbranch ?? "????";
+  if ($gitbranch -eq $null) { $gitbranch = "????"; }
   $prompt = "$username | $hostname | $gitbranch | $path`n■ ■ ■ ■ ";
   return $prompt;
 }
