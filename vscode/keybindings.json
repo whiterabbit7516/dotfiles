@@ -75,6 +75,7 @@ command groups
     cancel                          x    t4680
     extensions                      x    t5157
     terminal                        y    t8233
+    clear                           y    t2159
     settings                        z    t8662
     profiles                        z    t6992
     zoom                            z    t2167
@@ -381,6 +382,9 @@ command groups
         "key": "insert",
         "command": "-editor.action.toggleOvertypeInsertMode"
     },
+    ///////////////////////////////////////////////////////////////
+    // clear                           y    t2159
+    ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
     // terminal t8233
     ///////////////////////////////////////////////////////////////
@@ -2760,7 +2764,7 @@ command groups
         "command": "bookmarksExplorer.focus"
     },
     {
-        "key": "ctrl+m ctrl+w",
+        "key": "ctrl+m ctrl+y",
         "when": "!inQuickOpen",
         "command": "bookmarks.clearFromAllFiles"
     },
