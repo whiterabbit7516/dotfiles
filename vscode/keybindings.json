@@ -2,7 +2,9 @@
 command groups
     unbinds                         -    t1113
     dump                                 t0377
-    navigation                      -    t3508
+    navigation - forward/back       -    t3508
+    navigation - up/down/left/right -    t2509
+    navigation - next/previous      -    t1255
     scrolling                       -    t7776
     suggestions                     -    t3420
     layout / editor groups          a    t4355
@@ -43,7 +45,6 @@ command groups
     notifications                   n    t6821
     auxiliary sidebar               n    t9392
     new                             n    t1619
-    next                            n    t1390
     output                          o    t2786
     toggle                          o    t3584
     cycle                           o    t6078
@@ -1233,103 +1234,8 @@ command groups
         "command": "list.scrollUp",
     },
     ///////////////////////////////////////////////////////////////
-    // navigation                      -    t3508
+    // navigation - forward/back       -    t3508
     ///////////////////////////////////////////////////////////////
-    {
-        "key": "ctrl+]",
-        "when": "editorFocus || openEditorsFocus",
-        "command": "workbench.action.nextEditorInGroup",
-    },
-    {
-        "key": "ctrl+[",
-        "when": "editorFocus || openEditorsFocus",
-        "command": "workbench.action.previousEditorInGroup",
-    },
-    {
-        "key": "ctrl+shift+[",
-        "when": "editorFocus || openEditorsFocus",
-        "command": "workbench.action.moveEditorLeftInGroup",
-    },
-    {
-        "key": "ctrl+shift+]",
-        "when": "editorFocus || openEditorsFocus",
-        "command": "workbench.action.moveEditorRightInGroup",
-    },
-    {
-        "key": "ctrl+[",
-        "when": "panelFocus",
-        "command": "workbench.action.previousPanelView",
-    },
-    {
-        "key": "ctrl+[",
-        "when": "sideBarFocus",
-        "command": "workbench.action.previousSideBarView",
-    },
-    {
-        "key": "ctrl+]",
-        "when": "panelFocus",
-        "command": "workbench.action.nextPanelView",
-    },
-    {
-        "key": "ctrl+]",
-        "when": "sideBarFocus",
-        "command": "workbench.action.nextSideBarView",
-    },
-    {
-        "key": "alt+j",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpenSelectNext",
-    },
-    {
-        "key": "alt+k",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpenSelectPrevious",
-    },
-    {
-        "key": "alt+l",
-        "when": "inQuickOpen",
-        "command": "workbench.action.acceptSelectedQuickOpenItem",
-    },
-    {
-        "key": "alt+l",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.navigateRight"
-    },
-    {
-        "key": "alt+l",
-        "when": "listFocus && !inputFocus && !breadcrumbsActive",
-        "command": "list.select",
-    },
-    {
-        "key": "alt+h",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.navigateLeft"
-    },
-    {
-        "key": "alt+h",
-        "when": "listFocus && !inputFocus && !breadcrumbsActive",
-        "command": "list.collapse",
-    },
-    {
-        "key": "alt+j",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.navigateDown"
-    },
-    {
-        "key": "alt+j",
-        "when": "listFocus && !inputFocus",
-        "command": "list.focusDown",
-    },
-    {
-        "key": "alt+k",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.navigateUp"
-    },
-    {
-        "key": "alt+k",
-        "when": "listFocus && !inputFocus",
-        "command": "list.focusUp",
-    },
     {
         "key": "ctrl+,",
         "when": "editorFocus",
@@ -1359,6 +1265,98 @@ command groups
         "key": "alt+right",
         "when": "editorFocus",
         "command": "workbench.action.navigateForward",
+    },
+    ///////////////////////////////////////////////////////////////
+    // navigation - up/down/left/right -    t2509
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "alt+j",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.navigateDown"
+    },
+    {
+        "key": "alt+k",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "alt+h",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "alt+l",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "alt+j",
+        "when": "listFocus && !inputFocus",
+        "command": "list.focusDown",
+    },
+    {
+        "key": "alt+k",
+        "when": "listFocus && !inputFocus",
+        "command": "list.focusUp",
+    },
+    {
+        "key": "alt+h",
+        "when": "listFocus && !inputFocus && !breadcrumbsActive",
+        "command": "list.collapse",
+    },
+    {
+        "key": "alt+l",
+        "when": "listFocus && !inputFocus && !breadcrumbsActive",
+        "command": "list.select",
+    },
+    {
+        "key": "alt+j",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpenSelectNext",
+    },
+    {
+        "key": "alt+k",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpenSelectPrevious",
+    },
+    {
+        "key": "alt+l",
+        "when": "inQuickOpen",
+        "command": "workbench.action.acceptSelectedQuickOpenItem",
+    },
+    ///////////////////////////////////////////////////////////////
+    // navigation - next/previous      -    t1255
+    ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+]",
+        "when": "panelFocus",
+        "command": "workbench.action.nextPanelView",
+    },
+    {
+        "key": "ctrl+[",
+        "when": "panelFocus",
+        "command": "workbench.action.previousPanelView",
+    },
+
+    {
+        "key": "ctrl+]",
+        "when": "sideBarFocus",
+        "command": "workbench.action.nextSideBarView",
+    },
+    {
+        "key": "ctrl+[",
+        "when": "sideBarFocus",
+        "command": "workbench.action.previousSideBarView",
+    },
+    {
+        "key": "ctrl+]",
+        "when": "editorFocus || openEditorsFocus",
+        "command": "workbench.action.nextEditorInGroup",
+    },
+    {
+        "key": "ctrl+[",
+        "when": "editorFocus || openEditorsFocus",
+        "command": "workbench.action.previousEditorInGroup",
     },
     ///////////////////////////////////////////////////////////////
     // debug                           d    t3216
@@ -1792,6 +1790,16 @@ command groups
     ///////////////////////////////////////////////////////////////
     // layout / editor groups          a    t4355
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+shift+[",
+        "when": "editorFocus || openEditorsFocus",
+        "command": "workbench.action.moveEditorLeftInGroup",
+    },
+    {
+        "key": "ctrl+shift+]",
+        "when": "editorFocus || openEditorsFocus",
+        "command": "workbench.action.moveEditorRightInGroup",
+    },
     {
         "key": "ctrl+a ctrl+o",
         "when": "!inQuickOpen",
@@ -3703,18 +3711,6 @@ command groups
         "when": "inQuickOpen",
         "command": "workbench.action.openView",
     },
-    ///////////////////////////////////////////////////////////////
-    // next                            n    t1390
-    ///////////////////////////////////////////////////////////////
-    {
-        "key": "ctrl+shift+n",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Next "
-    },
-    ///////////////////////////////////////////////////////////////
-    // previous                        p    t8477
-    ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
     // insert                          i    t8063
     ///////////////////////////////////////////////////////////////
