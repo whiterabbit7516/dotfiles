@@ -930,6 +930,14 @@ command groups
         }
     },
     {
+        "key": "ctrl+l",
+        "when": "terminalFocus",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\u000c"
+        }
+    },
+    {
         "key": "ctrl+x",
         "when": "terminalFocus",
         "command": "workbench.action.terminal.sendSequence",
