@@ -21,7 +21,7 @@ command groups
     file explorer                   f    t4428
     find                            f    t4038
     symbols                         g    t4807
-    goto                            g    t2985
+    jump                            g    t2985
     outline                         g    t6000
     help                            h    t3118
     history                         h    t5797
@@ -900,16 +900,6 @@ command groups
         "when": "editorTextFocus",
         "command": "editor.action.insertCursorAbove",
     },
-    {
-        "key": "ctrl+/",
-        "when": "editorTextFocus",
-        "command": "metaGo.gotoSmart"
-    },
-    {
-        "key": "ctrl+shift+/",
-        "when": "editorTextFocus",
-        "command": "metaGo.selectSmart",
-    },
     ///////////////////////////////////////////////////////////////
     // sidebar                         b    t5715
     ///////////////////////////////////////////////////////////////
@@ -1481,9 +1471,19 @@ command groups
         "command": "editor.action.nextMatchFindAction",
     },
     {
+        "key": "ctrl+alt+p",
+        "when": "editorFocus",
+        "command": "editor.action.previousMatchFindAction",
+    },
+    {
         "key": "ctrl+alt+n",
         "when": "editorFocus && findInputFocussed",
         "command": "editor.action.nextMatchFindAction",
+    },
+    {
+        "key": "ctrl+alt+p",
+        "when": "editorFocus && findInputFocussed",
+        "command": "editor.action.previousMatchFindAction",
     },
     {
         "key": "ctrl+alt+n",
@@ -1491,9 +1491,19 @@ command groups
         "command": "workbench.action.terminal.findNext",
     },
     {
+        "key": "ctrl+alt+p",
+        "when": "terminalFindWidgetFocused",
+        "command": "workbench.action.terminal.findPrevious",
+    },
+    {
         "key": "ctrl+alt+n",
         "when": "terminalFocus",
         "command": "workbench.action.terminal.findNext",
+    },
+    {
+        "key": "ctrl+alt+p",
+        "when": "terminalFocus",
+        "command": "workbench.action.terminal.findPrevious",
     },
     {
         "key": "ctrl+alt+n",
@@ -1502,23 +1512,8 @@ command groups
     },
     {
         "key": "ctrl+alt+p",
-        "when": "editorFocus",
-        "command": "editor.action.previousMatchFindAction",
-    },
-    {
-        "key": "ctrl+alt+p",
-        "when": "editorFocus && findInputFocussed",
-        "command": "editor.action.previousMatchFindAction",
-    },
-    {
-        "key": "ctrl+alt+p",
-        "when": "terminalFindWidgetFocused",
-        "command": "workbench.action.terminal.findPrevious",
-    },
-    {
-        "key": "ctrl+alt+p",
-        "when": "terminalFocus",
-        "command": "workbench.action.terminal.findPrevious",
+        "when": "webviewFindWidgetFocused && !editorFocus && activeEditor == 'WebviewEditor'",
+        "command": "editor.action.webvieweditor.findPext",
     },
     {
         "key": "ctrl+f",
@@ -1530,11 +1525,6 @@ command groups
         "key": "ctrl+f ctrl+f",
         "when": "editorFocus",
         "command": "actions.find",
-    },
-    {
-        "key": "ctrl+f s",
-        "when": "editorFocus",
-        "command": "toggleFindInSelection",
     },
     {
         "key": "ctrl+f ctrl+s",
@@ -1586,8 +1576,18 @@ command groups
         "command": "editor.action.peekTypeDefinition"
     },
     ///////////////////////////////////////////////////////////////
-    // goto                            g    t2985
+    // jump                            g    t2985
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+/",
+        "when": "editorTextFocus",
+        "command": "metaGo.gotoSmart"
+    },
+    {
+        "key": "ctrl+shift+/",
+        "when": "editorTextFocus",
+        "command": "metaGo.selectSmart",
+    },
     {
         "key": "ctrl+g ctrl+o",
         "when": "editorTextFocus",
@@ -1600,17 +1600,12 @@ command groups
         "args": ">Go To "
     },
     {
-        "key": "ctrl+g ctrl+e",
-        "when": "editorTextFocus",
-        "command": "workbench.action.gotoSymbol",
-    },
-    {
         "key": "ctrl+g ctrl+g",
         "when": "editorFocus",
         "command": "workbench.action.gotoSymbol"
     },
     {
-        "key": "ctrl+g ctrl+s",
+        "key": "ctrl+g g",
         "when": "editorFocus",
         "command": "workbench.action.showAllSymbols"
     },
@@ -2433,6 +2428,11 @@ command groups
     ///////////////////////////////////////////////////////////////
     // search                          s    t4141
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+s ctrl+y",
+        "when": "!inQuickOpen",
+        "command": "search.action.clearHistory"
+    },
     {
         "key": "ctrl+s ctrl+n",
         "when": "hasSearchResult || inSearchEditor",
@@ -3539,18 +3539,13 @@ command groups
     },
     {
         "key": "ctrl+shift+y",
-        "when": "!inQuickOpen && !terminalFocus",
-        "command": "workbench.action.terminal.focus",
+        "when": "editorFocus && !inQuickOpen",
+        "command": "openInTerminal"
     },
     {
         "key": "ctrl+shift+s",
         "when": "terminalFocus",
         "command": "workbench.action.terminal.split",
-    },
-    {
-        "key": "ctrl+shift+i",
-        "when": "explorerResourceIsFolder",
-        "command": "openInTerminal",
     },
     {
         "key": "ctrl+alt+y",
@@ -3971,6 +3966,27 @@ command groups
     ///////////////////////////////////////////////////////////////
     // clear                           y    t2159
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+shift+y",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Clear "
+    },
+    {
+        "key": "ctrl+y ctrl+h",
+        "when": "editorFocus",
+        "command": "workbench.action.clearEditorHistory"
+    },
+    {
+        "key": "ctrl+y ctrl+b",
+        "when": "editorFocus",
+        "command": "workbench.action.clearCommandHistory"
+    },
+    {
+        "key": "ctrl+y ctrl+o",
+        "when": "editorFocus",
+        "command": "workbench.output.action.clearOutput"
+    },
     ///////////////////////////////////////////////////////////////
     // settings                        z    t8662
     ///////////////////////////////////////////////////////////////
