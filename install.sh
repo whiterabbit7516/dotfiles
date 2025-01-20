@@ -13,7 +13,6 @@ touch ~/.local/dotfiles/powershell/profile.ps1
 ##########################################
 # vim
 ##########################################
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ln -fsv $SCRIPTROOT/vim/.vimrc ~/.vimrc
 ##########################################
 # tmux
