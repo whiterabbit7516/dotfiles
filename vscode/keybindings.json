@@ -38,7 +38,6 @@ command groups
     marks / bookmarks               m    t0604
     minimap                         m    t1725
     macros                          m    t7096
-    move                            m    t9910
     tmux                            m    t7299
     vim                             m    t0286
     notifications                   n    t6821
@@ -53,6 +52,7 @@ command groups
     logs                            q    t4752
     quit                            q    t1951
     remote - general                r    t2900
+    
     references                      r    t2275
     reload                          r    t2391
     refresh                         r    t2581
@@ -87,6 +87,34 @@ command groups
     ///////////////////////////////////////////////////////////////
     // unbinds                         -   t1113
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+k ctrl+1",
+        "command": "-editor.foldLevel1",
+    },
+    {
+        "key": "ctrl+k ctrl+2",
+        "command": "-editor.foldLevel2",
+    },
+    {
+        "key": "ctrl+k ctrl+3",
+        "command": "-editor.foldLevel3",
+    },
+    {
+        "key": "ctrl+k ctrl+4",
+        "command": "-editor.foldLevel4",
+    },
+    {
+        "key": "ctrl+k ctrl+5",
+        "command": "-editor.foldLevel5",
+    },
+    {
+        "key": "ctrl+k ctrl+6",
+        "command": "-editor.foldLevel6",
+    },
+    {
+        "key": "ctrl+k ctrl+7",
+        "command": "-editor.foldLevel7",
+    },
     {
         "key": "ctrl+q",
         "command": "-workbench.action.quickOpenView"
@@ -1324,16 +1352,6 @@ command groups
         "command": "editor.action.marker.prev",
     },
     {
-        "key": "ctrl+alt+h",
-        "when": "editorFocus && !editorReadonly && !inDebugMode",
-        "command": "editor.action.outdentLines",
-    },
-    {
-        "key": "ctrl+alt+l",
-        "when": "editorFocus && !editorReadonly && !inDebugMode",
-        "command": "editor.action.indentLines",
-    },
-    {
         "key": "ctrl+i ctrl+e",
         "when": "workbench.explorer.openEditorsView.active",
         "command": "workbench.files.action.focusOpenEditorsView",
@@ -1887,14 +1905,14 @@ command groups
     // line                            l    t5788
     ///////////////////////////////////////////////////////////////
     {
-        "key": "ctrl+l ctrl+i",
-        "when": "editorTextFocus && !editorReadonly",
-        "command": "editor.action.indentLines",
+        "key": "ctrl+alt+h",
+        "when": "editorFocus && !editorReadonly && !inDebugMode",
+        "command": "editor.action.outdentLines",
     },
     {
-        "key": "ctrl+l ctrl+o",
-        "when": "editorTextFocus && !editorReadonly",
-        "command": "editor.action.outdentLines",
+        "key": "ctrl+alt+l",
+        "when": "editorFocus && !editorReadonly && !inDebugMode",
+        "command": "editor.action.indentLines",
     },
     {
         "key": "ctrl+l ctrl+j",
@@ -1992,9 +2010,6 @@ command groups
         "command": "workbench.action.quickOpen",
         "args": ">Macros "
     },
-    ///////////////////////////////////////////////////////////////
-    // move                            m    t9910
-    ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
     // tmux                            m    t7299
     ///////////////////////////////////////////////////////////////
@@ -2312,6 +2327,12 @@ command groups
     // developer                       q    t2758
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+q",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Developer "
+    },
+    {
         "key": "ctrl+q l",
         "when": "!inQuickOpen",
         "command": "workbench.action.quickOpen",
@@ -2322,12 +2343,6 @@ command groups
         "when": "!inQuickOpen",
         "command": "workbench.action.quickOpen",
         "args": ">Developer: Reload "
-    },
-    {
-        "key": "ctrl+q",
-        "when": "inQuickOpen",
-        "command": "workbench.action.quickOpen",
-        "args": ">Developer "
     },
     ///////////////////////////////////////////////////////////////
     // logs                            q    t4752
