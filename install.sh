@@ -13,7 +13,6 @@ ln -fsv $PWD/vim/.vimrc ~/.vimrc
 ##########################################
 # tmux
 ##########################################
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ln -fsv $PWD/tmux/.tmux.conf ~/.tmux.conf
 mkdir -p ~/.local/dotfiles/tmux
 touch ~/.local/dotfiles/tmux/tmux.conf
