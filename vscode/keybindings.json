@@ -1,7 +1,6 @@
 /*
 command groups
     unbinds                         -    t1113
-    dump                            -    t0377
     navigation - forward/back       -    t3508
     navigation - up/down/left/right -    t2509
     navigation - next/previous      -    t1255
@@ -82,11 +81,20 @@ command groups
     zoom                            z    t2167
     zen                             z    t0176
     undo                            z    t5347
+    dump                            -    t0377
 */
 [
     ///////////////////////////////////////////////////////////////
     // unbinds                         -   t1113
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+shift+m",
+        "command": "-workbench.actions.view.problems",
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpen"
+    },
     {
         "key": "ctrl+shift+y",
         "command": "-workbench.debug.action.toggleRepl",
@@ -388,9 +396,6 @@ command groups
         "command": "-editor.action.toggleOvertypeInsertMode"
     },
     ///////////////////////////////////////////////////////////////
-    // dump                            -    t0377
-    ///////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////
     // navigation - forward/back       -    t3508
     ///////////////////////////////////////////////////////////////
     {
@@ -428,22 +433,22 @@ command groups
     ///////////////////////////////////////////////////////////////
     {
         "key": "alt+j",
-        "when": "!inQuickOpen",
+        "when": "!inQuickOpen && !terminalFocus",
         "command": "workbench.action.navigateDown"
     },
     {
         "key": "alt+k",
-        "when": "!inQuickOpen",
+        "when": "!inQuickOpen && !terminalFocus",
         "command": "workbench.action.navigateUp"
     },
     {
         "key": "alt+h",
-        "when": "!inQuickOpen",
+        "when": "!inQuickOpen && !terminalFocus",
         "command": "workbench.action.navigateLeft"
     },
     {
         "key": "alt+l",
-        "when": "!inQuickOpen",
+        "when": "!inQuickOpen && !terminalFocus",
         "command": "workbench.action.navigateRight"
     },
     {
@@ -586,12 +591,12 @@ command groups
     },
     {
         "key": "ctrl+a ctrl+o",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "workbench.action.toggleEditorGroupLayout"
     },
     {
         "key": "ctrl+a ctrl+r",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "workbench.action.evenEditorWidths"
     },
     {
@@ -611,27 +616,27 @@ command groups
     },
     {
         "key": "ctrl+a 1",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "workbench.action.editorLayoutSingle",
     },
     {
         "key": "ctrl+a 2",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "workbench.action.editorLayoutTwoColumns",
     },
     {
         "key": "ctrl+a 3",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "workbench.action.editorLayoutTwoRowsRight",
     },
     {
         "key": "ctrl+a 4",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "workbench.action.editorLayoutTwoByTwoGrid",
     },
     {
         "key": "ctrl+a 5",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "layoutEditorGroups",
         "args": {
             "orientation": 0,
@@ -656,7 +661,7 @@ command groups
     },
     {
         "key": "ctrl+a 6",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "layoutEditorGroups",
         "args": {
             "orientation": 0,
@@ -682,7 +687,7 @@ command groups
     },
     {
         "key": "ctrl+a 7",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "layoutEditorGroups",
         "args": {
             "orientation": 0,
@@ -709,7 +714,7 @@ command groups
     },
     {
         "key": "ctrl+a 8",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "layoutEditorGroups",
         "args": {
             "orientation": 0,
@@ -737,7 +742,7 @@ command groups
     },
     {
         "key": "ctrl+a 9",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "layoutEditorGroups",
         "args": {
             "orientation": 0,
@@ -782,27 +787,27 @@ command groups
     },
     {
         "key": "ctrl+e s",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "workbench.action.toggleSplitEditorInGroup"
     },
     {
         "key": "ctrl+e o",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "workbench.action.focusOtherSideEditor"
     },
     {
         "key": "ctrl+a p",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "workbench.action.toggleEditorGroupLock"
     },
     {
         "key": "ctrl+w ctrl+a",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "workbench.action.closeEditorsAndGroup"
     },
     {
         "key": "ctrl+a ctrl+x",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "workbench.action.closeEditorsAndGroup"
     },
     {
@@ -842,22 +847,22 @@ command groups
     },
     {
         "key": "ctrl+a h",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "workbench.action.focusLeftGroup"
     },
     {
         "key": "ctrl+a l",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "workbench.action.focusRightGroup"
     },
     {
         "key": "ctrl+a k",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "workbench.action.focusAboveGroup"
     },
     {
         "key": "ctrl+a j",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "workbench.action.focusBelowGroup"
     },
     {
@@ -1038,12 +1043,12 @@ command groups
     },
     {
         "key": "ctrl+i ctrl+c",
-        "when": "!inQuickOpen && breadcrumbsPossible",
+        "when": "editorFocus && breadcrumbsPossible",
         "command": "breadcrumbs.focusAndSelect",
     },
     {
         "key": "ctrl+i c",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "breadcrumbs.toggle"
     },
     ///////////////////////////////////////////////////////////////
@@ -1051,12 +1056,12 @@ command groups
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+d ctrl+n",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "editor.debug.action.goToNextBreakpoint"
     },
     {
         "key": "ctrl+d ctrl+p",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "editor.debug.action.goToPreviousBreakpoint"
     },
     {
@@ -1222,13 +1227,13 @@ command groups
         "key": "ctrl+shift+d",
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpen",
-        "args": ">Dev Contaners "
+        "args": ">Dev Containers "
     },
     {
         "key": "ctrl+r d",
         "when": "!inQuickOpen",
         "command": "workbench.action.quickOpen",
-        "args": ">Dev Containers: ",
+        "args": ">Dev Containers ",
     },
     {
         "key": "ctrl+r z",
@@ -1260,6 +1265,11 @@ command groups
     // editor                          e    t8500
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+e r",
+        "when": "editorFocus",
+        "command": "workbench.action.files.revert"
+    },
+    {
         "key": "ctrl+e ctrl+r",
         "when": "!inQuickOpen",
         "command": "workbench.action.reopenClosedEditor"
@@ -1276,12 +1286,12 @@ command groups
     },
     {
         "key": "ctrl+e ctrl+l",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "workbench.action.editor.changeLanguageMode"
     },
     {
         "key": "ctrl+e ctrl+t",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "workbench.action.reopenWithEditor"
     },
     {
@@ -1332,12 +1342,12 @@ command groups
     },
     {
         "key": "ctrl+e ctrl+e",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "workbench.action.navigateToLastEditLocation",
     },
     {
         "key": "ctrl+e ctrl+o",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "workbench.action.navigateLast",
     },
     {
@@ -1377,12 +1387,12 @@ command groups
     },
     {
         "key": "ctrl+e ctrl+w",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "editor.action.toggleWordWrap"
     },
     {
         "key": "ctrl+e ctrl+s",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "editor.action.toggleRenderWhitespace"
     },
     {
@@ -1392,7 +1402,7 @@ command groups
     },
     {
         "key": "ctrl+e ctrl+i",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "editor.action.toggleOvertypeInsertMode"
     },
     ///////////////////////////////////////////////////////////////
@@ -1400,7 +1410,7 @@ command groups
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i f",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "workbench.files.action.showActiveFileInExplorer"
     },
     {
@@ -1441,7 +1451,7 @@ command groups
     },
     {
         "key": "d",
-        "when": "filesExplorerFocus && !explorerResourceReadonly && !inputFocus",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceMoveableToTrash && !explorerResourceReadonly && !inputFocus",
         "command": "deleteFile",
     },
     {
@@ -1450,8 +1460,8 @@ command groups
         "command": "filesExplorer.findInFolder",
     },
     {
-        "key": "ctrl+f r",
-        "when": "!inQuickOpen",
+        "key": "r",
+        "when": "filesExplorerFocus && !inputFocus",
         "command": "workbench.files.action.refreshFilesExplorer"
     },
     ///////////////////////////////////////////////////////////////
@@ -1579,7 +1589,7 @@ command groups
     },
     {
         "key": "ctrl+g ctrl+a",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "editor.action.revealDeclaration"
     },
     {
@@ -1594,12 +1604,12 @@ command groups
     },
     {
         "key": "ctrl+g a",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "editor.action.peekDeclaration"
     },
     {
         "key": "ctrl+g t",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "editor.action.peekTypeDefinition"
     },
     ///////////////////////////////////////////////////////////////
@@ -1618,12 +1628,12 @@ command groups
     },
     {
         "key": "ctrl+g ctrl+g",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "workbench.action.gotoSymbol"
     },
     {
         "key": "ctrl+g ctrl+s",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "workbench.action.showAllSymbols"
     },
     {
@@ -1633,12 +1643,12 @@ command groups
     },
     {
         "key": "ctrl+g ctrl+t",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "editor.action.goToTypeDefinition"
     },
     {
         "key": "ctrl+g ctrl+l",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "workbench.action.gotoLine"
     },
     {
@@ -1753,11 +1763,6 @@ command groups
         "command": "workbench.action.focusPanel",
     },
     {
-        "key": "ctrl+9",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.focusPanel",
-    },
-    {
         "key": "ctrl+j",
         "when": "!inQuickOpen",
         "command": "workbench.action.togglePanel",
@@ -1841,12 +1846,12 @@ command groups
     },
     {
         "key": "ctrl+k ctrl+9",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "editor.foldAll"
     },
     {
         "key": "ctrl+k ctrl+0",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "editor.unfoldAll",
     },
     ///////////////////////////////////////////////////////////////
@@ -1963,12 +1968,12 @@ command groups
     },
     {
         "key": "ctrl+m ctrl+y",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "bookmarks.clearFromAllFiles"
     },
     {
         "key": "ctrl+m ctrl+l",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "bookmarks.toggleLabeled"
     },
     {
@@ -1978,7 +1983,7 @@ command groups
     },
     {
         "key": "ctrl+m ctrl+x",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "bookmarks.clear"
     },
     {
@@ -2007,7 +2012,7 @@ command groups
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i m",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "editor.action.toggleMinimap"
     },
     ///////////////////////////////////////////////////////////////
@@ -2187,26 +2192,6 @@ command groups
         "command": "toggleVim",
     },
     {
-        "key": "ctrl+m ctrl+d",
-        "when": "editorTextFocus && vim.active",
-        "command": "extension.vim_ctrl+d",
-    },
-    {
-        "key": "ctrl+m ctrl+u",
-        "when": "editorTextFocus && vim.active",
-        "command": "extension.vim_ctrl+u",
-    },
-    {
-        "key": "ctrl+m ctrl+e",
-        "when": "editorTextFocus && vim.active",
-        "command": "extension.vim_ctrl+e",
-    },
-    {
-        "key": "ctrl+m ctrl+y",
-        "when": "editorTextFocus && vim.active",
-        "command": "extension.vim_ctrl+y",
-    },
-    {
         "key": "ctrl+m ctrl+v",
         "when": "editorTextFocus && vim.active",
         "command": "extension.vim_ctrl+v",
@@ -2382,7 +2367,7 @@ command groups
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+i ctrl+r",
-        "when": "!inQuickOpen && !terminalFocus",
+        "when": "!inQuickOpen",
         "command": "workbench.view.remote",
     },
     {
@@ -2489,11 +2474,6 @@ command groups
         "key": "ctrl+s ctrl+s",
         "when": "!inQuickOpen",
         "command": "workbench.action.findInFiles",
-    },
-    {
-        "key": "ctrl+s ctrl+g",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.showAllSymbols"
     },
     {
         "key": "ctrl+s ctrl+f",
@@ -2743,16 +2723,6 @@ command groups
         "command": "fileutils.renameFile",
     },
     {
-        "key": "ctrl+t r",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.files.revert"
-    },
-    {
-        "key": "ctrl+e r",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.files.revert"
-    },
-    {
         "key": "ctrl+shift+t",
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpen",
@@ -2816,7 +2786,7 @@ command groups
     },
     {
         "key": "ctrl+shift+v",
-        "when": "!inQuickOpen",
+        "when": "!inQuickOpen && inputFocus",
         "command": "editor.action.clipboardPasteAction",
     },
     {
@@ -4091,7 +4061,7 @@ command groups
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+z ctrl+z",
-        "when": "!inQuickOpen",
+        "when": "editorFocus",
         "command": "undo"
     },
     {
@@ -4099,4 +4069,7 @@ command groups
         "when": "!inQuickOpen",
         "command": "workbench.view.undostack" // non existant
     },
+    ///////////////////////////////////////////////////////////////
+    // dump                            -    t0377
+    ///////////////////////////////////////////////////////////////
 ]
