@@ -16,7 +16,7 @@ command groups
     crumbs                          c    t4616
     debug                           d    t3216
     remote - dev containers         d    t6291
-    remove                          d    t3636
+    delete                          d    t3636
     editor                          e    t8500
     file explorer                   f    t4428
     find                            f    t4038
@@ -87,6 +87,10 @@ command groups
     ///////////////////////////////////////////////////////////////
     // unbinds                         -   t1113
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+q",
+        "command": "-workbench.action.quickOpenView"
+    },
     {
         "key": "ctrl+shift+m",
         "command": "-workbench.actions.view.problems",
@@ -499,7 +503,6 @@ command groups
         "when": "panelFocus",
         "command": "workbench.action.previousPanelView",
     },
-
     {
         "key": "ctrl+]",
         "when": "sideBarFocus",
@@ -512,26 +515,26 @@ command groups
     },
     {
         "key": "ctrl+]",
-        "when": "editorFocus || openEditorsFocus",
+        "when": "(editorFocus || openEditorsFocus) && !panelFocus",
         "command": "workbench.action.nextEditorInGroup",
     },
     {
         "key": "ctrl+[",
-        "when": "editorFocus || openEditorsFocus",
+        "when": "(editorFocus || openEditorsFocus) && !panelFocus",
         "command": "workbench.action.previousEditorInGroup",
     },
     ///////////////////////////////////////////////////////////////
     // scrolling                       -    t7776
     ///////////////////////////////////////////////////////////////
     {
-        "key": "ctrl+alt+y",
-        "when": "textInputFocus",
-        "command": "scrollLineUp",
-    },
-    {
         "key": "ctrl+alt+e",
         "when": "textInputFocus",
         "command": "scrollLineDown",
+    },
+    {
+        "key": "ctrl+alt+y",
+        "when": "textInputFocus",
+        "command": "scrollLineUp",
     },
     {
         "key": "ctrl+alt+d",
@@ -581,12 +584,12 @@ command groups
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+shift+[",
-        "when": "editorFocus || openEditorsFocus",
+        "when": "(editorFocus || openEditorsFocus) && !panelFocus",
         "command": "workbench.action.moveEditorLeftInGroup",
     },
     {
         "key": "ctrl+shift+]",
-        "when": "editorFocus || openEditorsFocus",
+        "when": "(editorFocus || openEditorsFocus) && !panelFocus",
         "command": "workbench.action.moveEditorRightInGroup",
     },
     {
@@ -778,7 +781,7 @@ command groups
         "key": "ctrl+a",
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpen",
-        "args": ">View Editor Group "
+        "args": ">Layout "
     },
     {
         "key": "alt+a",
@@ -786,24 +789,9 @@ command groups
         "command": "workbench.action.customizeLayout",
     },
     {
-        "key": "ctrl+e s",
-        "when": "editorFocus",
-        "command": "workbench.action.toggleSplitEditorInGroup"
-    },
-    {
-        "key": "ctrl+e o",
-        "when": "editorFocus",
-        "command": "workbench.action.focusOtherSideEditor"
-    },
-    {
         "key": "ctrl+a p",
         "when": "editorFocus",
         "command": "workbench.action.toggleEditorGroupLock"
-    },
-    {
-        "key": "ctrl+w ctrl+a",
-        "when": "editorFocus",
-        "command": "workbench.action.closeEditorsAndGroup"
     },
     {
         "key": "ctrl+a ctrl+x",
@@ -821,6 +809,16 @@ command groups
         "command": "workbench.action.toggleMaximizeEditorGroup",
     },
     {
+        "key": "ctrl+a ctrl+j",
+        "when": "editorFocus",
+        "command": "workbench.action.moveEditorToBelowGroup",
+    },
+    {
+        "key": "ctrl+a ctrl+k",
+        "when": "editorFocus",
+        "command": "workbench.action.moveEditorToAboveGroup",
+    },
+    {
         "key": "ctrl+a ctrl+h",
         "when": "editorFocus",
         "command": "workbench.action.moveEditorToLeftGroup",
@@ -836,14 +834,14 @@ command groups
         "command": "workbench.action.splitEditor",
     },
     {
-        "key": "ctrl+a ctrl+j",
+        "key": "ctrl+a j",
         "when": "editorFocus",
-        "command": "workbench.action.moveEditorToBelowGroup",
+        "command": "workbench.action.focusBelowGroup"
     },
     {
-        "key": "ctrl+a ctrl+k",
+        "key": "ctrl+a k",
         "when": "editorFocus",
-        "command": "workbench.action.moveEditorToAboveGroup",
+        "command": "workbench.action.focusAboveGroup"
     },
     {
         "key": "ctrl+a h",
@@ -854,16 +852,6 @@ command groups
         "key": "ctrl+a l",
         "when": "editorFocus",
         "command": "workbench.action.focusRightGroup"
-    },
-    {
-        "key": "ctrl+a k",
-        "when": "editorFocus",
-        "command": "workbench.action.focusAboveGroup"
-    },
-    {
-        "key": "ctrl+a j",
-        "when": "editorFocus",
-        "command": "workbench.action.focusBelowGroup"
     },
     {
         "key": "ctrl+i ctrl+h",
@@ -877,16 +865,6 @@ command groups
     },
     {
         "key": "ctrl+a shift+o",
-        "when": "editorFocus",
-        "command": "workbench.action.focusPreviousGroup",
-    },
-    {
-        "key": "ctrl+o",
-        "when": "editorFocus",
-        "command": "workbench.action.focusNextGroup",
-    },
-    {
-        "key": "ctrl+shift+o",
         "when": "editorFocus",
         "command": "workbench.action.focusPreviousGroup",
     },
@@ -939,16 +917,6 @@ command groups
         "key": "ctrl+b",
         "when": "!inQuickOpen",
         "command": "workbench.action.toggleSidebarVisibility"
-    },
-    {
-        "key": "ctrl+a ctrl+h",
-        "when": "sideBarFocus",
-        "command": "workbench.action.toggleSidebarPosition",
-    },
-    {
-        "key": "ctrl+a ctrl+l",
-        "when": "sideBarFocus",
-        "command": "workbench.action.toggleSidebarPosition",
     },
     {
         "key": "ctrl+i ctrl+b",
@@ -1126,9 +1094,9 @@ command groups
         "command": "workbench.action.debug.stepOver",
     },
     {
-        "key": "ctrl+alt+l",
-        "when": "debugState != 'inactive'",
-        "command": "workbench.action.debug.stepInto",
+        "key": "ctrl+alt+k",
+        "when": "debugState == 'stopped'",
+        "command": "workbench.action.debug.stepBack",
     },
     {
         "key": "ctrl+alt+h",
@@ -1136,9 +1104,9 @@ command groups
         "command": "workbench.action.debug.stepOut",
     },
     {
-        "key": "ctrl+alt+k",
-        "when": "debugState == 'stopped'",
-        "command": "workbench.action.debug.stepBack",
+        "key": "ctrl+alt+l",
+        "when": "debugState != 'inactive'",
+        "command": "workbench.action.debug.stepInto",
     },
     {
         "key": "ctrl+d c",
@@ -1259,11 +1227,21 @@ command groups
         "args": ">Dev Containers: Log "
     },
     ///////////////////////////////////////////////////////////////
-    // remove                          d   t3636
+    // delete                          d   t3636
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
     // editor                          e    t8500
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+e s",
+        "when": "editorFocus",
+        "command": "workbench.action.toggleSplitEditorInGroup"
+    },
+    {
+        "key": "ctrl+e o",
+        "when": "editorFocus",
+        "command": "workbench.action.focusOtherSideEditor"
+    },
     {
         "key": "ctrl+e r",
         "when": "editorFocus",
@@ -1308,27 +1286,22 @@ command groups
         "key": "ctrl+e",
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpen",
-        "args": ">View Editor "
+        "args": ">Editor "
     },
     {
-        "key": "ctrl+g ctrl+h",
+        "key": "ctrl+e h",
         "when": "editorTextFocus",
         "command": "editor.action.showHover",
-    },
-    {
-        "key": "ctrl+g ctrl+o",
-        "when": "editorTextFocus",
-        "command": "editor.action.jumpToBracket",
-    },
-    {
-        "key": "ctrl+alt+k",
-        "when": "editorTextFocus && !editorReadonly && !inDebugMode",
-        "command": "editor.action.moveLinesUpAction",
     },
     {
         "key": "ctrl+alt+j",
         "when": "editorTextFocus && !editorReadonly && !inDebugMode",
         "command": "editor.action.moveLinesDownAction",
+    },
+    {
+        "key": "ctrl+alt+k",
+        "when": "editorTextFocus && !editorReadonly && !inDebugMode",
+        "command": "editor.action.moveLinesUpAction",
     },
     {
         "key": "ctrl+shift+alt+j",
@@ -1386,6 +1359,11 @@ command groups
         "command": "editor.action.sourceAction",
     },
     {
+        "key": "ctrl+.",
+        "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly",
+        "command": "editor.action.quickFix",
+    },
+    {
         "key": "ctrl+e ctrl+w",
         "when": "editorFocus",
         "command": "editor.action.toggleWordWrap"
@@ -1394,11 +1372,6 @@ command groups
         "key": "ctrl+e ctrl+s",
         "when": "editorFocus",
         "command": "editor.action.toggleRenderWhitespace"
-    },
-    {
-        "key": "ctrl+.",
-        "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly",
-        "command": "editor.action.quickFix",
     },
     {
         "key": "ctrl+e ctrl+i",
@@ -1615,6 +1588,11 @@ command groups
     ///////////////////////////////////////////////////////////////
     // goto                            g    t2985
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+g ctrl+o",
+        "when": "editorTextFocus",
+        "command": "editor.action.jumpToBracket",
+    },
     {
         "key": "ctrl+shift+g",
         "when": "inQuickOpen",
@@ -2274,6 +2252,16 @@ command groups
     // cycle                           o    t6078
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+o",
+        "when": "editorFocus",
+        "command": "workbench.action.focusNextGroup",
+    },
+    {
+        "key": "ctrl+shift+o",
+        "when": "editorFocus",
+        "command": "workbench.action.focusPreviousGroup",
+    },
+    {
         "key": "ctrl+tab",
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpenNavigateNext",
@@ -2341,7 +2329,7 @@ command groups
         "args": ">Developer: Reload "
     },
     {
-        "key": "ctrl+shift+q",
+        "key": "ctrl+q",
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpen",
         "args": ">Developer "
@@ -2353,6 +2341,12 @@ command groups
         "key": "alt+q",
         "when": "inQuickOpen",
         "command": "workbench.action.showLogs",
+    },
+    {
+        "key": "ctrl+shift+q",
+        "when": "inQuickOpen",
+        "command": "workbench.action.quickOpen",
+        "args": ">Logs "
     },
     ///////////////////////////////////////////////////////////////
     // quit                            q    t1951
@@ -3121,6 +3115,11 @@ command groups
     ///////////////////////////////////////////////////////////////
     // close                           w   t6648
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+w ctrl+a",
+        "when": "editorFocus",
+        "command": "workbench.action.closeEditorsAndGroup"
+    },
     {
         "key": "ctrl+w ctrl+h",
         "when": "!inQuickOpen",
