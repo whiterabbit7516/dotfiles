@@ -106,7 +106,12 @@ function prompt {
   $hostname = $ENV:HOST ?? $(hostname);
   $gitbranch = get-gitbranch ?? "????";
   if ($gitbranch -eq $null) { $gitbranch = "????"; }
-  $prompt = "$username | $hostname | $gitbranch | $path`n■ ■ ■ ■ ";
+  $promptcontext = "■ $username | $hostname | $gitbranch | $path ■";
+  $promptwidth = $promptcontext.Length;
+  $promptprefix = "■■■▶ ";
+  $promptbordertop = "■" * $promptwidth;
+  $promptborderbottom = "■" + $("-" * ($promptwidth - 2)) + "■";
+  $prompt = $promptbordertop + "`n" + $promptcontext + "`n" + $promptborderbottom + "`n" + $promptprefix;
   return $prompt;
 }
 #########################################
