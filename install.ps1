@@ -8,7 +8,6 @@ new-item -type file ~/.local/dotfiles/powershell/profile.ps1 -force | out-null
 ##########################################
 # vim
 ##########################################
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ln -fsv $PSScriptRoot/vim/.vimrc ~/.vimrc
 ##########################################
 # tmux
