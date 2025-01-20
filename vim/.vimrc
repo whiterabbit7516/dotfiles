@@ -1,22 +1,3 @@
-" Specify a directory for plugins
-" - For Neovim: stdpath('data') . '/plugged'
-" - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.vim/plugged')
-
-" Using a non-master branch
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-
-" fzf
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-nnoremap <C-P> :Files<CR>
-
-Plug 'itchyny/lightline.vim'
-
-" Initialize plugin system
-call plug#end()
-
-
 nnoremap J 8j
 nnoremap K 8k
 nnoremap H 8h
