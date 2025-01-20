@@ -1705,16 +1705,6 @@ command groups
     // panel                           j    t1566
     ///////////////////////////////////////////////////////////////
     {
-        "key": "ctrl+alt+h",
-        "when": "panelFocus",
-        "command": "workbench.action.terminal.resizePaneLeft",
-    },
-    {
-        "key": "ctrl+alt+l",
-        "when": "panelFocus",
-        "command": "workbench.action.terminal.resizePaneRight",
-    },
-    {
         "key": "ctrl+alt+j",
         "when": "panelFocus",
         "command": "workbench.action.terminal.resizePaneDown",
@@ -1725,10 +1715,20 @@ command groups
         "command": "workbench.action.terminal.resizePaneUp",
     },
     {
+        "key": "ctrl+alt+h",
+        "when": "panelFocus",
+        "command": "workbench.action.terminal.resizePaneLeft",
+    },
+    {
+        "key": "ctrl+alt+l",
+        "when": "panelFocus",
+        "command": "workbench.action.terminal.resizePaneRight",
+    },
+    {
         "key": "ctrl+j",
         "when": "inQuickOpen",
         "command": "workbench.action.quickOpen",
-        "args": ">View Panel "
+        "args": ">Panel "
     },
     {
         "key": "ctrl+i ctrl+j",
@@ -1746,19 +1746,14 @@ command groups
         "command": "workbench.action.toggleMaximizedPanel",
     },
     {
-        "key": "ctrl+n",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.toggleAuxiliaryBar",
+        "key": "ctrl+a ctrl+j",
+        "when": "panelFocus",
+        "command": "workbench.action.positionPanelBottom",
     },
     {
         "key": "ctrl+a ctrl+h",
         "when": "panelFocus",
         "command": "workbench.action.positionPanelLeft",
-    },
-    {
-        "key": "ctrl+a ctrl+j",
-        "when": "panelFocus",
-        "command": "workbench.action.positionPanelBottom",
     },
     {
         "key": "ctrl+a ctrl+l",
@@ -2196,6 +2191,11 @@ command groups
     ///////////////////////////////////////////////////////////////
     // auxiliary sidebar               n    t9392
     ///////////////////////////////////////////////////////////////
+    {
+        "key": "ctrl+n",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.toggleAuxiliaryBar",
+    },
     {
         "key": "ctrl+i ctrl+n",
         "when": "!inQuickOpen",
