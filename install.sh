@@ -1,31 +1,36 @@
 ##########################################
+# variables
+##########################################
+SCRIPTPATH=${BASH_SOURCE[0]}
+SCRIPTROOT="$(dirname $SCRIPTPATH)"
+##########################################
 # powershell
 ##########################################
 mkdir -p ~/.config/powershell
-ln -fsv $PWD/powershell/profile.ps1 ~/.config/powershell/profile.ps1
+ln -fsv $SCRIPTROOT/powershell/profile.ps1 ~/.config/powershell/profile.ps1
 mkdir -p ~/.local/dotfiles/powershell
 touch ~/.local/dotfiles/powershell/profile.ps1
 ##########################################
 # vim
 ##########################################
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-ln -fsv $PWD/vim/.vimrc ~/.vimrc
+ln -fsv $SCRIPTROOT/vim/.vimrc ~/.vimrc
 ##########################################
 # tmux
 ##########################################
-ln -fsv $PWD/tmux/.tmux.conf ~/.tmux.conf
+ln -fsv $SCRIPTROOT/tmux/.tmux.conf ~/.tmux.conf
 mkdir -p ~/.local/dotfiles/tmux
 touch ~/.local/dotfiles/tmux/tmux.conf
 ##########################################
 # vscode
 ##########################################
 mkdir -p ~/.config/Code/User
-# ln -fsv $PWD/vscode/settings.json ~/.config/Code/User/settings.json
-# ln -fsv $PWD/vscode/keybindings.json ~/.config/Code/User/keybindings.json
-cp $PWD/vscode/settings.json ~/.config/Code/User/settings.json
-cp $PWD/vscode/keybindings.json ~/.config/Code/User/keybindings.json
+# ln -fsv $SCRIPTROOT/vscode/settings.json ~/.config/Code/User/settings.json
+# ln -fsv $SCRIPTROOT/vscode/keybindings.json ~/.config/Code/User/keybindings.json
+cp $SCRIPTROOT/vscode/settings.json ~/.config/Code/User/settings.json
+cp $SCRIPTROOT/vscode/keybindings.json ~/.config/Code/User/keybindings.json
 ##########################################
 # bash
 ##########################################
-# ln -fsv $PWD/bash/bashrc ~/.bashrc
-# ln -fsv $PWD/bash/bash_profile ~/.bash_profile
+# ln -fsv $SCRIPTROOT/bash/bashrc ~/.bashrc
+# ln -fsv $SCRIPTROOTWD/bash/bash_profile ~/.bash_profile
