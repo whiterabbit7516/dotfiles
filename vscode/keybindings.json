@@ -1244,7 +1244,7 @@ command groups
         "args": ">Dev Containers: Log "
     },
     ///////////////////////////////////////////////////////////////
-    // delete                          d   t3636
+    // delete                          d    t3636
     ///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////
     // editor                          e    t8500
@@ -3115,19 +3115,39 @@ command groups
     // close                           w   t6648
     ///////////////////////////////////////////////////////////////
     {
-        "key": "ctrl+w ctrl+a",
-        "when": "editorFocus",
-        "command": "workbench.action.closeEditorsAndGroup"
+        "key": "w",
+        "when": "openEditorsFocus",
+        "command": "workbench.action.closeActiveEditor"
     },
     {
         "key": "ctrl+w ctrl+h",
-        "when": "editorFocus",
+        "when": "editorFocus || openEditorsFocus ",
         "command": "workbench.action.closeEditorsToTheLeft"
     },
     {
         "key": "ctrl+w ctrl+l",
-        "when": "editorFocus",
+        "when": "editorFocus || openEditorsFocus",
         "command": "workbench.action.closeEditorsToTheRight"
+    },
+    {
+        "key": "ctrl+w ctrl+o || openEditorsFocus",
+        "when": "editorFocus",
+        "command": "workbench.action.closeOtherEditors",
+    },
+    {
+        "key": "ctrl+w ctrl+s",
+        "when": "editorFocus || openEditorsFocus",
+        "command": "workbench.action.closeUnmodifiedEditors"
+    },
+    {
+        "key": "ctrl+w ctrl+e",
+        "when": "editorFocus || openEditorsFocus",
+        "command": "workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+w ctrl+w",
+        "when": "editorFocus || openEditorsFocus",
+        "command": "workbench.action.closeActiveEditor",
     },
     {
         "key": "ctrl+w ctrl+w",
@@ -3135,29 +3155,14 @@ command groups
         "command": "workbench.action.closeGroup",
     },
     {
+        "key": "ctrl+w ctrl+a",
+        "when": "editorFocus",
+        "command": "workbench.action.closeEditorsAndGroup"
+    },
+    {
         "key": "ctrl+w ctrl+w",
         "when": "!editorIsOpen && !multipleEditorGroups",
         "command": "workbench.action.closeWindow",
-    },
-    {
-        "key": "ctrl+w ctrl+o",
-        "when": "editorFocus",
-        "command": "workbench.action.closeOtherEditors",
-    },
-    {
-        "key": "ctrl+w ctrl+s",
-        "when": "editorFocus",
-        "command": "workbench.action.closeUnmodifiedEditors"
-    },
-    {
-        "key": "ctrl+w ctrl+e",
-        "when": "editorFocus",
-        "command": "workbench.action.closeActiveEditor"
-    },
-    {
-        "key": "ctrl+w ctrl+w",
-        "when": "editorFocus",
-        "command": "workbench.action.closeActiveEditor",
     },
     ///////////////////////////////////////////////////////////////
     // cancel                          x    t4680
