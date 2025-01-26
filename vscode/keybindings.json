@@ -554,12 +554,12 @@ command groups
     },
     {
         "key": "ctrl+]",
-        "when": "(editorFocus || openEditorsFocus) && !panelFocus",
+        "when": "!inQuickOpen && !panelFocus && !sideBarFocus && !terminalFocus",
         "command": "workbench.action.nextEditorInGroup",
     },
     {
         "key": "ctrl+[",
-        "when": "(editorFocus || openEditorsFocus) && !panelFocus",
+        "when": "!inQuickOpen && !panelFocus && !sideBarFocus && !terminalFocus",
         "command": "workbench.action.previousEditorInGroup",
     },
     ///////////////////////////////////////////////////////////////
@@ -623,12 +623,12 @@ command groups
     ///////////////////////////////////////////////////////////////
     {
         "key": "ctrl+shift+[",
-        "when": "(editorFocus || openEditorsFocus) && !panelFocus",
+        "when": "!inQuickOpen && !panelFocus && !sideBarFocus && !terminalFocus",
         "command": "workbench.action.moveEditorLeftInGroup",
     },
     {
         "key": "ctrl+shift+]",
-        "when": "(editorFocus || openEditorsFocus) && !panelFocus",
+        "when": "!inQuickOpen && !panelFocus && !sideBarFocus && !terminalFocus",
         "command": "workbench.action.moveEditorRightInGroup",
     },
     {
@@ -3148,12 +3148,12 @@ command groups
     },
     {
         "key": "ctrl+w ctrl+e",
-        "when": "editorFocus || openEditorsFocus",
+        "when": "!inQuickOpen && !panelFocus && !sideBarFocus && !terminalFocus",
         "command": "workbench.action.closeActiveEditor"
     },
     {
         "key": "ctrl+w ctrl+w",
-        "when": "editorFocus || openEditorsFocus",
+        "when": "!inQuickOpen && !panelFocus && !sideBarFocus && !terminalFocus",
         "command": "workbench.action.closeActiveEditor",
     },
     {
