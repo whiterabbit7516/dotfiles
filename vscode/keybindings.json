@@ -87,6 +87,18 @@ command groups
     // unbinds                         -   t1113
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+f4",
+        "command": "-workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+k u",
+        "command": "-workbench.action.closeUnmodifiedEditors"
+    },
+    {
+        "key": "ctrl+k w",
+        "command": "-workbench.action.closeEditorsInGroup"
+    },
+    {
         "key": "ctrl+k ctrl+1",
         "command": "-editor.foldLevel1",
     },
@@ -819,11 +831,6 @@ command groups
         "key": "ctrl+a p",
         "when": "editorFocus",
         "command": "workbench.action.toggleEditorGroupLock"
-    },
-    {
-        "key": "ctrl+a ctrl+x",
-        "when": "editorFocus",
-        "command": "workbench.action.closeEditorsAndGroup"
     },
     {
         "key": "ctrl+a ctrl+m",
@@ -3130,8 +3137,8 @@ command groups
         "command": "workbench.action.closeEditorsToTheRight"
     },
     {
-        "key": "ctrl+w ctrl+o || openEditorsFocus",
-        "when": "editorFocus",
+        "key": "ctrl+w ctrl+o",
+        "when": "editorFocus || openEditorsFocus",
         "command": "workbench.action.closeOtherEditors",
     },
     {
