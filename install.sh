@@ -2,7 +2,7 @@
 ##########################################
 # variables
 ##########################################
-SCRIPTPATH=${BASH_SOURCE[0]}
+SCRIPTPATH=$(realpath "${BASH_SOURCE[0]}")
 SCRIPTROOT="$(dirname $SCRIPTPATH)"
 ##########################################
 # powershell
