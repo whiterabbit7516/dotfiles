@@ -1,6 +1,8 @@
 {
   "name": "dotfiles-main",
   "image": "ghcr.io/whiterabbit7516/devcontainers/devenv-main-amd64:latest",
+  "workspaceMount": "source=${localWorkspaceFolder}/,target=/workspace/repos/dotfiles-main/,type=bind",
+  "workspaceFolder": "/workspace",
   "runArgs": [
     "--network=host",
     // "--cap-add=NET_RAW",
