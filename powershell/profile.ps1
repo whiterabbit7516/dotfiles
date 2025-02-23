@@ -16,8 +16,9 @@ elseif ($(get-command code-insiders -ErrorAction SilentlyContinue) -ne $null)
 #########################################
 # paths
 #########################################
-$ENV:PATH = "$($ENV:PATH):/root/.cargo/bin"
-$ENV:PATH = "$($ENV:PATH):/root/.krew/bin"
+$ENV:PATH = "$($ENV:PATH):/root/.cargo/bin/"
+$ENV:PATH = "$($ENV:PATH):/root/.krew/bin/"
+$ENV:PATH = "$($ENV:PATH):/root/.nargo/bin/"
 $ENV:PATH = "$($ENV:PATH):/usr/local/go/bin/"
 $ENV:PATH = "$($ENV:PATH):/usr/local/foundry/"
 #########################################
