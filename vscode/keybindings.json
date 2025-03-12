@@ -1716,6 +1716,12 @@ command groups
         "when": "!inQuickOpen",
         "command": "workbench.action.toggleFullScreen"
     },
+    // for single handed full screen
+    {
+        "key": "ctrl+w f",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.toggleFullScreen"
+    },
     ///////////////////////////////////////////////////////////////
     // insert                          i    t8063
     ///////////////////////////////////////////////////////////////
