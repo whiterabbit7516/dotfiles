@@ -1711,12 +1711,7 @@ command groups
         "when": "!inQuickOpen",
         "command": "workbench.action.toggleFullScreen"
     },
-    {
-        "key": "ctrl+w i",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.toggleFullScreen"
-    },
-    // for single handed full screen
+    // for left hand only full screen
     {
         "key": "ctrl+w f",
         "when": "!inQuickOpen",
