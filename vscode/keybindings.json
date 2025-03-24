@@ -2200,11 +2200,6 @@ command groups
         "when": "!inQuickOpen",
         "command": "notifications.toggleList"
     },
-    {
-        "key": "ctrl+w ctrl+n",
-        "when": "!inQuickOpen",
-        "command": "notifications.clearAll"
-    },
     ///////////////////////////////////////////////////////////////
     // auxiliary sidebar               n    t9392
     ///////////////////////////////////////////////////////////////
@@ -3993,6 +3988,16 @@ command groups
         "key": "ctrl+y ctrl+o",
         "when": "editorFocus",
         "command": "workbench.output.action.clearOutput"
+    },
+    {
+        "key": "ctrl+y ctrl+p",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.clearRecentFiles"
+    },
+    {
+        "key": "ctrl+y ctrl+n",
+        "when": "!inQuickOpen",
+        "command": "notifications.clearAll"
     },
     ///////////////////////////////////////////////////////////////
     // settings                        z    t8662
