@@ -87,6 +87,10 @@ command groups
     // unbinds                         -   t1113
     ///////////////////////////////////////////////////////////////
     {
+        "key": "ctrl+numpad0",
+        "command": "-workbench.action.zoomReset"
+    },
+    {
         "key": "ctrl+f4",
         "command": "-workbench.action.closeActiveEditor"
     },
@@ -4051,6 +4055,21 @@ command groups
         "args": ">Zoom "
     },
     {
+        "key": "ctrl+z ctrl+r",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.zoomReset"
+    },
+    {
+        "key": "ctrl+z ctrl+i",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.zoomIn"
+    },
+    {
+        "key": "ctrl+z ctrl+o",
+        "when": "!inQuickOpen",
+        "command": "workbench.action.zoomOut"
+    },
+    {
         "key": "ctrl+shift+=",
         "when": "!inQuickOpen",
         "command": "workbench.action.zoomIn"
@@ -4061,28 +4080,38 @@ command groups
         "command": "workbench.action.zoomOut"
     },
     {
-        "key": "ctrl+z ctrl+i",
-        "when": "!inQuickOpen",
+        "key": "ctrl+z r",
+        "when": "editorFocus",
+        "command": "editor.action.fontZoomReset"
+    },
+    {
+        "key": "ctrl+z i",
+        "when": "editorFocus",
         "command": "editor.action.fontZoomIn"
     },
     {
-        "key": "ctrl+z ctrl+o",
-        "when": "!inQuickOpen",
+        "key": "ctrl+z o",
+        "when": "editorFocus",
         "command": "editor.action.fontZoomOut"
     },
     {
-        "key": "ctrl+z ctrl+r",
-        "when": "!inQuickOpen",
-        "command": "editor.action.fontZoomReset"
+        "key": "ctrl+z r",
+        "when": "terminalFocus",
+        "command": "workbench.action.terminal.fontZoomReset"
+    },
+    {
+        "key": "ctrl+z i",
+        "when": "terminalFocus",
+        "command": "workbench.action.terminal.fontZoomIn"
+    },
+    {
+        "key": "ctrl+z o",
+        "when": "terminalFocus",
+        "command": "workbench.action.terminal.fontZoomOut"
     },
     ///////////////////////////////////////////////////////////////
     // zen                             z    t0176
     ///////////////////////////////////////////////////////////////
-    {
-        "key": "ctrl+z o",
-        "when": "!inQuickOpen",
-        "command": "workbench.action.toggleZenMode"
-    },
     {
         "key": "ctrl+i ctrl+z",
         "when": "!inQuickOpen",
