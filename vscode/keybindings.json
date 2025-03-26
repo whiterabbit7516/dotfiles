@@ -1143,22 +1143,22 @@ command groups
     },
     {
         "key": "ctrl+d x",
-        "when": "inDebugMode",
+        "when": "!inQuickOpen && inDebugMode",
         "command": "workbench.action.debug.stop",
     },
     {
         "key": "ctrl+d s",
-        "when": "debugState == 'running'",
+        "when": "!inQuickOpen && (debugState == 'running')",
         "command": "workbench.action.debug.pause",
     },
     {
         "key": "ctrl+d b",
-        "when": "editorTextFocus",
+        "when": "!inQuickOpen && editorTextFocus",
         "command": "editor.debug.action.toggleBreakpoint",
     },
     {
         "key": "ctrl+d r",
-        "when": "inDebugMode",
+        "when": "!inQuickOpen && inDebugMode",
         "command": "workbench.action.debug.restart",
     },
     {
@@ -1188,7 +1188,7 @@ command groups
     },
     {
         "key": "ctrl+d j",
-        "when": "inDebugMode",
+        "when": "!inQuickOpen && inDebugMode",
         "command": "editor.debug.action.runToCursor",
     },
     {
@@ -1198,12 +1198,12 @@ command groups
     },
     {
         "key": "ctrl+d h",
-        "when": "editorTextFocus && inDebugMode",
+        "when": "!inQuickOpen && editorTextFocus && inDebugMode",
         "command": "editor.debug.action.showDebugHover",
     },
     {
         "key": "ctrl+d k",
-        "when": "inDebugMode",
+        "when": "!inQuickOpen && inDebugMode",
         "command": "debug.jumpToCursor",
     },
     {
