@@ -1297,8 +1297,13 @@ command groups
     },
     {
         "key": "ctrl+e ctrl+t",
-        "when": "editorFocus",
+        "when": "!inQuickOpen && !panelFocus && !sideBarFocus && !terminalFocus",
         "command": "workbench.action.reopenWithEditor"
+    },
+    {
+        "key": "ctrl+e t",
+        "when": "!inQuickOpen && !panelFocus && !sideBarFocus && !terminalFocus",
+        "command": "workbench.action.toggleEditorType"
     },
     {
         "key": "alt+e",
