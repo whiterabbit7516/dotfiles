@@ -4,6 +4,7 @@ command groups
     navigation - forward/back       -    t3508
     navigation - up/down/left/right -    t2509
     navigation - next/previous      -    t1255
+    navigation - lists              -    t8455
     scrolling                       -    t7776
     suggestions                     -    t3420
     layout / editor groups          a    t4355
@@ -500,26 +501,6 @@ command groups
   },
   {
     "key": "alt+j",
-    "when": "listFocus && !inputFocus",
-    "command": "list.focusDown",
-  },
-  {
-    "key": "alt+k",
-    "when": "listFocus && !inputFocus",
-    "command": "list.focusUp",
-  },
-  {
-    "key": "alt+h",
-    "when": "listFocus && !inputFocus && !breadcrumbsActive",
-    "command": "list.collapse",
-  },
-  {
-    "key": "alt+l",
-    "when": "listFocus && !inputFocus && !breadcrumbsActive",
-    "command": "list.select",
-  },
-  {
-    "key": "alt+j",
     "when": "inQuickOpen",
     "command": "workbench.action.quickOpenSelectNext",
   },
@@ -565,6 +546,39 @@ command groups
     "key": "ctrl+[",
     "when": "!inQuickOpen && !panelFocus && !sideBarFocus && !terminalFocus",
     "command": "workbench.action.previousEditorInGroup",
+  },
+  ///////////////////////////////////////////////////////////////
+  // navigation - lists              -    t8455
+  ///////////////////////////////////////////////////////////////
+  {
+    "key": "o",
+    "when": "listFocus && !inputFocus",
+    "command": "list.toggleExpand",
+  },
+  {
+    "key": "[Space]",
+    "when": "listFocus && !inputFocus",
+    "command": "list.toggleExpand",
+  },
+  {
+    "key": "alt+j",
+    "when": "listFocus && !inputFocus",
+    "command": "list.focusDown",
+  },
+  {
+    "key": "alt+k",
+    "when": "listFocus && !inputFocus",
+    "command": "list.focusUp",
+  },
+  {
+    "key": "alt+h",
+    "when": "listFocus && !inputFocus && !breadcrumbsActive",
+    "command": "list.collapse",
+  },
+  {
+    "key": "alt+l",
+    "when": "listFocus && !inputFocus && !breadcrumbsActive",
+    "command": "list.select",
   },
   ///////////////////////////////////////////////////////////////
   // scrolling                       -    t7776
@@ -2274,11 +2288,6 @@ command groups
     "command": "workbench.action.quickOpen",
     "args": ">Toggle "
   },
-  {
-    "key": "shift+alt+o",
-    "when": "listFocus && !inputFocus",
-    "command": "list.toggleSelection",
-  },
   ///////////////////////////////////////////////////////////////
   // cycle                           o    t6078
   ///////////////////////////////////////////////////////////////
@@ -2594,16 +2603,6 @@ command groups
     "command": "workbench.action.terminal.selectToPreviousCommand",
   },
   {
-    "key": "shift+alt+j",
-    "when": "listFocus && listSupportsMultiselect && !inputFocus",
-    "command": "list.expandSelectionDown",
-  },
-  {
-    "key": "shift+alt+k",
-    "when": "listFocus && listSupportsMultiselect && !inputFocus",
-    "command": "list.expandSelectionUp",
-  },
-  {
     "key": "shift+alt+h",
     "when": "editorTextFocus",
     "command": "editor.action.smartSelect.shrink",
@@ -2632,6 +2631,21 @@ command groups
     "key": "ctrl+s ctrl+j",
     "when": "textInputFocus",
     "command": "expandLineSelection",
+  },
+  {
+    "key": "shift+alt+j",
+    "when": "listFocus && listSupportsMultiselect && !inputFocus",
+    "command": "list.expandSelectionDown",
+  },
+  {
+    "key": "shift+alt+k",
+    "when": "listFocus && listSupportsMultiselect && !inputFocus",
+    "command": "list.expandSelectionUp",
+  },
+  {
+    "key": "shift+alt+o",
+    "when": "listFocus && !inputFocus",
+    "command": "list.toggleSelection",
   },
   ///////////////////////////////////////////////////////////////
   // statusbar                       s    t9465
