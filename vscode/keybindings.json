@@ -677,7 +677,7 @@ command groups
   {
     "key": "ctrl+a p",
     "when": "editorFocus",
-    "command": "workbench.action.toggleSeparatePinnedEditorTabs"
+    "command": "workbench.action.toggleEditorGroupLock"
   },
   {
     "key": "ctrl+a 1",
