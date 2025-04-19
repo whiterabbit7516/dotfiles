@@ -675,6 +675,11 @@ command groups
     "command": "workbench.action.unpinEditor",
   },
   {
+    "key": "ctrl+a p",
+    "when": "editorFocus",
+    "command": "workbench.action.toggleSeparatePinnedEditorTabs"
+  },
+  {
     "key": "ctrl+a 1",
     "when": "editorFocus",
     "command": "workbench.action.editorLayoutSingle",
@@ -844,11 +849,6 @@ command groups
     "key": "alt+a",
     "when": "inQuickOpen",
     "command": "workbench.action.customizeLayout",
-  },
-  {
-    "key": "ctrl+a p",
-    "when": "editorFocus",
-    "command": "workbench.action.toggleEditorGroupLock"
   },
   {
     "key": "ctrl+a ctrl+m",
