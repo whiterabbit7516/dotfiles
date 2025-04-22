@@ -3240,6 +3240,11 @@ command groups
     "when": "!editorIsOpen && !multipleEditorGroups",
     "command": "workbench.action.closeWindow",
   },
+  {
+    "key": "ctrl+w ctrl+n",
+    "when": "!inQuickOpen",
+    "command": "notifications.clearAll"
+  },
   ///////////////////////////////////////////////////////////////
   // cancel                          x    t4680
   ///////////////////////////////////////////////////////////////
