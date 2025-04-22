@@ -1907,6 +1907,11 @@ command groups
   // chat / copilot                  l    t7259
   ///////////////////////////////////////////////////////////////
   {
+    "key": "ctrl+l ctrl+x",
+    "when": "inlineChatHasProvider && inlineChatVisible",
+    "command": "inlineChat.close",
+  },
+  {
     "key": "ctrl+l ctrl+i",
     "command": "inlineChat.viewInChat",
     "when": "inChatInput && inlineChatHasProvider && inlineChatVisible"
