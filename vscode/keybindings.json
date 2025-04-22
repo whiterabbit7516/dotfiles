@@ -3210,6 +3210,11 @@ command groups
   ///////////////////////////////////////////////////////////////
   {
     "key": "ctrl+x",
+    "command": "workbench.action.chat.stopListening",
+    "when": "voiceChatInProgress && scopedVoiceChatInProgress == 'editor' || voiceChatInProgress && scopedVoiceChatInProgress == 'inline' || voiceChatInProgress && scopedVoiceChatInProgress == 'quick' || voiceChatInProgress && scopedVoiceChatInProgress == 'view'"
+  },
+  {
+    "key": "ctrl+x",
     "command": "workbench.action.terminal.chat.close",
     "when": "chatIsEnabled && terminalChatFocus && terminalChatVisible || chatIsEnabled && terminalChatVisible && terminalFocus"
   },
