@@ -3507,7 +3507,7 @@ command groups
     "command": "workbench.action.terminal.chat.start",
   },
   {
-    "key": "ctrl+shift+s",
+    "key": "ctrl+shift+i",
     "when": "editorHasSelection && terminalIsOpen",
     "command": "workbench.action.terminal.sendSequence",
     "args": {
@@ -3515,7 +3515,7 @@ command groups
     }
   },
   {
-    "key": "ctrl+y s",
+    "key": "ctrl+y i",
     "when": "editorHasSelection && terminalIsOpen",
     "command": "workbench.action.terminal.sendSequence",
     "args": {
