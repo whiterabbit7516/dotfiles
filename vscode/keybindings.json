@@ -88,6 +88,11 @@ command groups
   // unbinds                         -   t1113
   ///////////////////////////////////////////////////////////////
   {
+    "key": "ctrl+down",
+    "command": "-inlineChat.viewInChat",
+    "when": "inChatInput && inlineChatHasProvider && inlineChatVisible"
+  },
+  {
     "key": "ctrl+shift+i",
     "command": "-workbench.action.chat.openEditSession",
     "when": "chatEditingParticipantRegistered && !chatSetupHidden && view != 'workbench.panel.chat.view.edits'"
@@ -1896,6 +1901,16 @@ command groups
   ///////////////////////////////////////////////////////////////
   // chat / copilot                  l    t7259
   ///////////////////////////////////////////////////////////////
+  {
+    "key": "ctrl+l ctrl+i",
+    "command": "inlineChat.viewInChat",
+    "when": "inChatInput && inlineChatHasProvider && inlineChatVisible"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "inlineChat.acceptChanges",
+    "when": "inlineChatHasProvider && inlineChatVisible"
+  },
   {
     "key": "ctrl+i ctrl+l",
     "when": "!inQuickOpen",
