@@ -88,6 +88,10 @@ command groups
   // unbinds                         -   t1113
   ///////////////////////////////////////////////////////////////
   {
+    "key": "ctrl+0",
+    "command": "-workbench.action.focusSideBar"
+  },
+  {
     "key": "ctrl+down",
     "command": "-inlineChat.viewInChat",
     "when": "inChatInput && inlineChatHasProvider && inlineChatVisible"
@@ -977,6 +981,11 @@ command groups
   },
   {
     "key": "ctrl+i ctrl+b",
+    "when": "!inQuickOpen",
+    "command": "workbench.action.focusSideBar"
+  },
+  {
+    "key": "ctrl+9",
     "when": "!inQuickOpen",
     "command": "workbench.action.focusSideBar"
   },
@@ -2283,6 +2292,11 @@ command groups
   },
   {
     "key": "ctrl+i ctrl+n",
+    "when": "!inQuickOpen",
+    "command": "workbench.action.focusAuxiliaryBar"
+  },
+  {
+    "key": "ctrl+0",
     "when": "!inQuickOpen",
     "command": "workbench.action.focusAuxiliaryBar"
   },
