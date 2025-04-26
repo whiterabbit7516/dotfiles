@@ -1961,6 +1961,11 @@ command groups
     "command": "inlineChat.close",
   },
   {
+    "key": "ctrl+l ctrl+x",
+    "when": "chatIsEnabled && terminalChatFocus && terminalChatVisible || chatIsEnabled && terminalChatVisible && terminalFocus",
+    "command": "workbench.action.terminal.chat.close",
+  },
+  {
     "key": "ctrl+l ctrl+i",
     "command": "inlineChat.viewInChat",
     "when": "inChatInput && inlineChatHasProvider && inlineChatVisible"
@@ -1993,6 +1998,11 @@ command groups
   },
   {
     "key": "ctrl+shift+l",
+    "when": "terminalChatAgentRegistered && terminalFocusInAny && terminalHasBeenCreated || terminalChatAgentRegistered && terminalFocusInAny && terminalProcessSupported",
+    "command": "workbench.action.terminal.chat.start",
+  },
+  {
+    "key": "ctrl+l ctrl+l",
     "when": "terminalChatAgentRegistered && terminalFocusInAny && terminalHasBeenCreated || terminalChatAgentRegistered && terminalFocusInAny && terminalProcessSupported",
     "command": "workbench.action.terminal.chat.start",
   },
@@ -4084,14 +4094,6 @@ command groups
     "command": "workbench.action.terminal.sendSequence",
     "args": {
       "text": "\u001bOC"
-    }
-  },
-  {
-    "key": "ctrl+l",
-    "when": "terminalFocus",
-    "command": "workbench.action.terminal.sendSequence",
-    "args": {
-      "text": "\u000c"
     }
   },
   {
