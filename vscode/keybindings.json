@@ -1763,6 +1763,11 @@ command groups
     "when": "!inQuickOpen",
     "command": "outline.focus"
   },
+  {
+    "key": "ctrl+i g",
+    "when": "editorFocus",
+    "command": "outline.followCursor"
+  },
   ///////////////////////////////////////////////////////////////
   // help                            h    t3118
   ///////////////////////////////////////////////////////////////
