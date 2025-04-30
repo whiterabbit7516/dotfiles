@@ -4106,7 +4106,7 @@ command groups
     "when": "terminalFocus",
     "command": "workbench.action.terminal.sendSequence",
     "args": {
-      "text": "\u0003cc"
+      "text": "\u0003cc\u0008\u0008\u0008\u0008\u0008\u0008"
     }
   },
   ///////////////////////////////////////////////////////////////
