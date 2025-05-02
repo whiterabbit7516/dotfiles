@@ -4106,7 +4106,8 @@ command groups
     "when": "terminalFocus",
     "command": "workbench.action.terminal.sendSequence",
     "args": {
-      "text": "\u0003cc\u0008\u0008\u0008\u0008\u0008\u0008"
+      // ctrl+l, normal mode, clear line, backspaces for bash, ctrl+l for bash
+      "text": "\u000c\u0003cc\u0008\u0008\u0008\u0008\u0008\u0008\u000c"
     }
   },
   ///////////////////////////////////////////////////////////////
