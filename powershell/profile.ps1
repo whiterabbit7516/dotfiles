@@ -9,6 +9,8 @@ elseif ($(get-command code-insiders -ErrorAction SilentlyContinue) -ne $null)
 {
   Set-Alias -Name vscode -Value 'code-insiders'
 }
+function New-Directory { New-Item -Path $args[0] -ItemType Directory };
+Set-Alias -Name nd -Value New-Directory;
 #########################################
 # environment variables
 #########################################
