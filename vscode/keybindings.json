@@ -675,12 +675,12 @@ command groups
   },
   {
     "key": "ctrl+a ctrl+o",
-    "when": "editorFocus",
+    "when": "!inQuickOpen && (editorFocus || activeEditor != '')",
     "command": "workbench.action.toggleEditorGroupLayout"
   },
   {
     "key": "ctrl+a ctrl+r",
-    "when": "editorFocus",
+    "when": "!inQuickOpen && (editorFocus || activeEditor != '')",
     "command": "workbench.action.evenEditorWidths"
   },
   {
@@ -700,7 +700,7 @@ command groups
   },
   {
     "key": "ctrl+a p",
-    "when": "editorFocus",
+    "when": "!inQuickOpen && (editorFocus || activeEditor != '')",
     "command": "workbench.action.toggleEditorGroupLock"
   },
   {
@@ -926,47 +926,47 @@ command groups
   },
   {
     "key": "ctrl+a ctrl+j",
-    "when": "editorFocus",
+    "when": "!inQuickOpen && (editorFocus || activeEditor != '')",
     "command": "workbench.action.moveEditorToBelowGroup",
   },
   {
     "key": "ctrl+a ctrl+k",
-    "when": "editorFocus",
+    "when": "!inQuickOpen && (editorFocus || activeEditor != '')",
     "command": "workbench.action.moveEditorToAboveGroup",
   },
   {
     "key": "ctrl+a ctrl+h",
-    "when": "editorFocus",
+    "when": "!inQuickOpen && (editorFocus || activeEditor != '')",
     "command": "workbench.action.moveEditorToLeftGroup",
   },
   {
     "key": "ctrl+a ctrl+l",
-    "when": "editorFocus",
+    "when": "!inQuickOpen && (editorFocus || activeEditor != '')",
     "command": "workbench.action.moveEditorToRightGroup",
   },
   {
     "key": "ctrl+a ctrl+s",
-    "when": "editorFocus",
+    "when": "!inQuickOpen && (editorFocus || activeEditor != '')",
     "command": "workbench.action.splitEditor",
   },
   {
     "key": "ctrl+a j",
-    "when": "editorFocus",
+    "when": "!inQuickOpen && (editorFocus || activeEditor != '')",
     "command": "workbench.action.focusBelowGroup"
   },
   {
     "key": "ctrl+a k",
-    "when": "editorFocus",
+    "when": "!inQuickOpen && (editorFocus || activeEditor != '')",
     "command": "workbench.action.focusAboveGroup"
   },
   {
     "key": "ctrl+a h",
-    "when": "editorFocus",
+    "when": "!inQuickOpen && (editorFocus || activeEditor != '')",
     "command": "workbench.action.focusLeftGroup"
   },
   {
     "key": "ctrl+a l",
-    "when": "editorFocus",
+    "when": "!inQuickOpen && (editorFocus || activeEditor != '')",
     "command": "workbench.action.focusRightGroup"
   },
   {
@@ -976,12 +976,12 @@ command groups
   },
   {
     "key": "ctrl+a o",
-    "when": "editorFocus",
+    "when": "!inQuickOpen && (editorFocus || activeEditor != '')",
     "command": "workbench.action.focusNextGroup",
   },
   {
     "key": "ctrl+a shift+o",
-    "when": "editorFocus",
+    "when": "!inQuickOpen && (editorFocus || activeEditor != '')",
     "command": "workbench.action.focusPreviousGroup",
   },
   ///////////////////////////////////////////////////////////////
@@ -1494,7 +1494,7 @@ command groups
   ///////////////////////////////////////////////////////////////
   {
     "key": "ctrl+i f",
-    "when": "editorFocus",
+    "when": "!inQuickOpen && (editorFocus || activeEditor != '')",
     "command": "workbench.files.action.showActiveFileInExplorer"
   },
   {
@@ -2402,12 +2402,12 @@ command groups
   ///////////////////////////////////////////////////////////////
   {
     "key": "ctrl+o",
-    "when": "editorFocus",
+    "when": "!inQuickOpen && (editorFocus || activeEditor != '')",
     "command": "workbench.action.focusNextGroup",
   },
   {
     "key": "ctrl+shift+o",
-    "when": "editorFocus",
+    "when": "!inQuickOpen && (editorFocus || activeEditor != '')",
     "command": "workbench.action.focusPreviousGroup",
   },
   {
@@ -3271,32 +3271,32 @@ command groups
   },
   {
     "key": "ctrl+w ctrl+h",
-    "when": "editorFocus || openEditorsFocus ",
+    "when": "!inQuickOpen && (editorFocus || openEditorsFocus || activeEditor != '')",
     "command": "workbench.action.closeEditorsToTheLeft"
   },
   {
     "key": "ctrl+w ctrl+l",
-    "when": "editorFocus || openEditorsFocus",
+    "when": "!inQuickOpen && (editorFocus || openEditorsFocus || activeEditor != '')",
     "command": "workbench.action.closeEditorsToTheRight"
   },
   {
     "key": "ctrl+w ctrl+o",
-    "when": "editorFocus || openEditorsFocus",
+    "when": "!inQuickOpen && (editorFocus || openEditorsFocus || activeEditor != '')",
     "command": "workbench.action.closeOtherEditors",
   },
   {
     "key": "ctrl+w ctrl+s",
-    "when": "editorFocus || openEditorsFocus",
+    "when": "!inQuickOpen && (editorFocus || openEditorsFocus || activeEditor != '')",
     "command": "workbench.action.closeUnmodifiedEditors"
   },
   {
     "key": "ctrl+w ctrl+e",
-    "when": "!inQuickOpen && !panelFocus && !sideBarFocus && !terminalFocus",
+    "when": "!inQuickOpen && (editorFocus || openEditorsFocus || activeEditor != '')",
     "command": "workbench.action.closeActiveEditor"
   },
   {
     "key": "ctrl+w ctrl+w",
-    "when": "!inQuickOpen && !panelFocus && !sideBarFocus && !terminalFocus",
+    "when": "!inQuickOpen && (editorFocus || openEditorsFocus || activeEditor != '')",
     "command": "workbench.action.closeActiveEditor",
   },
   {
@@ -3306,7 +3306,7 @@ command groups
   },
   {
     "key": "ctrl+w ctrl+a",
-    "when": "editorFocus",
+    "when": "!inQuickOpen && (editorFocus || activeEditor != '')",
     "command": "workbench.action.closeEditorsAndGroup"
   },
   {
