@@ -4136,7 +4136,7 @@ command groups
   },
   {
     "key": "ctrl+y ctrl+o",
-    "when": "editorFocus",
+    "when": "editorFocus || outputFocus",
     "command": "workbench.output.action.clearOutput"
   },
   {
