@@ -947,7 +947,7 @@ command groups
   {
     "key": "ctrl+a ctrl+s",
     "when": "!inQuickOpen && (editorFocus || activeEditor != '')",
-    "command": "workbench.action.splitEditor",
+    "command": "workbench.action.splitEditorToNextGroup"
   },
   {
     "key": "ctrl+a j",
