@@ -2027,14 +2027,14 @@ command groups
     "when": "inlineChatHasProvider && inlineChatVisible"
   },
   {
-    "key": "ctrl+l ctrl+m",
-    "when": "chatHasToolsAgent && chatIsEnabled && inChatInput && inUnifiedChat && !chatSessionRequestInProgress || chatHasToolsAgent && chatIsEnabled && inChatInput && !chatSessionRequestInProgress && chatLocation == 'editing-session' || chatIsEnabled && config.chat.unifiedChatView && inChatInput && inUnifiedChat && !chatSessionRequestInProgress || chatIsEnabled && config.chat.unifiedChatView && inChatInput && !chatSessionRequestInProgress && chatLocation == 'editing-session'",
-    "command": "workbench.action.chat.toggleAgentMode",
-  },
-  {
     "key": "ctrl+l ctrl+y",
     "when": "chatIsEnabled && inChat",
     "command": "workbench.action.chat.clearHistory"
+  },
+  {
+    "key": "ctrl+l ctrl+m",
+    "command": "workbench.action.chat.toggleAgentMode",
+    "when": "chatIsEnabled && inChatInput && !chatSessionRequestInProgress && chatLocation == 'panel'"
   },
   ///////////////////////////////////////////////////////////////
   // live share                      l    t5930
