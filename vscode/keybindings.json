@@ -24,8 +24,8 @@ command groups
     symbols                         g    t4807
     jump                            g    t2985
     outline                         g    t6000
+    copilot - completions           h    t7505
     help                            h    t3118
-    history                         h    t5797
     interface                       i    t4780
     full screen                     i    t2530
     insert                          i    t8063
@@ -33,7 +33,7 @@ command groups
     preferences                     k    t1917
     fold                            k    t3866
     format                          k    t4704
-    chat / copilot                  l    t7259
+    copilot - chat                  l    t7259
     live share                      l    t5930
     line                            l    t5788
     marks / bookmarks               m    t0604
@@ -1774,22 +1774,27 @@ command groups
     "command": "outline.followCursor"
   },
   ///////////////////////////////////////////////////////////////
-  // help                            h    t3118
+  // copilot - completions           h    t7505
   ///////////////////////////////////////////////////////////////
   {
     "key": "ctrl+h",
     "when": "inQuickOpen",
     "command": "workbench.action.quickOpen",
-    "args": ">Help "
+    "args": ">Copilot "
+  },
+  {
+    "key": "alt+h",
+    "when": "inQuickOpen",
+    "command": "github.copilot.toggleStatusMenu"
   },
   ///////////////////////////////////////////////////////////////
-  // history                         h    t5797
+  // help                            h    t3118
   ///////////////////////////////////////////////////////////////
   {
     "key": "ctrl+shift+h",
     "when": "inQuickOpen",
     "command": "workbench.action.quickOpen",
-    "args": ">History "
+    "args": ">Help "
   },
   ///////////////////////////////////////////////////////////////
   // interface                       i    t4780
@@ -1963,7 +1968,7 @@ command groups
     "command": "editor.action.formatSelection",
   },
   ///////////////////////////////////////////////////////////////
-  // chat / copilot                  l    t7259
+  // copilot - chat                  l    t7259
   ///////////////////////////////////////////////////////////////
   {
     "key": "ctrl+l ctrl+x",
