@@ -1,7 +1,7 @@
 {
   "name": "main",
   "image": "ghcr.io/whiterabbit7516/devcontainers/devenv-main-amd64:latest",
-  "workspaceMount": "source=${localWorkspaceFolder}/,target=/workspace/repos/dotfiles-main/,type=bind",
+  "workspaceMount": "source=${localWorkspaceFolder}/,target=/workspace/repos/dotfiles/,type=bind",
   "workspaceFolder": "/workspace",
   "runArgs": [
     "--network=host",
@@ -13,7 +13,6 @@
     "pull",
     "ghcr.io/whiterabbit7516/devcontainers/devenv-main-amd64:latest"
   ],
-//   "postCreateCommand": "/usr/bin/pwsh -nop -nol -f /devcontainer/docker-context/scripts/postCreate.ps1",
   "containerEnv": {},
   "remoteUser": "root",
   "customizations": {
