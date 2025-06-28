@@ -42,6 +42,13 @@ $ENV:PATH = "$($ENV:PATH):/usr/local/foundry/"
 Set-PSReadLineOption -EditMode Vi -ViModeIndicator Cursor;
 Set-PSReadLineKeyHandler -Chord Ctrl+c -Function ViCommandMode;
 Set-PSReadLineOption -PredictionViewStyle ListView;
+Set-PSReadLineOption -BellStyle None
+Set-PSReadLineOption -HistorySearchCaseSensitive
+function Wipe-History {
+  Clear-History; # delete current PSReadLine session history
+  [Microsoft.PowerShell.PSConsoleReadLine]::ClearHistory(); # delete current console session history
+  Remove-Item $(Get-PSReadLineOption).HistorySavePath; # delete PSReadLine history file
+};
 #########################################
 # fzf
 #########################################
