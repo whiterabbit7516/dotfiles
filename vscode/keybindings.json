@@ -88,6 +88,11 @@ command groups
   // unbinds                         -   t1113
   ///////////////////////////////////////////////////////////////
   {
+    "key": "ctrl+n",
+    "command": "-workbench.action.openChat",
+    "when": "chatIsEnabled && inChat && inChatEditor"
+  },
+  {
     "key": "ctrl+m",
     "command": "-editor.action.toggleTabFocusMode"
   },
@@ -1974,6 +1979,11 @@ command groups
   ///////////////////////////////////////////////////////////////
   // copilot - chat                  l    t7259
   ///////////////////////////////////////////////////////////////
+  {
+    "key": "ctrl+l ctrl+h",
+    "when": "!inQuickOpen",
+    "command": "workbench.action.chat.history"
+  },
   {
     "key": "ctrl+l ctrl+x",
     "when": "inlineChatHasProvider && inlineChatVisible",
