@@ -10,7 +10,7 @@ command groups
     layout / editor groups          a    t4355
     activity bar                    a    t6913
     cursor                          a    t3075
-    sidebar                         b    t5715
+    primary sidebar                 b    t5715
     commands                        b    t6712
     rename                          b    t5262
     remote - codespaces             c    t3134
@@ -26,6 +26,7 @@ command groups
     outline                         g    t6000
     copilot - completions           h    t7505
     help                            h    t3118
+    maximize                        h    t8966
     interface                       i    t4780
     full screen                     i    t2530
     insert                          i    t8063
@@ -42,7 +43,7 @@ command groups
     tmux                            m    t7299
     vim                             m    t0286
     notifications                   n    t6821
-    auxiliary sidebar               n    t9392
+    secondary sidebar               n    t9392
     new                             n    t1619
     output                          o    t2786
     toggle                          o    t3584
@@ -53,7 +54,7 @@ command groups
     logs                            q    t4752
     quit                            q    t1951
     remote - general                r    t2900
-    references                      r    t2275 // to be cleaned
+    references                      r    t2275
     reload                          r    t2391
     refresh                         r    t2581
     search                          s    t4141
@@ -87,6 +88,10 @@ command groups
   ///////////////////////////////////////////////////////////////
   // unbinds                         -   t1113
   ///////////////////////////////////////////////////////////////
+  {
+    "key": "ctrl+alt+b",
+    "command": "-workbench.action.toggleAuxiliaryBar"
+  },
   {
     "key": "ctrl+n",
     "command": "-workbench.action.openChat",
@@ -930,8 +935,8 @@ command groups
   },
   {
     "key": "ctrl+a ctrl+i",
-    "when": "maximizedEditorGroup || multipleEditorGroups",
-    "command": "workbench.action.toggleMaximizeEditorGroup",
+    "when": "!inQuickOpen",
+    "command": "workbench.action.maximizeEditorHideSidebar"
   },
   {
     "key": "ctrl+a ctrl+j",
@@ -1026,7 +1031,7 @@ command groups
     "command": "editor.action.insertCursorAbove",
   },
   ///////////////////////////////////////////////////////////////
-  // sidebar                         b    t5715
+  // primary sidebar                 b    t5715
   ///////////////////////////////////////////////////////////////
   {
     "key": "ctrl+b",
@@ -1806,6 +1811,24 @@ command groups
     "args": ">Help "
   },
   ///////////////////////////////////////////////////////////////
+  // maximize                        h    t8966
+  ///////////////////////////////////////////////////////////////
+  {
+    "key": "ctrl+h",
+    "when": "panelFocus",
+    "command": "workbench.action.toggleMaximizedPanel",
+  },
+  {
+    "key": "ctrl+h",
+    "when": "editorFocus",
+    "command": "workbench.action.toggleMaximizeEditorGroup",
+  },
+  {
+    "key": "ctrl+h",
+    "when": "auxiliaryBarFocus",
+    "command": "workbench.action.toggleMaximizedAuxiliaryBar"
+  },
+  ///////////////////////////////////////////////////////////////
   // interface                       i    t4780
   ///////////////////////////////////////////////////////////////
   {
@@ -1880,11 +1903,6 @@ command groups
     "key": "ctrl+j",
     "when": "!inQuickOpen",
     "command": "workbench.action.togglePanel",
-  },
-  {
-    "key": "ctrl+h",
-    "when": "!inQuickOpen",
-    "command": "workbench.action.toggleMaximizedPanel",
   },
   {
     "key": "ctrl+a ctrl+j",
@@ -2362,7 +2380,7 @@ command groups
     "command": "notifications.toggleList"
   },
   ///////////////////////////////////////////////////////////////
-  // auxiliary sidebar               n    t9392
+  // secondary sidebar               n    t9392
   ///////////////////////////////////////////////////////////////
   {
     "key": "ctrl+n",
@@ -2552,11 +2570,6 @@ command groups
   // references                      r    t2275
   ///////////////////////////////////////////////////////////////
   {
-    "key": "ctrl+i ctrl+p",
-    "when": "inReferenceSearchEditor || referenceSearchVisible",
-    "command": "togglePeekWidgetFocus",
-  },
-  {
     "key": "ctrl+i r",
     "when": "!inQuickOpen",
     "command": "references-view.tree.focus"
@@ -2572,14 +2585,9 @@ command groups
     "command": "editor.action.referenceSearch.trigger"
   },
   {
-    "key": "ctrl+g ctrl+c",
-    "when": "editorHasCallHierarchyProvider",
-    "command": "references-view.showCallHierarchy",
-  },
-  {
-    "key": "ctrl+g c",
-    "when": "editorHasCallHierarchyProvider && editorTextFocus && !inReferenceSearchEditor",
-    "command": "editor.showCallHierarchy",
+    "key": "ctrl+o",
+    "when": "inReferenceSearchEditor || referenceSearchVisible",
+    "command": "togglePeekWidgetFocus",
   },
   {
     "key": "ctrl+f ctrl+i",
