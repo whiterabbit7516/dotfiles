@@ -88,6 +88,16 @@ command groups
   // unbinds                         -   t1113
   ///////////////////////////////////////////////////////////////
   {
+    "key": "shift+alt+h",
+    "command": "-references-view.showCallHierarchy",
+    "when": "editorHasCallHierarchyProvider"
+  },
+  {
+    "key": "shift+alt+h",
+    "command": "-editor.showCallHierarchy",
+    "when": "editorHasCallHierarchyProvider && editorTextFocus && !inReferenceSearchEditor"
+  },
+  {
     "key": "ctrl+alt+b",
     "command": "-workbench.action.toggleAuxiliaryBar"
   },
