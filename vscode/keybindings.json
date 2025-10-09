@@ -26,7 +26,6 @@ command groups
     outline                         g    t6000
     copilot - completions           h    t7505
     help                            h    t3118
-    maximize                        h    t8966
     interface                       i    t4780
     full screen                     i    t2530
     insert                          i    t8063
@@ -930,13 +929,13 @@ command groups
   },
   {
     "key": "ctrl+a ctrl+m",
-    "when": "editorTextFocus",
+    "when": "!inQuickOpen && (editorFocus || activeEditor != '')",
     "command": "workbench.action.joinTwoGroups",
   },
   {
     "key": "ctrl+a ctrl+i",
-    "when": "!inQuickOpen",
-    "command": "workbench.action.maximizeEditorHideSidebar"
+    "when": "!inQuickOpen && (editorFocus || activeEditor != '')",
+    "command": "workbench.action.toggleMaximizeEditorGroup",
   },
   {
     "key": "ctrl+a ctrl+j",
@@ -1811,24 +1810,6 @@ command groups
     "args": ">Help "
   },
   ///////////////////////////////////////////////////////////////
-  // maximize                        h    t8966
-  ///////////////////////////////////////////////////////////////
-  {
-    "key": "ctrl+h",
-    "when": "panelFocus",
-    "command": "workbench.action.toggleMaximizedPanel",
-  },
-  {
-    "key": "ctrl+h",
-    "when": "editorFocus",
-    "command": "workbench.action.toggleMaximizeEditorGroup",
-  },
-  {
-    "key": "ctrl+h",
-    "when": "auxiliaryBarFocus",
-    "command": "workbench.action.toggleMaximizedAuxiliaryBar"
-  },
-  ///////////////////////////////////////////////////////////////
   // interface                       i    t4780
   ///////////////////////////////////////////////////////////////
   {
@@ -1905,19 +1886,9 @@ command groups
     "command": "workbench.action.togglePanel",
   },
   {
-    "key": "ctrl+a ctrl+j",
-    "when": "panelFocus",
-    "command": "workbench.action.positionPanelBottom",
-  },
-  {
-    "key": "ctrl+a ctrl+h",
-    "when": "panelFocus",
-    "command": "workbench.action.positionPanelLeft",
-  },
-  {
-    "key": "ctrl+a ctrl+l",
-    "when": "panelFocus",
-    "command": "workbench.action.positionPanelRight",
+    "key": "ctrl+h",
+    "when": "!inQuickOpen",
+    "command": "workbench.action.toggleMaximizedPanel",
   },
   ///////////////////////////////////////////////////////////////
   // preferences                     k    t1917
