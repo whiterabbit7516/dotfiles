@@ -88,6 +88,16 @@ command groups
   // unbinds                         -   t1113
   ///////////////////////////////////////////////////////////////
   {
+    "key": "ctrl+shift+y",
+    "command": "-chatEditor.action.accept",
+    "when": "chatEdits.hasEditorModifications && editorFocus && !chatEdits.isCurrentlyBeingModified || chatEdits.hasEditorModifications && notebookEditorFocused && !chatEdits.isCurrentlyBeingModified"
+  },
+  {
+    "key": "ctrl+shift+n",
+    "command": "-chatEditor.action.reject",
+    "when": "chatEdits.hasEditorModifications && editorFocus && !chatEdits.isCurrentlyBeingModified || chatEdits.hasEditorModifications && notebookEditorFocused && !chatEdits.isCurrentlyBeingModified"
+  },
+  {
     "key": "shift+alt+h",
     "command": "-references-view.showCallHierarchy",
     "when": "editorHasCallHierarchyProvider"
@@ -1999,9 +2009,19 @@ command groups
     "when": "inChatInput && inlineChatHasProvider && inlineChatVisible"
   },
   {
-    "key": "ctrl+enter",
+    "key": "ctrl+l ctrl+k",
     "command": "inlineChat.acceptChanges",
     "when": "inlineChatHasProvider && inlineChatVisible"
+  },
+  {
+    "key": "ctrl+l ctrl+k",
+    "command": "chatEditor.action.accept",
+    "when": "chatEdits.hasEditorModifications && editorFocus && !chatEdits.isCurrentlyBeingModified || chatEdits.hasEditorModifications && notebookEditorFocused && !chatEdits.isCurrentlyBeingModified"
+  },
+  {
+    "key": "ctrl+l ctrl+u",
+    "command": "chatEditor.action.reject",
+    "when": "chatEdits.hasEditorModifications && editorFocus && !chatEdits.isCurrentlyBeingModified || chatEdits.hasEditorModifications && notebookEditorFocused && !chatEdits.isCurrentlyBeingModified"
   },
   {
     "key": "ctrl+i ctrl+l",
@@ -4283,8 +4303,5 @@ command groups
     "key": "ctrl+i z",
     "when": "!inQuickOpen",
     "command": "workbench.view.undostack" // non existant
-  },
-  ///////////////////////////////////////////////////////////////
-  // dump                            -    t0377
-  ///////////////////////////////////////////////////////////////
+  }
 ]
