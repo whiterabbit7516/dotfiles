@@ -11,6 +11,8 @@ elseif ($(get-command code-insiders -ErrorAction SilentlyContinue) -ne $null)
 }
 function New-Directory { New-Item -Path $args[0] -ItemType Directory };
 Set-Alias -Name nd -Value New-Directory;
+function Get-Random4 { Get-Random -Minimum 1000 -Maximum 10000 };
+Set-Alias -Name gr -Value Get-Random4;
 #########################################
 # environment variables
 #########################################
