@@ -1995,18 +1995,13 @@ command groups
   },
   {
     "key": "ctrl+l ctrl+x",
-    "when": "inlineChatHasProvider && inlineChatVisible",
-    "command": "inlineChat.close",
-  },
-  {
-    "key": "ctrl+l ctrl+x",
-    "when": "chatIsEnabled && terminalChatFocus && terminalChatVisible || chatIsEnabled && terminalChatVisible && terminalFocus",
-    "command": "workbench.action.terminal.chat.close",
+    "when": "inlineChatVisible",
+    "command": "inlineChat2.close",
   },
   {
     "key": "ctrl+l ctrl+i",
     "command": "inlineChat.viewInChat",
-    "when": "inChatInput && inlineChatHasProvider && inlineChatVisible"
+    "when": "inChatInput && inlineChatVisible"
   },
   {
     "key": "ctrl+l ctrl+k",
@@ -2016,12 +2011,12 @@ command groups
   {
     "key": "ctrl+l ctrl+k",
     "command": "chatEditor.action.accept",
-    "when": "chatEdits.hasEditorModifications && editorFocus && !chatEdits.isCurrentlyBeingModified || chatEdits.hasEditorModifications && notebookEditorFocused && !chatEdits.isCurrentlyBeingModified"
+    "when": "chatEdits.hasEditorModifications && editorFocus && !chatEdits.isCurrentlyBeingModified"
   },
   {
     "key": "ctrl+l ctrl+u",
     "command": "chatEditor.action.reject",
-    "when": "chatEdits.hasEditorModifications && editorFocus && !chatEdits.isCurrentlyBeingModified || chatEdits.hasEditorModifications && notebookEditorFocused && !chatEdits.isCurrentlyBeingModified"
+    "when": "chatEdits.hasEditorModifications && editorFocus && !chatEdits.isCurrentlyBeingModified"
   },
   {
     "key": "ctrl+i ctrl+l",
@@ -2036,23 +2031,13 @@ command groups
   },
   {
     "key": "ctrl+l ctrl+l",
-    "when": "editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly",
+    "when": "editorFocus && inlineChatHasEditsAgent && inlineChatPossible && !editorReadonly",
     "command": "inlineChat.start",
   },
   {
     "key": "ctrl+l ctrl+n",
     "when": "chatIsEnabled && inChat",
     "command": "workbench.action.chat.newChat",
-  },
-  {
-    "key": "ctrl+shift+l",
-    "when": "terminalChatAgentRegistered && terminalFocusInAny && terminalHasBeenCreated || terminalChatAgentRegistered && terminalFocusInAny && terminalProcessSupported",
-    "command": "workbench.action.terminal.chat.start",
-  },
-  {
-    "key": "ctrl+l ctrl+l",
-    "when": "terminalChatAgentRegistered && terminalFocusInAny && terminalHasBeenCreated || terminalChatAgentRegistered && terminalFocusInAny && terminalProcessSupported",
-    "command": "workbench.action.terminal.chat.start",
   },
   {
     "key": "ctrl+l ctrl+n",
@@ -2066,13 +2051,28 @@ command groups
   },
   {
     "key": "ctrl+l ctrl+y",
-    "when": "chatIsEnabled && inChat",
+    "when": "!inQuickOpen",
     "command": "workbench.action.chat.clearHistory"
   },
   {
     "key": "ctrl+l ctrl+m",
     "command": "workbench.action.chat.toggleAgentMode",
     "when": "chatIsEnabled && inChatInput && !chatSessionRequestInProgress && chatLocation == 'panel'"
+  },
+  {
+    "key": "ctrl+shift+l",
+    "when": "terminalChatAgentRegistered && terminalFocusInAny && terminalHasBeenCreated || terminalChatAgentRegistered && terminalFocusInAny && terminalProcessSupported",
+    "command": "workbench.action.terminal.chat.start",
+  },
+  {
+    "key": "ctrl+l ctrl+l",
+    "when": "terminalChatAgentRegistered && terminalFocusInAny && terminalHasBeenCreated || terminalChatAgentRegistered && terminalFocusInAny && terminalProcessSupported",
+    "command": "workbench.action.terminal.chat.start",
+  },
+  {
+    "key": "ctrl+l ctrl+x",
+    "when": "chatIsEnabled && terminalChatFocus && terminalChatVisible || chatIsEnabled && terminalChatVisible && terminalFocus",
+    "command": "workbench.action.terminal.chat.close",
   },
   ///////////////////////////////////////////////////////////////
   // live share                      l    t5930
@@ -3362,8 +3362,8 @@ command groups
   },
   {
     "key": "ctrl+x",
-    "when": "inlineChatHasProvider && inlineChatVisible",
-    "command": "inlineChat.close",
+    "when": "inlineChatVisible",
+    "command": "inlineChat2.close",
   },
   {
     "key": "ctrl+x",
