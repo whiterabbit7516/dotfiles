@@ -44,21 +44,33 @@ $ENV:PATH = "$($ENV:PATH):/usr/local/foundry/"
 Set-PSReadLineOption -EditMode Vi -ViModeIndicator Cursor;
 Set-PSReadLineKeyHandler -Chord Ctrl+c -Function ViCommandMode;
 Set-PSReadLineOption -PredictionViewStyle ListView;
-Set-PSReadLineOption -BellStyle None
-Set-PSReadLineOption -HistorySearchCaseSensitive
+Set-PSReadLineOption -BellStyle None;
+Set-PSReadLineOption -HistorySearchCaseSensitive;
+Set-PSReadLineOption -AddToHistoryHandler {
+    param([string]$line)
+    $trimmed = $line.TrimStart().TrimEnd();
+    if ($trimmed.Length -eq 0) {
+        return $false
+    }
+    # Only add to history if the line ends with a semicolon
+    return ($trimmed[-1] -eq ';')
+};
 function Wipe-History {
   Clear-History; # delete current PSReadLine session history
   [Microsoft.PowerShell.PSConsoleReadLine]::ClearHistory(); # delete current console session history
   Remove-Item $(Get-PSReadLineOption).HistorySavePath; # delete PSReadLine history file
 };
+function Edit-History {
+   vim $(Get-PSReadLineOption).HistorySavePath;
+};
 #########################################
 # fzf
 #########################################
-Import-Module PSFzf -ArgumentList 'Ctrl+t','Ctrl+r' -ErrorAction SilentlyContinue
+Import-Module PSFzf -ArgumentList 'Ctrl+t','Ctrl+r' -ErrorAction SilentlyContinue;
 # Set-PSReadLineKeyHandler -Key Tab -ScriptBlock { Invoke-FzfTabCompletion }
-Set-Alias -Name fe -Value 'Invoke-FuzzyEdit'
-Set-Alias -Name fd -Value 'Invoke-FuzzySetLocation'
-Set-Alias -Name fh -Value 'Invoke-FuzzyHistory'
+Set-Alias -Name fe -Value 'Invoke-FuzzyEdit';
+Set-Alias -Name fd -Value 'Invoke-FuzzySetLocation';
+Set-Alias -Name fh -Value 'Invoke-FuzzyHistory';
 #########################################
 # colors
 #########################################
