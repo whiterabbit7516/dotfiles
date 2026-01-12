@@ -3070,7 +3070,7 @@ command groups
   {
     "key": "ctrl+v ctrl+g",
     "when": "!inQuickOpen",
-    "command": "git-graph.view",
+    "command": "workbench.scm.history.focus"
   },
   {
     "key": "ctrl+v b",
