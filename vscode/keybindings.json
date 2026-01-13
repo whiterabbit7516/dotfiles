@@ -4148,18 +4148,18 @@ command groups
   ///////////////////////////////////////////////////////////////
   {
     "key": "ctrl+shift+y",
-    "when": "inQuickOpen",
+    "when": "inQuickOpen && !terminalFocus",
     "command": "workbench.action.quickOpen",
     "args": ">Clear "
   },
   {
     "key": "ctrl+y ctrl+h",
-    "when": "editorFocus",
+    "when": "editorFocus && !terminalFocus",
     "command": "workbench.action.clearEditorHistory"
   },
   {
     "key": "ctrl+y ctrl+b",
-    "when": "editorFocus",
+    "when": "editorFocus && !terminalFocus",
     "command": "workbench.action.clearCommandHistory"
   },
   {
@@ -4169,14 +4169,19 @@ command groups
   },
   {
     "key": "ctrl+y ctrl+p",
-    "when": "!inQuickOpen",
+    "when": "editorFocus && !terminalFocus",
     "command": "workbench.action.clearRecentFiles"
   },
   {
     "key": "ctrl+y ctrl+n",
-    "when": "!inQuickOpen",
+    "when": "editorFocus && !terminalFocus",
     "command": "notifications.clearAll"
   },
+  {
+    "key": "ctrl+y b",
+    "when": "editorFocus && !terminalFocus",
+    "command": "workbench.debug.viewlet.action.removeAllBreakpoints"
+  }
   ///////////////////////////////////////////////////////////////
   // settings                        z    t8662
   ///////////////////////////////////////////////////////////////
