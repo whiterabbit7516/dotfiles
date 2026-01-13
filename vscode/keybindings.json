@@ -1760,7 +1760,7 @@ command groups
   },
   {
     "key": "ctrl+g g",
-    "when": "editorFocus",
+    "when": "!inQuickOpen",
     "command": "workbench.action.showAllSymbols"
   },
   {
