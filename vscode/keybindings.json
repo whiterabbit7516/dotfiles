@@ -1378,23 +1378,23 @@ command groups
   ///////////////////////////////////////////////////////////////
   {
     "key": "ctrl+e l",
-    "when": "editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly",
     "command": "inlineChat.start",
+    "when": "editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly",
   },
   {
     "key": "ctrl+e s",
+    "command": "workbench.action.toggleSplitEditorInGroup",
     "when": "editorFocus",
-    "command": "workbench.action.toggleSplitEditorInGroup"
   },
   {
     "key": "ctrl+e o",
+    "command": "workbench.action.focusOtherSideEditor",
     "when": "editorFocus",
-    "command": "workbench.action.focusOtherSideEditor"
   },
   {
     "key": "ctrl+e r",
+    "command": "workbench.action.files.revert",
     "when": "editorFocus",
-    "command": "workbench.action.files.revert"
   },
   {
     "key": "ctrl+e ctrl+r",
@@ -1403,124 +1403,124 @@ command groups
   },
   {
     "key": "ctrl+e ctrl+g",
-    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly",
     "command": "editor.action.refactor",
+    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly",
   },
   {
     "key": "ctrl+e ctrl+b",
-    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly",
     "command": "editor.action.rename",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly",
   },
   {
     "key": "ctrl+e ctrl+l",
+    "command": "workbench.action.editor.changeLanguageMode",
     "when": "editorFocus",
-    "command": "workbench.action.editor.changeLanguageMode"
   },
   {
     "key": "ctrl+e ctrl+t",
+    "command": "workbench.action.reopenWithEditor",
     "when": "!inQuickOpen && !panelFocus && !sideBarFocus && !terminalFocus",
-    "command": "workbench.action.reopenWithEditor"
   },
   {
     "key": "ctrl+e t",
+    "command": "workbench.action.toggleEditorType",
     "when": "!inQuickOpen && !panelFocus && !sideBarFocus && !terminalFocus",
-    "command": "workbench.action.toggleEditorType"
   },
   {
     "key": "alt+e",
-    "when": "inQuickOpen",
     "command": "workbench.action.showAllEditors",
+    "when": "inQuickOpen",
   },
   {
     "key": "ctrl+e ctrl+f",
-    "when": "editorFocus",
     "command": "actions.find",
+    "when": "editorFocus",
   },
   {
     "key": "ctrl+e",
-    "when": "inQuickOpen",
     "command": "workbench.action.quickOpen",
-    "args": ">Editor "
+    "args": ">Editor ",
+    "when": "inQuickOpen",
   },
   {
     "key": "ctrl+e h",
-    "when": "editorTextFocus",
     "command": "editor.action.showHover",
+    "when": "editorTextFocus",
   },
   {
     "key": "ctrl+alt+j",
-    "when": "editorTextFocus && !editorReadonly && !inDebugMode",
     "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly && !inDebugMode",
   },
   {
     "key": "ctrl+alt+k",
-    "when": "editorTextFocus && !editorReadonly && !inDebugMode",
     "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly && !inDebugMode",
   },
   {
     "key": "ctrl+shift+alt+j",
-    "when": "editorTextFocus && !editorReadonly",
     "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly",
   },
   {
     "key": "ctrl+shift+alt+k",
-    "when": "editorTextFocus && !editorReadonly",
     "command": "editor.action.copyLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly",
   },
   {
     "key": "ctrl+e ctrl+e",
-    "when": "editorFocus",
     "command": "workbench.action.navigateToLastEditLocation",
+    "when": "editorFocus",
   },
   {
     "key": "ctrl+e ctrl+o",
-    "when": "editorFocus",
     "command": "workbench.action.navigateLast",
+    "when": "editorFocus",
   },
   {
     "key": "ctrl+e ctrl+n",
-    "when": "editorFocus && !editorReadonly",
     "command": "editor.action.marker.next",
+    "when": "editorFocus && !editorReadonly",
   },
   {
     "key": "ctrl+e ctrl+p",
-    "when": "editorFocus && !editorReadonly",
     "command": "editor.action.marker.prev",
+    "when": "editorFocus && !editorReadonly",
   },
   {
     "key": "ctrl+i ctrl+e",
-    "when": "workbench.explorer.openEditorsView.active",
     "command": "workbench.files.action.focusOpenEditorsView",
+    "when": "workbench.explorer.openEditorsView.active",
   },
   {
     "key": "ctrl+e ctrl+a",
-    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly",
     "command": "editor.action.quickFix",
+    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly",
   },
   {
     "key": "ctrl+e a",
-    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly",
     "command": "editor.action.sourceAction",
+    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly",
   },
   {
     "key": "ctrl+[Period]",
-    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly",
     "command": "editor.action.quickFix",
+    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly",
   },
   {
     "key": "ctrl+e ctrl+w",
+    "command": "editor.action.toggleWordWrap",
     "when": "editorFocus",
-    "command": "editor.action.toggleWordWrap"
   },
   {
     "key": "ctrl+e ctrl+s",
+    "command": "editor.action.toggleRenderWhitespace",
     "when": "editorFocus",
-    "command": "editor.action.toggleRenderWhitespace"
   },
   {
     "key": "ctrl+e ctrl+i",
+    "command": "editor.action.toggleOvertypeInsertMode",
     "when": "editorFocus",
-    "command": "editor.action.toggleOvertypeInsertMode"
   },
   ///////////////////////////////////////////////////////////////
   // file explorer                   f    t4428
@@ -1528,7 +1528,7 @@ command groups
   {
     "key": "ctrl+i f",
     "when": "!inQuickOpen && (editorFocus || activeEditor != '')",
-    "command": "workbench.files.action.showActiveFileInExplorer"
+    "command": "workbench.files.action.showActiveFileInExplorer",
   },
   {
     "key": "alt+f",
@@ -1989,14 +1989,19 @@ command groups
   // copilot - chat                  l    t7259
   ///////////////////////////////////////////////////////////////
   {
-    "key": "ctrl+l ctrl+h",
-    "when": "!inQuickOpen",
-    "command": "workbench.action.chat.history"
+    "key": "ctrl+l ctrl+p",
+    "command": "workbench.action.chat.run.prompt",
+    "when": "!inQuickOpen && chatIsEnabled"
   },
   {
-    "key": "ctrl+l ctrl+x",
-    "when": "inlineChatVisible",
-    "command": "inlineChat2.close",
+    "key": "ctrl+l ctrl+r",
+    "command": "github.copilot.chat.review",
+    "when": "!inQuickOpen",
+  },
+  {
+    "key": "ctrl+l ctrl+h",
+    "command": "workbench.action.chat.history",
+    "when": "!inQuickOpen",
   },
   {
     "key": "ctrl+l ctrl+i",
@@ -2070,9 +2075,24 @@ command groups
     "command": "workbench.action.terminal.chat.start",
   },
   {
+    "key": "ctrl+l ctrl+z",
+    "command": "workbench.action.chat.openFeatureSettings",
+    "when": "!inQuickOpen",
+  },
+  {
     "key": "ctrl+l ctrl+x",
     "when": "chatIsEnabled && terminalChatFocus && terminalChatVisible || chatIsEnabled && terminalChatVisible && terminalFocus",
     "command": "workbench.action.terminal.chat.close",
+  },
+  {
+    "key": "ctrl+l ctrl+x",
+    "command": "github.copilot.chat.review.discardAll",
+    "when": "!inQuickOpen && !inlineChatVisible && !terminalChatVisible",
+  },
+  {
+    "key": "ctrl+l ctrl+x",
+    "when": "inlineChatVisible",
+    "command": "inlineChat2.close",
   },
   ///////////////////////////////////////////////////////////////
   // live share                      l    t5930
@@ -4181,7 +4201,7 @@ command groups
     "key": "ctrl+y b",
     "when": "editorFocus && !terminalFocus",
     "command": "workbench.debug.viewlet.action.removeAllBreakpoints"
-  }
+  },
   ///////////////////////////////////////////////////////////////
   // settings                        z    t8662
   ///////////////////////////////////////////////////////////////
@@ -4221,8 +4241,8 @@ command groups
   },
   {
     "key": "alt+z",
-    "when": "inQuickOpen",
     "command": "workbench.profiles.actions.switchProfile",
+    "when": "inQuickOpen"
   },
   ///////////////////////////////////////////////////////////////
   // zoom                            z    t2167
@@ -4285,28 +4305,28 @@ command groups
   },
   {
     "key": "ctrl+z o",
-    "when": "terminalFocus",
-    "command": "workbench.action.terminal.fontZoomOut"
+    "command": "workbench.action.terminal.fontZoomOut",
+    "when": "terminalFocus"
   },
   ///////////////////////////////////////////////////////////////
   // zen                             z    t0176
   ///////////////////////////////////////////////////////////////
   {
     "key": "ctrl+i ctrl+z",
-    "when": "!inQuickOpen",
-    "command": "workbench.action.toggleZenMode"
+    "command": "workbench.action.toggleZenMode",
+    "when": "!inQuickOpen"
   },
   ///////////////////////////////////////////////////////////////
   // undo                            z    t5347
   ///////////////////////////////////////////////////////////////
   {
     "key": "ctrl+z ctrl+z",
-    "when": "editorFocus",
-    "command": "undo"
+    "command": "undo",
+    "when": "editorFocus"
   },
   {
     "key": "ctrl+i z",
-    "when": "!inQuickOpen",
-    "command": "workbench.view.undostack" // non existant
-  }
+    "command": "workbench.view.undostack", // non existant
+    "when": "!inQuickOpen"
+  },
 ]
