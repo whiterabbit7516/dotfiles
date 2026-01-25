@@ -538,22 +538,22 @@ command groups
   ///////////////////////////////////////////////////////////////
   {
     "key": "alt+j",
-    "when": "!inQuickOpen && !terminalFocus",
+    "when": "!inQuickOpen && !terminalFocus && !inlineSuggestionVisible",
     "command": "workbench.action.navigateDown"
   },
   {
     "key": "alt+k",
-    "when": "!inQuickOpen && !terminalFocus",
+    "when": "!inQuickOpen && !terminalFocus && !inlineSuggestionVisible",
     "command": "workbench.action.navigateUp"
   },
   {
     "key": "alt+h",
-    "when": "!inQuickOpen && !terminalFocus",
+    "when": "!inQuickOpen && !terminalFocus && !inlineSuggestionVisible",
     "command": "workbench.action.navigateLeft"
   },
   {
     "key": "alt+l",
-    "when": "!inQuickOpen && !terminalFocus",
+    "when": "!inQuickOpen && !terminalFocus && !inlineSuggestionVisible",
     "command": "workbench.action.navigateRight"
   },
   {
