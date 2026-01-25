@@ -1820,6 +1820,16 @@ command groups
     "when": "inQuickOpen",
     "command": "github.copilot.toggleStatusMenu"
   },
+  {
+    "key": "ctrl+tab",
+    "command": "editor.action.inlineSuggest.acceptNextWord",
+    "when": "editorFocus && cursorBeforeGhostText && inlineSuggestionVisible && !accessibilityModeEnabled && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+tab",
+    "command": "undo",
+    "when": "editorFocus && cursorBeforeGhostText && inlineSuggestionVisible && !accessibilityModeEnabled && !editorReadonly"
+  },
   ///////////////////////////////////////////////////////////////
   // help                            h    t3118
   ///////////////////////////////////////////////////////////////
