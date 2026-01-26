@@ -538,26 +538,6 @@ command groups
   ///////////////////////////////////////////////////////////////
   {
     "key": "alt+j",
-    "when": "!inQuickOpen && !terminalFocus && !inlineSuggestionVisible",
-    "command": "workbench.action.navigateDown"
-  },
-  {
-    "key": "alt+k",
-    "when": "!inQuickOpen && !terminalFocus && !inlineSuggestionVisible",
-    "command": "workbench.action.navigateUp"
-  },
-  {
-    "key": "alt+h",
-    "when": "!inQuickOpen && !terminalFocus && !inlineSuggestionVisible",
-    "command": "workbench.action.navigateLeft"
-  },
-  {
-    "key": "alt+l",
-    "when": "!inQuickOpen && !terminalFocus && !inlineSuggestionVisible",
-    "command": "workbench.action.navigateRight"
-  },
-  {
-    "key": "alt+j",
     "when": "inQuickOpen",
     "command": "workbench.action.quickOpenSelectNext",
   },
@@ -1823,22 +1803,22 @@ command groups
   {
     "key": "alt+l",
     "command": "editor.action.inlineSuggest.acceptNextWord",
-    "when": "editorFocus && cursorBeforeGhostText && inlineSuggestionVisible && !accessibilityModeEnabled && !editorReadonly"
+    "when": "editorFocus && cursorBeforeGhostText && inlineSuggestionVisible && !accessibilityModeEnabled && !editorReadonly && !suggestWidgetVisible"
   },
   {
     "key": "alt+h",
     "command": "undo",
-    "when": "editorFocus && cursorBeforeGhostText && inlineSuggestionVisible && !accessibilityModeEnabled && !editorReadonly"
+    "when": "editorFocus && cursorBeforeGhostText && inlineSuggestionVisible && !accessibilityModeEnabled && !editorReadonly && !suggestWidgetVisible"
   },
   {
     "key": "alt+j",
     "command": "editor.action.inlineSuggest.showNext",
-    "when": "editorFocus && inlineSuggestionVisible && !editorReadonly"
+    "when": "editorFocus && inlineSuggestionVisible && !editorReadonly && !suggestWidgetVisible"
   },
   {
     "key": "alt+k",
     "command": "editor.action.inlineSuggest.showPrevious",
-    "when": "editorFocus && inlineSuggestionVisible && !editorReadonly"
+    "when": "editorFocus && inlineSuggestionVisible && !editorReadonly && !suggestWidgetVisible"
   },
   ///////////////////////////////////////////////////////////////
   // help                            h    t3118
