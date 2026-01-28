@@ -1824,7 +1824,7 @@ command groups
     "key": "alt+k",
     "command": "editor.action.inlineSuggest.hide",
     "when": "editorFocus && (inlineEditIsVisible || inlineSuggestionVisible)"
-  }
+  },
   ///////////////////////////////////////////////////////////////
   // help                            h    t3118
   ///////////////////////////////////////////////////////////////
