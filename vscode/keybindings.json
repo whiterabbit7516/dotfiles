@@ -1801,6 +1801,16 @@ command groups
     "command": "github.copilot.toggleStatusMenu"
   },
   {
+    "key": "alt+j",
+    "command": "editor.action.inlineSuggest.trigger",
+    "when": "editorFocus && !inlineSuggestionVisible && !suggestWidgetVisible"
+  },
+  {
+    "key": "alt+j",
+    "command": "editor.action.inlineSuggest.acceptNextLine",
+    "when": "editorFocus && inlineSuggestionVisible && !editorReadonly && !suggestWidgetVisible"
+  },
+  {
     "key": "alt+l",
     "command": "editor.action.inlineSuggest.acceptNextWord",
     "when": "editorFocus && cursorBeforeGhostText && inlineSuggestionVisible && !accessibilityModeEnabled && !editorReadonly && !suggestWidgetVisible"
@@ -1811,15 +1821,10 @@ command groups
     "when": "editorFocus && cursorBeforeGhostText && inlineSuggestionVisible && !accessibilityModeEnabled && !editorReadonly && !suggestWidgetVisible"
   },
   {
-    "key": "alt+j",
-    "command": "editor.action.inlineSuggest.showNext",
-    "when": "editorFocus && inlineSuggestionVisible && !editorReadonly && !suggestWidgetVisible"
-  },
-  {
     "key": "alt+k",
-    "command": "editor.action.inlineSuggest.showPrevious",
-    "when": "editorFocus && inlineSuggestionVisible && !editorReadonly && !suggestWidgetVisible"
-  },
+    "command": "editor.action.inlineSuggest.hide",
+    "when": "editorFocus && (inlineEditIsVisible || inlineSuggestionVisible)"
+  }
   ///////////////////////////////////////////////////////////////
   // help                            h    t3118
   ///////////////////////////////////////////////////////////////
