@@ -1969,30 +1969,35 @@ command groups
   },
   {
     "key": "ctrl+k ctrl+9",
-    "when": "editorFocus",
-    "command": "editor.foldAll"
+    "command": "editor.foldAll",
+    "when": "editorFocus"
   },
   {
     "key": "ctrl+k ctrl+0",
-    "when": "editorFocus",
     "command": "editor.unfoldAll",
+    "when": "editorFocus"
   },
   ///////////////////////////////////////////////////////////////
   // format                          k    t4704
   ///////////////////////////////////////////////////////////////
   {
     "key": "ctrl+k ctrl+d",
-    "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor",
     "command": "editor.action.formatDocument",
+    "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
   },
   {
     "key": "ctrl+k ctrl+s",
-    "when": "editorHasDocumentSelectionFormattingProvider && editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly",
     "command": "editor.action.formatSelection",
+    "when": "editorHasDocumentSelectionFormattingProvider && editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
   },
   ///////////////////////////////////////////////////////////////
   // copilot - chat                  l    t7259
   ///////////////////////////////////////////////////////////////
+  {
+    "key": "ctrl+l ctrl+n",
+    "command": "workbench.action.openChat",
+    "when": "editorFocus"
+  },
   {
     "key": "ctrl+l ctrl+p",
     "command": "workbench.action.chat.run.prompt",
@@ -4338,5 +4343,5 @@ command groups
     "key": "ctrl+i z",
     "command": "workbench.view.undostack", // non existant
     "when": "!inQuickOpen"
-  },
+  }
 ]
