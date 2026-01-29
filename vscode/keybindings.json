@@ -1,87 +1,86 @@
 /*
 command groups
-    unbinds                         -    t1113
-    navigation - forward/back       -    t3508
-    navigation - up/down/left/right -    t2509
-    navigation - next/previous      -    t1255
-    navigation - lists              -    t8455
-    scrolling                       -    t7776
-    suggestions                     -    t3420
-    layout / editor groups          a    t4355
-    activity bar                    a    t6913
-    cursor                          a    t3075
-    primary sidebar                 b    t5715
-    commands                        b    t6712
-    rename                          b    t5262
-    remote - codespaces             c    t3134
-    crumbs                          c    t4616
-    debug                           d    t3216
-    remote - dev containers         d    t6291
-    delete                          d    t3636
-    editor                          e    t8500
-    file explorer                   f    t4428
-    find                            f    t4038
-    symbols                         g    t4807
-    jump                            g    t2985
-    outline                         g    t6000
-    copilot - completions           h    t7505
-    help                            h    t3118
-    interface                       i    t4780
-    full screen                     i    t2530
-    insert                          i    t8063
-    panel                           j    t1566
-    preferences                     k    t1917
-    fold                            k    t3866
-    format                          k    t4704
-    copilot - chat                  l    t7259
-    live share                      l    t5930
-    line                            l    t5788
-    marks / bookmarks               m    t0604
-    minimap                         m    t1725
-    macros                          m    t7096
-    tmux                            m    t7299
-    vim                             m    t0286
-    notifications                   n    t6821
-    secondary sidebar               n    t9392
-    new                             n    t1619
-    output                          o    t2786
-    toggle                          o    t3584
-    cycle                           o    t6078
-    open                            o    t2669
-    quick open                      p    t3167
-    developer                       q    t2758
-    logs                            q    t4752
-    quit                            q    t1951
-    remote - general                r    t2900
-    references                      r    t2275
-    reload                          r    t2391
-    refresh                         r    t2581
-    search                          s    t4141
-    remote - ssh                    s    t9391
-    select                          s    t2119
-    statusbar                       s    t9465
-    tasks                           t    t3388
-    timeline                        t    t9839
-    file / folder                   t    t3459
-    menubar                         t    t5664
-    clipboard / copy / paste / cut  u    t6904
-    snippets                        u    t5608
-    problems                        u    t7119
-    source control                  v    t7077
-    view                            v    t8489
-    windows                         w    t5091
-    workspace                       w    t6870
-    close                           w    t6648
-    cancel                          x    t4680
-    extensions                      x    t5157
-    terminal                        y    t8233
-    clear                           y    t2159
-    settings                        z    t8662
-    profiles                        z    t6992
-    zoom                            z    t2167
-    zen                             z    t0176
-    undo                            z    t5347
-    dump                            -    t0377
+    unbinds                                    -    t1113
+    navigation - forward/back                  -    t3508
+    navigation - up/down/left/right            -    t2509
+    navigation - next/previous                 -    t1255
+    navigation - lists                         -    t8455
+    scrolling                                  -    t7776
+    layout / editor groups                     a    t4355
+    activity bar                               a    t6913
+    cursor                                     a    t3075
+    primary sidebar                            b    t5715
+    commands                                   b    t6712
+    rename                                     b    t5262
+    remote - codespaces                        c    t3134
+    crumbs                                     c    t4616
+    debug                                      d    t3216
+    remote - dev containers                    d    t6291
+    delete                                     d    t3636
+    editor                                     e    t8500
+    file explorer                              f    t4428
+    find                                       f    t4038
+    symbols                                    g    t4807
+    jump                                       g    t2985
+    outline                                    g    t6000
+    copilot - completions / suggestions        h    t7505
+    help                                       h    t3118
+    interface                                  i    t4780
+    full screen                                i    t2530
+    insert                                     i    t8063
+    panel                                      j    t1566
+    preferences                                k    t1917
+    fold                                       k    t3866
+    format                                     k    t4704
+    copilot - chat                             l    t7259
+    live share                                 l    t5930
+    line                                       l    t5788
+    marks / bookmarks                          m    t0604
+    minimap                                    m    t1725
+    macros                                     m    t7096
+    tmux                                       m    t7299
+    vim                                        m    t0286
+    notifications                              n    t6821
+    secondary sidebar                          n    t9392
+    new                                        n    t1619
+    output                                     o    t2786
+    toggle                                     o    t3584
+    cycle                                      o    t6078
+    open                                       o    t2669
+    quick open                                 p    t3167
+    developer                                  q    t2758
+    logs                                       q    t4752
+    quit                                       q    t1951
+    remote - general                           r    t2900
+    references                                 r    t2275
+    reload                                     r    t2391
+    refresh                                    r    t2581
+    search                                     s    t4141
+    remote - ssh                               s    t9391
+    select                                     s    t2119
+    statusbar                                  s    t9465
+    tasks                                      t    t3388
+    timeline                                   t    t9839
+    file / folder                              t    t3459
+    menubar                                    t    t5664
+    clipboard / copy / paste / cut             u    t6904
+    snippets                                   u    t5608
+    problems                                   u    t7119
+    source control                             v    t7077
+    view                                       v    t8489
+    windows                                    w    t5091
+    workspace                                  w    t6870
+    close                                      w    t6648
+    cancel                                     x    t4680
+    extensions                                 x    t5157
+    terminal                                   y    t8233
+    clear                                      y    t2159
+    settings                                   z    t8662
+    profiles                                   z    t6992
+    zoom                                       z    t2167
+    zen                                        z    t0176
+    undo                                       z    t5347
+    dump                                       -    t0377
 */
 [
   ///////////////////////////////////////////////////////////////
@@ -649,29 +648,6 @@ command groups
     "key": "ctrl+alt+y",
     "when": "listFocus && !inputFocus",
     "command": "list.scrollUp",
-  },
-  ///////////////////////////////////////////////////////////////
-  // suggestions                     -    t3420
-  ///////////////////////////////////////////////////////////////
-  {
-    "key": "alt+k",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus",
-    "command": "selectPrevSuggestion",
-  },
-  {
-    "key": "alt+j",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus",
-    "command": "selectNextSuggestion",
-  },
-  {
-    "key": "alt+l",
-    "when": "suggestWidgetVisible && textInputFocus",
-    "command": "acceptSelectedSuggestion",
-  },
-  {
-    "key": "ctrl+[Space]",
-    "when": "suggestWidgetVisible && textInputFocus",
-    "command": "hideSuggestWidget",
   },
   ///////////////////////////////////////////////////////////////
   // layout / editor groups          a    t4355
@@ -1801,9 +1777,14 @@ command groups
     "command": "github.copilot.toggleStatusMenu"
   },
   {
-    "key": "alt+j",
+    "key": "alt+k",
     "command": "editor.action.inlineSuggest.trigger",
     "when": "editorFocus && !inlineSuggestionVisible && !suggestWidgetVisible"
+  },
+  {
+    "key": "alt+k",
+    "command": "editor.action.inlineSuggest.hide",
+    "when": "editorFocus && (inlineEditIsVisible || inlineSuggestionVisible)"
   },
   {
     "key": "alt+j",
@@ -1817,13 +1798,28 @@ command groups
   },
   {
     "key": "alt+h",
-    "command": "undo",
-    "when": "editorFocus && cursorBeforeGhostText && inlineSuggestionVisible && !accessibilityModeEnabled && !editorReadonly && !suggestWidgetVisible"
+    "command": "editor.action.triggerSuggest",
+    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+  },
+  {
+    "key": "alt+h",
+    "command": "hideSuggestWidget",
+    "when": "editorFocus && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "alt+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   },
   {
     "key": "alt+k",
-    "command": "editor.action.inlineSuggest.hide",
-    "when": "editorFocus && (inlineEditIsVisible || inlineSuggestionVisible)"
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "alt+l",
+    "command": "acceptSelectedSuggestion",
+    "when": "suggestWidgetVisible && textInputFocus"
   },
   ///////////////////////////////////////////////////////////////
   // help                            h    t3118
@@ -4343,5 +4339,5 @@ command groups
     "key": "ctrl+i z",
     "command": "workbench.view.undostack", // non existant
     "when": "!inQuickOpen"
-  }
+  },
 ]
