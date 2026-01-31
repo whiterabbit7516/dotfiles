@@ -1772,11 +1772,6 @@ command groups
     "args": ">Copilot "
   },
   {
-    "key": "alt+h",
-    "when": "inQuickOpen",
-    "command": "github.copilot.toggleStatusMenu"
-  },
-  {
     "key": "alt+k",
     "command": "editor.action.inlineSuggest.trigger",
     "when": "editorFocus && !inlineSuggestionVisible && !suggestWidgetVisible"
@@ -2005,11 +2000,6 @@ command groups
     "when": "!inQuickOpen",
   },
   {
-    "key": "ctrl+l ctrl+h",
-    "command": "workbench.action.chat.history",
-    "when": "!inQuickOpen",
-  },
-  {
     "key": "ctrl+l ctrl+i",
     "command": "inlineChat.viewInChat",
     "when": "inChatInput && inlineChatVisible"
@@ -2104,6 +2094,16 @@ command groups
     "key": "ctrl+l ctrl+x",
     "when": "inlineChatVisible",
     "command": "inlineChat2.close",
+  },
+  {
+    "key": "ctrl+l ctrl+h",
+    "command": "workbench.action.chat.history",
+    "when": "!inQuickOpen",
+  },
+  {
+    "key": "alt+h",
+    "command": "workbench.action.chat.history",
+    "when": "inQuickOpen",
   },
   ///////////////////////////////////////////////////////////////
   // live share                      l    t5930
