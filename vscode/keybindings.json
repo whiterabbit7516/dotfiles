@@ -25,6 +25,7 @@ command groups
     outline                                    g    t6000
     copilot - completions / suggestions        h    t7505
     help                                       h    t3118
+    history                                    h    t7765
     interface                                  i    t4780
     full screen                                i    t2530
     insert                                     i    t8063
@@ -1826,6 +1827,14 @@ command groups
     "args": ">Help "
   },
   ///////////////////////////////////////////////////////////////
+  // history                         h    t7765
+  ///////////////////////////////////////////////////////////////
+  {
+    "key": "alt+h",
+    "command": "workbench.action.chat.history",
+    "when": "inQuickOpen",
+  },
+  ///////////////////////////////////////////////////////////////
   // interface                       i    t4780
   ///////////////////////////////////////////////////////////////
   {
@@ -2099,11 +2108,6 @@ command groups
     "key": "ctrl+l ctrl+h",
     "command": "workbench.action.chat.history",
     "when": "!inQuickOpen",
-  },
-  {
-    "key": "alt+h",
-    "command": "workbench.action.chat.history",
-    "when": "inQuickOpen",
   },
   ///////////////////////////////////////////////////////////////
   // live share                      l    t5930
