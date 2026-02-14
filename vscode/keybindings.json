@@ -2582,9 +2582,9 @@ command groups
   // remote - general                r    t2900
   ///////////////////////////////////////////////////////////////
   {
-    "key": "ctrl+i ctrl+r",
-    "when": "!inQuickOpen",
+    "key": "ctrl+i r",
     "command": "workbench.view.remote",
+    "when": "!inQuickOpen",
   },
   {
     "key": "ctrl+r",
@@ -2606,9 +2606,9 @@ command groups
   // references                      r    t2275
   ///////////////////////////////////////////////////////////////
   {
-    "key": "ctrl+i r",
+    "key": "ctrl+i ctrl+r",
+    "command": "references-view.tree.focus",
     "when": "!inQuickOpen",
-    "command": "references-view.tree.focus"
   },
   {
     "key": "ctrl+g ctrl+r",
