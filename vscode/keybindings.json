@@ -88,24 +88,24 @@ command groups
   // unbinds                         -   t1113
   ///////////////////////////////////////////////////////////////
   {
+    "key": "ctrl+shift+b",
+    "command": "-workbench.action.tasks.build",
+  },
+  {
     "key": "ctrl+shift+y",
     "command": "-chatEditor.action.accept",
-    "when": "chatEdits.hasEditorModifications && editorFocus && !chatEdits.isCurrentlyBeingModified || chatEdits.hasEditorModifications && notebookEditorFocused && !chatEdits.isCurrentlyBeingModified"
   },
   {
     "key": "ctrl+shift+n",
     "command": "-chatEditor.action.reject",
-    "when": "chatEdits.hasEditorModifications && editorFocus && !chatEdits.isCurrentlyBeingModified || chatEdits.hasEditorModifications && notebookEditorFocused && !chatEdits.isCurrentlyBeingModified"
   },
   {
     "key": "shift+alt+h",
     "command": "-references-view.showCallHierarchy",
-    "when": "editorHasCallHierarchyProvider"
   },
   {
     "key": "shift+alt+h",
     "command": "-editor.showCallHierarchy",
-    "when": "editorHasCallHierarchyProvider && editorTextFocus && !inReferenceSearchEditor"
   },
   {
     "key": "ctrl+alt+b",
@@ -114,7 +114,6 @@ command groups
   {
     "key": "ctrl+n",
     "command": "-workbench.action.openChat",
-    "when": "chatIsEnabled && inChat && inChatEditor"
   },
   {
     "key": "ctrl+m",
@@ -123,7 +122,6 @@ command groups
   {
     "key": "ctrl+alt+j",
     "command": "-liveshare.join",
-    "when": "liveshare:state != 'Joined' && liveshare:state != 'Shared'"
   },
   {
     "key": "ctrl+0",
@@ -132,17 +130,14 @@ command groups
   {
     "key": "ctrl+down",
     "command": "-inlineChat.viewInChat",
-    "when": "inChatInput && inlineChatHasProvider && inlineChatVisible"
   },
   {
     "key": "ctrl+shift+i",
     "command": "-workbench.action.chat.openEditSession",
-    "when": "chatEditingParticipantRegistered && !chatSetupHidden && view != 'workbench.panel.chat.view.edits'"
   },
   {
     "key": "ctrl+shift+i",
     "command": "-workbench.panel.chatEditing",
-    "when": "workbench.panel.chat.view.edits.active"
   },
   {
     "key": "ctrl+numpad0",
