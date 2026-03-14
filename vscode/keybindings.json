@@ -3382,6 +3382,11 @@ command groups
   ///////////////////////////////////////////////////////////////
   {
     "key": "ctrl+x",
+    "command": "editor.action.hideHover",
+    "when": "editorFocus && hoverVisible"
+  },
+  {
+    "key": "ctrl+x",
     "command": "workbench.action.chat.stopListening",
     "when": "voiceChatInProgress && scopedVoiceChatInProgress == 'editor' || voiceChatInProgress && scopedVoiceChatInProgress == 'inline' || voiceChatInProgress && scopedVoiceChatInProgress == 'quick' || voiceChatInProgress && scopedVoiceChatInProgress == 'view'"
   },
@@ -3419,11 +3424,6 @@ command groups
     "key": "ctrl+x",
     "when": "editorFocus && markersNavigationVisible",
     "command": "closeMarkersNavigation",
-  },
-  {
-    "key": "ctrl+x",
-    "when": "editorFocus && parameterHintsVisible",
-    "command": "closeParameterHints",
   },
   {
     "key": "ctrl+x",
@@ -3604,6 +3604,11 @@ command groups
     "key": "ctrl+x",
     "when": "editorFocus && findWidgetVisible",
     "command": "closeFindWidget",
+  },
+  {
+    "key": "ctrl+x",
+    "when": "editorFocus && parameterHintsVisible",
+    "command": "closeParameterHints",
   },
   ///////////////////////////////////////////////////////////////
   // extensions                      x    t5157
