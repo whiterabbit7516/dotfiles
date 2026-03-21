@@ -64,6 +64,17 @@ function Edit-History {
    vim $(Get-PSReadLineOption).HistorySavePath;
 };
 #########################################
+# Copy-Location
+#########################################
+function Copy-Location {
+  $location = Get-Location | Select-Object -ExpandProperty Path;
+  & tmux set-buffer $location;
+  & tmux set-buffer -b "location" $location;
+  Write-Host "path copied to tmux buffer: $location";
+  & tmux display-message -d 1000 "path copied to tmux buffer: $location";
+}
+Set-Alias -Name cl -Value 'Copy-Location';
+#########################################
 # fzf
 #########################################
 Import-Module PSFzf -ArgumentList 'Ctrl+t','Ctrl+r' -ErrorAction SilentlyContinue;
