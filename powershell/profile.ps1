@@ -20,12 +20,13 @@ Set-Alias -Name gr -Value Get-Random4;
 #########################################
 # paths
 #########################################
-$ENV:PATH = "$($ENV:PATH):/root/.cargo/bin/"
-$ENV:PATH = "$($ENV:PATH):/root/.krew/bin/"
-$ENV:PATH = "$($ENV:PATH):/root/.nargo/bin/"
-$ENV:PATH = "$($ENV:PATH):/root/.bb/"
-$ENV:PATH = "$($ENV:PATH):/usr/local/go/bin/"
-$ENV:PATH = "$($ENV:PATH):/usr/local/foundry/"
+$ENV:PATH = "$($ENV:PATH):/root/.bb/";
+$ENV:PATH = "$($ENV:PATH):/root/.cargo/bin/";
+$ENV:PATH = "$($ENV:PATH):/root/.krew/bin/";
+$ENV:PATH = "$($ENV:PATH):/root/.local/bin/";
+$ENV:PATH = "$($ENV:PATH):/root/.nargo/bin/";
+$ENV:PATH = "$($ENV:PATH):/usr/local/foundry/";
+$ENV:PATH = "$($ENV:PATH):/usr/local/go/bin/";
 #########################################
 # argument completers
 #########################################
