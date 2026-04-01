@@ -68,6 +68,15 @@ function Edit-History {
 # Copy-Location
 #########################################
 function Copy-Location {
+  if (-not (Get-Command tmux -ErrorAction SilentlyContinue)) {
+    Write-Warning "tmux is not available on PATH.";
+    return;
+  }
+  & tmux list-sessions 2>&1 | Out-Null;
+  if ($LASTEXITCODE -ne 0) {
+    Write-Warning "tmux server is not running.";
+    return;
+  }
   $location = Get-Location | Select-Object -ExpandProperty Path;
   & tmux set-buffer $location;
   & tmux set-buffer -b "location" $location;
@@ -159,4 +168,3 @@ if (Test-Path ~/.local/dotfiles/powershell/profile.ps1)
   Write-Information "Reading ~/.local/dotfiles/powershell/profile.ps1";
   Invoke-Expression -Command ~/.local/dotfiles/powershell/profile.ps1;
 }
-#########################################
