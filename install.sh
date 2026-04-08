@@ -34,3 +34,8 @@ cp $SCRIPTROOT/vscode/keybindings.json ~/.config/Code/User/keybindings.json
 ##########################################
 # ln -fsv $SCRIPTROOT/bash/bashrc ~/.bashrc
 # ln -fsv $SCRIPTROOTWD/bash/bash_profile ~/.bash_profile
+##########################################
+# claude
+##########################################
+mkdir -p ~/.claude
+cp $SCRIPTROOT/claude/settings.json ~/.claude/settings.json

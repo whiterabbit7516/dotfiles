@@ -27,3 +27,8 @@ copy-item $PSScriptRoot/vscode/keybindings.json ~/.config/Code/User/keybindings.
 ##########################################
 # ln -fsv $PSScriptRoot/bash/bashrc ~/.bashrc
 # ln -fsv $PSScriptRoot/bash/bash_profile ~/.bash_profile
+##########################################
+# claude
+##########################################
+new-item -type dir ~/.claude -force | out-null
+copy-item $PSScriptRoot/claude/settings.json ~/.claude/settings.json

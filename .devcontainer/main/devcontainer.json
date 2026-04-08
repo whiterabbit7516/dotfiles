@@ -13,7 +13,9 @@
     "pull",
     "ghcr.io/whiterabbit7516/devcontainers/devenv-main-amd64:latest"
   ],
-  "containerEnv": {},
+  "containerEnv": {
+    "CLAUDE_CODE_NO_FLICKER": "1"
+  },
   "remoteUser": "root",
   "customizations": {
     "vscode": {
