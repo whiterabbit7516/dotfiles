@@ -39,3 +39,4 @@ cp $SCRIPTROOT/vscode/keybindings.json ~/.config/Code/User/keybindings.json
 ##########################################
 mkdir -p ~/.claude
 cp $SCRIPTROOT/claude/settings.json ~/.claude/settings.json
+cp $SCRIPTROOT/claude/claude.json ~/.claude.json

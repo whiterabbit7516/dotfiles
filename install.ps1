@@ -32,3 +32,4 @@ copy-item $PSScriptRoot/vscode/keybindings.json ~/.config/Code/User/keybindings.
 ##########################################
 new-item -type dir ~/.claude -force | out-null
 copy-item $PSScriptRoot/claude/settings.json ~/.claude/settings.json
+copy-item $PSScriptRoot/claude/claude.json ~/.claude.json
