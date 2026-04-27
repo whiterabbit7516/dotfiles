@@ -34,7 +34,7 @@ command groups
     fold                                       k    t3866
     format                                     k    t4704
     copilot - chat                             l    t7259
-    live share                                 l    t5930
+    claude code                                l    t5930
     line                                       l    t5788
     marks / bookmarks                          m    t0604
     minimap                                    m    t1725
@@ -87,6 +87,10 @@ command groups
   ///////////////////////////////////////////////////////////////
   // unbinds                         -   t1113
   ///////////////////////////////////////////////////////////////
+  {
+    "key": "ctrl+a",
+    "command": "-editor.action.selectAll"
+  },
   {
     "key": "ctrl+shift+b",
     "command": "-workbench.action.tasks.build",
@@ -551,6 +555,16 @@ command groups
   ///////////////////////////////////////////////////////////////
   {
     "key": "ctrl+]",
+    "when": "editorFocus || activeEditor != ''",
+    "command": "workbench.action.nextEditorInGroup",
+  },
+  {
+    "key": "ctrl+[",
+    "when": "editorFocus || activeEditor != ''",
+    "command": "workbench.action.previousEditorInGroup",
+  },
+  {
+    "key": "ctrl+]",
     "when": "panelFocus",
     "command": "workbench.action.nextPanelView",
   },
@@ -566,18 +580,18 @@ command groups
   },
   {
     "key": "ctrl+[",
-    "when": "sideBarFocus",
-    "command": "workbench.action.previousSideBarView",
+    "command": "workbench.action.previousAuxiliaryBarView",
+    "when": "auxiliaryBarFocus"
   },
   {
     "key": "ctrl+]",
-    "when": "!inQuickOpen && !panelFocus && !sideBarFocus && !terminalFocus",
-    "command": "workbench.action.nextEditorInGroup",
+    "command": "workbench.action.nextAuxiliaryBarView",
+    "when": "auxiliaryBarFocus"
   },
   {
     "key": "ctrl+[",
-    "when": "!inQuickOpen && !panelFocus && !sideBarFocus && !terminalFocus",
-    "command": "workbench.action.previousEditorInGroup",
+    "when": "sideBarFocus",
+    "command": "workbench.action.previousSideBarView",
   },
   ///////////////////////////////////////////////////////////////
   // navigation - lists              -    t8455
@@ -649,14 +663,14 @@ command groups
   // layout / editor groups          a    t4355
   ///////////////////////////////////////////////////////////////
   {
-    "key": "ctrl+shift+[",
-    "when": "!inQuickOpen && !panelFocus && !sideBarFocus && !terminalFocus",
-    "command": "workbench.action.moveEditorLeftInGroup",
+    "key": "ctrl+shift+]",
+    "when": "editorFocus || activeEditor != ''",
+    "command": "workbench.action.moveEditorRightInGroup",
   },
   {
-    "key": "ctrl+shift+]",
-    "when": "!inQuickOpen && !panelFocus && !sideBarFocus && !terminalFocus",
-    "command": "workbench.action.moveEditorRightInGroup",
+    "key": "ctrl+shift+[",
+    "when": "editorFocus || activeEditor != ''",
+    "command": "workbench.action.moveEditorLeftInGroup",
   },
   {
     "key": "ctrl+a ctrl+o",
@@ -1991,7 +2005,13 @@ command groups
   {
     "key": "ctrl+l ctrl+n",
     "command": "workbench.action.openChat",
-    "when": "editorFocus"
+    "when": "!inQuickOpen",
+  },
+  {
+    "key": "ctrl+l n",
+    "command": "workbench.action.quickOpen",
+    "args": ">Chat New ",
+    "when": "!inQuickOpen",
   },
   {
     "key": "ctrl+l ctrl+p",
@@ -2038,16 +2058,6 @@ command groups
     "key": "ctrl+l ctrl+l",
     "when": "editorFocus && inlineChatHasEditsAgent && inlineChatPossible && !editorReadonly",
     "command": "inlineChat.start",
-  },
-  {
-    "key": "ctrl+l ctrl+i",
-    "command": "workbench.action.chat.openInEditor",
-    "when": "!inQuickOpen && inChat",
-  },
-  {
-    "key": "ctrl+l ctrl+n",
-    "when": "chatIsEnabled && inChat",
-    "command": "workbench.action.chat.newChat",
   },
   {
     "key": "ctrl+l ctrl+n",
@@ -2105,18 +2115,18 @@ command groups
     "when": "!inQuickOpen",
   },
   ///////////////////////////////////////////////////////////////
-  // live share                      l    t5930
+  // claude code                     l    t5930
   ///////////////////////////////////////////////////////////////
   {
     "key": "ctrl+i l",
     "when": "!inQuickOpen",
-    "command": "workbench.view.extension.liveshare",
+    "command": "claudeVSCodeSidebarSecondary.focus"
   },
   {
     "key": "ctrl+shift+l",
     "when": "inQuickOpen",
     "command": "workbench.action.quickOpen",
-    "args": ">Live Share "
+    "args": ">Claude "
   },
   ///////////////////////////////////////////////////////////////
   // line                            l    t5788
