@@ -23,7 +23,7 @@ command groups
     symbols                                    g    t4807
     jump                                       g    t2985
     outline                                    g    t6000
-    copilot - completions / suggestions        h    t7505
+    copilot - general                          h    t1658
     help                                       h    t3118
     history                                    h    t7765
     interface                                  i    t4780
@@ -34,6 +34,7 @@ command groups
     fold                                       k    t3866
     format                                     k    t4704
     copilot - chat                             l    t7259
+    copilot - suggestions                      l    t7505
     claude code                                l    t5930
     line                                       l    t5788
     marks / bookmarks                          m    t0604
@@ -1345,10 +1346,10 @@ command groups
   {
     "key": "ctrl+e l",
     "command": "inlineChat.start",
-    "when": "editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly",
+    "when": "editorFocus && inlineChatHasEditsAgent && inlineChatPossible && !editorReadonly",
   },
   {
-    "key": "ctrl+e s",
+    "key": "ctrl+e ctrl+s",
     "command": "workbench.action.toggleSplitEditorInGroup",
     "when": "editorFocus",
   },
@@ -1479,7 +1480,7 @@ command groups
     "when": "editorFocus",
   },
   {
-    "key": "ctrl+e ctrl+s",
+    "key": "ctrl+e s",
     "command": "editor.action.toggleRenderWhitespace",
     "when": "editorFocus",
   },
@@ -1773,7 +1774,7 @@ command groups
     "command": "outline.followCursor"
   },
   ///////////////////////////////////////////////////////////////
-  // copilot - completions           h    t7505
+  // copilot - general               h    t1658
   ///////////////////////////////////////////////////////////////
   {
     "key": "ctrl+h",
@@ -1782,49 +1783,9 @@ command groups
     "args": ">Copilot "
   },
   {
-    "key": "alt+k",
-    "command": "editor.action.inlineSuggest.trigger",
-    "when": "editorFocus && !inlineSuggestionVisible && !suggestWidgetVisible"
-  },
-  {
-    "key": "alt+k",
-    "command": "editor.action.inlineSuggest.hide",
-    "when": "editorFocus && (inlineEditIsVisible || inlineSuggestionVisible)"
-  },
-  {
-    "key": "alt+j",
-    "command": "editor.action.inlineSuggest.acceptNextLine",
-    "when": "editorFocus && inlineSuggestionVisible && !editorReadonly && !suggestWidgetVisible"
-  },
-  {
-    "key": "alt+l",
-    "command": "editor.action.inlineSuggest.acceptNextWord",
-    "when": "editorFocus && cursorBeforeGhostText && inlineSuggestionVisible && !accessibilityModeEnabled && !editorReadonly && !suggestWidgetVisible"
-  },
-  {
     "key": "alt+h",
-    "command": "editor.action.triggerSuggest",
-    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
-  },
-  {
-    "key": "alt+h",
-    "command": "hideSuggestWidget",
-    "when": "editorFocus && suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "alt+j",
-    "command": "selectNextSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "alt+k",
-    "command": "selectPrevSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "alt+l",
-    "command": "acceptSelectedSuggestion",
-    "when": "suggestWidgetVisible && textInputFocus"
+    "when": "inQuickOpen",
+    "command": "github.copilot.toggleStatusMenu"
   },
   ///////////////////////////////////////////////////////////////
   // help                            h    t3118
@@ -1838,11 +1799,6 @@ command groups
   ///////////////////////////////////////////////////////////////
   // history                         h    t7765
   ///////////////////////////////////////////////////////////////
-  {
-    "key": "alt+h",
-    "command": "workbench.action.chat.history",
-    "when": "inQuickOpen",
-  },
   ///////////////////////////////////////////////////////////////
   // interface                       i    t4780
   ///////////////////////////////////////////////////////////////
@@ -2024,11 +1980,6 @@ command groups
     "when": "!inQuickOpen",
   },
   {
-    "key": "ctrl+l ctrl+i",
-    "command": "inlineChat.viewInChat",
-    "when": "inChatInput && inlineChatVisible"
-  },
-  {
     "key": "ctrl+l ctrl+k",
     "command": "inlineChat.acceptChanges",
     "when": "inlineChatHasProvider && inlineChatVisible"
@@ -2056,8 +2007,8 @@ command groups
   },
   {
     "key": "ctrl+l ctrl+l",
-    "when": "editorFocus && inlineChatHasEditsAgent && inlineChatPossible && !editorReadonly",
     "command": "inlineChat.start",
+    "when": "editorFocus && inlineChatHasEditsAgent && inlineChatPossible && !editorReadonly",
   },
   {
     "key": "ctrl+l ctrl+n",
@@ -2113,6 +2064,59 @@ command groups
     "key": "ctrl+l ctrl+h",
     "command": "workbench.action.chat.history",
     "when": "!inQuickOpen",
+  },
+  ///////////////////////////////////////////////////////////////
+  // copilot - completions           l    t7505
+  ///////////////////////////////////////////////////////////////
+  {
+    "key": "ctrl+l ctrl+q",
+    "command": "editor.action.inlineSuggest.snooze",
+    "when": "!inQuickOpen"
+  },
+  {
+    "key": "alt+k",
+    "command": "editor.action.inlineSuggest.trigger",
+    "when": "editorFocus && !inlineSuggestionVisible && !suggestWidgetVisible"
+  },
+  {
+    "key": "alt+k",
+    "command": "editor.action.inlineSuggest.hide",
+    "when": "editorFocus && (inlineEditIsVisible || inlineSuggestionVisible)"
+  },
+  {
+    "key": "alt+j",
+    "command": "editor.action.inlineSuggest.acceptNextLine",
+    "when": "editorFocus && inlineSuggestionVisible && !editorReadonly && !suggestWidgetVisible"
+  },
+  {
+    "key": "alt+l",
+    "command": "editor.action.inlineSuggest.acceptNextWord",
+    "when": "editorFocus && cursorBeforeGhostText && inlineSuggestionVisible && !accessibilityModeEnabled && !editorReadonly && !suggestWidgetVisible"
+  },
+  {
+    "key": "alt+h",
+    "command": "editor.action.triggerSuggest",
+    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+  },
+  {
+    "key": "alt+h",
+    "command": "hideSuggestWidget",
+    "when": "editorFocus && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "alt+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "alt+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "alt+l",
+    "command": "acceptSelectedSuggestion",
+    "when": "suggestWidgetVisible && textInputFocus"
   },
   ///////////////////////////////////////////////////////////////
   // claude code                     l    t5930
