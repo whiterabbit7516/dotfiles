@@ -1981,13 +1981,13 @@ command groups
   },
   {
     "key": "ctrl+l ctrl+k",
-    "command": "inlineChat.acceptChanges",
-    "when": "inlineChatHasProvider && inlineChatVisible"
+    "command": "chatEditor.action.accept",
+    "when": "chatEdits.hasEditorModifications && editorFocus && !chatEdits.isCurrentlyBeingModified"
   },
   {
     "key": "ctrl+l ctrl+k",
-    "command": "chatEditor.action.accept",
-    "when": "chatEdits.hasEditorModifications && editorFocus && !chatEdits.isCurrentlyBeingModified"
+    "command": "inlineChat2.keep",
+    "when": "chatEdits.hasEditorModifications && chatInputHasFocus && inlineChatHasEditsAgent && inlineChatVisible && !chatEdits.isRequestInProgress && !chatInputHasText || chatEdits.hasEditorModifications && chatInputHasFocus && inlineChatHasNotebookAgent && inlineChatVisible && !chatEdits.isRequestInProgress && !chatInputHasText && activeEditor == 'workbench.editor.notebook'"
   },
   {
     "key": "ctrl+l ctrl+u",
@@ -1995,20 +1995,25 @@ command groups
     "when": "chatEdits.hasEditorModifications && editorFocus && !chatEdits.isCurrentlyBeingModified"
   },
   {
+    "key": "ctrl+l ctrl+u",
+    "command": "inlineChat2.undo",
+    "when": "chatInputHasFocus && inlineChatHasEditsAgent && inlineChatVisible && config.inlineChat.renderMode == 'hover' || chatInputHasFocus && inlineChatHasNotebookAgent && inlineChatVisible && activeEditor == 'workbench.editor.notebook' && config.inlineChat.renderMode == 'hover' || editorFocus && inlineChatHasEditsAgent && inlineChatVisible && !chatEdits.hasEditorModifications && config.inlineChat.renderMode == 'hover' || editorFocus && inlineChatHasNotebookAgent && inlineChatVisible && !chatEdits.hasEditorModifications && activeEditor == 'workbench.editor.notebook' && config.inlineChat.renderMode == 'hover'"
+  },
+  {
     "key": "ctrl+i ctrl+l",
     "command": "workbench.panel.chat.view.copilot.focus",
-    "when": "!inQuickOpen",
+    "when": "!inQuickOpen"
   },
   {
     "key": "ctrl+l",
     "command": "workbench.action.quickOpen",
     "args": ">Chat ",
-    "when": "inQuickOpen",
+    "when": "inQuickOpen"
   },
   {
     "key": "ctrl+l ctrl+l",
     "command": "inlineChat.start",
-    "when": "editorFocus && inlineChatHasEditsAgent && inlineChatPossible && !editorReadonly",
+    "when": "editorFocus && inlineChatHasEditsAgent && inlineChatPossible && !editorReadonly"
   },
   {
     "key": "ctrl+l ctrl+n",
