@@ -4193,8 +4193,14 @@ command groups
     "when": "terminalFocus",
     "command": "workbench.action.terminal.sendSequence",
     "args": {
-      // ctrl+l, normal mode, clear line, backspaces for bash, ctrl+l for bash
-      "text": "\u000c\u0003cc\u0008\u0008\u0008\u0008\u0008\u0008\u000c"
+      /*
+        powershell: ctrl+l, trailing enter + ctrl+l
+        bash: trailing enter + ctrl+l required for some reason
+        claude: ctrl+l x2 in quick succession clears
+        sh: ctrl+l doesn't work, clear command required, but will break claude
+      */
+       // esc (normal mode) || cc (insert mode) || backspace x2 || ctrl+k (delete to end) || ctrl+u (delete to start) || enter || ctrl+l (clear) x2
+       "text": "\u0003cc\u0008\u0008\u000b\u0015\u000a\u000c\u000c"
     }
   },
   ///////////////////////////////////////////////////////////////
