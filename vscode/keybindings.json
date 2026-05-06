@@ -89,6 +89,10 @@ command groups
   // unbinds                         -   t1113
   ///////////////////////////////////////////////////////////////
   {
+    "key": "ctrl+shift+i",
+    "command": "-workbench.action.chat.openagent",
+  },
+  {
     "key": "ctrl+a",
     "command": "-editor.action.selectAll"
   },
@@ -3704,7 +3708,7 @@ command groups
   },
   {
     "key": "ctrl+shift+i",
-    "when": "editorHasSelection && terminalIsOpen",
+    "when": "editorFocus || terminalFocus",
     "command": "workbench.action.terminal.sendSequence",
     "args": {
       "text": "${selectedText}"
@@ -3712,7 +3716,7 @@ command groups
   },
   {
     "key": "ctrl+y i",
-    "when": "editorHasSelection && terminalIsOpen",
+    "when": "editorFocus || terminalFocus",
     "command": "workbench.action.terminal.sendSequence",
     "args": {
       "text": "${selectedText}"
