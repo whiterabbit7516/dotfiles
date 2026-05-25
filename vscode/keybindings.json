@@ -89,6 +89,11 @@ command groups
   // unbinds                         -   t1113
   ///////////////////////////////////////////////////////////////
   {
+    "key": "ctrl+escape",
+    "command": "-claude-vscode.focus",
+    "when": "editorTextFocus && !config.claudeCode.useTerminal"
+  },
+  {
     "key": "ctrl+shift+i",
     "command": "-workbench.action.chat.openagent",
   },
@@ -2140,6 +2145,11 @@ command groups
     "when": "inQuickOpen",
     "command": "workbench.action.quickOpen",
     "args": ">Claude "
+  },
+  {
+    "key": "ctrl+l a",
+    "command": "claude-vscode.focus",
+    "when": "editorTextFocus && !config.claudeCode.useTerminal"
   },
   ///////////////////////////////////////////////////////////////
   // line                            l    t5788
