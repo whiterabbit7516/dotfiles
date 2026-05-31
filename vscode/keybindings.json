@@ -2079,6 +2079,17 @@ command groups
     "command": "workbench.action.chat.history",
     "when": "!inQuickOpen",
   },
+  {
+    "key": "ctrl+i l",
+    "command": "workbench.action.chat.focusAgentSessionsViewer",
+    "when": "!inQuickOpen",
+  },
+  {
+    "key": "ctrl+l c",
+    "command": "workbench.action.quickOpen",
+    "args": ">Claude Code ",
+    "when": "!inQuickOpen",
+  },
   ///////////////////////////////////////////////////////////////
   // copilot - completions           l    t7505
   ///////////////////////////////////////////////////////////////
@@ -2133,25 +2144,6 @@ command groups
     "when": "suggestWidgetVisible && textInputFocus"
   },
   ///////////////////////////////////////////////////////////////
-  // claude code                     l    t5930
-  ///////////////////////////////////////////////////////////////
-  {
-    "key": "ctrl+i l",
-    "when": "!inQuickOpen",
-    "command": "claudeVSCodeSidebarSecondary.focus"
-  },
-  {
-    "key": "ctrl+shift+l",
-    "when": "inQuickOpen",
-    "command": "workbench.action.quickOpen",
-    "args": ">Claude "
-  },
-  {
-    "key": "ctrl+l a",
-    "command": "claude-vscode.focus",
-    "when": "editorTextFocus && !config.claudeCode.useTerminal"
-  },
-  ///////////////////////////////////////////////////////////////
   // line                            l    t5788
   ///////////////////////////////////////////////////////////////
   {
@@ -2168,16 +2160,6 @@ command groups
     "key": "ctrl+l ctrl+j",
     "when": "editorFocus",
     "command": "editor.action.joinLines",
-  },
-  {
-    "key": "ctrl+l ctrl+b",
-    "when": "editorFocus",
-    "command": "lineBreakInsert",
-  },
-  {
-    "key": "ctrl+l ctrl+d",
-    "when": "textInputFocus && !editorReadonly",
-    "command": "editor.action.deleteLines",
   },
   {
     "key": "ctrl+l ctrl+s",
