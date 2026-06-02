@@ -23,7 +23,6 @@ command groups
     symbols                                    g    t4807
     jump                                       g    t2985
     outline                                    g    t6000
-    copilot - general                          h    t1658
     help                                       h    t3118
     history                                    h    t7765
     interface                                  i    t4780
@@ -33,10 +32,11 @@ command groups
     preferences                                k    t1917
     fold                                       k    t3866
     format                                     k    t4704
-    copilot - chat                             l    t7259
-    copilot - suggestions                      l    t7505
-    claude code                                l    t5930
-    line                                       l    t5788
+    line                                       k    t5788
+    ai - chat                                  l    t7259
+    ai - suggestions                           l    t7505
+    ai - copilot                               l    t8911
+    ai - claude                                l    t6032
     marks / bookmarks                          m    t0604
     minimap                                    m    t1725
     macros                                     m    t7096
@@ -1424,26 +1424,6 @@ command groups
     "when": "editorTextFocus",
   },
   {
-    "key": "ctrl+alt+j",
-    "command": "editor.action.moveLinesDownAction",
-    "when": "editorTextFocus && !editorReadonly && !inDebugMode",
-  },
-  {
-    "key": "ctrl+alt+k",
-    "command": "editor.action.moveLinesUpAction",
-    "when": "editorTextFocus && !editorReadonly && !inDebugMode",
-  },
-  {
-    "key": "ctrl+shift+alt+j",
-    "command": "editor.action.copyLinesDownAction",
-    "when": "editorTextFocus && !editorReadonly",
-  },
-  {
-    "key": "ctrl+shift+alt+k",
-    "command": "editor.action.copyLinesUpAction",
-    "when": "editorTextFocus && !editorReadonly",
-  },
-  {
     "key": "ctrl+e ctrl+e",
     "command": "workbench.action.navigateToLastEditLocation",
     "when": "editorFocus",
@@ -1783,24 +1763,10 @@ command groups
     "command": "outline.followCursor"
   },
   ///////////////////////////////////////////////////////////////
-  // copilot - general               h    t1658
-  ///////////////////////////////////////////////////////////////
-  {
-    "key": "ctrl+h",
-    "when": "inQuickOpen",
-    "command": "workbench.action.quickOpen",
-    "args": ">Copilot "
-  },
-  {
-    "key": "alt+h",
-    "when": "inQuickOpen",
-    "command": "github.copilot.toggleStatusMenu"
-  },
-  ///////////////////////////////////////////////////////////////
   // help                            h    t3118
   ///////////////////////////////////////////////////////////////
   {
-    "key": "ctrl+shift+h",
+    "key": "ctrl+h",
     "when": "inQuickOpen",
     "command": "workbench.action.quickOpen",
     "args": ">Help "
@@ -1959,13 +1925,61 @@ command groups
     "command": "editor.action.formatDocument",
     "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
   },
+  ///////////////////////////////////////////////////////////////
+  // line                            k    t5788
+  ///////////////////////////////////////////////////////////////
+  {
+    "key": "ctrl+alt+j",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly && !inDebugMode",
+  },
+  {
+    "key": "ctrl+alt+k",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly && !inDebugMode",
+  },
+  {
+    "key": "ctrl+shift+alt+j",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly",
+  },
+  {
+    "key": "ctrl+shift+alt+k",
+    "command": "editor.action.copyLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly",
+  },
+  {
+    "key": "ctrl+alt+h",
+    "when": "editorFocus && !editorReadonly && !inDebugMode",
+    "command": "editor.action.outdentLines",
+  },
+  {
+    "key": "ctrl+alt+l",
+    "when": "editorFocus && !editorReadonly && !inDebugMode",
+    "command": "editor.action.indentLines",
+  },
+  {
+    "key": "ctrl+k ctrl+j",
+    "when": "editorFocus",
+    "command": "editor.action.joinLines",
+  },
   {
     "key": "ctrl+k ctrl+s",
-    "command": "editor.action.formatSelection",
-    "when": "editorHasDocumentSelectionFormattingProvider && editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
+    "when": "textInputFocus && !editorReadonly",
+    "command": "editor.action.sortLinesAscending",
+  },
+  {
+    "key": "ctrl+k ctrl+c",
+    "when": "editorTextFocus && !editorReadonly",
+    "command": "editor.action.commentLine",
+  },
+  {
+    "key": "ctrl+k ctrl+a",
+    "when": "editorTextFocus",
+    "command": "editor.action.insertCursorAtEndOfEachLineSelected",
   },
   ///////////////////////////////////////////////////////////////
-  // copilot - chat                  l    t7259
+  // ai - chat                                  l    t7259
   ///////////////////////////////////////////////////////////////
   {
     "key": "ctrl+l ctrl+n",
@@ -2084,14 +2098,8 @@ command groups
     "command": "workbench.action.chat.focusAgentSessionsViewer",
     "when": "!inQuickOpen",
   },
-  {
-    "key": "ctrl+l c",
-    "command": "workbench.action.quickOpen",
-    "args": ">Claude Code ",
-    "when": "!inQuickOpen",
-  },
   ///////////////////////////////////////////////////////////////
-  // copilot - completions           l    t7505
+  // ai - suggestions                           l    t7505
   ///////////////////////////////////////////////////////////////
   {
     "key": "ctrl+l ctrl+q",
@@ -2144,37 +2152,27 @@ command groups
     "when": "suggestWidgetVisible && textInputFocus"
   },
   ///////////////////////////////////////////////////////////////
-  // line                            l    t5788
+  // ai - copilot                               l    t8911
   ///////////////////////////////////////////////////////////////
   {
-    "key": "ctrl+alt+h",
-    "when": "editorFocus && !editorReadonly && !inDebugMode",
-    "command": "editor.action.outdentLines",
+    "key": "ctrl+l g",
+    "command": "workbench.action.quickOpen",
+    "args": ">Copilot ",
+    "when": "!inQuickOpen"
   },
   {
-    "key": "ctrl+alt+l",
-    "when": "editorFocus && !editorReadonly && !inDebugMode",
-    "command": "editor.action.indentLines",
+    "key": "ctrl+l t",
+    "when": "!inQuickOpen",
+    "command": "github.copilot.toggleStatusMenu"
   },
+  ///////////////////////////////////////////////////////////////
+  // ai - claude                                l    t6032
+  ///////////////////////////////////////////////////////////////
   {
-    "key": "ctrl+l ctrl+j",
-    "when": "editorFocus",
-    "command": "editor.action.joinLines",
-  },
-  {
-    "key": "ctrl+l ctrl+s",
-    "when": "textInputFocus && !editorReadonly",
-    "command": "editor.action.sortLinesAscending",
-  },
-  {
-    "key": "ctrl+l ctrl+c",
-    "when": "editorTextFocus && !editorReadonly",
-    "command": "editor.action.commentLine",
-  },
-  {
-    "key": "ctrl+l ctrl+a",
-    "when": "editorTextFocus",
-    "command": "editor.action.insertCursorAtEndOfEachLineSelected",
+    "key": "ctrl+l c",
+    "command": "workbench.action.quickOpen",
+    "args": ">Claude Code ",
+    "when": "!inQuickOpen",
   },
   ///////////////////////////////////////////////////////////////
   // marks / bookmarks               m    t0604
@@ -4195,8 +4193,8 @@ command groups
         claude: ctrl+l x2 in quick succession clears
         sh: ctrl+l doesn't work, clear command required, but will break claude
       */
-       // esc (normal mode) || cc (insert mode) || backspace x2 || ctrl+k (delete to end) || ctrl+u (delete to start) || enter || ctrl+l (clear) x2
-       "text": "\u0003cc\u0008\u0008\u000b\u0015\u000a\u000c\u000c"
+      // esc (normal mode) || cc (insert mode) || backspace x2 || ctrl+k (delete to end) || ctrl+u (delete to start) || enter || ctrl+l (clear) x2
+      "text": "\u0003cc\u0008\u0008\u000b\u0015\u000a\u000c\u000c"
     }
   },
   ///////////////////////////////////////////////////////////////
