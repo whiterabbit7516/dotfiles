@@ -1474,8 +1474,13 @@ command groups
     "when": "editorFocus",
   },
   {
-    "key": "ctrl+e ctrl+i",
+    "key": "ctrl+e i",
     "command": "editor.action.toggleOvertypeInsertMode",
+    "when": "editorFocus",
+  },
+  {
+    "key": "ctrl+e ctrl+i",
+    "command": "insert-unicode.insertText",
     "when": "editorFocus",
   },
   ///////////////////////////////////////////////////////////////
