@@ -1735,7 +1735,7 @@ command groups
     "command": "editor.action.goToTypeDefinition"
   },
   {
-    "key": "ctrl+g ctrl+l",
+    "key": "ctrl+g ctrl+k",
     "when": "editorFocus",
     "command": "workbench.action.gotoLine"
   },
