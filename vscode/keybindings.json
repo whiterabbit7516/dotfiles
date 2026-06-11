@@ -3446,13 +3446,18 @@ command groups
     "when": "!inQuickOpen && (editorFocus || openEditorsFocus || activeEditor != '')",
   },
   {
+    "key": "ctrl+w ctrl+a",
+    "command": "workbench.action.closeEditorsAndGroup",
+    "when": "!inQuickOpen && (editorFocus || activeEditor != '')",
+  },
+  {
     "key": "ctrl+w ctrl+w",
     "when": "!inQuickOpen && (editorFocus || openEditorsFocus || activeEditor != '')",
     "command": "workbench.action.closeActiveEditor",
   },
   {
     "key": "ctrl+w ctrl+w",
-    "when": "activeEditorGroupEmpty && multipleEditorGroups",
+    "when": "!inQuickOpen && activeEditorGroupEmpty && multipleEditorGroups",
     "command": "workbench.action.closeGroup",
   },
   {
@@ -4437,5 +4442,5 @@ command groups
     "key": "ctrl+i z",
     "command": "workbench.view.undostack", // non existant
     "when": "!inQuickOpen"
-  }
+  },
 ]
