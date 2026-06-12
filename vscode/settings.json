@@ -667,4 +667,6 @@
   "workbench.editor.splitInGroupLayout": "vertical",
   "window.zoomLevel": -1,
   "editor.fontFamily": "monospace",
+  "workbench.editor.labelFormat": "short",
+  "workbench.editor.closeEmptyGroups": false
 }
