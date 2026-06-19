@@ -1118,6 +1118,11 @@ command groups
     "when": "!inQuickOpen",
     "command": "workbench.action.focusSideBar"
   },
+  {
+    "key": "ctrl+9",
+    "when": "!inQuickOpen",
+    "command": "workbench.action.focusSideBar"
+  },
   ///////////////////////////////////////////////////////////////
   // commands                        b    t6712
   ///////////////////////////////////////////////////////////////
@@ -2513,6 +2518,11 @@ command groups
   },
   {
     "key": "ctrl+i ctrl+n",
+    "when": "!inQuickOpen",
+    "command": "workbench.action.focusAuxiliaryBar"
+  },
+  {
+    "key": "ctrl+0",
     "when": "!inQuickOpen",
     "command": "workbench.action.focusAuxiliaryBar"
   },
