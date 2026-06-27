@@ -4287,8 +4287,8 @@ command groups
         claude: ctrl+l x2 in quick succession clears
         sh: ctrl+l doesn't work, clear command required, but will break claude
       */
-      // esc (normal mode) || cc (insert mode) || backspace x2 || ctrl+k (delete to end) || ctrl+u (delete to start) || enter || ctrl+l (clear) x2
-      "text": "\u0003cc\u0008\u0008\u000b\u0015\u000a\u000c\u000c"
+      // esc (normal mode) || cc (insert mode) || backspace x2 || ctrl+k (delete to end) || ctrl+u (delete to start) || enter || ctrl+l (clear)
+      "text": "\u0003cc\u0008\u0008\u000b\u0015\u000a\u000c"
     }
   },
   ///////////////////////////////////////////////////////////////
