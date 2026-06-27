@@ -80,10 +80,30 @@ function Copy-Location {
   $location = Get-Location | Select-Object -ExpandProperty Path;
   & tmux set-buffer $location;
   & tmux set-buffer -b "location" $location;
-  Write-Host "path copied to tmux buffer: $location";
-  & tmux display-message -d 1000 "path copied to tmux buffer: $location";
+  $message = "path copied to tmux buffer: $location"
+  Write-Host $message;
+  & tmux display-message -d 1000 $message;
 }
 Set-Alias -Name cl -Value 'Copy-Location';
+#########################################
+# Rename-Pane
+#########################################
+function Rename-Pane {
+  if (-not (Get-Command tmux -ErrorAction SilentlyContinue)) {
+    Write-Warning "tmux is not available on PATH.";
+    return;
+  }
+  & tmux list-sessions 2>&1 | Out-Null;
+  if ($LASTEXITCODE -ne 0) {
+    Write-Warning "tmux server is not running.";
+    return;
+  }
+  $location = Get-Location | Select-Object -ExpandProperty Path;
+  & tmux select-pane -T $location;
+  $message = "tmux pane renamed: $location"
+  Write-Host $message;
+  & tmux display-message -d 1000 $message;
+}
 #########################################
 # fzf
 #########################################
