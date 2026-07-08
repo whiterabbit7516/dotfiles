@@ -9,8 +9,6 @@ SCRIPTROOT="$(dirname $SCRIPTPATH)"
 ##########################################
 mkdir -p ~/.config/powershell
 ln -fsv $SCRIPTROOT/powershell/profile.ps1 ~/.config/powershell/profile.ps1
-mkdir -p ~/.local/dotfiles/powershell
-touch ~/.local/dotfiles/powershell/profile.ps1
 ##########################################
 # vim
 ##########################################
@@ -19,16 +17,12 @@ ln -fsv $SCRIPTROOT/vim/.vimrc ~/.vimrc
 # tmux
 ##########################################
 ln -fsv $SCRIPTROOT/tmux/.tmux.conf ~/.tmux.conf
-mkdir -p ~/.local/dotfiles/tmux
-touch ~/.local/dotfiles/tmux/tmux.conf
 ##########################################
 # vscode
 ##########################################
 mkdir -p ~/.config/Code/User
-# ln -fsv $SCRIPTROOT/vscode/settings.json ~/.config/Code/User/settings.json
-# ln -fsv $SCRIPTROOT/vscode/keybindings.json ~/.config/Code/User/keybindings.json
-cp $SCRIPTROOT/vscode/settings.json ~/.config/Code/User/settings.json
-cp $SCRIPTROOT/vscode/keybindings.json ~/.config/Code/User/keybindings.json
+cp -n $SCRIPTROOT/vscode/settings.json ~/.config/Code/User/settings.json
+cp -n $SCRIPTROOT/vscode/keybindings.json ~/.config/Code/User/keybindings.json
 ##########################################
 # bash
 ##########################################
@@ -38,5 +32,5 @@ cp $SCRIPTROOT/vscode/keybindings.json ~/.config/Code/User/keybindings.json
 # claude
 ##########################################
 mkdir -p ~/.claude
-cp $SCRIPTROOT/claude/settings.json ~/.claude/settings.json
-cp $SCRIPTROOT/claude/claude.json ~/.claude.json
+cp -n $SCRIPTROOT/claude/settings.json ~/.claude/settings.json
+cp -n $SCRIPTROOT/claude/claude.json ~/.claude.json

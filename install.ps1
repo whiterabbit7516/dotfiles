@@ -1,10 +1,9 @@
 ##########################################
 # powershell
 ##########################################
-install-module psfzf -force
-new-item -type dir ~/.config/powershell -force | out-null
+Install-Module psfzf -force
+New-Item -type dir ~/.config/powershell -force | Out-Null
 ln -fsv $PSScriptRoot/powershell/profile.ps1 ~/.config/powershell/profile.ps1
-new-item -type file ~/.local/dotfiles/powershell/profile.ps1 -force | out-null
 ##########################################
 # vim
 ##########################################
@@ -13,15 +12,12 @@ ln -fsv $PSScriptRoot/vim/.vimrc ~/.vimrc
 # tmux
 ##########################################
 ln -fsv $PSScriptRoot/tmux/.tmux.conf ~/.tmux.conf
-new-item -type file ~/.local/dotfiles/tmux/tmux.conf -force | out-null
 ##########################################
 # vscode
 ##########################################
-new-item -type dir ~/.config/Code/User -force | out-null
-# ln -fsv $PSScriptRoot/vscode/settings.json ~/.config/Code/User/settings.json
-# ln -fsv $PSScriptRoot/vscode/keybindings.json ~/.config/Code/User/keybindings.json
-copy-item $PSScriptRoot/vscode/settings.json ~/.config/Code/User/settings.json
-copy-item $PSScriptRoot/vscode/keybindings.json ~/.config/Code/User/keybindings.json
+New-Item -type dir ~/.config/Code/User -force | Out-Null
+if (-not (Test-Path ~/.config/Code/User/settings.json)) { Copy-Item $PSScriptRoot/vscode/settings.json ~/.config/Code/User/settings.json }
+if (-not (Test-Path ~/.config/Code/User/keybindings.json)) { Copy-Item $PSScriptRoot/vscode/keybindings.json ~/.config/Code/User/keybindings.json }
 ##########################################
 # bash
 ##########################################
@@ -30,6 +26,6 @@ copy-item $PSScriptRoot/vscode/keybindings.json ~/.config/Code/User/keybindings.
 ##########################################
 # claude
 ##########################################
-new-item -type dir ~/.claude -force | out-null
-copy-item $PSScriptRoot/claude/settings.json ~/.claude/settings.json
-copy-item $PSScriptRoot/claude/claude.json ~/.claude.json
+New-Item -type dir ~/.claude -force | Out-Null
+if (-not (Test-Path ~/.claude/settings.json)) { Copy-Item $PSScriptRoot/claude/settings.json ~/.claude/settings.json }
+if (-not (Test-Path ~/.claude.json)) { Copy-Item $PSScriptRoot/claude/claude.json ~/.claude.json }
