@@ -53,8 +53,9 @@ Set-PSReadLineOption -AddToHistoryHandler {
     if ($trimmed.Length -eq 0) {
         return $false
     }
-    # Only add to history if the line ends with a semicolon
-    return ($trimmed[-1] -eq ';')
+    # # Only add to history if the line ends with a semicolon
+    # return ($trimmed[-1] -eq ';')
+    return $true
 };
 function Wipe-History {
   Clear-History; # delete current PSReadLine session history
@@ -62,7 +63,7 @@ function Wipe-History {
   Remove-Item $(Get-PSReadLineOption).HistorySavePath; # delete PSReadLine history file
 };
 function Edit-History {
-   vim $(Get-PSReadLineOption).HistorySavePath;
+   code -r $(Get-PSReadLineOption).HistorySavePath;
 };
 #########################################
 # Copy-Location
