@@ -1,3 +1,4 @@
+#!/usr/bin/env -S pwsh -NoLogo -NonInteractive -NoProfile
 ##########################################
 # powershell
 ##########################################
