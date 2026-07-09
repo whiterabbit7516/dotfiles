@@ -87,9 +87,16 @@ function Copy-Location {
 }
 Set-Alias -Name cl -Value 'Copy-Location';
 #########################################
-# Rename-Pane
+# tmux 
 #########################################
-function Rename-Pane {
+function Store-TmuxCommand {
+  param(
+    [Parameter(Mandatory = $true, HelpMessage = "command to be executed")]
+    [ValidateNotNullOrWhiteSpace()]
+    [string]$Command,
+    [Parameter(Mandatory = $false, HelpMessage = "store the command without executing it")]
+    [switch]$NoExecute
+  )
   if (-not (Get-Command tmux -ErrorAction SilentlyContinue)) {
     Write-Warning "tmux is not available on PATH.";
     return;
@@ -100,11 +107,46 @@ function Rename-Pane {
     return;
   }
   $location = Get-Location | Select-Object -ExpandProperty Path;
-  & tmux select-pane -T $location;
-  $message = "tmux pane renamed: $location"
-  Write-Host $message;
-  & tmux display-message -d 1000 $message;
+  $pane_title = " $location · $Command "; # store the cwd & cmd in pane_title
+  & tmux select-pane -T $pane_title;
+  if (-not $NoExecute) {
+    Invoke-Expression $Command;
+  }
 }
+Set-Alias -Name sb -Value 'Store-TmuxCommand';
+function Restore-TmuxCommand {
+  if (-not (Get-Command tmux -ErrorAction SilentlyContinue)) {
+    Write-Warning "tmux is not available on PATH.";
+    return;
+  }
+  & tmux list-sessions 2>&1 | Out-Null;
+  if ($LASTEXITCODE -ne 0) {
+    Write-Warning "tmux server is not running.";
+    return;
+  }
+  $pane_title = & tmux display-message -p '#{pane_title}'; # restore the cwd & cmd from pane_title
+  if ([string]::IsNullOrWhiteSpace($pane_title)) {
+    Write-Warning "pane title is empty; nothing to restore.";
+    return;
+  }
+  $parts = $pane_title.Trim() -split ' \· ', 2; # parse out the location and command
+  if ($parts.Count -ne 2) {
+    Write-Warning "pane title is not in the expected '<location> · <command>' format: $pane_title";
+    return;
+  }
+  $location, $Command = $parts;
+  if ([string]::IsNullOrWhiteSpace($location) -or [string]::IsNullOrWhiteSpace($Command)) {
+    Write-Warning "parsed an empty location or command from pane title: $pane_title";
+    return;
+  }
+  if (-not (Test-Path -LiteralPath $location)) {
+    Write-Warning "parsed location does not exist: $location";
+    return;
+  }
+  Set-Location -LiteralPath $location;
+  Invoke-Expression $Command;
+}
+Set-Alias -Name rb -Value 'Restore-TmuxCommand';
 #########################################
 # fzf
 #########################################
