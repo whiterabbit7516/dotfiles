@@ -1,7 +1,7 @@
 ##########################################
 # powershell
 ##########################################
-Install-Module psfzf -force
+Install-Module PSFzf
 New-Item -type dir ~/.config/powershell -force | Out-Null
 ln -fsv $PSScriptRoot/powershell/profile.ps1 ~/.config/powershell/profile.ps1
 ##########################################
