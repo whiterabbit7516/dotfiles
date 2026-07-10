@@ -3796,7 +3796,7 @@ command groups
   },
   {
     "key": "ctrl+y l",
-    "when": "terminalChatAgentRegistered && terminalHasBeenCreated || terminalChatAgentRegistered && terminalProcessSupported",
+    "when": "!inQuickOpen && terminalChatAgentRegistered && terminalHasBeenCreated",
     "command": "workbench.action.terminal.chat.start",
   },
   {
