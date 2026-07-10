@@ -668,5 +668,6 @@
   "window.zoomLevel": -1,
   "editor.fontFamily": "monospace",
   "workbench.editor.labelFormat": "short",
-  "workbench.editor.closeEmptyGroups": false
+  "workbench.editor.closeEmptyGroups": false,
+  "workbench.editor.useModal": "off"
 }
