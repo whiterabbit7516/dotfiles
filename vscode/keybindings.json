@@ -755,6 +755,26 @@ command groups
     "command": "workbench.action.toggleEditorGroupLock"
   },
   {
+    "key": "ctrl+1",
+    "when": "!inQuickOpen",
+    "command": "workbench.action.focusFirstEditorGroup"
+  },
+  {
+    "key": "ctrl+2",
+    "when": "!inQuickOpen",
+    "command": "workbench.action.focusSecondEditorGroup"
+  },
+  {
+    "key": "ctrl+3",
+    "when": "!inQuickOpen",
+    "command": "workbench.action.focusThirdEditorGroup"
+  },
+  {
+    "key": "ctrl+4",
+    "when": "!inQuickOpen",
+    "command": "workbench.action.focusFourthEditorGroup"
+  },
+  {
     "key": "ctrl+a 1",
     "when": "!inQuickOpen",
     "command": "workbench.action.focusFirstEditorGroup"
