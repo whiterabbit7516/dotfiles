@@ -1881,7 +1881,6 @@ command groups
   // history                         h    t7765
   ///////////////////////////////////////////////////////////////
   {
-    // tmux new
     "key": "ctrl+shift+h",
     "when": "terminalFocus",
     "command": "workbench.action.terminal.sendSequence",
