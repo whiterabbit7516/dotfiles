@@ -89,6 +89,47 @@ Set-Alias -Name cl -Value 'Copy-Location';
 #########################################
 # tmux 
 #########################################
+function Start-TmuxSession {
+  if (-not (Get-Command tmux -ErrorAction SilentlyContinue)) {
+    Write-Warning "tmux is not available on PATH.";
+    return;
+  }
+  & tmux list-sessions 2>&1 | Out-Null;
+  if ($LASTEXITCODE -eq 0) {
+    if ([string]::IsNullOrWhiteSpace($ENV:TMUX)) {
+      & tmux attach-session;
+    }
+    else {
+      # already inside tmux; attach-session would fail in nested mode
+      $target = (& tmux list-sessions -F '#S' | Select-Object -First 1);
+      if ([string]::IsNullOrWhiteSpace($target)) {
+        Write-Warning "no tmux session found to switch to.";
+        return;
+      }
+      & tmux switch-client -t $target;
+    }
+    return;
+  }
+  & tmux new-session;
+}
+function Initialize-TmuxWindows {
+  if (-not (Get-Command tmux -ErrorAction SilentlyContinue)) {
+    Write-Warning "tmux is not available on PATH.";
+    return;
+  }
+  if ([string]::IsNullOrWhiteSpace($ENV:TMUX)) {
+    Write-Warning "must be inside tmux to initialize windows.";
+    return;
+  }
+  & tmux list-sessions 2>&1 | Out-Null;
+  if ($LASTEXITCODE -ne 0) {
+    Write-Warning "tmux server is not running.";
+    return;
+  }
+  @('· ⚫ ·', '· ⚫ 🟢 ·', '· 🟢 🔴 ·', '· 🔴 🟡 ·', '· 🟡 ⚪ ·', '· ⚪ ·') | ForEach-Object {
+    & tmux new-window -n $_;
+  }
+}
 function Store-TmuxCommand {
   param(
     [Parameter(Mandatory = $true, HelpMessage = "command to be executed")]
