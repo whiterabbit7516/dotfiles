@@ -24,3 +24,20 @@ nnoremap > xp
 nnoremap < hxph
 
 set number
+set scrolloff=12
+
+set nobackup
+set nowritebackup
+set noswapfile
+set noundofile
+
+set hlsearch
+set incsearch
+
+set expandtab
+set tabstop=2
+set autoindent
+
+set autoread
+set updatetime=2000
+autocmd CursorHold,CursorHoldI * silent! update
