@@ -2366,7 +2366,7 @@ command groups
     "when": "terminalFocus",
     "command": "workbench.action.terminal.sendSequence",
     "args": {
-      "text": "tmux new;\u000a"
+      "text": "Start-TmuxSession;\u000a"
     }
   },
   {
