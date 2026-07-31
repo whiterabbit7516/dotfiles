@@ -2900,12 +2900,12 @@ command groups
     "command": "workbench.action.terminal.selectToPreviousCommand",
   },
   {
-    "key": "shift+alt+h",
+    "key": "shift+alt+l",
     "when": "editorTextFocus",
     "command": "editor.action.smartSelect.shrink",
   },
   {
-    "key": "shift+alt+l",
+    "key": "shift+alt+h",
     "when": "editorTextFocus",
     "command": "editor.action.smartSelect.expand",
   },
