@@ -126,7 +126,7 @@ function Initialize-TmuxWindows {
     Write-Warning "tmux server is not running.";
     return;
   }
-  @('· ⚫ ·', '· ⚫ 🟢 ·', '· 🟢 🔴 ·', '· 🔴 🟡 ·', '· 🟡 ⚪ ·', '· ⚪ ·') | ForEach-Object {
+  @('· ⚫ ·', '· ⚫ 🟢 ·', '· 🟢 🟠 ·', '· 🟠 🟡 ·', '· 🟡 ⚪ ·', '· ⚪ ·') | ForEach-Object {
     & tmux new-window -n $_;
   }
 }
