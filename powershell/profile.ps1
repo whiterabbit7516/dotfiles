@@ -256,11 +256,11 @@ function prompt {
   $hostname = $ENV:HOST ?? $(hostname);
   $gitbranch = get-gitbranch ?? "????";
   if ($gitbranch -eq $null) { $gitbranch = "????"; }
-  $promptcontext = "■ $username | $hostname | $gitbranch | $path ■";
+  $promptcontext = "│ $username │ $hostname │ $gitbranch │ $path │";
   $promptwidth = $promptcontext.Length;
-  $promptprefix = "■■■▶ ";
-  $promptbordertop = "■" * $promptwidth;
-  $promptborderbottom = "■" + $("-" * ($promptwidth - 2)) + "■";
+  $promptprefix = "➜  ";
+  $promptbordertop = "┌" + $("─" * ($promptwidth - 2)) + "┐";
+  $promptborderbottom = "└" + $("─" * ($promptwidth - 2)) + "┘";
   $prompt = $promptbordertop + "`n" + $promptcontext + "`n" + $promptborderbottom + "`n" + $promptprefix;
   return $prompt;
 }
