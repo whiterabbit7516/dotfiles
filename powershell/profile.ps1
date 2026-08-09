@@ -66,6 +66,12 @@ function Edit-History {
    code -r $(Get-PSReadLineOption).HistorySavePath;
 };
 #########################################
+# PowerShell Profile
+#########################################
+function Edit-PSProfile {
+   code -r $PROFILE.CurrentUserAllHosts;
+};
+#########################################
 # Copy-Location
 #########################################
 function Copy-Location {
