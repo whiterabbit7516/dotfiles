@@ -213,7 +213,7 @@ $PSStyle.FileInfo.Directory = $PSStyle.Foreground.Blue;
 #########################################
 # prompt
 #########################################
-function get-gitbranch {
+function Get-GitRef {
     $errorpattern = "^(fatal|error)\:.+$";
     $branchpattern = "^.+branch (?<branch>.+)$";
     $commitpattern = "^.+detached at (?<commit>.+)$";
@@ -259,7 +259,7 @@ function get-gitbranch {
 function prompt {
   $username = $ENV:USER ?? $(whoami);
   $hostname = $ENV:HOST ?? $(hostname);
-  $gitbranch = $(get-gitbranch) ?? "●";
+  $gitbranch = $(Get-GitRef) ?? "●";
   $path = Get-Location # | Split-Path -Leaf
   $promptcontext = "│ $username │ $hostname │ $gitbranch │ $path │";
   $promptwidth = $promptcontext.Length;
