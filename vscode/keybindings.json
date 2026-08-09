@@ -4310,8 +4310,8 @@ command groups
     "command": "workbench.action.terminal.sendSequence",
     "args": {
       /*
-        powershell: ctrl+l, trailing enter + ctrl+l
-        bash: trailing enter + ctrl+l required for some reason
+        powershell: trailing enter + ctrl+l
+        bash: trailing enter + ctrl+l
         claude: ctrl+l x2 in quick succession clears
         sh: ctrl+l doesn't work, clear command required, but will break claude
       */
