@@ -257,11 +257,10 @@ function get-gitbranch {
     return $null;
 }
 function prompt {
-  $path = Get-Location # | Split-Path -Leaf
   $username = $ENV:USER ?? $(whoami);
   $hostname = $ENV:HOST ?? $(hostname);
-  $gitbranch = get-gitbranch ?? "●";
-  if ($gitbranch -eq $null) { $gitbranch = "●"; }
+  $gitbranch = $(get-gitbranch) ?? "●";
+  $path = Get-Location # | Split-Path -Leaf
   $promptcontext = "│ $username │ $hostname │ $gitbranch │ $path │";
   $promptwidth = $promptcontext.Length;
   $promptprefix = "➜  ";
