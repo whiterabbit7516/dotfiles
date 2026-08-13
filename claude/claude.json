@@ -1,4 +1,5 @@
 {
   "theme": "dark-ansi",
-  "editorMode": "vim"
+  "editorMode": "vim",
+  "messageIdleNotifThresholdMs": 5000
 }

@@ -18,5 +18,6 @@
     "CLAUDE_CODE_DISABLE_TERMINAL_TITLE": "1"
   },
   "theme": "dark",
-  "editorMode": "vim"
+  "editorMode": "vim",
+  "preferredNotifChannel": "terminal_bell"
 }
