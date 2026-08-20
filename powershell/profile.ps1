@@ -133,7 +133,9 @@ function Initialize-TmuxWindows {
     return;
   }
   @('⚫', '⚫ 🟢', '🟢 🟡', '🟡 🟠', '🟠 🔵', '🔵 ⚪', '⚪') | ForEach-Object {
-    & tmux new-window -n $_;
+    $window_name = $_;
+    & tmux new-window -n $window_name;
+    & tmux clock-mode -t $window_name;
   }
 }
 function Store-TmuxCommand {
@@ -194,6 +196,23 @@ function Restore-TmuxCommand {
   Invoke-Expression $Command;
 }
 Set-Alias -Name rb -Value 'Restore-TmuxCommand';
+function Get-TmuxPaneId {
+  if (-not (Get-Command tmux -ErrorAction SilentlyContinue)) {
+    Write-Warning "tmux is not available on PATH.";
+    return;
+  }
+  & tmux list-sessions 2>&1 | Out-Null;
+  if ($LASTEXITCODE -ne 0) {
+    Write-Warning "tmux server is not running.";
+    return;
+  }
+  $pane_id = & tmux display-message -p '#{session_id}:#{window_id}.#{pane_id}'
+  if ([string]::IsNullOrWhiteSpace($pane_id)) {
+    Write-Warning "failed to retrieve pane id.";
+    return;
+  }
+  return $pane_id;
+}
 #########################################
 # fzf
 #########################################
