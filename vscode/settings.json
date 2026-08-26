@@ -537,12 +537,12 @@
   "git.enableSmartCommit": true,
   "editor.minimap.maxColumn": 60,
   "editor.minimap.renderCharacters": false,
-  "editor.cursorSmoothCaretAnimation": true,
+  "editor.cursorSmoothCaretAnimation": "on",
   "editor.smoothScrolling": true,
   "editor.cursorBlinking": "phase",
   "workbench.iconTheme": "material-icon-theme",
   "editor.codeLens": false,
-  "editor.renderWhitespace": "all",
+  "editor.renderWhitespace": "none",
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "terminal.integrated.copyOnSelection": true,
   "debug.toolBarLocation": "docked",
@@ -606,7 +606,7 @@
   "git.confirmForcePush": false,
   "editor.formatOnType": true,
   "terminal.integrated.rendererType": "canvas",
-  "editor.lightbulb.enabled": false,
+  "editor.lightbulb.enabled": "off",
   "editor.cursorStyle": "line",
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.wordWrap": "off",
@@ -656,20 +656,82 @@
   "vim.foldfix": true,
   "remote.autoForwardPorts": false,
   "files.insertFinalNewline": true,
-  "editor.guides.indentation": false,
-  "window.menuBarVisibility": "toggle",
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
   "editor.guides.bracketPairs": "active",
-  "workbench.colorTheme": "Horizon Bright",
   "editor.columnSelection": true,
-  "workbench.activityBar.visible": false,
   "workbench.editor.splitInGroupLayout": "vertical",
   "window.zoomLevel": -1,
   "editor.fontFamily": "monospace",
-  "workbench.editor.labelFormat": "short",
-  "workbench.editor.closeEmptyGroups": false,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "github.copilot.selectedCompletionModel": "",
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "explorer.autoReveal": false,
+  "editor.language.brackets": [],
+  "diffEditor.ignoreTrimWhitespace": false,
+  "files.exclude": {
+    "~/.dotnet": true,
+  },
+  "workbench.startupEditor": "none",
+  "chat.mcp.gallery.enabled": true,
+  "chat.tips.enabled": false,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock",
+    "*.cs": "${capture}.designer.cs,${capture}.g.cs,${capture}.generjated.cs,${capture}.run.json,${capture}.settings.json,${capture}.settings.*.json",
+    "*.csproj": "${capture}.csproj.user",
+    "*.json": "${capture}.Development.json",
+    "*.cshtml": "${capture}.cshtml.cs,${capture}.cshtml.css",
+    "*.razor": "${capture}.razor.cs,${capture}.razor.css",
+    "*.resx": "${capture}.Designer.cs",
+    "*.xaml": "${capture}.xaml.cs",
+    "*.sqlite": "${capture}.${extname}-*",
+    "*.db": "${capture}.${extname}-*",
+    "*.sqlite3": "${capture}.${extname}-*",
+    "*.db3": "${capture}.${extname}-*",
+    "*.sdb": "${capture}.${extname}-*",
+    "*.s3db": "${capture}.${extname}-*"
+  },
+  "chat.tools.urls.autoApprove": {
+    "https://code.visualstudio.com": true,
+    "https://github.com/microsoft/vscode/wiki/*": true,
+    "https://github.com": {
+      "approveRequest": false,
+      "approveResponse": true
+    }
+  },
+  "claudeCode.preferredLocation": "panel",
   "workbench.editor.useModal": "off",
+  "claudeCode.useCtrlEnterToSend": true,
+  "editor.inlineSuggest.edits.showCollapsed": true,
+  "editor.mouseWheelScrollSensitivity": 2,
+  "chat.tools.terminal.autoApprove": {
+    "dotnet test": true
+  },
+  "workbench.editor.closeEmptyGroups": false,
+  "workbench.colorTheme": "Amethyst",
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.rightClickBehavior": "default"
 }
