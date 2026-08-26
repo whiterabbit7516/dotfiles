@@ -726,7 +726,7 @@
   "workbench.editor.useModal": "off",
   "claudeCode.useCtrlEnterToSend": true,
   "editor.inlineSuggest.edits.showCollapsed": true,
-  "editor.mouseWheelScrollSensitivity": 2,
+  "editor.mouseWheelScrollSensitivity": 4,
   "chat.tools.terminal.autoApprove": {
     "dotnet test": true
   },
