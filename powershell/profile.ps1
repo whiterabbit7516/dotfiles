@@ -1,12 +1,10 @@
 #########################################
 # aliases
 #########################################
-if ($(get-command code -ErrorAction SilentlyContinue) -ne $null)
-{
+if ($(get-command code -ErrorAction SilentlyContinue) -ne $null) {
   Set-Alias -Name vscode -Value 'code'
 }
-elseif ($(get-command code-insiders -ErrorAction SilentlyContinue) -ne $null)
-{
+elseif ($(get-command code-insiders -ErrorAction SilentlyContinue) -ne $null) {
   Set-Alias -Name vscode -Value 'code-insiders'
 }
 function New-Directory { New-Item -Path $args[0] -ItemType Directory };
@@ -49,14 +47,14 @@ Set-PSReadLineOption -PredictionViewStyle ListView;
 Set-PSReadLineOption -BellStyle None;
 Set-PSReadLineOption -HistorySearchCaseSensitive;
 Set-PSReadLineOption -AddToHistoryHandler {
-    param([string]$line)
-    $trimmed = $line.TrimStart().TrimEnd();
-    if ($trimmed.Length -eq 0) {
-        return $false
-    }
-    # # Only add to history if the line ends with a semicolon
-    # return ($trimmed[-1] -eq ';')
-    return $true
+  param([string]$line)
+  $trimmed = $line.TrimStart().TrimEnd();
+  if ($trimmed.Length -eq 0) {
+    return $false
+  }
+  # # Only add to history if the line ends with a semicolon
+  # return ($trimmed[-1] -eq ';')
+  return $true
 };
 function Wipe-History {
   Clear-History; # delete current PSReadLine session history
@@ -64,13 +62,13 @@ function Wipe-History {
   Remove-Item $(Get-PSReadLineOption).HistorySavePath; # delete PSReadLine history file
 };
 function Edit-History {
-   code -r $(Get-PSReadLineOption).HistorySavePath;
+  code -r $(Get-PSReadLineOption).HistorySavePath;
 };
 #########################################
 # PowerShell Profile
 #########################################
 function Edit-PSProfile {
-   code -r $PROFILE.CurrentUserAllHosts;
+  code -r $PROFILE.CurrentUserAllHosts;
 };
 #########################################
 # Copy-Location
@@ -217,7 +215,7 @@ function Get-TmuxPaneId {
 #########################################
 # fzf
 #########################################
-Import-Module PSFzf -ArgumentList 'Ctrl+t','Ctrl+r' -ErrorAction SilentlyContinue;
+Import-Module PSFzf -ArgumentList 'Ctrl+t', 'Ctrl+r' -ErrorAction SilentlyContinue;
 # Set-PSReadLineKeyHandler -Key Tab -ScriptBlock { Invoke-FzfTabCompletion }
 Set-Alias -Name fe -Value 'Invoke-FuzzyEdit';
 Set-Alias -Name fd -Value 'Invoke-FuzzySetLocation';
@@ -234,47 +232,39 @@ $PSStyle.FileInfo.Directory = $PSStyle.Foreground.Blue;
 # prompt
 #########################################
 function Get-GitRef {
-    $errorpattern = "^(fatal|error)\:.+$";
-    $branchpattern = "^.+branch (?<branch>.+)$";
-    $commitpattern = "^.+detached at (?<commit>.+)$";
-    $tagpattern = "^.+tag (?<tag>.+)$";
-    $r = iex "/usr/local/bin/git status 2>&1" -ErrorAction SilentlyContinue;
-    if (-not $?)
-    {
-        return $null;
-    }
-    if ($r -eq $null)
-    {
-        return $null;
-    }
-    foreach ($line in $r) 
-    {
-        if ($line -eq $null)
-        {
-            continue;
-        }
-        if ($line.GetType().Name -ne "String")
-        {
-            continue;
-        }
-        # elseif ($line -match $errorpattern)
-        # {
-        #     continue;
-        # }
-        elseif ($line -match $branchpattern)
-        {
-            return $Matches["branch"];
-        }
-        elseif ($line -match $commitpattern)
-        {
-            return $Matches["commit"];
-        }
-        elseif ($line -match $tagpattern)
-        {
-            return $Matches["tag"];
-        }
-    }
+  $errorpattern = "^(fatal|error)\:.+$";
+  $branchpattern = "^.+branch (?<branch>.+)$";
+  $commitpattern = "^.+detached at (?<commit>.+)$";
+  $tagpattern = "^.+tag (?<tag>.+)$";
+  $r = iex "/usr/local/bin/git status 2>&1" -ErrorAction SilentlyContinue;
+  if (-not $?) {
     return $null;
+  }
+  if ($r -eq $null) {
+    return $null;
+  }
+  foreach ($line in $r) {
+    if ($line -eq $null) {
+      continue;
+    }
+    if ($line.GetType().Name -ne "String") {
+      continue;
+    }
+    # elseif ($line -match $errorpattern)
+    # {
+    #     continue;
+    # }
+    elseif ($line -match $branchpattern) {
+      return $Matches["branch"];
+    }
+    elseif ($line -match $commitpattern) {
+      return $Matches["commit"];
+    }
+    elseif ($line -match $tagpattern) {
+      return $Matches["tag"];
+    }
+  }
+  return $null;
 }
 function prompt {
   $username = $ENV:USER ?? $(whoami);
@@ -292,8 +282,7 @@ function prompt {
 #########################################
 # .local/powershell/profile.ps1
 #########################################
-if (Test-Path ~/.local/dotfiles/powershell/profile.ps1)
-{
+if (Test-Path ~/.local/dotfiles/powershell/profile.ps1) {
   Write-Information "Reading ~/.local/dotfiles/powershell/profile.ps1";
   Invoke-Expression -Command ~/.local/dotfiles/powershell/profile.ps1;
 }
