@@ -22,6 +22,7 @@ Set-Alias -Name gr -Value Get-Random4;
 #########################################
 $ENV:PATH = "$($ENV:PATH):/root/.bb/";
 $ENV:PATH = "$($ENV:PATH):/root/.cargo/bin/";
+$ENV:PATH = "$($ENV:PATH):/root/.cmux/bin/";
 $ENV:PATH = "$($ENV:PATH):/root/.krew/bin/";
 $ENV:PATH = "$($ENV:PATH):/root/.local/bin/";
 $ENV:PATH = "$($ENV:PATH):/root/.nargo/bin/";
