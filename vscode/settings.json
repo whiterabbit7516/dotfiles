@@ -25,7 +25,7 @@
       "args": [
         "-nol"
       ]
-    },
+    }
   },
   "terminal.integrated.profiles.windows": {
     "PowerShell": {
@@ -448,7 +448,7 @@
         "r",
         "▶",
         "q",
-        "h",
+        "h"
       ]
     }
   ],
@@ -515,7 +515,7 @@
         "4",
         "b"
       ]
-    },
+    }
   ],
   "files.autoSave": "afterDelay",
   "diffEditor.renderSideBySide": false,
@@ -528,7 +528,7 @@
     "workbench.action.toggleAuxiliaryBar" // conflicts with tmux
   ],
   "editor.rulers": [
-    180,
+    180
   ],
   "explorer.confirmDragAndDrop": false,
   "[csharp]": {
@@ -669,5 +669,7 @@
   "editor.fontFamily": "monospace",
   "workbench.editor.labelFormat": "short",
   "workbench.editor.closeEmptyGroups": false,
-  "workbench.editor.useModal": "off"
+  "workbench.editor.useModal": "off",
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.rightClickBehavior": "default"
 }
