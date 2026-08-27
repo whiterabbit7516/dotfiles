@@ -86,6 +86,9 @@ function Read-EnvFile {
       return;
     }
     $key, $value = $line -split "=", 2;
+    if ($value.Length -ge 2 -and $value[0] -eq $value[-1] -and ($value[0] -eq '"' -or $value[0] -eq "'")) {
+      $value = $value.Substring(1, $value.Length - 2);
+    }
     [System.Environment]::SetEnvironmentVariable($key, $value);
     Write-Verbose "$key=$value";
   }
