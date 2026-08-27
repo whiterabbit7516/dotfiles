@@ -42,6 +42,7 @@ $ENV:PATH = "$($ENV:PATH):/usr/local/go/bin/";
 # PSReadLine
 #########################################
 Set-PSReadLineOption -EditMode Vi -ViModeIndicator Cursor;
+Write-Host -NoNewline "`e[3 q" # Force the initial cursor shape, since PSReadLine won't fire the mode-change handler on startup (no transition has occurred yet)
 Set-PSReadLineKeyHandler -Chord Ctrl+c -Function ViCommandMode;
 Set-PSReadLineOption -PredictionViewStyle ListView;
 Set-PSReadLineOption -BellStyle None;
