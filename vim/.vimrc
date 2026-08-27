@@ -23,21 +23,26 @@ nnoremap Q @q
 nnoremap > xp
 nnoremap < hxph
 
-set number
-set scrolloff=12
+set number          " show line numbers
+set scrolloff=12    " keep 12 lines visible above/below cursor when scrolling
 
-set nobackup
-set nowritebackup
-set noswapfile
-set noundofile
+set nobackup        " don't keep a backup copy after overwriting a file
+set nowritebackup   " don't create a temp backup copy while writing
+set noswapfile       " don't create .swp crash-recovery files
+set noundofile       " don't persist undo history to disk between sessions
 
-set hlsearch
-set incsearch
+set hlsearch        " highlight all matches of the last search
+set incsearch       " jump to matches as you type the search pattern
 
-set expandtab
-set tabstop=2
-set autoindent
+set expandtab       " insert spaces instead of tab characters
+set tabstop=2       " a tab character displays as 2 spaces
+set autoindent      " match indentation of the previous line on a new line
 
-set autoread
-set updatetime=2000
-autocmd CursorHold,CursorHoldI * silent! update
+set autoread        " reload a file automatically if it changed on disk
+set updatetime=2000 " trigger CursorHold after 2s of inactivity
+autocmd CursorHold,CursorHoldI * silent! update  " autosave on idle (see above)
+
+" Block cursor in normal mode, underline in insert mode
+let &t_SI = "\e[4 q"
+let &t_EI = "\e[2 q"
+let &t_SR = "\e[4 q"
