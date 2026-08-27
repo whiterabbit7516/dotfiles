@@ -324,3 +324,11 @@ if (Test-Path ~/.local/dotfiles/powershell/profile.ps1) {
   Write-Information "Reading ~/.local/dotfiles/powershell/profile.ps1";
   Invoke-Expression -Command ~/.local/dotfiles/powershell/profile.ps1;
 }
+# read from home .env
+if (Test-Path ~/.env) {
+  Read-EnvFile /root/.env;
+}
+# read from cwd .env
+if (Test-Path .env) {
+  Read-EnvFile .env;
+}
