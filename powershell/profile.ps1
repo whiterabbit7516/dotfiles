@@ -72,6 +72,25 @@ function Edit-PSProfile {
   code -r $PROFILE.CurrentUserAllHosts;
 };
 #########################################
+# Read-EnvFile
+#########################################
+function Read-EnvFile {
+  [CmdletBinding()]
+  param(
+    [Parameter(Mandatory = $true, Position = 0)]
+    [string]$path
+  )
+  Get-Content -Path $path | ForEach-Object {
+    $line = $_.Trim();
+    if ($line -eq "" -or $line.StartsWith("#")) {
+      return;
+    }
+    $key, $value = $line -split "=", 2;
+    [System.Environment]::SetEnvironmentVariable($key, $value);
+    Write-Verbose "$key=$value";
+  }
+}
+#########################################
 # Copy-Location
 #########################################
 function Copy-Location {
