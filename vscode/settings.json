@@ -732,6 +732,6 @@
   },
   "workbench.editor.closeEmptyGroups": false,
   "workbench.colorTheme": "Amethyst",
-  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorStyle": "underline",
   "terminal.integrated.rightClickBehavior": "default"
 }
