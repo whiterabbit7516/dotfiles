@@ -175,10 +175,11 @@ function Initialize-TmuxWindows {
     Write-Warning "tmux server is not running.";
     return;
   }
-  @('⚫⚫⚫⚫⚫⚫', '⚫⚫⚫🟢🟢🟢', '🟢🟢🟢🟡🟡🟡', '🟡🟡🟡🟠🟠🟠', '🟠🟠🟠🔵🔵🔵', '🔵🔵🔵⚪⚪⚪', '⚪⚪⚪⚪⚪⚪') | ForEach-Object {
+  @('⚫⚫⚫⚫⚫⚫⚫⚫', '⚫⚫⚫⚫🟢🟢🟢🟢', '🟢🟢🟢🟢🟡🟡🟡🟡', '🟡🟡🟡🟡🟠🟠🟠🟠', '🟠🟠🟠🟠🔵🔵🔵🔵', '🔵🔵🔵🔵⚪⚪⚪⚪', '⚪⚪⚪⚪⚪⚪⚪⚪') | ForEach-Object {
     $window_name = $_;
     & tmux new-window -n $window_name;
     & tmux clock-mode -t $window_name;
+    & tmux select-pane -t $window_name -d;
   }
 }
 function Store-TmuxCommand {
