@@ -135,6 +135,9 @@ function Invoke-Native {
 #########################################
 # tmux 
 #########################################
+function Edit-TmuxConfig {
+  code -r $HOME/.tmux.conf;
+}
 function Start-TmuxSession {
   if (-not (Get-Command tmux -ErrorAction SilentlyContinue)) {
     Write-Warning "tmux is not available on PATH.";
