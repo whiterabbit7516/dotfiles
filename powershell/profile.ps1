@@ -101,17 +101,19 @@ function Copy-Location {
     Write-Warning "tmux is not available on PATH.";
     return;
   }
-  & tmux list-sessions 2>&1 | Out-Null;
-  if ($LASTEXITCODE -ne 0) {
+  try {
+    Invoke-Native tmux -- list-sessions 2>&1 | Out-Null;
+  }
+  catch {
     Write-Warning "tmux server is not running.";
     return;
   }
   $location = Get-Location | Select-Object -ExpandProperty Path;
-  & tmux set-buffer $location;
-  & tmux set-buffer -b "location" $location;
+  Invoke-Native tmux -- set-buffer $location;
+  Invoke-Native tmux -- set-buffer -b "location" $location;
   $message = "path copied to tmux buffer: $location"
   Write-Host $message;
-  & tmux display-message -d 1000 $message;
+  Invoke-Native tmux -- display-message -d 1000 $message;
 }
 Set-Alias -Name cl -Value 'Copy-Location';
 #########################################
@@ -135,6 +137,8 @@ function Invoke-Native {
 #########################################
 # tmux 
 #########################################
+# separator windows that segregate the window list into groups
+$tmux_separator_windows = @('⚫⚫⚫⚫', '⚫⚫⚫⚫🟢🟢🟢🟢', '🟢🟢🟢🟢🟡🟡🟡🟡', '🟡🟡🟡🟡🟠🟠🟠🟠', '🟠🟠🟠🟠🔵🔵🔵🔵', '🔵🔵🔵🔵⚪⚪⚪⚪', '⚪⚪⚪⚪');
 function Edit-TmuxConfig {
   code -r $HOME/.tmux.conf;
 }
@@ -143,23 +147,28 @@ function Start-TmuxSession {
     Write-Warning "tmux is not available on PATH.";
     return;
   }
-  & tmux list-sessions 2>&1 | Out-Null;
-  if ($LASTEXITCODE -eq 0) {
-    if ([string]::IsNullOrWhiteSpace($ENV:TMUX)) {
-      & tmux attach-session;
-    }
-    else {
-      # already inside tmux; attach-session would fail in nested mode
-      $target = (& tmux list-sessions -F '#S' | Select-Object -First 1);
-      if ([string]::IsNullOrWhiteSpace($target)) {
-        Write-Warning "no tmux session found to switch to.";
-        return;
-      }
-      & tmux switch-client -t $target;
-    }
+  $server_running = $true;
+  try {
+    Invoke-Native tmux -- list-sessions 2>&1 | Out-Null;
+  }
+  catch {
+    $server_running = $false;
+  }
+  if (-not $server_running) {
+    Invoke-Native tmux -- new-session;
     return;
   }
-  & tmux new-session;
+  if ([string]::IsNullOrWhiteSpace($ENV:TMUX)) {
+    Invoke-Native tmux -- attach-session;
+    return;
+  }
+  # already inside tmux; attach-session would fail in nested mode
+  $target = (Invoke-Native tmux -- list-sessions -F '#S' | Select-Object -First 1);
+  if ([string]::IsNullOrWhiteSpace($target)) {
+    Write-Warning "no tmux session found to switch to.";
+    return;
+  }
+  Invoke-Native tmux -- switch-client -t $target;
 }
 function Initialize-TmuxWindows {
   if (-not (Get-Command tmux -ErrorAction SilentlyContinue)) {
@@ -170,17 +179,91 @@ function Initialize-TmuxWindows {
     Write-Warning "must be inside tmux to initialize windows.";
     return;
   }
-  & tmux list-sessions 2>&1 | Out-Null;
-  if ($LASTEXITCODE -ne 0) {
+  try {
+    Invoke-Native tmux -- list-sessions 2>&1 | Out-Null;
+  }
+  catch {
     Write-Warning "tmux server is not running.";
     return;
   }
-  @('⚫⚫⚫⚫', '⚫⚫⚫⚫🟢🟢🟢🟢', '🟢🟢🟢🟢🟡🟡🟡🟡', '🟡🟡🟡🟡🟠🟠🟠🟠', '🟠🟠🟠🟠🔵🔵🔵🔵', '🔵🔵🔵🔵⚪⚪⚪⚪', '⚪⚪⚪⚪') | ForEach-Object {
+  $tmux_separator_windows | ForEach-Object {
     $window_name = $_;
-    & tmux new-window -n $window_name;
-    & tmux clock-mode -t $window_name;
-    & tmux select-pane -t $window_name -d;
+    Invoke-Native tmux -- new-window -n $window_name;
+    Invoke-Native tmux -- clock-mode -t $window_name;
+    Invoke-Native tmux -- select-pane -t $window_name -d;
   }
+}
+function Sort-TmuxWindows {
+  if (-not (Get-Command tmux -ErrorAction SilentlyContinue)) {
+    Write-Warning "tmux is not available on PATH.";
+    return;
+  }
+  if ([string]::IsNullOrWhiteSpace($ENV:TMUX)) {
+    Write-Warning "must be inside tmux to sort windows.";
+    return;
+  }
+  try {
+    Invoke-Native tmux -- list-sessions 2>&1 | Out-Null;
+  }
+  catch {
+    Write-Warning "tmux server is not running.";
+    return;
+  }
+  # non-ASCII rather than \p{So}: .NET regex matches UTF-16 units, so astral emoji never match a symbol class
+  function Test-TmuxSeparator {
+    param([string]$Name)
+    return ($tmux_separator_windows -contains $Name) -or (($Name -match '[^\x00-\x7F]') -and ($Name -notmatch '[\p{L}\p{N}]'));
+  }
+  function Get-TmuxNaturalKey {
+    param([string]$Name)
+    $key = '';
+    foreach ($chunk in [regex]::Matches($Name.ToLowerInvariant(), '\d+|\D+')) {
+      if ($chunk.Value -match '^\d+$') { $key += $chunk.Value.PadLeft(12, '0'); } else { $key += $chunk.Value; }
+    }
+    return $key;
+  }
+
+  $session = Invoke-Native tmux -- display-message -p '#S';
+  $base_index = [int](((Invoke-Native tmux -- show-options -t $session -g base-index) -split '\s+')[-1]);
+  $windows = Invoke-Native tmux -- list-windows -t $session -F '#{window_id}|#{window_index}|#{window_name}' | ForEach-Object {
+    $id, $index, $name = $_ -split '\|', 3;
+    [pscustomobject]@{ Id = $id; Index = [int]$index; Name = $name; IsSeparator = (Test-TmuxSeparator $name); };
+  } | Sort-Object Index;
+
+  # sort each run of windows between separators; separators keep their relative order
+  $ordered = [System.Collections.Generic.List[object]]::new();
+  $group = [System.Collections.Generic.List[object]]::new();
+  foreach ($window in $windows) {
+    if (-not $window.IsSeparator) {
+      $group.Add($window);
+      continue;
+    }
+    $group | Sort-Object { Get-TmuxNaturalKey $_.Name } | ForEach-Object { $ordered.Add($_); };
+    $group.Clear();
+    $ordered.Add($window);
+  }
+  $group | Sort-Object { Get-TmuxNaturalKey $_.Name } | ForEach-Object { $ordered.Add($_); };
+
+  for ($i = 0; $i -lt $ordered.Count; $i++) {
+    $ordered[$i] | Add-Member -NotePropertyName NewIndex -NotePropertyValue ($base_index + $i) -Force;
+  }
+  $moved = @($ordered | Where-Object { $_.Index -ne $_.NewIndex });
+  if ($moved.Count -eq 0) {
+    Write-Host "tmux windows are already sorted.";
+    return;
+  }
+
+  # park above the occupied range in final order, then bring each back down so no move lands on a taken index
+  $active_id = Invoke-Native tmux -- display-message -t $session -p '#{window_id}';
+  $staging = (($windows.Index | Measure-Object -Maximum).Maximum) + 1000;
+  for ($i = 0; $i -lt $ordered.Count; $i++) {
+    Invoke-Native tmux -- move-window -s $ordered[$i].Id -t "${session}:$($staging + $i)";
+  }
+  foreach ($window in $ordered) {
+    Invoke-Native tmux -- move-window -s $window.Id -t "${session}:$($window.NewIndex)";
+  }
+  Invoke-Native tmux -- select-window -t $active_id;
+  Write-Host "sorted $($ordered.Count) tmux windows, $($moved.Count) moved.";
 }
 function Store-TmuxCommand {
   param(
@@ -194,14 +277,16 @@ function Store-TmuxCommand {
     Write-Warning "tmux is not available on PATH.";
     return;
   }
-  & tmux list-sessions 2>&1 | Out-Null;
-  if ($LASTEXITCODE -ne 0) {
+  try {
+    Invoke-Native tmux -- list-sessions 2>&1 | Out-Null;
+  }
+  catch {
     Write-Warning "tmux server is not running.";
     return;
   }
   $location = Get-Location | Select-Object -ExpandProperty Path;
   $pane_title = " $location · $Command "; # store the cwd & cmd in pane_title
-  & tmux select-pane -T $pane_title;
+  Invoke-Native tmux -- select-pane -T $pane_title;
   if (-not $NoExecute) {
     Invoke-Expression $Command;
   }
@@ -212,12 +297,14 @@ function Restore-TmuxCommand {
     Write-Warning "tmux is not available on PATH.";
     return;
   }
-  & tmux list-sessions 2>&1 | Out-Null;
-  if ($LASTEXITCODE -ne 0) {
+  try {
+    Invoke-Native tmux -- list-sessions 2>&1 | Out-Null;
+  }
+  catch {
     Write-Warning "tmux server is not running.";
     return;
   }
-  $pane_title = & tmux display-message -p '#{pane_title}'; # restore the cwd & cmd from pane_title
+  $pane_title = Invoke-Native tmux -- display-message -p '#{pane_title}'; # restore the cwd & cmd from pane_title
   if ([string]::IsNullOrWhiteSpace($pane_title)) {
     Write-Warning "pane title is empty; nothing to restore.";
     return;
@@ -245,12 +332,14 @@ function Get-TmuxPaneId {
     Write-Warning "tmux is not available on PATH.";
     return;
   }
-  & tmux list-sessions 2>&1 | Out-Null;
-  if ($LASTEXITCODE -ne 0) {
+  try {
+    Invoke-Native tmux -- list-sessions 2>&1 | Out-Null;
+  }
+  catch {
     Write-Warning "tmux server is not running.";
     return;
   }
-  $pane_id = & tmux display-message -p '#{session_id}:#{window_id}.#{pane_id}'
+  $pane_id = Invoke-Native tmux -- display-message -p '#{session_id}:#{window_id}.#{pane_id}'
   if ([string]::IsNullOrWhiteSpace($pane_id)) {
     Write-Warning "failed to retrieve pane id.";
     return;
