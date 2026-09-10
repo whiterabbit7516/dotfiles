@@ -1470,8 +1470,14 @@ command groups
   },
   {
     "key": "ctrl+e r",
-    "command": "workbench.action.files.revert",
-    "when": "editorFocus",
+    "command": "runCommands",
+     "args": {
+       "commands": [
+         "workbench.action.closeActiveEditor",
+         "workbench.action.reopenClosedEditor"
+      ]
+    },
+    "when": "!inQuickOpen && (editorFocus || activeEditor != '')",
   },
   {
     "key": "ctrl+e ctrl+r",
@@ -1501,7 +1507,7 @@ command groups
   {
     "key": "ctrl+e t",
     "command": "workbench.action.toggleEditorType",
-    "when": "!inQuickOpen && !panelFocus && !sideBarFocus && !terminalFocus",
+    "when": "!inQuickOpen && (editorFocus || activeEditor != '')",
   },
   {
     "key": "alt+e",
