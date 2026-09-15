@@ -186,11 +186,11 @@ function Initialize-TmuxWindows {
     Write-Warning "tmux server is not running.";
     return;
   }
-  $tmux_separator_windows | ForEach-Object {
-    $window_name = $_;
-    Invoke-Native tmux -- new-window -n $window_name;
-    Invoke-Native tmux -- clock-mode -t $window_name;
-    Invoke-Native tmux -- select-pane -t $window_name -d;
+  $existing = @(Invoke-Native tmux -- list-windows -F '#{window_name}');
+  $tmux_separator_windows | Where-Object { $existing -notcontains $_ } | ForEach-Object {
+    $window_id = Invoke-Native tmux -- new-window -n $_ -P -F '#{window_id}';
+    Invoke-Native tmux -- clock-mode -t $window_id;
+    Invoke-Native tmux -- select-pane -t $window_id -d;
   }
 }
 function Sort-TmuxWindows {
