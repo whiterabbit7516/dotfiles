@@ -7,7 +7,6 @@ command groups
     navigation - lists                         -    t8455
     scrolling                                  -    t7776
     layout / editor groups                     a    t4355
-    activity bar                               a    t6913
     cursor                                     a    t3075
     primary sidebar                            b    t5715
     commands                                   b    t6712
@@ -61,11 +60,10 @@ command groups
     search                                     s    t4141
     remote - ssh                               s    t9391
     select                                     s    t2119
-    statusbar                                  s    t9465
     tasks                                      t    t3388
     timeline                                   t    t9839
     file / folder                              t    t3459
-    menubar                                    t    t5664
+    tests                                      t    t5664
     clipboard / copy / paste / cut             u    t6904
     snippets                                   u    t5608
     problems                                   u    t7119
@@ -1093,19 +1091,6 @@ command groups
     "key": "ctrl+a shift+o",
     "when": "!inQuickOpen && (editorFocus || activeEditor != '')",
     "command": "workbench.action.focusPreviousGroup",
-  },
-  ///////////////////////////////////////////////////////////////
-  // activity bar                    a    t6913
-  ///////////////////////////////////////////////////////////////
-  {
-    "key": "ctrl+i ctrl+a",
-    "when": "!inQuickOpen",
-    "command": "workbench.action.focusActivityBar",
-  },
-  {
-    "key": "ctrl+i a",
-    "when": "!inQuickOpen",
-    "command": "workbench.action.toggleActivityBarVisibility",
   },
   ///////////////////////////////////////////////////////////////
   // cursor                          a    t3075
@@ -2951,14 +2936,6 @@ command groups
     "command": "list.toggleSelection",
   },
   ///////////////////////////////////////////////////////////////
-  // statusbar                       s    t9465
-  ///////////////////////////////////////////////////////////////
-  {
-    "key": "ctrl+i s",
-    "when": "!inQuickOpen",
-    "command": "workbench.action.toggleStatusbarVisibility"
-  },
-  ///////////////////////////////////////////////////////////////
   // tasks                           t    t3388
   ///////////////////////////////////////////////////////////////
   {
@@ -3071,12 +3048,12 @@ command groups
     "args": ">File "
   },
   ///////////////////////////////////////////////////////////////
-  // menubar                         t    t5664
+  // test                            t    t5664
   ///////////////////////////////////////////////////////////////
   {
     "key": "ctrl+i t",
+    "command": "workbench.view.testing.focus",
     "when": "!inQuickOpen",
-    "command": "workbench.action.toggleMenuBar"
   },
   ///////////////////////////////////////////////////////////////
   // clipboard / copy / paste / cut  u    t6904
