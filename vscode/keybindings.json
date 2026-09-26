@@ -31,7 +31,7 @@ command groups
     preferences                                k    t1917
     fold                                       k    t3866
     format                                     k    t4704
-    line                                       k    t5788
+    line                                       l    t5788
     ai - chat                                  l    t7259
     ai - suggestions                           l    t7505
     ai - copilot                               l    t8911
@@ -1827,7 +1827,7 @@ command groups
     "command": "editor.action.goToTypeDefinition"
   },
   {
-    "key": "ctrl+g ctrl+k",
+    "key": "ctrl+g ctrl+l",
     "when": "editorFocus",
     "command": "workbench.action.gotoLine"
   },
@@ -2031,7 +2031,7 @@ command groups
     "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
   },
   ///////////////////////////////////////////////////////////////
-  // line                            k    t5788
+  // line                            l    t5788
   ///////////////////////////////////////////////////////////////
   {
     "key": "ctrl+alt+j",
@@ -2064,22 +2064,22 @@ command groups
     "command": "editor.action.indentLines",
   },
   {
-    "key": "ctrl+k ctrl+j",
+    "key": "ctrl+l ctrl+j",
     "when": "editorFocus",
     "command": "editor.action.joinLines",
   },
   {
-    "key": "ctrl+k ctrl+s",
+    "key": "ctrl+l ctrl+s",
     "when": "textInputFocus && !editorReadonly",
     "command": "editor.action.sortLinesAscending",
   },
   {
-    "key": "ctrl+k ctrl+c",
+    "key": "ctrl+l ctrl+c",
     "when": "editorTextFocus && !editorReadonly",
     "command": "editor.action.commentLine",
   },
   {
-    "key": "ctrl+k ctrl+a",
+    "key": "ctrl+l ctrl+a",
     "when": "editorTextFocus",
     "command": "editor.action.insertCursorAtEndOfEachLineSelected",
   },
