@@ -1156,6 +1156,11 @@ command groups
     "command": "workbench.action.quickOpen",
     "args": ">Rename "
   },
+  {
+    "key": "ctrl+y b",
+    "command": "workbench.action.terminal.rename",
+    "when": "terminalFocus"
+  },
   ///////////////////////////////////////////////////////////////
   // remote - codespaces             c    t3134
   ///////////////////////////////////////////////////////////////
@@ -1915,6 +1920,22 @@ command groups
     "when": "inQuickOpen",
     "command": "workbench.action.quickOpen",
     "args": ">Insert "
+  },
+  {
+    "key": "ctrl+shift+i",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "${selectedText}"
+    },
+    "when": "editorFocus || terminalFocus"
+  },
+  {
+    "key": "ctrl+y i",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "${selectedText}"
+    },
+    "when": "editorFocus || terminalFocus"
   },
   ///////////////////////////////////////////////////////////////
   // panel                           j    t1566
@@ -3802,22 +3823,6 @@ command groups
     "command": "workbench.action.terminal.chat.start",
   },
   {
-    "key": "ctrl+shift+i",
-    "when": "editorFocus || terminalFocus",
-    "command": "workbench.action.terminal.sendSequence",
-    "args": {
-      "text": "${selectedText}"
-    }
-  },
-  {
-    "key": "ctrl+y i",
-    "when": "editorFocus || terminalFocus",
-    "command": "workbench.action.terminal.sendSequence",
-    "args": {
-      "text": "${selectedText}"
-    }
-  },
-  {
     "key": "ctrl+shift+r",
     "when": "editorFocus || terminalFocus",
     "command": "workbench.action.terminal.runSelectedText",
@@ -3826,11 +3831,6 @@ command groups
     "key": "ctrl+y r",
     "when": "editorFocus || terminalFocus",
     "command": "workbench.action.terminal.runSelectedText",
-  },
-  {
-    "key": "ctrl+y b",
-    "when": "terminalFocus",
-    "command": "workbench.action.terminal.rename",
   },
   {
     "key": "ctrl+shift+j",
