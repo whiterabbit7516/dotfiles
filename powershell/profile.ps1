@@ -88,6 +88,9 @@ function Edit-PSProfile {
   Write-Host "opening file $filepath ...";
   code -r $filepath;
 };
+function Reload-PSProfile {
+  . $PROFILE.CurrentUserAllHosts;
+};
 #########################################
 # Read-EnvFile
 #########################################
