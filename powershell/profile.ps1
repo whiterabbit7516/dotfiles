@@ -57,19 +57,36 @@ Set-PSReadLineOption -AddToHistoryHandler {
   # return ($trimmed[-1] -eq ';')
   return $true
 };
-function Wipe-History {
-  Clear-History; # delete current PSReadLine session history
-  [Microsoft.PowerShell.PSConsoleReadLine]::ClearHistory(); # delete current console session history
+function Wipe-PSHistory {
+  Clear-History; # delete current PowerShell session history
   Remove-Item $(Get-PSReadLineOption).HistorySavePath; # delete PSReadLine history file
+  [Microsoft.PowerShell.PSConsoleReadLine]::ClearHistory(); # clear current PSReadLine session history
 };
-function Edit-History {
-  code -r $(Get-PSReadLineOption).HistorySavePath;
+function Edit-PSHistory {
+  $filepath = (Get-PSReadLineOption).HistorySavePath;
+  Write-Host "opening file $filepath ...";
+  code -r $filepath;
+};
+function Reload-PSHistory {
+  $historyPath = (Get-PSReadLineOption).HistorySavePath;
+  if ([string]::IsNullOrWhiteSpace($historyPath) -or -not (Test-Path -LiteralPath $historyPath -PathType Leaf)) {
+    return;
+  }
+  $history = Get-Content -LiteralPath $historyPath -ErrorAction Stop; # read desired history
+  Remove-Item $historyPath; # delete PSReadLine history file
+  [Microsoft.PowerShell.PSConsoleReadLine]::ClearHistory(); # clear the current PSReadLine session history
+  # add desired history back to the current PSReadLine session & history file
+  foreach ($command in $history) {
+    [Microsoft.PowerShell.PSConsoleReadLine]::AddToHistory($command);
+  }
 };
 #########################################
 # PowerShell Profile
 #########################################
 function Edit-PSProfile {
-  code -r $PROFILE.CurrentUserAllHosts;
+  $filepath = $PROFILE.CurrentUserAllHosts;
+  Write-Host "opening file $filepath ...";
+  code -r $filepath;
 };
 #########################################
 # Read-EnvFile
