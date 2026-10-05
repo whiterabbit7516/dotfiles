@@ -3080,22 +3080,22 @@ command groups
   },
   {
     "key": "ctrl+u ctrl+c",
-    "when": "!inQuickOpen && inputFocus",
+    "when": "!inQuickOpen",
     "command": "editor.action.clipboardCopyAction",
   },
   {
     "key": "ctrl+c ctrl+c",
-    "when": "!inQuickOpen && inputFocus",
+    "when": "!inQuickOpen",
     "command": "editor.action.clipboardCopyAction",
   },
   {
     "key": "ctrl+u ctrl+v",
-    "when": "!inQuickOpen && inputFocus",
+    "when": "!inQuickOpen",
     "command": "editor.action.clipboardPasteAction",
   },
   {
     "key": "ctrl+v ctrl+v",
-    "when": "!inQuickOpen && inputFocus",
+    "when": "!inQuickOpen",
     "command": "editor.action.clipboardPasteAction",
   },
   {
