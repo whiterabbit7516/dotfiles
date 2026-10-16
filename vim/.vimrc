@@ -33,6 +33,7 @@ nnoremap < hxph
 
 set number          " show line numbers
 set scrolloff=12    " keep 12 lines visible above/below cursor when scrolling
+set nowrap
 
 """""""""""""""""""""""""""""""" 
 " backups
