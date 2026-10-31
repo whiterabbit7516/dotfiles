@@ -3207,14 +3207,14 @@ command groups
     "command": "gitlens.gitCommands",
   },
   {
-    "key": "ctrl+v ctrl+b",
-    "when": "!inQuickOpen",
-    "command": "gitlens.views.branches.focus",
-  },
-  {
     "key": "ctrl+v ctrl+f",
     "when": "!inQuickOpen",
     "command": "gitlens.views.searchAndCompare.focus",
+  },
+  {
+    "key": "ctrl+v ctrl+b",
+    "command": "gitlens.showBranchesView",
+    "when": "!inQuickOpen"
   },
   {
     "key": "ctrl+v ctrl+t",
