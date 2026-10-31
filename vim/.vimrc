@@ -60,10 +60,16 @@ set tabstop=2       " a tab character displays as 2 spaces
 set autoindent      " match indentation of the previous line on a new line
 
 """""""""""""""""""""""""""""""" 
-" autosave
+" autoreload
 """""""""""""""""""""""""""""""" 
 
 set autoread        " reload a file automatically if it changed on disk
+call timer_start(2000, {-> execute('checktime')}, {'repeat': -1}) " Check every second
+
+"""""""""""""""""""""""""""""""" 
+" autosave
+"""""""""""""""""""""""""""""""" 
+
 set updatetime=2000 " trigger CursorHold after 2s of inactivity
 autocmd CursorHold,CursorHoldI * silent! update  " autosave on idle (see above)
 

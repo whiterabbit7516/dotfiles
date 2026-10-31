@@ -15,6 +15,7 @@ Set-Alias -Name gr -Value Get-Random4;
 # environment variables
 #########################################
 # $ENV:PYTHONSTARTUP="/home/.../.pythonrc.py"
+$ENV:ISSUES_DIR="/workspace/mount/issues/active/";
 #########################################
 # paths
 #########################################
@@ -213,6 +214,41 @@ function Initialize-TmuxWindows {
     Invoke-Native tmux -- select-pane -t $window_id -d;
   }
 }
+# windows in these groups (indexes into $tmux_separator_windows: green, yellow, orange, blue) are kept sorted by name
+$tmux_sorted_groups = @(1, 2, 3, 4);
+function Get-TmuxNaturalKey {
+  param([string]$Name)
+  $key = '';
+  foreach ($chunk in [regex]::Matches($Name.ToLowerInvariant(), '\d+|\D+')) {
+    if ($chunk.Value -match '^\d+$') { $key += $chunk.Value.PadLeft(12, '0'); } else { $key += $chunk.Value; }
+  }
+  return $key;
+}
+# ordinal rather than culture-aware, so sorting and inserting always agree
+function Compare-TmuxWindowName {
+  param([string]$A, [string]$B)
+  return [string]::CompareOrdinal((Get-TmuxNaturalKey $A), (Get-TmuxNaturalKey $B));
+}
+# every separator must exist exactly once, in order, or the groups can't be trusted; $null (after a warning) when they aren't
+function Get-TmuxSeparators {
+  param([object[]]$Windows)
+  $separators = @();
+  foreach ($name in $tmux_separator_windows) {
+    $found = @($Windows | Where-Object { $_.Name -ceq $name });
+    if ($found.Count -ne 1) {
+      Write-Warning "tmux groups are malformed: expected one '$name' separator, found $($found.Count).";
+      return $null;
+    }
+    $separators += $found[0];
+  }
+  for ($i = 1; $i -lt $separators.Count; $i++) {
+    if ($separators[$i].Index -le $separators[$i - 1].Index) {
+      Write-Warning "tmux groups are malformed: separator '$($separators[$i].Name)' is not after '$($separators[$i - 1].Name)'.";
+      return $null;
+    }
+  }
+  return ,$separators;
+}
 function Sort-TmuxWindows {
   if (-not (Get-Command tmux -ErrorAction SilentlyContinue)) {
     Write-Warning "tmux is not available on PATH.";
@@ -234,35 +270,48 @@ function Sort-TmuxWindows {
     param([string]$Name)
     return ($tmux_separator_windows -contains $Name) -or (($Name -match '[^\x00-\x7F]') -and ($Name -notmatch '[\p{L}\p{N}]'));
   }
-  function Get-TmuxNaturalKey {
-    param([string]$Name)
-    $key = '';
-    foreach ($chunk in [regex]::Matches($Name.ToLowerInvariant(), '\d+|\D+')) {
-      if ($chunk.Value -match '^\d+$') { $key += $chunk.Value.PadLeft(12, '0'); } else { $key += $chunk.Value; }
+  # stable insertion sort: equal names keep their current order
+  function Sort-TmuxWindowList {
+    param([object[]]$Windows)
+    $sorted = [System.Collections.Generic.List[object]]::new();
+    foreach ($window in $Windows) {
+      $at = $sorted.Count;
+      while (($at -gt 0) -and ((Compare-TmuxWindowName $sorted[$at - 1].Name $window.Name) -gt 0)) { $at--; }
+      $sorted.Insert($at, $window);
     }
-    return $key;
+    return $sorted.ToArray();
   }
 
   $session = Invoke-Native tmux -- display-message -p '#S';
   $base_index = [int](((Invoke-Native tmux -- show-options -t $session -g base-index) -split '\s+')[-1]);
-  $windows = Invoke-Native tmux -- list-windows -t $session -F '#{window_id}|#{window_index}|#{window_name}' | ForEach-Object {
+  $windows = @(Invoke-Native tmux -- list-windows -t $session -F '#{window_id}|#{window_index}|#{window_name}' | ForEach-Object {
     $id, $index, $name = $_ -split '\|', 3;
     [pscustomobject]@{ Id = $id; Index = [int]$index; Name = $name; IsSeparator = (Test-TmuxSeparator $name); };
-  } | Sort-Object Index;
+  } | Sort-Object Index);
+  if ($null -eq (Get-TmuxSeparators $windows)) {
+    return;
+  }
 
-  # sort each run of windows between separators; separators keep their relative order
+  # sort each run of windows between separators, but only in the sorted groups; other runs and the separators keep their order
   $ordered = [System.Collections.Generic.List[object]]::new();
   $group = [System.Collections.Generic.List[object]]::new();
+  $group_id = -1; # index of the last known separator seen, i.e. which group the current run belongs to
+  $flush_group = {
+    $run = if ($tmux_sorted_groups -contains $group_id) { @(Sort-TmuxWindowList $group.ToArray()) } else { $group.ToArray() };
+    foreach ($member in $run) { $ordered.Add($member); }
+    $group.Clear();
+  };
   foreach ($window in $windows) {
     if (-not $window.IsSeparator) {
       $group.Add($window);
       continue;
     }
-    $group | Sort-Object { Get-TmuxNaturalKey $_.Name } | ForEach-Object { $ordered.Add($_); };
-    $group.Clear();
+    & $flush_group;
     $ordered.Add($window);
+    $known = [array]::IndexOf($tmux_separator_windows, $window.Name);
+    if ($known -ge 0) { $group_id = $known; }
   }
-  $group | Sort-Object { Get-TmuxNaturalKey $_.Name } | ForEach-Object { $ordered.Add($_); };
+  & $flush_group;
 
   for ($i = 0; $i -lt $ordered.Count; $i++) {
     $ordered[$i] | Add-Member -NotePropertyName NewIndex -NotePropertyValue ($base_index + $i) -Force;
@@ -284,6 +333,108 @@ function Sort-TmuxWindows {
   }
   Invoke-Native tmux -- select-window -t $active_id;
   Write-Host "sorted $($ordered.Count) tmux windows, $($moved.Count) moved.";
+}
+function Throw-TmuxWindow {
+  param([string]$WindowId) # defaults to the window of the current pane
+  if (-not (Get-Command tmux -ErrorAction SilentlyContinue)) {
+    Write-Warning "tmux is not available on PATH.";
+    return;
+  }
+  if ([string]::IsNullOrWhiteSpace($ENV:TMUX)) {
+    Write-Warning "must be inside tmux to throw a window.";
+    return;
+  }
+  try {
+    Invoke-Native tmux -- list-sessions 2>&1 | Out-Null;
+  }
+  catch {
+    Write-Warning "tmux server is not running.";
+    return;
+  }
+  $pane_target = if (-not [string]::IsNullOrWhiteSpace($WindowId)) { @('-t', $WindowId) } elseif (-not [string]::IsNullOrWhiteSpace($ENV:TMUX_PANE)) { @('-t', $ENV:TMUX_PANE) } else { @() };
+  $session, $current_id = (Invoke-Native tmux -- display-message -p @pane_target '#{session_name}|#{window_id}') -split '\|', 2;
+  $windows = @(Invoke-Native tmux -- list-windows -t $session -F '#{window_id}|#{window_index}|#{window_name}' | ForEach-Object {
+    $id, $index, $name = $_ -split '\|', 3;
+    [pscustomobject]@{ Id = $id; Index = [int]$index; Name = $name; };
+  } | Sort-Object Index);
+
+  $separators = Get-TmuxSeparators $windows;
+  if ($null -eq $separators) {
+    return;
+  }
+
+  # green sits between the second and third separators, yellow between the third and fourth
+  $green_open, $green_close, $yellow_close = $separators[1], $separators[2], $separators[3];
+  $current = $windows | Where-Object { $_.Id -eq $current_id };
+  if ($null -eq $current) {
+    Write-Warning "could not find the current tmux window ($current_id).";
+    return;
+  }
+  if (($current.Index -gt $green_open.Index) -and ($current.Index -lt $green_close.Index)) {
+    $from, $to, $open, $close = '🟢', '🟡', $green_close, $yellow_close;
+  } elseif (($current.Index -gt $green_close.Index) -and ($current.Index -lt $yellow_close.Index)) {
+    $from, $to, $open, $close = '🟡', '🟢', $green_open, $green_close;
+  } else {
+    Write-Warning "current tmux window '$($current.Name)' is not in the green or yellow group.";
+    return;
+  }
+
+  # sorted position in the destination group: before the first window that sorts after this one, else before the separator that closes it
+  $before = $windows | Where-Object { ($_.Index -gt $open.Index) -and ($_.Index -lt $close.Index) -and ((Compare-TmuxWindowName $_.Name $current.Name) -gt 0) } | Select-Object -First 1;
+  if ($null -eq $before) {
+    $before = $close;
+  }
+  Invoke-Native tmux -- move-window -b -s $current.Id -t $before.Id;
+  # Write-Host "moved '$($current.Name)' $from ➔ $to";
+}
+function Throw-TmuxWindows {
+  if (-not (Get-Command tmux -ErrorAction SilentlyContinue)) {
+    Write-Warning "tmux is not available on PATH.";
+    return;
+  }
+  if ([string]::IsNullOrWhiteSpace($ENV:TMUX)) {
+    Write-Warning "must be inside tmux to throw windows.";
+    return;
+  }
+  try {
+    Invoke-Native tmux -- list-sessions 2>&1 | Out-Null;
+  }
+  catch {
+    Write-Warning "tmux server is not running.";
+    return;
+  }
+  $pane_target = if ([string]::IsNullOrWhiteSpace($ENV:TMUX_PANE)) { @() } else { @('-t', $ENV:TMUX_PANE) };
+  $session, $current_id = (Invoke-Native tmux -- display-message -p @pane_target '#{session_name}|#{window_id}') -split '\|', 2;
+  $windows = @(Invoke-Native tmux -- list-windows -t $session -F '#{window_id}|#{window_index}|#{window_name}' | ForEach-Object {
+    $id, $index, $name = $_ -split '\|', 3;
+    [pscustomobject]@{ Id = $id; Index = [int]$index; Name = $name; };
+  } | Sort-Object Index);
+  $separators = Get-TmuxSeparators $windows;
+  if ($null -eq $separators) {
+    return;
+  }
+
+  # the colour of the current window decides which group is thrown
+  $green_open, $green_close, $yellow_close = $separators[1], $separators[2], $separators[3];
+  $current = $windows | Where-Object { $_.Id -eq $current_id };
+  if ($null -eq $current) {
+    Write-Warning "could not find the current tmux window ($current_id).";
+    return;
+  }
+  if (($current.Index -gt $green_open.Index) -and ($current.Index -lt $green_close.Index)) {
+    $open, $close = $green_open, $green_close;
+  } elseif (($current.Index -gt $green_close.Index) -and ($current.Index -lt $yellow_close.Index)) {
+    $open, $close = $green_close, $yellow_close;
+  } else {
+    Write-Warning "current tmux window '$($current.Name)' is not in the green or yellow group.";
+    return;
+  }
+
+  # each window lands at its sorted position in the other group; Throw-TmuxWindow re-reads the layout every time
+  $group = @($windows | Where-Object { ($_.Index -gt $open.Index) -and ($_.Index -lt $close.Index) });
+  foreach ($window in $group) {
+    Throw-TmuxWindow -WindowId $window.Id;
+  }
 }
 function Store-TmuxCommand {
   param(
@@ -366,6 +517,7 @@ function Get-TmuxPaneId {
   }
   return $pane_id;
 }
+$ENV:TMUX_PANE_ID = Get-TmuxPaneId;
 #########################################
 # fzf
 #########################################
