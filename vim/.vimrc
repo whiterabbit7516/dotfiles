@@ -80,3 +80,9 @@ autocmd CursorHold,CursorHoldI * silent! update  " autosave on idle (see above)
 let &t_SI = "\e[4 q"
 let &t_EI = "\e[2 q"
 let &t_SR = "\e[4 q"
+
+"""""""""""""""""""""""""""""""" 
+" mouse
+"""""""""""""""""""""""""""""""" 
+
+set mouse=a
