@@ -371,21 +371,27 @@ function Throw-TmuxWindow {
     return;
   }
 
-  # green sits between the second and third separators, yellow between the third and fourth
-  $green_open, $green_close, $yellow_close = $separators[1], $separators[2], $separators[3];
   $current = $windows | Where-Object { $_.Id -eq $current_id };
   if ($null -eq $current) {
     Write-Warning "could not find the current tmux window ($current_id).";
     return;
   }
-  if (($current.Index -gt $green_open.Index) -and ($current.Index -lt $green_close.Index)) {
-    $from, $to, $open, $close = '🟢', '🟡', $green_close, $yellow_close;
-  } elseif (($current.Index -gt $green_close.Index) -and ($current.Index -lt $yellow_close.Index)) {
-    $from, $to, $open, $close = '🟡', '🟢', $green_open, $green_close;
-  } else {
-    Write-Warning "current tmux window '$($current.Name)' is not in the green or yellow group.";
+  # group i sits between separators i and i + 1; black (0) is never thrown
+  $group_colours = @('⚫', '🟢', '🟡', '🟠', '🔵', '⚪');
+  $group = -1;
+  for ($i = 1; $i -lt $group_colours.Count; $i++) {
+    if (($current.Index -gt $separators[$i].Index) -and ($current.Index -lt $separators[$i + 1].Index)) {
+      $group = $i;
+      break;
+    }
+  }
+  if ($group -lt 1) {
+    Write-Warning "current tmux window '$($current.Name)' is not in the green, yellow, orange, blue or white group.";
     return;
   }
+  # green goes to yellow, every other group goes to green
+  $target = if ($group -eq 1) { 2 } else { 1 };
+  $from, $to, $open, $close = $group_colours[$group], $group_colours[$target], $separators[$target], $separators[$target + 1];
 
   # sorted position in the destination group: before the first window that sorts after this one, else before the separator that closes it
   $before = $windows | Where-Object { ($_.Index -gt $open.Index) -and ($_.Index -lt $close.Index) -and ((Compare-TmuxWindowName $_.Name $current.Name) -gt 0) } | Select-Object -First 1;
