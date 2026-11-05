@@ -216,6 +216,8 @@ function Initialize-TmuxWindows {
 }
 # windows in these groups (indexes into $tmux_separator_windows: green, yellow, orange, blue) are kept sorted by name
 $tmux_sorted_groups = @(1, 2, 3, 4);
+# Sort-TmuxWindows parks the closing ⚪⚪⚪⚪ separator at this index
+$tmux_closing_separator_index = 1000;
 function Get-TmuxNaturalKey {
   param([string]$Name)
   $key = '';
@@ -313,12 +315,18 @@ function Sort-TmuxWindows {
   }
   & $flush_group;
 
+  # the closing separator goes last, so windows that landed after it join the white group
+  $closing = $ordered | Where-Object { $_.Name -ceq $tmux_separator_windows[-1] };
+  [void]$ordered.Remove($closing);
+  $ordered.Add($closing);
   for ($i = 0; $i -lt $ordered.Count; $i++) {
     $ordered[$i] | Add-Member -NotePropertyName NewIndex -NotePropertyValue ($base_index + $i) -Force;
   }
+  # park it far out, so new-window (which takes the lowest free index) fills the gap inside the white group
+  $closing.NewIndex = [math]::Max($tmux_closing_separator_index, $closing.NewIndex);
   $moved = @($ordered | Where-Object { $_.Index -ne $_.NewIndex });
   if ($moved.Count -eq 0) {
-    Write-Host "tmux windows are already sorted.";
+    Write-Host "tmux windows are already sorted";
     return;
   }
 
