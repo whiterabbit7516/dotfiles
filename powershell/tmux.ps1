@@ -70,10 +70,6 @@ function Initialize-TmuxWindows {
     Invoke-Native tmux -- select-pane -t $window_id -d;
   }
 }
-# windows in these groups (indexes into $tmux_separator_windows: green, yellow, orange, blue) are kept sorted by name
-$tmux_sorted_groups = @(1, 2, 3, 4);
-# Sort-TmuxWindows parks the closing ⚪⚪⚪⚪ separator at this index
-$tmux_closing_separator_index = 1000;
 function Get-TmuxNaturalKey {
   param([string]$Name)
   $key = '';
@@ -111,6 +107,10 @@ function Get-TmuxSeparators {
 # Sort-TmuxWindows
 #########################################
 function Sort-TmuxWindows {
+  # windows in these groups (indexes into $tmux_separator_windows: green, yellow, orange, blue) are kept sorted by name
+  $tmux_sorted_groups = @(1, 2, 3, 4);
+  # park the closing ⚪⚪⚪⚪ separator at this index
+  $tmux_closing_separator_index = 1000;
   if (-not (Get-Command tmux -ErrorAction SilentlyContinue)) {
     Write-Warning "tmux is not available on PATH.";
     return;
@@ -144,7 +144,6 @@ function Sort-TmuxWindows {
   }
 
   $session = Invoke-Native tmux -- display-message -p '#S';
-  $base_index = [int](((Invoke-Native tmux -- show-options -t $session -g base-index) -split '\s+')[-1]);
   $windows = @(Invoke-Native tmux -- list-windows -t $session -F '#{window_id}|#{window_index}|#{window_name}' | ForEach-Object {
     $id, $index, $name = $_ -split '\|', 3;
     [pscustomobject]@{ Id = $id; Index = [int]$index; Name = $name; IsSeparator = (Test-TmuxSeparator $name); };
@@ -179,7 +178,7 @@ function Sort-TmuxWindows {
   [void]$ordered.Remove($closing);
   $ordered.Add($closing);
   for ($i = 0; $i -lt $ordered.Count; $i++) {
-    $ordered[$i] | Add-Member -NotePropertyName NewIndex -NotePropertyValue ($base_index + $i) -Force;
+    $ordered[$i] | Add-Member -NotePropertyName NewIndex -NotePropertyValue $i -Force;
   }
   # park it far out, so new-window (which takes the lowest free index) fills the gap inside the white group
   $closing.NewIndex = [math]::Max($tmux_closing_separator_index, $closing.NewIndex);
