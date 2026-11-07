@@ -4,6 +4,9 @@
 ##########################################
 New-Item -type dir ~/.config/powershell -force | Out-Null
 ln -fsv $PSScriptRoot/powershell/profile.ps1 ~/.config/powershell/profile.ps1
+ln -fsv $PSScriptRoot/powershell/prompt.ps1 ~/.config/powershell/prompt.ps1
+ln -fsv $PSScriptRoot/powershell/psreadline.ps1 ~/.config/powershell/psreadline.ps1
+ln -fsv $PSScriptRoot/powershell/tmux.ps1 ~/.config/powershell/tmux.ps1
 ##########################################
 # vim
 ##########################################
