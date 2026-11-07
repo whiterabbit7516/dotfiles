@@ -383,7 +383,6 @@ function Copy-TmuxPaneId {
   Invoke-Native tmux -- display-message -d 1000 $message;
 }
 Set-Alias -Name ct -Value 'Copy-TmuxPaneId';
-$ENV:TMUX_PANE_ID = Get-TmuxPaneId;
 #########################################
 # Copy-Location
 #########################################
