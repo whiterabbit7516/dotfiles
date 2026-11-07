@@ -40,6 +40,10 @@ $ENV:PATH = "$($ENV:PATH):/usr/local/go/bin/";
 #   }
 # }
 #########################################
+# shared
+#########################################
+. "$PSScriptRoot/shared.ps1"
+#########################################
 # PSReadLine
 #########################################
 . "$PSScriptRoot/psreadline.ps1"
@@ -54,24 +58,6 @@ function Edit-PSProfile {
 function Reload-PSProfile {
   . $PROFILE.CurrentUserAllHosts;
 };
-#########################################
-# Invoke-Native
-#########################################
-function Invoke-Native {
-  [CmdletBinding()]
-  param(
-    [Parameter(Mandatory = $true, Position = 0)]
-    [string]$command,
- 
-    [Parameter(ValueFromRemainingArguments = $true)]
-    [string[]]$arguments
-  )
- 
-  & $command @arguments;
-  if ($LASTEXITCODE -ne 0) {
-    throw "'$command $($arguments -join ' ')' failed with exit code $LASTEXITCODE";
-  }
-}
 #########################################
 # Read-EnvFile
 #########################################

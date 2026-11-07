@@ -1,8 +1,21 @@
+#########################################
+# shared
+#########################################
+. "$PSScriptRoot/shared.ps1"
+#########################################
+# locals
+#########################################
 # separator windows that segregate the window list into groups
 $tmux_separator_windows = @('⚫⚫⚫⚫', '⚫⚫⚫⚫🟢🟢🟢🟢', '🟢🟢🟢🟢🟡🟡🟡🟡', '🟡🟡🟡🟡🟠🟠🟠🟠', '🟠🟠🟠🟠🔵🔵🔵🔵', '🔵🔵🔵🔵⚪⚪⚪⚪', '⚪⚪⚪⚪');
+#########################################
+# Edit-TmuxConfig
+#########################################
 function Edit-TmuxConfig {
   code -r $HOME/.tmux.conf;
 }
+#########################################
+# Start-TmuxSession
+#########################################
 function Start-TmuxSession {
   if (-not (Get-Command tmux -ErrorAction SilentlyContinue)) {
     Write-Warning "tmux is not available on PATH.";
@@ -31,6 +44,9 @@ function Start-TmuxSession {
   }
   Invoke-Native tmux -- switch-client -t $target;
 }
+#########################################
+# Initialize-TmuxWindows
+#########################################
 function Initialize-TmuxWindows {
   if (-not (Get-Command tmux -ErrorAction SilentlyContinue)) {
     Write-Warning "tmux is not available on PATH.";
@@ -91,6 +107,9 @@ function Get-TmuxSeparators {
   }
   return ,$separators;
 }
+#########################################
+# Sort-TmuxWindows
+#########################################
 function Sort-TmuxWindows {
   if (-not (Get-Command tmux -ErrorAction SilentlyContinue)) {
     Write-Warning "tmux is not available on PATH.";
@@ -182,6 +201,9 @@ function Sort-TmuxWindows {
   Invoke-Native tmux -- select-window -t $active_id;
   Write-Host "sorted $($ordered.Count) tmux windows, $($moved.Count) moved.";
 }
+#########################################
+# Throw-TmuxWindow
+#########################################
 function Throw-TmuxWindow {
   param([string]$WindowId) # defaults to the window of the current pane
   if (-not (Get-Command tmux -ErrorAction SilentlyContinue)) {
@@ -241,6 +263,9 @@ function Throw-TmuxWindow {
   Invoke-Native tmux -- move-window -b -s $current.Id -t $before.Id;
   # Write-Host "moved '$($current.Name)' $from ➔ $to";
 }
+#########################################
+# Throw-TmuxWindows
+#########################################
 function Throw-TmuxWindows {
   if (-not (Get-Command tmux -ErrorAction SilentlyContinue)) {
     Write-Warning "tmux is not available on PATH.";
@@ -290,6 +315,9 @@ function Throw-TmuxWindows {
     Throw-TmuxWindow -WindowId $window.Id;
   }
 }
+#########################################
+# Store-TmuxCommand
+#########################################
 function Store-TmuxCommand {
   param(
     [Parameter(Mandatory = $true, HelpMessage = "command to be executed")]
@@ -317,6 +345,9 @@ function Store-TmuxCommand {
   }
 }
 Set-Alias -Name sb -Value 'Store-TmuxCommand';
+#########################################
+# Restore-TmuxCommand
+#########################################
 function Restore-TmuxCommand {
   if (-not (Get-Command tmux -ErrorAction SilentlyContinue)) {
     Write-Warning "tmux is not available on PATH.";
@@ -352,6 +383,9 @@ function Restore-TmuxCommand {
   Invoke-Expression $Command;
 }
 Set-Alias -Name rb -Value 'Restore-TmuxCommand';
+#########################################
+# Get-TmuxPaneId
+#########################################
 function Get-TmuxPaneId {
   if (-not (Get-Command tmux -ErrorAction SilentlyContinue)) {
     Write-Warning "tmux is not available on PATH.";
@@ -371,6 +405,9 @@ function Get-TmuxPaneId {
   }
   return $pane_id;
 }
+#########################################
+# Copy-TmuxPaneId
+#########################################
 function Copy-TmuxPaneId {
   $pane_id = Get-TmuxPaneId;
   if ([string]::IsNullOrWhiteSpace($pane_id)) {
