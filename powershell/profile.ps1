@@ -42,7 +42,7 @@ $ENV:PATH = "$($ENV:PATH):/usr/local/go/bin/";
 #########################################
 # PSReadLine
 #########################################
-. (Join-Path $PSScriptRoot './psreadline.ps1')
+. "$PSScriptRoot/psreadline.ps1"
 #########################################
 # PowerShell Profile
 #########################################
@@ -97,7 +97,7 @@ function Read-EnvFile {
 #########################################
 # tmux 
 #########################################
-. (Join-Path $PSScriptRoot './tmux.ps1')
+. "$PSScriptRoot/tmux.ps1"
 #########################################
 # fzf
 #########################################
@@ -117,7 +117,7 @@ $PSStyle.FileInfo.Directory = $PSStyle.Foreground.Blue;
 #########################################
 # prompt
 #########################################
-. (Join-Path $PSScriptRoot './prompt.ps1')
+. "$PSScriptRoot/prompt.ps1"
 #########################################
 # .local/powershell/profile.ps1
 #########################################
