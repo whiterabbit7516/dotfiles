@@ -173,6 +173,11 @@ function Sort-TmuxWindows {
   }
   & $flush_group;
 
+  # the black separator goes first, so windows that landed before it join the black group
+  $black = $ordered | Where-Object { $_.Name -ceq $tmux_separator_windows[0] };
+  [void]$ordered.Remove($black);
+  $ordered.Insert(0, $black);
+
   # the closing separator goes last, so windows that landed after it join the white group
   $closing = $ordered | Where-Object { $_.Name -ceq $tmux_separator_windows[-1] };
   [void]$ordered.Remove($closing);
