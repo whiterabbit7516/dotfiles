@@ -1,3 +1,35 @@
 {
-  "editorMode": "vim"
+  "editorMode": "vim",
+  "askUser": true,
+  "memory": true,
+  "mouse": true,
+  "beep": false,
+  "theme": "github",
+  "defaultMode": "autopilot",
+  "defaultPermissionMode": "assisted",
+  "enableAllGithubMcpTools": true,
+  "showReasoning": false,
+  "footer": {
+    "showContextWindow": true,
+    "showAiUsed": true,
+    "showAgent": true,
+    "showSandbox": true,
+    "showModelEffort": true,
+    "showBranch": true,
+    "showDirectory": true,
+    "showCustom": true,
+    "showQuota": true,
+    "showUsername": true,
+    "showCiStatus": true,
+    "showCodeChanges": true,
+    "showPullRequest": true,
+    "showSchedules": true,
+    "showYolo": true
+  },
+  "bannerStyle": "mona",
+  "ide": {
+    "autoConnect": true
+  },
+  "stayInAutopilot": true,
+  "showTipsOnStartup": true
 }
