@@ -93,6 +93,24 @@ function Reload-PSProfile {
   . $PROFILE.CurrentUserAllHosts;
 };
 #########################################
+# Invoke-Native
+#########################################
+function Invoke-Native {
+  [CmdletBinding()]
+  param(
+    [Parameter(Mandatory = $true, Position = 0)]
+    [string]$command,
+ 
+    [Parameter(ValueFromRemainingArguments = $true)]
+    [string[]]$arguments
+  )
+ 
+  & $command @arguments;
+  if ($LASTEXITCODE -ne 0) {
+    throw "'$command $($arguments -join ' ')' failed with exit code $LASTEXITCODE";
+  }
+}
+#########################################
 # Read-EnvFile
 #########################################
 function Read-EnvFile {
@@ -137,24 +155,6 @@ function Copy-Location {
   Invoke-Native tmux -- display-message -d 1000 $message;
 }
 Set-Alias -Name cl -Value 'Copy-Location';
-#########################################
-# Invoke-Native
-#########################################
-function Invoke-Native {
-  [CmdletBinding()]
-  param(
-    [Parameter(Mandatory = $true, Position = 0)]
-    [string]$command,
- 
-    [Parameter(ValueFromRemainingArguments = $true)]
-    [string[]]$arguments
-  )
- 
-  & $command @arguments;
-  if ($LASTEXITCODE -ne 0) {
-    throw "'$command $($arguments -join ' ')' failed with exit code $LASTEXITCODE";
-  }
-}
 #########################################
 # tmux 
 #########################################
@@ -531,6 +531,18 @@ function Get-TmuxPaneId {
   }
   return $pane_id;
 }
+function Copy-TmuxPaneId {
+  $pane_id = Get-TmuxPaneId;
+  if ([string]::IsNullOrWhiteSpace($pane_id)) {
+    return;
+  }
+  Invoke-Native tmux -- set-buffer $pane_id;
+  Invoke-Native tmux -- set-buffer -b "pane_id" $pane_id;
+  $message = "pane id copied to tmux buffer: $pane_id";
+  Write-Host $message;
+  Invoke-Native tmux -- display-message -d 1000 $message;
+}
+Set-Alias -Name ct -Value 'Copy-TmuxPaneId';
 $ENV:TMUX_PANE_ID = Get-TmuxPaneId;
 #########################################
 # fzf
