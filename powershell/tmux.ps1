@@ -144,9 +144,9 @@ function Sort-TmuxWindows {
   }
 
   $session = Invoke-Native tmux -- display-message -p '#S';
-  $windows = @(Invoke-Native tmux -- list-windows -t $session -F '#{window_id}|#{window_index}|#{window_name}' | ForEach-Object {
-    $id, $index, $name = $_ -split '\|', 3;
-    [pscustomobject]@{ Id = $id; Index = [int]$index; Name = $name; IsSeparator = (Test-TmuxSeparator $name); };
+  $windows = @(Invoke-Native tmux -- list-windows -t $session -F '#{window_id}|#{window_index}|#{window_active}|#{window_name}' | ForEach-Object {
+    $id, $index, $active, $name = $_ -split '\|', 4;
+    [pscustomobject]@{ Id = $id; Index = [int]$index; Name = $name; IsSeparator = (Test-TmuxSeparator $name); IsActive = ($active -eq '1'); };
   } | Sort-Object Index);
   if ($null -eq (Get-TmuxSeparators $windows)) {
     return;
@@ -194,13 +194,13 @@ function Sort-TmuxWindows {
   }
 
   # park above the occupied range in final order, then bring each back down so no move lands on a taken index
-  $active_id = Invoke-Native tmux -- display-message -t $session -p '#{window_id}';
+  $active_id = ($windows | Where-Object IsActive).Id;
   $staging = (($windows.Index | Measure-Object -Maximum).Maximum) + 1000;
   for ($i = 0; $i -lt $ordered.Count; $i++) {
-    Invoke-Native tmux -- move-window -s $ordered[$i].Id -t "${session}:$($staging + $i)";
+    Invoke-Native tmux -- move-window -d -s $ordered[$i].Id -t "${session}:$($staging + $i)";
   }
   foreach ($window in $ordered) {
-    Invoke-Native tmux -- move-window -s $window.Id -t "${session}:$($window.NewIndex)";
+    Invoke-Native tmux -- move-window -d -s $window.Id -t "${session}:$($window.NewIndex)";
   }
   Invoke-Native tmux -- select-window -t $active_id;
   Write-Host "sorted $($ordered.Count) tmux windows, $($moved.Count) moved";
