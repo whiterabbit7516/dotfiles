@@ -751,7 +751,7 @@
   },
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
-      "text": "Generate a single-line commit message. Maximum 60 characters. Use imperative mood. Do not add a body, explanation, issue number, or trailing period."
+      "text": "single-line. maximum 60 characters. lowercase. no trailing period"
     }
   ]
 }
