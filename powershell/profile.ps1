@@ -1,4 +1,8 @@
 #########################################
+# shared
+#########################################
+. "$PSScriptRoot/shared.ps1"
+#########################################
 # aliases
 #########################################
 if ($(get-command code -ErrorAction SilentlyContinue) -ne $null) {
@@ -16,6 +20,14 @@ Set-Alias -Name gr -Value Get-Random4;
 #########################################
 # $ENV:PYTHONSTARTUP="/home/.../.pythonrc.py"
 $ENV:ISSUES_DIR="/workspace/mount/issues/active/";
+# read from home .env
+if (Test-Path ~/.env) {
+  Read-EnvFile /root/.env;
+}
+# read from cwd .env
+if (Test-Path .env) {
+  Read-EnvFile .env;
+}
 #########################################
 # paths
 #########################################
@@ -40,10 +52,6 @@ $ENV:PATH = "$($ENV:PATH):/usr/local/go/bin/";
 #   }
 # }
 #########################################
-# shared
-#########################################
-. "$PSScriptRoot/shared.ps1"
-#########################################
 # PSReadLine
 #########################################
 . "$PSScriptRoot/psreadline.ps1"
@@ -58,28 +66,6 @@ function Edit-PSProfile {
 function Reload-PSProfile {
   . $PROFILE.CurrentUserAllHosts;
 };
-#########################################
-# Read-EnvFile
-#########################################
-function Read-EnvFile {
-  [CmdletBinding()]
-  param(
-    [Parameter(Mandatory = $true, Position = 0)]
-    [string]$path
-  )
-  Get-Content -Path $path | ForEach-Object {
-    $line = $_.Trim();
-    if ($line -eq "" -or $line.StartsWith("#")) {
-      return;
-    }
-    $key, $value = $line -split "=", 2;
-    if ($value.Length -ge 2 -and $value[0] -eq $value[-1] -and ($value[0] -eq '"' -or $value[0] -eq "'")) {
-      $value = $value.Substring(1, $value.Length - 2);
-    }
-    [System.Environment]::SetEnvironmentVariable($key, $value);
-    Write-Verbose "$key=$value";
-  }
-}
 #########################################
 # tmux 
 #########################################
@@ -110,12 +96,4 @@ $PSStyle.FileInfo.Directory = $PSStyle.Foreground.Blue;
 if (Test-Path ~/.local/dotfiles/powershell/profile.ps1) {
   Write-Information "Reading ~/.local/dotfiles/powershell/profile.ps1";
   Invoke-Expression -Command ~/.local/dotfiles/powershell/profile.ps1;
-}
-# read from home .env
-if (Test-Path ~/.env) {
-  Read-EnvFile /root/.env;
-}
-# read from cwd .env
-if (Test-Path .env) {
-  Read-EnvFile .env;
 }
