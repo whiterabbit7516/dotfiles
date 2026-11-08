@@ -5,7 +5,7 @@
   "mouse": true,
   "beep": false,
   "theme": "github",
-  "defaultMode": "autopilot",
+  "defaultMode": "interactive",
   "defaultPermissionMode": "assisted",
   "enableAllGithubMcpTools": true,
   "showReasoning": false,

@@ -417,8 +417,8 @@ function Copy-TmuxPaneId {
   if ([string]::IsNullOrWhiteSpace($pane_id)) {
     return;
   }
+  Invoke-Native tmux -- set-buffer -wb "pane_id" $pane_id;
   Invoke-Native tmux -- set-buffer $pane_id;
-  Invoke-Native tmux -- set-buffer -b "pane_id" $pane_id;
   $message = "pane id copied to tmux buffer: $pane_id";
   Write-Host $message;
   Invoke-Native tmux -- display-message -d 1000 $message;
@@ -440,8 +440,8 @@ function Copy-Location {
     return;
   }
   $location = Get-Location | Select-Object -ExpandProperty Path;
+  Invoke-Native tmux -- set-buffer -wb "location" $location;
   Invoke-Native tmux -- set-buffer $location;
-  Invoke-Native tmux -- set-buffer -b "location" $location;
   $message = "path copied to tmux buffer: $location"
   Write-Host $message;
   Invoke-Native tmux -- display-message -d 1000 $message;
