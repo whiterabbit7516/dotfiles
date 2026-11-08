@@ -749,4 +749,9 @@
     "https://spec.openapis.org/": true,
     "https://www.schemastore.org/": true
   },
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "text": "Generate a single-line commit message. Maximum 60 characters. Use imperative mood. Do not add a body, explanation, issue number, or trailing period."
+    }
+  ]
 }
