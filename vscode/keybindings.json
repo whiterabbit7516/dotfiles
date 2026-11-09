@@ -88,6 +88,16 @@ command groups
   // unbinds                         -   t1113
   ///////////////////////////////////////////////////////////////
   {
+    "key": "ctrl+k ctrl+n",
+    "command": "-git.unstageSelectedRanges",
+    "when": "editorTextFocus && isInDiffEditor && isInDiffRightEditor && !operationInProgress && resourceScheme == 'git'"
+  },
+  {
+    "key": "ctrl+k ctrl+alt+s",
+    "command": "-git.stageSelectedRanges",
+    "when": "editorTextFocus && !operationInProgress && resourceScheme == 'vscode-remote'"
+  },
+  {
     "key": "ctrl+1",
     "command": "-workbench.action.focusFirstEditorGroup"
   },
@@ -2104,6 +2114,21 @@ command groups
     "when": "editorTextFocus",
     "command": "editor.action.insertCursorAtEndOfEachLineSelected",
   },
+  {
+    "key": "ctrl+s ctrl+l",
+    "command": "git.stageSelectedRanges",
+    "when": "!inQuickOpen"
+  },
+  {
+    "key": "ctrl+r ctrl+l",
+    "command": "git.revertSelectedRanges",
+    "when": "!inQuickOpen"
+  },
+  {
+    "key": "ctrl+u ctrl+l",
+    "command": "git.unstageSelectedRanges",
+    "when": "!inQuickOpen"
+  },
   ///////////////////////////////////////////////////////////////
   // ai - chat                                  l    t7259
   ///////////////////////////////////////////////////////////////
@@ -3183,23 +3208,13 @@ command groups
   },
   {
     "key": "ctrl+v ctrl+n",
-    "when": "editorTextFocus && !textCompareEditorActive",
-    "command": "workbench.action.editor.nextChange",
+    "command": "workbench.action.compareEditor.nextChange",
+    "when": "textCompareEditorVisible"
   },
   {
     "key": "ctrl+v ctrl+p",
-    "when": "editorTextFocus && !textCompareEditorActive",
-    "command": "workbench.action.editor.previousChange",
-  },
-  {
-    "key": "ctrl+v ctrl+n",
-    "when": "isInDiffEditor",
-    "command": "editor.action.diffReview.next",
-  },
-  {
-    "key": "ctrl+v ctrl+p",
-    "when": "isInDiffEditor",
-    "command": "editor.action.diffReview.prev",
+    "command": "workbench.action.compareEditor.previousChange",
+    "when": "textCompareEditorVisible"
   },
   {
     "key": "ctrl+v v",
