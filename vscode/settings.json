@@ -755,11 +755,11 @@
     }
   ],
   "workbench.colorCustomizations": {
-    "diffEditor.insertedLineBackground": "#00000040",
-    "diffEditor.insertedTextBackground": "#00000040",
+    "diffEditor.insertedLineBackground": "#00400040",
+    "diffEditor.insertedTextBackground": "#00400040",
     "diffEditor.insertedTextBorder": "#00ff0040",
-    "diffEditor.removedLineBackground": "#00000040",
-    "diffEditor.removedTextBackground": "#00000040",
+    "diffEditor.removedLineBackground": "#40000040",
+    "diffEditor.removedTextBackground": "#40000040",
     "diffEditor.removedTextBorder": "#ff000040"
   }
 }
