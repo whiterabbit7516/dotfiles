@@ -755,13 +755,13 @@
     }
   ],
   "workbench.colorCustomizations": {
-    "diffEditor.insertedLineBackground": "#000000fe",
-    "diffEditor.insertedTextBackground": "#000000fe",
+    "diffEditor.insertedLineBackground": "#00000040",
+    "diffEditor.insertedTextBackground": "#00000040",
     "diffEditor.insertedTextBorder": "#00ff0040",
-    "diffEditor.removedLineBackground": "#000000fe",
-    "diffEditor.removedTextBackground": "#000000fe",
+    "diffEditor.removedLineBackground": "#00000040",
+    "diffEditor.removedTextBackground": "#00000040",
     "diffEditor.removedTextBorder": "#ff000040",
     "diffEditorGutter.insertedLineBackground": "#00ff0040",
-    "diffEditorGutter.removedLineBackground": "#ff000040",
+    "diffEditorGutter.removedLineBackground": "#ff000040"
   }
 }
