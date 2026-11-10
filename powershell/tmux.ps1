@@ -342,7 +342,7 @@ function Store-TmuxCommand {
     return;
   }
   $location = Get-Location | Select-Object -ExpandProperty Path;
-  $pane_title = " $location · $Command "; # store the cwd & cmd in pane_title
+  $pane_title = "$location · $Command"; # store the cwd & cmd in pane_title
   Invoke-Native tmux -- select-pane -T $pane_title;
   if (-not $NoExecute) {
     Invoke-Expression $Command;
