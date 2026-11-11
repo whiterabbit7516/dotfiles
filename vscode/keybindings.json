@@ -4328,32 +4328,32 @@ command groups
   },
   {
     "key": "ctrl+y ctrl+h",
-    "when": "editorFocus && !terminalFocus",
+    "when": "!inQuickOpen && !terminalFocus",
     "command": "workbench.action.clearEditorHistory"
   },
   {
     "key": "ctrl+y ctrl+b",
-    "when": "editorFocus && !terminalFocus",
+    "when": "!inQuickOpen && !terminalFocus",
     "command": "workbench.action.clearCommandHistory"
   },
   {
     "key": "ctrl+y ctrl+o",
-    "when": "editorFocus || outputFocus",
+    "when": "!inQuickOpen || outputFocus",
     "command": "workbench.output.action.clearOutput"
   },
   {
     "key": "ctrl+y ctrl+p",
-    "when": "editorFocus && !terminalFocus",
+    "when": "!inQuickOpen && !terminalFocus",
     "command": "workbench.action.clearRecentFiles"
   },
   {
     "key": "ctrl+y ctrl+n",
-    "when": "editorFocus && !terminalFocus",
+    "when": "!inQuickOpen && !terminalFocus",
     "command": "notifications.clearAll"
   },
   {
     "key": "ctrl+y b",
-    "when": "editorFocus && !terminalFocus",
+    "when": "!inQuickOpen && !terminalFocus",
     "command": "workbench.debug.viewlet.action.removeAllBreakpoints"
   },
   ///////////////////////////////////////////////////////////////
