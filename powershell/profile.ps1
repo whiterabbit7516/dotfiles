@@ -79,6 +79,10 @@ Set-Alias -Name fe -Value 'Invoke-FuzzyEdit';
 Set-Alias -Name fd -Value 'Invoke-FuzzySetLocation';
 Set-Alias -Name fh -Value 'Invoke-FuzzyHistory';
 #########################################
+# dotenv
+#########################################
+Import-Module pwsh-dotenv -ErrorAction SilentlyContinue;
+#########################################
 # colors
 #########################################
 # [System.Enum]::GetValues("ConsoleColor") | foreach-object {write-host $_ -ForegroundColor $_}
