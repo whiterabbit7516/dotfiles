@@ -760,6 +760,8 @@
     "diffEditor.insertedTextBorder": "#00ff0040",
     "diffEditor.removedLineBackground": "#40000040",
     "diffEditor.removedTextBackground": "#40000040",
-    "diffEditor.removedTextBorder": "#ff000040"
-  }
+    "diffEditor.removedTextBorder": "#ff000040",
+    "diffEditorOverview.insertedForeground": "#00ff0080",
+    "diffEditorOverview.removedForeground": "#ff000080"
+  },
 }
