@@ -11,6 +11,7 @@ mkdir -p ~/.config/powershell
 ln -fsv $SCRIPTROOT/powershell/profile.ps1 ~/.config/powershell/profile.ps1
 ln -fsv $SCRIPTROOT/powershell/prompt.ps1 ~/.config/powershell/prompt.ps1
 ln -fsv $SCRIPTROOT/powershell/psreadline.ps1 ~/.config/powershell/psreadline.ps1
+ln -fsv $SCRIPTROOT/powershell/shared.ps1 ~/.config/powershell/shared.ps1
 ln -fsv $SCRIPTROOT/powershell/tmux.ps1 ~/.config/powershell/tmux.ps1
 ##########################################
 # vim
