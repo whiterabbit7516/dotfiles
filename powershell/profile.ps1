@@ -36,6 +36,7 @@ $ENV:PATH = "$($ENV:PATH):/root/.cargo/bin/";
 $ENV:PATH = "$($ENV:PATH):/root/.cmux/bin/";
 $ENV:PATH = "$($ENV:PATH):/root/.krew/bin/";
 $ENV:PATH = "$($ENV:PATH):/root/.local/bin/";
+$ENV:PATH = "$($ENV:PATH):/root/.local/share/solana/install/active_release/bin/";
 $ENV:PATH = "$($ENV:PATH):/root/.nargo/bin/";
 $ENV:PATH = "$($ENV:PATH):/usr/local/foundry/";
 $ENV:PATH = "$($ENV:PATH):/usr/local/go/bin/";
