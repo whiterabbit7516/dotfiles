@@ -1,13 +1,13 @@
 {
   "folders": [
     {
-      "path": "../"
+      "path": "../../.."
     },
     {
-      "path": "../vscode"
+      "path": "../../../tmux"
     },
     {
-      "path": "../tmux"
+      "path": "../../../vscode"
     }
   ],
   "settings": {
