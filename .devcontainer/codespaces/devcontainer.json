@@ -1,7 +1,7 @@
 {
   "name": "codespaces",
   "image": "ghcr.io/whiterabbit7516/devcontainers/devenv-main-amd64:latest",
-  "workspaceMount": "source=${localWorkspaceFolder}/,target=/workspace/repos/dotfiles/,type=bind",
+  "workspaceMount": "source=${localWorkspaceFolder}/,target=/workspace/mount/,type=bind",
   "workspaceFolder": "/workspace",
   "runArgs": [
     "--network=host",
