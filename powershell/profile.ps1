@@ -31,6 +31,7 @@ if (Test-Path .env) {
 #########################################
 # paths
 #########################################
+$ENV:PATH = "$($ENV:PATH):/root/.avm/bin/";
 $ENV:PATH = "$($ENV:PATH):/root/.bb/";
 $ENV:PATH = "$($ENV:PATH):/root/.cargo/bin/";
 $ENV:PATH = "$($ENV:PATH):/root/.cmux/bin/";
