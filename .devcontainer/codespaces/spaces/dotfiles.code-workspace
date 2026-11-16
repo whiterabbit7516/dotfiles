@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "path": "../"
+    },
+    {
+      "path": "../vscode"
+    },
+    {
+      "path": "../tmux"
+    }
+  ],
+  "settings": {
+    "window.titleSeparator": " | ",
+    "window.title": "${rootName}${separator}${profileName}"
+  }
+}
