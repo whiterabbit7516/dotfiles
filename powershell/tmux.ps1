@@ -242,17 +242,17 @@ function Throw-TmuxWindow {
     Write-Warning "could not find the current tmux window ($current_id)";
     return;
   }
-  # group i sits between separators i and i + 1; black (0) is never thrown
+  # group i sits between separators i and i + 1
   $group_colours = @('⚫', '🟢', '🟡', '🟠', '🔵', '⚪');
   $group = -1;
-  for ($i = 1; $i -lt $group_colours.Count; $i++) {
+  for ($i = 0; $i -lt $group_colours.Count; $i++) {
     if (($current.Index -gt $separators[$i].Index) -and ($current.Index -lt $separators[$i + 1].Index)) {
       $group = $i;
       break;
     }
   }
-  if ($group -lt 1) {
-    Write-Warning "current tmux window '$($current.Name)' is not in the green, yellow, orange, blue or white group";
+  if ($group -lt 0) {
+    Write-Warning "current tmux window '$($current.Name)' is not in the black, green, yellow, orange, blue or white group";
     return;
   }
   # green goes to yellow, every other group goes to green
