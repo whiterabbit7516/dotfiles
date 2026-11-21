@@ -19,7 +19,6 @@ Set-Alias -Name gr -Value Get-Random4;
 # environment variables
 #########################################
 # $ENV:PYTHONSTARTUP="/home/.../.pythonrc.py"
-$ENV:ISSUES_DIR="/workspace/mount/issues/active/";
 # read from home .env
 if (Test-Path ~/.env) {
   Read-EnvFile /root/.env;
