@@ -764,4 +764,5 @@
     "diffEditorOverview.insertedForeground": "#00ff0080",
     "diffEditorOverview.removedForeground": "#ff000080"
   },
+  "workbench.panel.opensMaximized": "never",
 }

@@ -1988,8 +1988,14 @@ command groups
   },
   {
     "key": "ctrl+h",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.action.focusPanel",
+        "workbench.action.toggleMaximizedPanel"
+      ]
+    },
     "when": "!inQuickOpen",
-    "command": "workbench.action.toggleMaximizedPanel",
   },
   ///////////////////////////////////////////////////////////////
   // preferences                     k    t1917
