@@ -1,0 +1,6 @@
+gh auth login
+gh repo list whiterabbit7516
+
+sl /workspace/mount/
+sl /workspace/repos/whiterabbit7516/
+sl /workspace/repos/whiterabbit7516/dotfiles/

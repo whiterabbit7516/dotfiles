@@ -1,0 +1,90 @@
+{
+  "name": "local-windows-arm64",
+  "build": {
+    "dockerfile": "./Dockerfile"
+  },
+  "workspaceMount": "source=${localWorkspaceFolder}/,target=/workspace/mount/,type=bind",
+  "workspaceFolder": "/workspace",
+  "runArgs": [
+    "--network=host",
+    "--privileged"
+    // "--cap-add=NET_RAW",
+    // "--cap-add=NET_ADMIN"
+  ],
+  "initializeCommand": "pwsh -nop -nol -f ${localWorkspaceFolder}/.devcontainer/local-windows-arm64/scripts/initializeCommand.ps1",
+  "features": {},
+  "postCreateCommand": "/usr/bin/pwsh -nop -nol -f /devcontainer/scripts/postCreate.ps1",
+  "postAttachCommand": "/usr/bin/pwsh -nop -nol -f /devcontainer/scripts/postAttach.ps1",
+  "containerEnv": {
+    "DOCKER_HOST": "unix:///var/run/docker-host.sock"
+  },
+  "remoteUser": "root",
+  "remoteEnv": {
+    "PATH": "${containerEnv:PATH}:/workspace/mount/scripts",
+    "CLAUDE_CODE_NO_FLICKER": "1",
+    // "GIT_CONFIG_GLOBAL": "/workspace/mount/config/git/config",
+    "AWS_CONFIG_FILE": "/workspace/mount/config/aws/config",
+    "OPENCODE_CONFIG": "/workspace/mount/config/opencode/opencode.json",
+    "OPENCODE_TUI_CONFIG": "/workspace/mount/config/opencode/tui.json",
+    "OPENCODE_CONFIG_DIR": "/workspace/mount/config/opencode/",
+    "HELM_DEBUG": "1"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "window.title": "${rootName}${separator}${profileName}",
+        "window.titleSeparator": " | ",
+        "terminal.integrated.defaultProfile.linux": "pwsh",
+        "terminal.integrated.profiles.linux": {
+          "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+          },
+          "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell",
+            "args": [
+              "-nol"
+            ]
+          }
+        },
+        "omnisharp.autoStart": false,
+        "dotfiles.repository": "https://github.com/whiterabbit7516/dotfiles.git",
+        "dotfiles.installCommand": "install.ps1"
+      },
+      "extensions": [
+        "alefragnani.bookmarks",
+        "anthropic.claude-code",
+        "brunnerh.insert-unicode",
+        "eamodio.gitlens",
+        "hashicorp.terraform",
+        "ms-dotnettools.csdevkit",
+        "ms-vscode.PowerShell",
+        "pbkit.vscode-pbkit",
+        "sleistner.vscode-fileutils",
+        "tamasfe.even-better-toml",
+        "vscodevim.vim"
+      ]
+    }
+  },
+  "mounts": [
+     "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind",
+     "source=${localEnv:HOMEDRIVE}${localEnv:HOMEPATH},target=/host/home/,type=bind,consistency=cached",
+    //  "source=${localWorkspaceFolder},target=/workspace/repos/whiterabbit7516/dotfiles/,type=bind,consistency=cached",
+     "source=devcontainer-whiterabbit7516-dotfiles-data,target=/root/z-location.db,type=volume,volume-subpath=z-location.db", // zlocation
+     "source=devcontainer-whiterabbit7516-dotfiles-data,target=/root/.aws/,type=volume,volume-subpath=.aws", // used by aws
+     "source=devcontainer-whiterabbit7516-dotfiles-data,target=/root/.gitconfig/,type=volume,volume-subpath=.gitconfig", // used by git
+     "source=devcontainer-whiterabbit7516-dotfiles-data,target=/root/.claude.json,type=volume,volume-subpath=.claude.json", // used by claude
+     "source=devcontainer-whiterabbit7516-dotfiles-data,target=/root/.claude/,type=volume,volume-subpath=.claude", // used by claude
+     "source=devcontainer-whiterabbit7516-dotfiles-data,target=/root/.config/,type=volume,volume-subpath=.config", // used by glab, acli, argocd
+     "source=devcontainer-whiterabbit7516-dotfiles-data,target=/root/.copilot/,type=volume,volume-subpath=.copilot", // used by copilot
+     "source=devcontainer-whiterabbit7516-dotfiles-data,target=/root/.env/,type=volume,volume-subpath=.env", // used to store secret env vars
+     "source=devcontainer-whiterabbit7516-dotfiles-data,target=/root/.gnupg/,type=volume,volume-subpath=.gnupg",
+     "source=devcontainer-whiterabbit7516-dotfiles-data,target=/root/.local/,type=volume,volume-subpath=.local", // used by various tools to store data
+     "source=devcontainer-whiterabbit7516-dotfiles-data,target=/root/.ssh/,type=volume,volume-subpath=.ssh", // used for ssh keys
+     "source=devcontainer-whiterabbit7516-dotfiles-data,target=/root/.tmux/,type=volume,volume-subpath=.tmux", // used by tmux-resurrect
+     "source=devcontainer-whiterabbit7516-dotfiles-data,target=/root/.tsh/,type=volume,volume-subpath=.tsh", // used by tsh
+     "source=devcontainer-whiterabbit7516-dotfiles-data,target=/workspace/scratch/,type=volume,volume-subpath=scratch", // scratch space persisted across rebuilds
+     "source=devcontainer-whiterabbit7516-dotfiles-data,target=/workspace/repos/,type=volume,volume-subpath=repos", // repositories
+   ]
+}

@@ -1,0 +1,35 @@
+{
+  "folders": [
+    {
+      "name": "core-mount",
+      "path": "/workspace/mount/"
+    },
+    {
+      "path": "../../../powershell"
+    },
+    {
+      "path": "../../../tmux"
+    },
+    {
+      "path": "../../../vscode"
+    }
+  ],
+  "settings": {
+    "window.title": "${rootName}${separator}${profileName}",
+    "window.titleSeparator": " | ",
+  },
+  "extensions": {
+    "recommendations": [
+      "alefragnani.bookmarks",
+      "eamodio.gitlens",
+      "metaseed.metago",
+      "mhutchie.git-graph",
+      "ms-azuretools.vscode-docker",
+      "ms-python.python",
+      "sleistner.vscode-fileutils",
+      "vscodevim.vim",
+      "redhat.vscode-yaml",
+    ]
+  },
+}
+
