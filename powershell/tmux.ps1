@@ -299,7 +299,8 @@ function Store-TmuxCommand {
   }
   $location = Get-Location | Select-Object -ExpandProperty Path;
   $pane_title = "$location · $Command"; # store the cwd & cmd in pane_title
-  Invoke-Native tmux -- select-pane -T $pane_title;
+  $pane_target = if ([string]::IsNullOrWhiteSpace($ENV:TMUX_PANE)) { @() } else { @('-t', $ENV:TMUX_PANE) }; # the calling pane, not the active one
+  Invoke-Native tmux -- select-pane @pane_target -T $pane_title;
   if (-not $NoExecute) {
     Invoke-Expression $Command;
   }
@@ -320,7 +321,8 @@ function Restore-TmuxCommand {
     Write-Warning "tmux server is not running";
     return;
   }
-  $pane_title = Invoke-Native tmux -- display-message -p '#{pane_title}'; # restore the cwd & cmd from pane_title
+  $pane_target = if ([string]::IsNullOrWhiteSpace($ENV:TMUX_PANE)) { @() } else { @('-t', $ENV:TMUX_PANE) }; # the calling pane, not the active one
+  $pane_title = Invoke-Native tmux -- display-message -p @pane_target '#{pane_title}'; # restore the cwd & cmd from pane_title
   if ([string]::IsNullOrWhiteSpace($pane_title)) {
     Write-Warning "pane title is empty; nothing to restore";
     return;
@@ -358,7 +360,8 @@ function Get-TmuxPaneId {
     Write-Warning "tmux server is not running";
     return;
   }
-  $pane_id = Invoke-Native tmux -- display-message -p '#{session_id}:#{window_id}.#{pane_id}'
+  $pane_target = if ([string]::IsNullOrWhiteSpace($ENV:TMUX_PANE)) { @() } else { @('-t', $ENV:TMUX_PANE) }; # the calling pane, not the active one
+  $pane_id = Invoke-Native tmux -- display-message -p @pane_target '#{session_id}:#{window_id}.#{pane_id}'
   if ([string]::IsNullOrWhiteSpace($pane_id)) {
     Write-Warning "failed to retrieve pane id";
     return;
