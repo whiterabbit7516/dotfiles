@@ -378,9 +378,8 @@ function Copy-TmuxPaneId {
   }
   Invoke-Native tmux -- set-buffer -wb "pane_id" $pane_id;
   Invoke-Native tmux -- set-buffer $pane_id;
-  $message = "pane id copied to tmux buffer: $pane_id";
-  Write-Host $message;
-  Invoke-Native tmux -- display-message -d 1000 $message;
+  Write-Host "pane id copied: $($PSStyle.Bold)$pane_id$($PSStyle.Reset)";
+  Invoke-Native tmux -- display-message -d 2000 "#[nobold]pane id copied: #[bold]$($pane_id.Replace('%', '%%'))#[default]"; # display-message runs strftime, so %<n> must be escaped
 }
 Set-Alias -Name ct -Value 'Copy-TmuxPaneId';
 #########################################
@@ -401,8 +400,7 @@ function Copy-Location {
   $location = Get-Location | Select-Object -ExpandProperty Path;
   Invoke-Native tmux -- set-buffer -wb "location" $location;
   Invoke-Native tmux -- set-buffer $location;
-  $message = "path copied to tmux buffer: $location"
-  Write-Host $message;
-  Invoke-Native tmux -- display-message -d 1000 $message;
+  Write-Host "path copied: $($PSStyle.Bold)$location$($PSStyle.Reset)";
+  Invoke-Native tmux -- display-message -d 2000 "#[nobold]path copied: #[bold]$($location.Replace('#', '##').Replace('%', '%%'))#[default]"; # display-message expands #-formats and runs strftime
 }
 Set-Alias -Name cl -Value 'Copy-Location';
