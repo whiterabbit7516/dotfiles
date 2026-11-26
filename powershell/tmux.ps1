@@ -209,7 +209,12 @@ function Sort-TmuxWindows {
 # Throw-TmuxWindow
 #########################################
 function Throw-TmuxWindow {
-  param([string]$WindowId) # defaults to the window of the current pane
+  param(
+    [Parameter(Position = 0)]
+    [ValidateSet('toggle', 'black', 'green', 'yellow', 'orange', 'blue', 'white')]
+    [string]$TargetGroup = 'toggle',
+    [string]$WindowId # defaults to the window of the current pane
+  )
   if (-not (Get-Command tmux -ErrorAction SilentlyContinue)) {
     Write-Warning "tmux is not available on PATH";
     return;
@@ -255,8 +260,11 @@ function Throw-TmuxWindow {
     Write-Warning "current tmux window '$($current.Name)' is not in the black, green, yellow, orange, blue or white group";
     return;
   }
-  # green goes to yellow, every other group goes to green
-  $target = if ($group -eq 1) { 2 } else { 1 };
+  # toggle: green goes to yellow, every other group goes to green
+  $target = if ($TargetGroup -ne 'toggle') { [array]::IndexOf(@('black', 'green', 'yellow', 'orange', 'blue', 'white'), $TargetGroup) } elseif ($group -eq 1) { 2 } else { 1 };
+  if ($target -eq $group) {
+    return;
+  }
   $from, $to, $open, $close = $group_colours[$group], $group_colours[$target], $separators[$target], $separators[$target + 1];
 
   # sorted position in the destination group: before the first window that sorts after this one, else before the separator that closes it
@@ -266,58 +274,6 @@ function Throw-TmuxWindow {
   }
   Invoke-Native tmux -- move-window -b -s $current.Id -t $before.Id;
   # Write-Host "moved '$($current.Name)' $from ➔ $to";
-}
-#########################################
-# Throw-TmuxWindows
-#########################################
-function Throw-TmuxWindows {
-  if (-not (Get-Command tmux -ErrorAction SilentlyContinue)) {
-    Write-Warning "tmux is not available on PATH";
-    return;
-  }
-  if ([string]::IsNullOrWhiteSpace($ENV:TMUX)) {
-    Write-Warning "must be inside tmux to throw windows";
-    return;
-  }
-  try {
-    Invoke-Native tmux -- list-sessions 2>&1 | Out-Null;
-  }
-  catch {
-    Write-Warning "tmux server is not running";
-    return;
-  }
-  $pane_target = if ([string]::IsNullOrWhiteSpace($ENV:TMUX_PANE)) { @() } else { @('-t', $ENV:TMUX_PANE) };
-  $session, $current_id = (Invoke-Native tmux -- display-message -p @pane_target '#{session_name}|#{window_id}') -split '\|', 2;
-  $windows = @(Invoke-Native tmux -- list-windows -t $session -F '#{window_id}|#{window_index}|#{window_name}' | ForEach-Object {
-    $id, $index, $name = $_ -split '\|', 3;
-    [pscustomobject]@{ Id = $id; Index = [int]$index; Name = $name; };
-  } | Sort-Object Index);
-  $separators = Get-TmuxSeparators $windows;
-  if ($null -eq $separators) {
-    return;
-  }
-
-  # the colour of the current window decides which group is thrown
-  $green_open, $green_close, $yellow_close = $separators[1], $separators[2], $separators[3];
-  $current = $windows | Where-Object { $_.Id -eq $current_id };
-  if ($null -eq $current) {
-    Write-Warning "could not find the current tmux window ($current_id)";
-    return;
-  }
-  if (($current.Index -gt $green_open.Index) -and ($current.Index -lt $green_close.Index)) {
-    $open, $close = $green_open, $green_close;
-  } elseif (($current.Index -gt $green_close.Index) -and ($current.Index -lt $yellow_close.Index)) {
-    $open, $close = $green_close, $yellow_close;
-  } else {
-    Write-Warning "current tmux window '$($current.Name)' is not in the green or yellow group";
-    return;
-  }
-
-  # each window lands at its sorted position in the other group; Throw-TmuxWindow re-reads the layout every time
-  $group = @($windows | Where-Object { ($_.Index -gt $open.Index) -and ($_.Index -lt $close.Index) });
-  foreach ($window in $group) {
-    Throw-TmuxWindow -WindowId $window.Id;
-  }
 }
 #########################################
 # Store-TmuxCommand
